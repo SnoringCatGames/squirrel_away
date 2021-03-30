@@ -21,7 +21,7 @@ In this game, the user can click anywhere in the level, and the cat character wi
 -   All code is published under the [MIT license](LICENSE).
 -   All art assets (files under `assets/images/`, `assets/music/`, and `assets/sounds/`) are published under the [CC0 1.0 Universal license](https://creativecommons.org/publicdomain/zero/1.0/deed.en).
 -   This project depends on various pieces of third-party code that are licensed separately. Here are lists of these third-party licenses:
-    -   [addons/scaffold/scaffold_third_party_licenses.gd](./addons/scaffold/scaffold_third_party_licenses.gd)
+    -   [addons/godot_scaffold/scaffold_third_party_licenses.gd](./addons/godot_scaffold/scaffold_third_party_licenses.gd)
     -   [addons/surfacer/surfacer_third_party_licenses.gd](./addons/surfacer/surfacer_third_party_licenses.gd)
     -   [src/squirrel_away_third_party_licenses.gd](./src/squirrel_away_third_party_licenses.gd)
 
