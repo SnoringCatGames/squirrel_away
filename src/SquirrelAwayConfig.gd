@@ -36,74 +36,74 @@ var theme := preload("res://src/default_theme.tres")
 var test_runner_resource_path := "res://test/TestRunner.tscn"
 
 var fonts := {
-    main_xs = preload("res://addons/scaffold/assets/fonts/main_font_xs.tres"),
+    main_xs = preload("res://addons/godot_scaffold/assets/fonts/main_font_xs.tres"),
     main_xs_italic = preload( \
-            "res://addons/scaffold/assets/fonts/main_font_xs_italic.tres"),
-    main_s = preload("res://addons/scaffold/assets/fonts/main_font_s.tres"),
-    main_m = preload("res://addons/scaffold/assets/fonts/main_font_m.tres"),
+            "res://addons/godot_scaffold/assets/fonts/main_font_xs_italic.tres"),
+    main_s = preload("res://addons/godot_scaffold/assets/fonts/main_font_s.tres"),
+    main_m = preload("res://addons/godot_scaffold/assets/fonts/main_font_m.tres"),
     main_m_bold = preload( \
-            "res://addons/scaffold/assets/fonts/main_font_m_bold.tres"),
+            "res://addons/godot_scaffold/assets/fonts/main_font_m_bold.tres"),
     main_m_italic = preload( \
-            "res://addons/scaffold/assets/fonts/main_font_m_italic.tres"),
-    main_l = preload("res://addons/scaffold/assets/fonts/main_font_l.tres"),
-    main_xl = preload("res://addons/scaffold/assets/fonts/main_font_xl.tres"),
+            "res://addons/godot_scaffold/assets/fonts/main_font_m_italic.tres"),
+    main_l = preload("res://addons/godot_scaffold/assets/fonts/main_font_l.tres"),
+    main_xl = preload("res://addons/godot_scaffold/assets/fonts/main_font_xl.tres"),
 }
 
 var sounds_manifest := [
     {
         name = "fall",
         volume_db = 18.0,
-        path_prefix = "res://addons/scaffold/assets/sounds/",
+        path_prefix = "res://addons/godot_scaffold/assets/sounds/",
     },
     {
         name = "cadence",
         volume_db = 8.0,
-        path_prefix = "res://addons/scaffold/assets/sounds/",
+        path_prefix = "res://addons/godot_scaffold/assets/sounds/",
     },
     {
         name = "jump",
         volume_db = -6.0,
-        path_prefix = "res://addons/scaffold/assets/sounds/",
+        path_prefix = "res://addons/godot_scaffold/assets/sounds/",
     },
     {
         name = "land",
         volume_db = -0.0,
-        path_prefix = "res://addons/scaffold/assets/sounds/",
+        path_prefix = "res://addons/godot_scaffold/assets/sounds/",
     },
     {
         name = "menu_select",
         volume_db = -2.0,
-        path_prefix = "res://addons/scaffold/assets/sounds/",
+        path_prefix = "res://addons/godot_scaffold/assets/sounds/",
     },
     {
         name = "menu_select_fancy",
         volume_db = -6.0,
-        path_prefix = "res://addons/scaffold/assets/sounds/",
+        path_prefix = "res://addons/godot_scaffold/assets/sounds/",
     },
     {
         name = "lock_low",
         volume_db = 0.0,
-        path_prefix = "res://addons/scaffold/assets/sounds/",
+        path_prefix = "res://addons/godot_scaffold/assets/sounds/",
     },
     {
         name = "lock_high",
         volume_db = 0.0,
-        path_prefix = "res://addons/scaffold/assets/sounds/",
+        path_prefix = "res://addons/godot_scaffold/assets/sounds/",
     },
     {
         name = "walk",
         volume_db = 15.0,
-        path_prefix = "res://addons/scaffold/assets/sounds/",
+        path_prefix = "res://addons/godot_scaffold/assets/sounds/",
     },
     {
         name = "achievement",
         volume_db = 12.0,
-        path_prefix = "res://addons/scaffold/assets/sounds/",
+        path_prefix = "res://addons/godot_scaffold/assets/sounds/",
     },
     {
         name = "single_cat_snore",
         volume_db = 17.0,
-        path_prefix = "res://addons/scaffold/assets/sounds/",
+        path_prefix = "res://addons/godot_scaffold/assets/sounds/",
     },
     {
         name = "cat_jump",
@@ -228,7 +228,7 @@ var app_manifest := {
     default_sounds_file_suffix = ".wav",
     default_sounds_bus_index = 1,
     music_manifest = music_manifest,
-    default_music_path_prefix = "res://addons/scaffold/assets/music/",
+    default_music_path_prefix = "res://addons/godot_scaffold/assets/music/",
     default_music_file_suffix = ".ogg",
     default_music_bus_index = 2,
     
@@ -250,9 +250,9 @@ var app_manifest := {
     developer_url = "https://snoringcat.games",
     
     developer_logo = preload( \
-            "res://addons/scaffold/assets/images/gui/snoring_cat_logo_about.png"),
+            "res://addons/godot_scaffold/assets/images/gui/snoring_cat_logo_about.png"),
     developer_splash = preload( \
-            "res://addons/scaffold/assets/images/gui/snoring_cat_logo_splash.png"),
+            "res://addons/godot_scaffold/assets/images/gui/snoring_cat_logo_splash.png"),
     
     # FIXME: -----------------
     godot_splash_screen_duration_sec = 0.8,
@@ -263,9 +263,9 @@ var app_manifest := {
     main_menu_image_scene_path = "res://src/MainMenuImage.tscn",
     
     fade_in_transition_texture = \
-            preload("res://addons/scaffold/assets/images/transition_in.png"),
+            preload("res://addons/godot_scaffold/assets/images/transition_in.png"),
     fade_out_transition_texture = \
-            preload("res://addons/scaffold/assets/images/transition_out.png"),
+            preload("res://addons/godot_scaffold/assets/images/transition_out.png"),
     
     google_analytics_id = "",
     privacy_policy_url = "",
