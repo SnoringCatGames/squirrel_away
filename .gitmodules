@@ -1,0 +1,6 @@
+[submodule "addons/godot_scaffold"]
+	path = addons/godot_scaffold
+	url = https://github.com/SnoringCatGames/godot_scaffold.git
+[submodule "addons/surfacer"]
+	path = addons/surfacer
+	url = https://github.com/SnoringCatGames/surfacer.git
