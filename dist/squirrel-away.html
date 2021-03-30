@@ -133,7 +133,6 @@
 			margin-top: 40px;
 		}
 	</style>
-
 </head>
 <body>
 	<canvas id='canvas'>
@@ -158,10 +157,10 @@
 		<div id='status-notice' style='display: none;'></div>
 	</div>
 
-	<script type='text/javascript' src='squirrel-away.js'></script>
+	<script src="squirrel-away.js"></script>
 	<script type='text/javascript'>//<![CDATA[
 
-		var engine = new Engine;
+		var engine = new Engine({"args":[],"canvasResizePolicy":2,"executable":"squirrel-away","experimentalVK":false,"fileSizes":{"squirrel-away.pck":4986528,"squirrel-away.wasm":18100721},"gdnativeLibs":[]});
 		var setStatusMode;
 		var setStatusNotice;
 
@@ -257,9 +256,8 @@
 				});
 			};
 
-			engine.setProgressFunc((current, total) => {
-
-				// --- THIS WAS CHANGED FROM THE DEFAULT GODOT TEMPLATE. --- //
+			// --- THIS WAS CHANGED FROM THE DEFAULT GODOT TEMPLATE. --- //
+			function onProgress(current, total) {
 				// if (total > 0) {
 				// 	statusProgressInner.style.width = current/total * 100 + '%';
 				// 	setStatusMode('progress');
@@ -273,7 +271,7 @@
 				// 	setStatusMode('indeterminate');
 				// }
 				setStatusMode('indeterminate');
-			});
+			}
 
 			function displayFailureNotice(err) {
 				var msg = err.message || err;
@@ -287,8 +285,12 @@
 				displayFailureNotice('WebGL not available');
 			} else {
 				setStatusMode('indeterminate');
-				engine.setCanvas(canvas);
-				engine.startGame(EXECUTABLE_NAME, MAIN_PACK).then(() => {
+				engine.canvas = canvas;
+				engine.startGame({
+					onProgress: onProgress,
+					onPrint: printStdout,
+					onPrintError: printStderr,
+				}).then(() => {
 					// --- THIS WAS CHANGED FROM THE DEFAULT GODOT TEMPLATE. --- //
 					setStatusNotice('Waiting on Godot...');
 					setStatusMode('indeterminate');
@@ -300,11 +302,9 @@
 			function printStdout(text) {
 				console.log(text);
 			}
-			engine.setStdoutFunc(printStdout);
 			function printStderr(text) {
 				console.warn('Error: ' + text);
 			}
-			engine.setStderrFunc(printStderr);
 			
 			// --- THIS WAS CHANGED FROM THE DEFAULT GODOT TEMPLATE. --- //
 			console.info('Main script loaded')
