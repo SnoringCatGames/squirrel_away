@@ -1,5 +1,5 @@
 class_name Main
-extends Node2D
+extends SurfacerBootstrap
 
 ###############################################################################
 ### MAIN TODO LIST: ###
@@ -488,11 +488,8 @@ extends Node2D
 # 
 ###############################################################################
 
-func _init() -> void:
-    print("Main._init")
-
 func _enter_tree() -> void:
-    SurfacerBootstrap.new().on_app_ready(SquirrelAway.app_manifest, self)
+    .on_app_ready(SquirrelAway.app_manifest, self)
     
     if OS.get_name() == "HTML5":
         JavaScript.eval("window.onAppReady()")

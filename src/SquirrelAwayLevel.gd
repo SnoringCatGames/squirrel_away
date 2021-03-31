@@ -7,8 +7,6 @@ const _WELCOME_PANEL_RESOURCE_PATH := \
 
 const MIN_CONTROLS_DISPLAY_TIME := 0.5
 
-export var id: String setget _set_id,_get_id
-
 func _input(event: InputEvent) -> void:
     # Close the welcome panel on any mouse or key click event.
     if is_instance_valid(Surfacer.welcome_panel) and \
@@ -16,17 +14,13 @@ func _input(event: InputEvent) -> void:
             (event is InputEventMouseButton or \
                     event is InputEventScreenTouch or \
                     event is InputEventKey) and \
-            Surfacer.is_level_ready:
-        Surfacer.welcome_panel.queue_free()
-        Surfacer.welcome_panel = null
+            is_started:
+        _hide_welcome_panel()
 
 func start() -> void:
     .start()
     
-    var welcome_panel: WelcomePanel = Gs.utils.add_scene( \
-            Gs.canvas_layers.layers.hud, \
-            _WELCOME_PANEL_RESOURCE_PATH)
-    Surfacer.welcome_panel = welcome_panel
+    _show_welcome_panel()
     
     # FIXME: Move this player creation (and readiness recording) back into
     #        Level.
@@ -54,11 +48,19 @@ func start() -> void:
     
     Gs.audio.play_music("on_a_quest")
 
-func quit() -> void:
-    .quit()
+func _exit_tree() -> void:
+    _hide_welcome_panel()
 
-func _set_id(value: String) -> void:
-    level_id = value
+func quit(immediately := true) -> void:
+    .quit(immediately)
 
-func _get_id() -> String:
-    return level_id
+func _show_welcome_panel() -> void:
+    assert(Surfacer.welcome_panel == null)
+    Surfacer.welcome_panel = Gs.utils.add_scene( \
+            Gs.canvas_layers.layers.hud, \
+            _WELCOME_PANEL_RESOURCE_PATH)
+
+func _hide_welcome_panel() -> void:
+    if Surfacer.welcome_panel != null:
+        Surfacer.welcome_panel.queue_free()
+        Surfacer.welcome_panel = null

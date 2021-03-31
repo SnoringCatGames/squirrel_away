@@ -1,9 +1,10 @@
-extends Node
+class_name SquirrelAwayConfig
+extends SurfacerConfig
 
-var debug := OS.is_debug_build()
+var _debug := OS.is_debug_build()
 
 # Useful for getting screenshots at specific resolutions.
-const SCREEN_RESOLUTIONS := {
+var _screen_resolutions := {
     # Should match Project Settings > Display > Window > Size > Width/Height
     default = Vector2(1024, 768),
     full_screen = Vector2.INF,
@@ -15,27 +16,27 @@ const SCREEN_RESOLUTIONS := {
     google_ads_portrait = Vector2(768, 1024),
 }
 
-var debug_window_size: Vector2 = SCREEN_RESOLUTIONS.default
+var _debug_window_size: Vector2 = _screen_resolutions.default
 
-var uses_threads := false and OS.can_use_threads()
-var thread_count := \
+var _uses_threads := false and OS.can_use_threads()
+var _thread_count := \
         4 if \
-        uses_threads else \
+        _uses_threads else \
         1
 
-var third_party_license_text := \
+var _third_party_license_text := \
         ScaffoldThirdPartyLicenses.TEXT + \
         SurfacerThirdPartyLicenses.TEXT + \
         SquirrelAwayThirdPartyLicenses.TEXT
 
-var special_thanks_text := """
+var _special_thanks_text := """
 """
 
-var theme := preload("res://src/default_theme.tres")
+var _theme := preload("res://src/default_theme.tres")
 
-var test_runner_resource_path := "res://test/TestRunner.tscn"
+var _test_runner_resource_path := "res://test/TestRunner.tscn"
 
-var fonts := {
+var _fonts := {
     main_xs = preload("res://addons/godot_scaffold/assets/fonts/main_font_xs.tres"),
     main_xs_italic = preload( \
             "res://addons/godot_scaffold/assets/fonts/main_font_xs_italic.tres"),
@@ -49,7 +50,7 @@ var fonts := {
     main_xl = preload("res://addons/godot_scaffold/assets/fonts/main_font_xl.tres"),
 }
 
-var sounds_manifest := [
+var _sounds_manifest := [
     {
         name = "fall",
         volume_db = 18.0,
@@ -131,14 +132,14 @@ var sounds_manifest := [
     },
 ]
 
-var music_manifest := [
+var _music_manifest := [
     {
         name = "on_a_quest",
         volume_db = 0.0,
     },
 ]
 
-var colors_manifest := {
+var _colors_manifest := {
     # Should match Project Settings > Application > Boot Splash > Bg Color
     # Should match Project Settings > Rendering > Environment > Default Clear Color
     background_color = Color("473d2d"),
@@ -163,7 +164,7 @@ var colors_manifest := {
     zebra_stripe_even_row_color_hsv_delta = {h=0.01, s=-0.05, v=0.05},
 }
 
-var styles_manifest := {
+var _styles_manifest := {
     button_corner_radius = 4,
     button_corner_detail = 3,
     button_shadow_size = 3,
@@ -182,16 +183,17 @@ var styles_manifest := {
 
 var app_manifest := {
     # TODO: Remember to reset these when creating releases.
-    debug = debug,
+    debug = _debug,
     #debug = false
     playtest = false,
-    is_profiler_enabled = debug,
-    is_inspector_enabled = debug,
+    also_prints_to_stdout = true,
+    is_profiler_enabled = _debug,
+    is_inspector_enabled = _debug,
     is_surfacer_logging = false,
     utility_panel_starts_open = false,
-    debug_window_size = debug_window_size,
-    uses_threads = uses_threads,
-    thread_count = thread_count,
+    debug_window_size = _debug_window_size,
+    uses_threads = _uses_threads,
+    thread_count = _thread_count,
     is_mobile_supported = true,
     
     app_name = "Squirrel Away",
@@ -199,7 +201,7 @@ var app_manifest := {
     app_version = "0.0.1",
     score_version = "0.0.1",
     
-    theme = theme,
+    theme = _theme,
     
     screen_filename_exclusions = [
         "RateAppScreen.tscn",
@@ -221,19 +223,19 @@ var app_manifest := {
     draw_utils = SurfacerDrawUtils.new(),
     level_config_class = SquirrelAwayLevelConfig,
     
-    fonts = fonts,
+    fonts = _fonts,
     
-    sounds_manifest = sounds_manifest,
+    sounds_manifest = _sounds_manifest,
     default_sounds_path_prefix = "res://assets/sounds/",
     default_sounds_file_suffix = ".wav",
     default_sounds_bus_index = 1,
-    music_manifest = music_manifest,
+    music_manifest = _music_manifest,
     default_music_path_prefix = "res://addons/godot_scaffold/assets/music/",
     default_music_file_suffix = ".ogg",
     default_music_bus_index = 2,
     
-    colors_manifest = colors_manifest,
-    styles_manifest = styles_manifest,
+    colors_manifest = _colors_manifest,
+    styles_manifest = _styles_manifest,
     
     main_menu_music = "on_a_quest",
     game_over_music = "on_a_quest",
@@ -241,8 +243,8 @@ var app_manifest := {
     developer_splash_sound = "single_cat_snore",
     level_end_sound = "cadence",
     
-    third_party_license_text = third_party_license_text,
-    special_thanks_text = special_thanks_text,
+    third_party_license_text = _third_party_license_text,
+    special_thanks_text = _special_thanks_text,
     
     app_logo = preload("res://assets/images/gui/logo.png"),
     app_logo_scale = 2.0,
@@ -285,6 +287,3 @@ var app_manifest := {
     
     default_camera_zoom = 1.0,
 }
-
-func _init() -> void:
-    print("SquirrelAway._init")
