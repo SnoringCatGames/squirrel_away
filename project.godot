@@ -799,7 +799,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot_scaffold/src/gui/level_select/LockAnimation.gd"
 }, {
-"base": "Node2D",
+"base": "SurfacerBootstrap",
 "class": "Main",
 "language": "GDScript",
 "path": "res://src/Main.gd"
@@ -1070,6 +1070,11 @@ _global_script_classes=[ {
 "path": "res://addons/godot_scaffold/src/config/ScaffoldColors.gd"
 }, {
 "base": "Node",
+"class": "ScaffoldConfig",
+"language": "GDScript",
+"path": "res://addons/godot_scaffold/src/config/ScaffoldConfig.gd"
+}, {
+"base": "Node",
 "class": "ScaffoldGeometry",
 "language": "GDScript",
 "path": "res://addons/godot_scaffold/src/utils/Geometry.gd"
@@ -1138,6 +1143,11 @@ _global_script_classes=[ {
 "class": "SquirrelAnimator",
 "language": "GDScript",
 "path": "res://src/players/squirrel/SquirrelAnimator.gd"
+}, {
+"base": "SurfacerConfig",
+"class": "SquirrelAwayConfig",
+"language": "GDScript",
+"path": "res://src/SquirrelAwayConfig.gd"
 }, {
 "base": "SurfacerLevel",
 "class": "SquirrelAwayLevel",
@@ -1229,7 +1239,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/surface/SurfaceType.gd"
 }, {
-"base": "Node",
+"base": "ScaffoldBootstrap",
 "class": "SurfacerBootstrap",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/SurfacerBootstrap.gd"
@@ -1238,6 +1248,11 @@ _global_script_classes=[ {
 "class": "SurfacerColors",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/utils/SurfacerColors.gd"
+}, {
+"base": "ScaffoldConfig",
+"class": "SurfacerConfig",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/config/SurfacerConfig.gd"
 }, {
 "base": "DrawUtils",
 "class": "SurfacerDrawUtils",
@@ -1607,6 +1622,7 @@ _global_script_class_icons={
 "ScaffoldBootstrap": "",
 "ScaffoldCheckBox": "res://addons/godot_scaffold/assets/images/editor_icons/ScaffoldCheckBox.png",
 "ScaffoldColors": "",
+"ScaffoldConfig": "",
 "ScaffoldGeometry": "",
 "ScaffoldLevel": "",
 "ScaffoldLevelConfig": "",
@@ -1621,6 +1637,7 @@ _global_script_class_icons={
 "ShinyButton": "res://addons/godot_scaffold/assets/images/editor_icons/ShinyButton.png",
 "SoundEffectsSettingsLabeledControlItem": "",
 "SquirrelAnimator": "",
+"SquirrelAwayConfig": "",
 "SquirrelAwayLevel": "",
 "SquirrelAwayLevelConfig": "",
 "SquirrelAwayThirdPartyLicenses": "",
@@ -1641,6 +1658,7 @@ _global_script_class_icons={
 "SurfaceType": "",
 "SurfacerBootstrap": "",
 "SurfacerColors": "",
+"SurfacerConfig": "",
 "SurfacerDrawUtils": "",
 "SurfacerLevel": "",
 "SurfacerProfilerMetric": "",
