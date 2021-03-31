@@ -77,7 +77,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Annotators",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/annotators/annotators.gd"
+"path": "res://addons/surfacer/src/annotators/Annotators.gd"
 }, {
 "base": "Node",
 "class": "Audio",
@@ -799,7 +799,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot_scaffold/src/gui/level_select/LockAnimation.gd"
 }, {
-"base": "SurfacerBootstrap",
+"base": "Reference",
 "class": "Main",
 "language": "GDScript",
 "path": "res://src/Main.gd"

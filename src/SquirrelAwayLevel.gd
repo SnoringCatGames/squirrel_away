@@ -14,7 +14,7 @@ func _input(event: InputEvent) -> void:
             (event is InputEventMouseButton or \
                     event is InputEventScreenTouch or \
                     event is InputEventKey) and \
-            is_started:
+            _get_is_started():
         _hide_welcome_panel()
 
 func start() -> void:

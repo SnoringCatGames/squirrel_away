@@ -16,7 +16,7 @@ var _screen_resolutions := {
     google_ads_portrait = Vector2(768, 1024),
 }
 
-var _debug_window_size: Vector2 = _screen_resolutions.default
+var _debug_window_size: Vector2 = _screen_resolutions.full_screen
 
 var _uses_threads := false and OS.can_use_threads()
 var _thread_count := \
