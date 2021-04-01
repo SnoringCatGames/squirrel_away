@@ -60,7 +60,7 @@ func _update_navigator(delta_sec: float) -> void:
     ._update_navigator(delta_sec)
 
 func _start_new_navigation() -> void:
-    Gs.profiler.start(SurfacerProfilerMetric.START_NEW_SQUIRREL_NAVIGATION)
+    Gs.profiler.start("start_new_squirrel_navigation")
     
     var possible_destinations: Array = \
             Gs.level.squirrel_destinations
@@ -76,8 +76,7 @@ func _start_new_navigation() -> void:
     navigator.navigate_to_position(next_destination)
     previous_destination = next_destination
     
-    var duration: float = \
-            Gs.profiler.stop(SurfacerProfilerMetric.START_NEW_SQUIRREL_NAVIGATION)
+    var duration: float = Gs.profiler.stop("start_new_squirrel_navigation")
     print_msg(("SQUIRREL NEW NAV    ;" + \
             "%8.3fs; " + \
             "calc duration=%sms"), [ \

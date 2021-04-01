@@ -744,7 +744,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/LeftWallsItemController.gd"
 }, {
-"base": "VBoxContainer",
+"base": "Reference",
 "class": "Legend",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/Legend.gd"
@@ -799,7 +799,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot_scaffold/src/gui/level_select/LockAnimation.gd"
 }, {
-"base": "Reference",
+"base": "SurfacerBootstrap",
 "class": "Main",
 "language": "GDScript",
 "path": "res://src/Main.gd"
@@ -1144,7 +1144,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/players/squirrel/SquirrelAnimator.gd"
 }, {
-"base": "SurfacerConfig",
+"base": "Node",
 "class": "SquirrelAwayConfig",
 "language": "GDScript",
 "path": "res://src/SquirrelAwayConfig.gd"
@@ -1249,7 +1249,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/utils/SurfacerColors.gd"
 }, {
-"base": "ScaffoldConfig",
+"base": "Node",
 "class": "SurfacerConfig",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/SurfacerConfig.gd"
@@ -1263,11 +1263,6 @@ _global_script_classes=[ {
 "class": "SurfacerLevel",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/SurfacerLevel.gd"
-}, {
-"base": "Reference",
-"class": "SurfacerProfilerMetric",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/utils/SurfacerProfilerMetric.gd"
 }, {
 "base": "Node",
 "class": "SurfacerThirdPartyLicenses",
@@ -1661,7 +1656,6 @@ _global_script_class_icons={
 "SurfacerConfig": "",
 "SurfacerDrawUtils": "",
 "SurfacerLevel": "",
-"SurfacerProfilerMetric": "",
 "SurfacerThirdPartyLicenses": "",
 "SurfacesGroupItemController": "",
 "SurfacesOfSideGroupItemController": "",
