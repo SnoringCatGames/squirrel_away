@@ -32,7 +32,7 @@ var _third_party_license_text := \
 var _special_thanks_text := """
 """
 
-var _theme := preload("res://src/default_theme.tres")
+var _theme := preload("res://src/config/default_theme.tres")
 
 var _test_runner_resource_path := "res://test/TestRunner.tscn"
 
@@ -264,7 +264,7 @@ var app_manifest := {
     godot_splash_screen_duration_sec = 0.8 if !_debug else 0.0,
     developer_splash_screen_duration_sec = 1.0 if !_debug else 0.0,
     
-    main_menu_image_scene_path = "res://src/MainMenuImage.tscn",
+    main_menu_image_scene_path = "res://src/gui/MainMenuImage.tscn",
     
     fade_in_transition_texture = \
             preload("res://addons/godot_scaffold/assets/images/transition_in.png"),
