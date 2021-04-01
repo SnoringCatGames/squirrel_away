@@ -2,8 +2,7 @@ tool
 class_name SquirrelAwayLevel
 extends SurfacerLevel
 
-const _WELCOME_PANEL_RESOURCE_PATH := \
-        "res://src/gui/WelcomePanel.tscn"
+const _WELCOME_PANEL_RESOURCE_PATH := "res://src/gui/WelcomePanel.tscn"
 
 const MIN_CONTROLS_DISPLAY_TIME := 0.5
 
