@@ -18,9 +18,9 @@ var _screen_resolutions := {
 
 var _debug_window_size: Vector2 = _screen_resolutions.full_screen
 
-var _uses_threads := false and OS.can_use_threads()
+var _uses_threads := true and OS.can_use_threads()
 var _thread_count := \
-        4 if \
+        OS.get_processor_count() if \
         _uses_threads else \
         1
 

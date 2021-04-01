@@ -804,7 +804,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/config/Main.gd"
 }, {
-"base": "Reference",
+"base": "Control",
 "class": "MainMenuImage",
 "language": "GDScript",
 "path": "res://src/gui/MainMenuImage.gd"
@@ -1840,6 +1840,7 @@ screenshot={
 
 [input_devices]
 
+pointing/ios/touch_delay=0.005
 pointing/emulate_touch_from_mouse=true
 
 [layer_names]
