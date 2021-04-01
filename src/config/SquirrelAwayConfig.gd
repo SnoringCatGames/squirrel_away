@@ -19,6 +19,7 @@ var _screen_resolutions := {
 var _debug_window_size: Vector2 = _screen_resolutions.full_screen
 
 var _uses_threads := true and OS.can_use_threads()
+var _uses_threads_for_platform_graph_calculation := false and _uses_threads
 var _thread_count := \
         OS.get_processor_count() if \
         _uses_threads else \
@@ -198,6 +199,8 @@ var app_manifest := {
     utility_panel_starts_open = false,
     debug_window_size = _debug_window_size,
     uses_threads = _uses_threads,
+    uses_threads_for_platform_graph_calculation = \
+            _uses_threads_for_platform_graph_calculation,
     thread_count = _thread_count,
     is_mobile_supported = true,
     
@@ -253,6 +256,8 @@ var app_manifest := {
     
     app_logo = preload("res://assets/images/gui/logo.png"),
     app_logo_scale = 2.0,
+    go_icon = preload("res://assets/images/gui/go_icon.png"),
+    go_icon_scale = 1.5,
     developer_name = "Snoring Cat LLC",
     developer_url = "https://snoringcat.games",
     
