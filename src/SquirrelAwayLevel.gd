@@ -3,13 +3,13 @@ class_name SquirrelAwayLevel
 extends SurfacerLevel
 
 const _WELCOME_PANEL_RESOURCE_PATH := \
-        "res://addons/surfacer/src/gui/panels/WelcomePanel.tscn"
+        "res://src/gui/WelcomePanel.tscn"
 
 const MIN_CONTROLS_DISPLAY_TIME := 0.5
 
 func _input(event: InputEvent) -> void:
     # Close the welcome panel on any mouse or key click event.
-    if is_instance_valid(Surfacer.welcome_panel) and \
+    if is_instance_valid(SquirrelAway.welcome_panel) and \
             _get_level_play_time() > MIN_CONTROLS_DISPLAY_TIME and \
             (event is InputEventMouseButton or \
                     event is InputEventScreenTouch or \
@@ -56,12 +56,12 @@ func quit(immediately := true) -> void:
     .quit(immediately)
 
 func _show_welcome_panel() -> void:
-    assert(Surfacer.welcome_panel == null)
-    Surfacer.welcome_panel = Gs.utils.add_scene( \
+    assert(SquirrelAway.welcome_panel == null)
+    SquirrelAway.welcome_panel = Gs.utils.add_scene( \
             Gs.canvas_layers.layers.hud, \
             _WELCOME_PANEL_RESOURCE_PATH)
 
 func _hide_welcome_panel() -> void:
-    if Surfacer.welcome_panel != null:
-        Surfacer.welcome_panel.queue_free()
-        Surfacer.welcome_panel = null
+    if SquirrelAway.welcome_panel != null:
+        SquirrelAway.welcome_panel.queue_free()
+        SquirrelAway.welcome_panel = null

@@ -192,6 +192,7 @@ var app_manifest := {
     playtest = false,
     also_prints_to_stdout = true,
     is_profiler_enabled = _debug,
+    are_all_levels_unlocked = true,
     is_inspector_enabled = _debug,
     is_surfacer_logging = false,
     utility_panel_starts_open = false,
@@ -260,11 +261,8 @@ var app_manifest := {
     developer_splash = preload( \
             "res://addons/godot_scaffold/assets/images/gui/snoring_cat_logo_splash.png"),
     
-    # FIXME: -----------------
-    godot_splash_screen_duration_sec = 0.8,
-    developer_splash_screen_duration_sec = 1.0,
-#    godot_splash_screen_duration_sec = 0.8 if !debug else 0.0,
-#    developer_splash_screen_duration_sec = 1.0 if !debug else 0.0,
+    godot_splash_screen_duration_sec = 0.8 if !_debug else 0.0,
+    developer_splash_screen_duration_sec = 1.0 if !_debug else 0.0,
     
     main_menu_image_scene_path = "res://src/MainMenuImage.tscn",
     
@@ -291,6 +289,8 @@ var app_manifest := {
     
     default_camera_zoom = 1.0,
 }
+
+var welcome_panel: WelcomePanel
 
 func register_app_manifest(manifest: Dictionary) -> void:
     Gs.profiler.preregister_metric_keys(_metric_keys)
