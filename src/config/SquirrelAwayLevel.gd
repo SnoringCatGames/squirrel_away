@@ -4,18 +4,6 @@ extends SurfacerLevel
 
 const _WELCOME_PANEL_RESOURCE_PATH := "res://src/gui/WelcomePanel.tscn"
 
-const MIN_CONTROLS_DISPLAY_TIME := 0.5
-
-func _input(event: InputEvent) -> void:
-    # Close the welcome panel on any mouse or key click event.
-    if is_instance_valid(SquirrelAway.welcome_panel) and \
-            _get_level_play_time() > MIN_CONTROLS_DISPLAY_TIME and \
-            (event is InputEventMouseButton or \
-                    event is InputEventScreenTouch or \
-                    event is InputEventKey) and \
-            _get_is_started():
-        _hide_welcome_panel()
-
 func start() -> void:
     .start()
     
@@ -53,6 +41,11 @@ func _destroy() -> void:
 
 func quit(immediately := true) -> void:
     .quit(immediately)
+
+func _on_initial_input() -> void:
+    # Close the welcome panel on any mouse or key click event.
+    if is_instance_valid(SquirrelAway.welcome_panel):
+        _hide_welcome_panel()
 
 func _show_welcome_panel() -> void:
     assert(SquirrelAway.welcome_panel == null)
