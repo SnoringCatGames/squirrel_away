@@ -1,5 +1,5 @@
 class_name SquirrelAwayConfig
-extends SurfacerConfig
+extends Node
 
 var _debug := OS.is_debug_build()
 
@@ -181,6 +181,10 @@ var _styles_manifest := {
     scroll_grabber_corner_detail = 3,
 }
 
+var _metric_keys := [
+    "start_new_squirrel_navigation",
+]
+
 var app_manifest := {
     # TODO: Remember to reset these when creating releases.
     debug = _debug,
@@ -287,3 +291,6 @@ var app_manifest := {
     
     default_camera_zoom = 1.0,
 }
+
+func register_app_manifest(manifest: Dictionary) -> void:
+    Gs.profiler.preregister_metric_keys(_metric_keys)

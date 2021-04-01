@@ -49,8 +49,8 @@ func start() -> void:
     Gs.audio.play_music("on_a_quest")
 
 func _destroy() -> void:
-    ._destroy()
     _hide_welcome_panel()
+    ._destroy()
 
 func quit(immediately := true) -> void:
     .quit(immediately)
