@@ -2,6 +2,8 @@ class_name SquirrelAwayConfig
 extends Node
 
 var _debug := OS.is_debug_build()
+var _playtest := true
+var _uses_threads := true and OS.can_use_threads()
 
 # Useful for getting screenshots at specific resolutions.
 var _screen_resolutions := {
@@ -16,26 +18,7 @@ var _screen_resolutions := {
     google_ads_portrait = Vector2(768, 1024),
 }
 
-var _debug_window_size: Vector2 = _screen_resolutions.full_screen
-
-var _uses_threads := true and OS.can_use_threads()
-var _uses_threads_for_platform_graph_calculation := false and _uses_threads
-var _thread_count := \
-        OS.get_processor_count() if \
-        _uses_threads else \
-        1
-
-var _third_party_license_text := \
-        ScaffoldThirdPartyLicenses.TEXT + \
-        SurfacerThirdPartyLicenses.TEXT + \
-        SquirrelAwayThirdPartyLicenses.TEXT
-
-var _special_thanks_text := """
-"""
-
-var _theme := preload("res://src/config/default_theme.tres")
-
-var _test_runner_resource_path := "res://test/TestRunner.tscn"
+var group_name_squirrel_destinations := "squirrel_destinations"
 
 var _fonts := {
     main_xs = preload("res://addons/godot_scaffold/assets/fonts/main_font_xs.tres"),
@@ -186,22 +169,89 @@ var _metric_keys := [
     "start_new_squirrel_navigation",
 ]
 
+var _debug_params := {
+#    limit_parsing = {
+#        player_name = "cat",
+#        
+#        edge_type = EdgeType.CLIMB_OVER_WALL_TO_FLOOR_EDGE,
+#        edge_type = EdgeType.FALL_FROM_WALL_EDGE,
+#        edge_type = EdgeType.FALL_FROM_FLOOR_EDGE,
+#        edge_type = EdgeType.JUMP_INTER_SURFACE_EDGE,
+#        edge_type = EdgeType.CLIMB_DOWN_WALL_TO_FLOOR_EDGE,
+#        edge_type = EdgeType.WALK_TO_ASCEND_WALL_FROM_FLOOR_EDGE,
+#        
+#        edge = {
+#            origin = {
+#                surface_side = SurfaceSide.RIGHT_WALL,
+#                surface_start_vertex = Vector2(64, 768),
+#                #position = Vector2(64, 704),
+#                epsilon = 10,
+#            },
+#            destination = {
+#                surface_side = SurfaceSide.LEFT_WALL,
+#                surface_start_vertex = Vector2(-384, 704),
+#                #position = Vector2(-384, 737),
+#                epsilon = 10,
+#            },
+#            #velocity_start = Vector2(0, -1000),
+#        },
+#    },
+    extra_annotations = {},
+}
+
+var _player_action_classes := [
+    preload("res://addons/surfacer/src/player/action/action_handlers/AirDashAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/AirDefaultAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/AirJumpAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/AllDefaultAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/CapVelocityAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/FloorDashAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/FloorDefaultAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/FallThroughFloorAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/FloorFrictionAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/FloorJumpAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/FloorWalkAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/MatchExpectedEdgeTrajectoryAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/WallClimbAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/WallDashAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/WallDefaultAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/WallFallAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/WallJumpAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/WallWalkAction.gd"),
+]
+
+var _edge_movement_classes := [
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/AirToSurfaceCalculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/ClimbDownWallToFloorCalculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/ClimbOverWallToFloorCalculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/FallFromFloorCalculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/FallFromWallCalculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/JumpInterSurfaceCalculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/JumpFromSurfaceToAirCalculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/WalkToAscendWallFromFloorCalculator.gd"),
+]
+
+var _player_param_classes := [
+    preload("res://src/players/cat/CatParams.gd"),
+    preload("res://src/players/squirrel/SquirrelParams.gd"),
+#    preload("res://test/data/TestPlayerParams.gd"),
+]
+
 var app_manifest := {
     # TODO: Remember to reset these when creating releases.
     debug = _debug,
     #debug = false
-    playtest = false,
-    also_prints_to_stdout = true,
-    is_profiler_enabled = _debug,
+    playtest = _playtest,
+    also_prints_to_stdout = true and _debug,
+    is_profiler_enabled = _debug or _playtest,
     are_all_levels_unlocked = true,
-    is_inspector_enabled = _debug,
-    is_surfacer_logging = false,
+    is_inspector_enabled = _debug or _playtest,
+    is_surfacer_logging = true,
     utility_panel_starts_open = false,
-    debug_window_size = _debug_window_size,
+    debug_window_size = _screen_resolutions.full_screen,
     uses_threads = _uses_threads,
-    uses_threads_for_platform_graph_calculation = \
-            _uses_threads_for_platform_graph_calculation,
-    thread_count = _thread_count,
+    uses_threads_for_platform_graph_calculation = false and _uses_threads,
+    thread_count = OS.get_processor_count() if _uses_threads else 1,
     is_mobile_supported = true,
     
     app_name = "Squirrel Away",
@@ -209,7 +259,7 @@ var app_manifest := {
     app_version = "0.0.1",
     score_version = "0.0.1",
     
-    theme = _theme,
+    theme = preload("res://src/config/default_theme.tres"),
     
     screen_filename_exclusions = [
         "RateAppScreen.tscn",
@@ -245,14 +295,23 @@ var app_manifest := {
     colors_manifest = _colors_manifest,
     styles_manifest = _styles_manifest,
     
+    debug_params = _debug_params,
+    player_action_classes = _player_action_classes,
+    edge_movement_classes = _edge_movement_classes,
+    player_param_classes = _player_param_classes,
+    
     main_menu_music = "on_a_quest",
     game_over_music = "on_a_quest",
     godot_splash_sound = "achievement",
     developer_splash_sound = "single_cat_snore",
     level_end_sound = "cadence",
     
-    third_party_license_text = _third_party_license_text,
-    special_thanks_text = _special_thanks_text,
+    third_party_license_text = \
+            ScaffoldThirdPartyLicenses.TEXT + \
+            SurfacerThirdPartyLicenses.TEXT + \
+            SquirrelAwayThirdPartyLicenses.TEXT,
+    special_thanks_text = """
+""",
     
     app_logo = preload("res://assets/images/gui/logo.png"),
     app_logo_scale = 2.0,
