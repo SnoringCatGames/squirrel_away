@@ -38,8 +38,6 @@ func start() -> void:
                 false, \
                 false)
     
-    Surfacer.annotators.on_level_ready()
-    
     Gs.audio.play_music("on_a_quest")
 
 func _destroy() -> void:
