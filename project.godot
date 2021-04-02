@@ -1314,6 +1314,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/SurfacerThirdPartyLicenses.gd"
 }, {
+"base": "Node2D",
+"class": "SurfacesAnnotator",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/annotators/SurfacesAnnotator.gd"
+}, {
+"base": "CheckboxLabeledControlItem",
+"class": "SurfacesAnnotatorSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/settings_items/SurfacesAnnotatorSettingsLabeledControlItem.gd"
+}, {
 "base": "InspectorItemController",
 "class": "SurfacesGroupItemController",
 "language": "GDScript",
@@ -1706,6 +1716,8 @@ _global_script_class_icons={
 "SurfacerDrawUtils": "",
 "SurfacerLevel": "",
 "SurfacerThirdPartyLicenses": "",
+"SurfacesAnnotator": "",
+"SurfacesAnnotatorSettingsLabeledControlItem": "",
 "SurfacesGroupItemController": "",
 "SurfacesOfSideGroupItemController": "",
 "TextLabeledControlItem": "",
