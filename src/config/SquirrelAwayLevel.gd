@@ -37,8 +37,6 @@ func start() -> void:
                 squirrel_position, \
                 false, \
                 false)
-    
-    Gs.audio.play_music("on_a_quest")
 
 func _destroy() -> void:
     _hide_welcome_panel()
@@ -52,6 +50,9 @@ func _on_initial_input() -> void:
     # Close the welcome panel on any mouse or key click event.
     if is_instance_valid(SquirrelAway.welcome_panel):
         _hide_welcome_panel()
+
+func _get_music_name() -> String:
+    return "on_a_quest"
 
 func _show_welcome_panel() -> void:
     assert(SquirrelAway.welcome_panel == null)
