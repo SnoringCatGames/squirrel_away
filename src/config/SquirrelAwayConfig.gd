@@ -246,7 +246,6 @@ var app_manifest := {
     is_profiler_enabled = _debug or _playtest,
     are_all_levels_unlocked = true,
     is_inspector_enabled = _debug or _playtest,
-    is_surfacer_logging = false,
     utility_panel_starts_open = false,
     debug_window_size = _screen_resolutions.full_screen,
     uses_threads = _uses_threads,
