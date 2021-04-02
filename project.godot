@@ -639,6 +639,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/legend_items/HypotheticalEdgeTrajectoryLegendItem.gd"
 }, {
+"base": "CheckboxLabeledControlItem",
+"class": "InspectorEnabledSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/settings_items/InspectorEnabledSettingsLabeledControlItem.gd"
+}, {
 "base": "Reference",
 "class": "InspectorItemController",
 "language": "GDScript",
@@ -648,6 +653,11 @@ _global_script_classes=[ {
 "class": "InspectorItemType",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/InspectorItemType.gd"
+}, {
+"base": "VBoxContainer",
+"class": "InspectorPanel",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/panels/InspectorPanel.gd"
 }, {
 "base": "Reference",
 "class": "InspectorSearchType",
@@ -759,6 +769,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/legend_items/LegendItemType.gd"
 }, {
+"base": "CheckboxLabeledControlItem",
+"class": "LevelAnnotatorSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/settings_items/LevelAnnotatorSettingsLabeledControlItem.gd"
+}, {
 "base": "Node",
 "class": "LevelInput",
 "language": "GDScript",
@@ -798,6 +813,11 @@ _global_script_classes=[ {
 "class": "LockAnimation",
 "language": "GDScript",
 "path": "res://addons/godot_scaffold/src/gui/level_select/LockAnimation.gd"
+}, {
+"base": "CheckboxLabeledControlItem",
+"class": "LogSurfacerEventsSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/settings_items/LogSurfacerEventsSettingsLabeledControlItem.gd"
 }, {
 "base": "SurfacerBootstrap",
 "class": "Main",
@@ -874,6 +894,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/legend_items/OriginSurfaceLegendItem.gd"
 }, {
+"base": "Node2D",
+"class": "PauseButton",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/PauseButton.gd"
+}, {
 "base": "Screen",
 "class": "PauseScreen",
 "language": "GDScript",
@@ -944,6 +969,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/PlayerAnnotator.gd"
 }, {
+"base": "CheckboxLabeledControlItem",
+"class": "PlayerAnnotatorSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/settings_items/PlayerAnnotatorSettingsLabeledControlItem.gd"
+}, {
 "base": "Reference",
 "class": "PlayerNavigationState",
 "language": "GDScript",
@@ -969,6 +999,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/PlayerPositionAnnotator.gd"
 }, {
+"base": "CheckboxLabeledControlItem",
+"class": "PlayerPositionAnnotatorSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/settings_items/PlayerPositionAnnotatorSettingsLabeledControlItem.gd"
+}, {
 "base": "Node2D",
 "class": "PlayerRecentMovementAnnotator",
 "language": "GDScript",
@@ -988,6 +1023,11 @@ _global_script_classes=[ {
 "class": "PlayerTileAnnotator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/PlayerTileAnnotator.gd"
+}, {
+"base": "CheckboxLabeledControlItem",
+"class": "PlayerTrajectoryAnnotatorSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/settings_items/PlayerTrajectoryAnnotatorSettingsLabeledControlItem.gd"
 }, {
 "base": "Reference",
 "class": "PlayerType",
@@ -1048,6 +1088,11 @@ _global_script_classes=[ {
 "class": "RulerAnnotator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/RulerAnnotator.gd"
+}, {
+"base": "CheckboxLabeledControlItem",
+"class": "RulerAnnotatorSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/settings_items/RulerAnnotatorSettingsLabeledControlItem.gd"
 }, {
 "base": "Node",
 "class": "SaveState",
@@ -1314,11 +1359,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/UserActionSource.gd"
 }, {
-"base": "VBoxContainer",
-"class": "UtilityPanel",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/gui/panels/UtilityPanel.gd"
-}, {
 "base": "Node",
 "class": "Utils",
 "language": "GDScript",
@@ -1531,8 +1571,10 @@ _global_script_class_icons={
 "HsvColorParams": "",
 "HsvRangeColorParams": "",
 "HypotheticalEdgeTrajectoryLegendItem": "",
+"InspectorEnabledSettingsLabeledControlItem": "",
 "InspectorItemController": "",
 "InspectorItemType": "",
+"InspectorPanel": "",
 "InspectorSearchType": "",
 "InstructionEndLegendItem": "",
 "InstructionStartLegendItem": "",
@@ -1555,6 +1597,7 @@ _global_script_class_icons={
 "Legend": "",
 "LegendItem": "",
 "LegendItemType": "",
+"LevelAnnotatorSettingsLabeledControlItem": "",
 "LevelInput": "",
 "LevelLabeledControlItem": "",
 "LevelSelectItem": "",
@@ -1563,6 +1606,7 @@ _global_script_class_icons={
 "LevelSelectItemUnlockedHeader": "",
 "LevelSelectScreen": "",
 "LockAnimation": "",
+"LogSurfacerEventsSettingsLabeledControlItem": "",
 "Main": "",
 "MainMenuImage": "",
 "MainMenuScreen": "",
@@ -1578,6 +1622,7 @@ _global_script_class_icons={
 "OriginSurfaceAnnotationElement": "",
 "OriginSurfaceItemController": "",
 "OriginSurfaceLegendItem": "",
+"PauseButton": "",
 "PauseScreen": "",
 "PlatformGraph": "",
 "PlatformGraphInspector": "",
@@ -1592,15 +1637,18 @@ _global_script_class_icons={
 "PlayerAnimator": "",
 "PlayerAnimatorParams": "",
 "PlayerAnnotator": "",
+"PlayerAnnotatorSettingsLabeledControlItem": "",
 "PlayerNavigationState": "",
 "PlayerParams": "",
 "PlayerParamsUtils": "",
 "PlayerPointerHandler": "",
 "PlayerPositionAnnotator": "",
+"PlayerPositionAnnotatorSettingsLabeledControlItem": "",
 "PlayerRecentMovementAnnotator": "",
 "PlayerSurfaceAnnotator": "",
 "PlayerSurfaceState": "",
 "PlayerTileAnnotator": "",
+"PlayerTrajectoryAnnotatorSettingsLabeledControlItem": "",
 "PlayerType": "",
 "PolylineAnnotationElement": "",
 "PolylineLegendItem": "",
@@ -1613,6 +1661,7 @@ _global_script_class_icons={
 "RateAppScreen": "",
 "RightWallsItemController": "",
 "RulerAnnotator": "",
+"RulerAnnotatorSettingsLabeledControlItem": "",
 "SaveState": "",
 "ScaffoldBootstrap": "",
 "ScaffoldCheckBox": "res://addons/godot_scaffold/assets/images/editor_icons/ScaffoldCheckBox.png",
@@ -1666,7 +1715,6 @@ _global_script_class_icons={
 "TotalPlaysLabeledControlItem": "",
 "UUID": "",
 "UserActionSource": "",
-"UtilityPanel": "",
 "Utils": "",
 "ValidEdgeItemController": "",
 "ValidEdgeTrajectoryLegendItem": "",
@@ -1691,7 +1739,7 @@ _global_script_class_icons={
 config/name="Squirrel Away"
 run/main_scene="res://src/config/Main.tscn"
 boot_splash/image="res://addons/godot_scaffold/assets/images/gui/godot_logo_splash.png"
-boot_splash/bg_color=Color( 0.278431, 0.239216, 0.176471, 1 )
+boot_splash/bg_color=Color( 0.12549, 0.145098, 0.192157, 1 )
 config/icon="res://assets/images/icon.png"
 config/quit_on_go_back=false
 

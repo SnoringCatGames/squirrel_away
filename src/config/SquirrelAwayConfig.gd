@@ -245,8 +245,8 @@ var app_manifest := {
     also_prints_to_stdout = true and _debug,
     is_profiler_enabled = _debug or _playtest,
     are_all_levels_unlocked = true,
-    is_inspector_enabled = _debug or _playtest,
-    utility_panel_starts_open = false,
+    is_inspector_enabled_default = true or _debug or _playtest,
+    inspector_panel_starts_open = false,
     debug_window_size = _screen_resolutions.full_screen,
     uses_threads = _uses_threads,
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
@@ -348,9 +348,8 @@ var app_manifest := {
     default_game_area_size = Vector2(1024, 768),
     aspect_ratio_max = 2.0 / 1.0,
     aspect_ratio_min = 1.0 / 2.0,
-    uses_level_scores = true,
-    
     default_camera_zoom = 1.0,
+    uses_level_scores = true,
 }
 
 var welcome_panel: WelcomePanel
