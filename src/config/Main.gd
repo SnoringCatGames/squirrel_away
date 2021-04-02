@@ -176,15 +176,15 @@ extends SurfacerBootstrap
 #     ranges.
 # 
 # - Improve annotation configuration.
-#   - Implement the bits of utility-menu UI to toggle annotations.
+#   - Implement the bits of inspector-menu UI to toggle annotations.
 #     - Add support for configuring in the menu which edge-type calculator to
 #       use with the inspector-selector.
 #     - And to configure which player to use.
 #     - Add a way to re-display the controls list.
 #     - Also support adjusting how many previous player positions to render.
-#     - Also list controls in the utility menu.
+#     - Also list controls in the inspector menu.
 #     - Collision calculation annotator bits.
-#     - Add a top-level button to utility menu to hide all annotations.
+#     - Add a top-level button to inspector menu to hide all annotations.
 #       - (grid, clicks, player position, player recent movement, platform
 #         graph, ...)
 #     - Toggle whether the legend (and current selection description) is shown.
