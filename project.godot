@@ -164,11 +164,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/ClimbOverWallToFloorEdge.gd"
 }, {
-"base": "Node",
-"class": "CloudLog",
-"language": "GDScript",
-"path": "res://addons/godot_scaffold/src/data/CloudLog.gd"
-}, {
 "base": "Reference",
 "class": "CollisionCalcParams",
 "language": "GDScript",
@@ -603,6 +598,11 @@ _global_script_classes=[ {
 "class": "GestureRecord",
 "language": "GDScript",
 "path": "res://addons/godot_scaffold/src/data/GestureRecord.gd"
+}, {
+"base": "Node",
+"class": "GestureReporter",
+"language": "GDScript",
+"path": "res://addons/godot_scaffold/src/data/GestureReporter.gd"
 }, {
 "base": "InspectorItemController",
 "class": "GlobalCountsGroupItemController",
@@ -1501,7 +1501,6 @@ _global_script_class_icons={
 "ClimbDownWallToFloorEdge": "",
 "ClimbOverWallToFloorCalculator": "",
 "ClimbOverWallToFloorEdge": "",
-"CloudLog": "",
 "CollisionCalcParams": "",
 "CollisionCalcResultMetadata": "",
 "CollisionCheckUtils": "",
@@ -1589,6 +1588,7 @@ _global_script_class_icons={
 "GameOverTimeLabeledControlItem": "",
 "GameScreen": "",
 "GestureRecord": "",
+"GestureReporter": "",
 "GlobalCountsGroupItemController": "",
 "GodotSplashScreen": "",
 "GridIndicesAnnotator": "",
