@@ -52,7 +52,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Analytics",
 "language": "GDScript",
-"path": "res://addons/godot_scaffold/src/data/analytics.gd"
+"path": "res://addons/godot_scaffold/src/data/Analytics.gd"
 }, {
 "base": "Reference",
 "class": "AnnotationElement",
@@ -134,6 +134,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot_scaffold/src/gui/labeled_control_list/CheckboxLabeledControlItem.gd"
 }, {
+"base": "Reference",
+"class": "CircularBuffer",
+"language": "GDScript",
+"path": "res://addons/godot_scaffold/src/utils/CircularBuffer.gd"
+}, {
 "base": "Node2D",
 "class": "ClickAnnotator",
 "language": "GDScript",
@@ -208,6 +213,11 @@ _global_script_classes=[ {
 "class": "ContinuousEdgeTrajectoryLegendItem",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/legend_items/ContinuousEdgeTrajectoryLegendItem.gd"
+}, {
+"base": "Node",
+"class": "CrashReporter",
+"language": "GDScript",
+"path": "res://addons/godot_scaffold/src/data/CrashReporter.gd"
 }, {
 "base": "Screen",
 "class": "CreditsScreen",
@@ -1135,6 +1145,11 @@ _global_script_classes=[ {
 "path": "res://addons/godot_scaffold/src/config/ScaffoldLevelConfig.gd"
 }, {
 "base": "Node",
+"class": "ScaffoldLog",
+"language": "GDScript",
+"path": "res://addons/godot_scaffold/src/data/ScaffoldLog.gd"
+}, {
+"base": "Node",
 "class": "ScaffoldNavigation",
 "language": "GDScript",
 "path": "res://addons/godot_scaffold/src/utils/Navigation.gd"
@@ -1480,6 +1495,7 @@ _global_script_class_icons={
 "CeilingsItemController": "",
 "CenteredPanel": "res://addons/godot_scaffold/assets/images/editor_icons/CenteredPanel.png",
 "CheckboxLabeledControlItem": "",
+"CircularBuffer": "",
 "ClickAnnotator": "",
 "ClimbDownWallToFloorCalculator": "",
 "ClimbDownWallToFloorEdge": "",
@@ -1495,6 +1511,7 @@ _global_script_class_icons={
 "ColorParamsType": "",
 "ConfirmDataDeletionScreen": "",
 "ContinuousEdgeTrajectoryLegendItem": "",
+"CrashReporter": "",
 "CreditsScreen": "",
 "CurrentScoreLabeledControlItem": "",
 "DataAgreementScreen": "",
@@ -1680,6 +1697,7 @@ _global_script_class_icons={
 "ScaffoldGeometry": "",
 "ScaffoldLevel": "",
 "ScaffoldLevelConfig": "",
+"ScaffoldLog": "",
 "ScaffoldNavigation": "",
 "ScaffoldStyles": "",
 "ScaffoldTextureButton": "res://addons/godot_scaffold/assets/images/editor_icons/ScaffoldTextureButton.png",
@@ -1910,6 +1928,10 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_3="walk_through_walls"
 2d_physics/layer_4="squirrels"
 2d_physics/layer_5="birds"
+
+[logging]
+
+file_logging/enable_file_logging=true
 
 [rendering]
 

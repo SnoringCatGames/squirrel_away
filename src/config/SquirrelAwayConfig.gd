@@ -252,17 +252,32 @@ var app_manifest := {
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     thread_count = OS.get_processor_count() if _uses_threads else 1,
     is_mobile_supported = true,
+    is_data_deletion_button_shown = false,
     
     app_name = "Squirrel Away",
     app_id = "games.snoringcat.squirrel_away",
     app_version = "0.0.1",
     score_version = "0.0.1",
+    data_agreement_version = "0.0.1",
+    
+    # Must start with "UA-".
+    google_analytics_id = "UA-186405125-2",
+    privacy_policy_url = \
+            "https://snoringcat.games/squirrel-away/privacy-policy",
+    terms_and_conditions_url = \
+            "https://snoringcat.games/squirrel-away/terms-and-conditions",
+    android_app_store_url = "",
+    ios_app_store_url = "",
+    support_url = "https://snoringcat.games/support",
+    log_gestures_url = "",
+    error_logs_url = \
+            "https://storage.googleapis.com/upload/storage/v1/b/squirrel-away-logs/o",
+    app_id_query_param = "squirrel-away",
     
     theme = preload("res://src/config/default_theme.tres"),
     
     screen_filename_exclusions = [
         "RateAppScreen.tscn",
-        "DataAgreementScreen.tscn",
         "ConfirmDataDeletionScreen.tscn",
     ],
     screen_path_inclusions = [],
@@ -277,7 +292,7 @@ var app_manifest := {
     level_select_item_class_exclusions = [],
     level_select_item_class_inclusions = [],
     
-    draw_utils = SurfacerDrawUtils.new(),
+    draw_utils_class = SurfacerDrawUtils,
     level_config_class = SquirrelAwayLevelConfig,
     
     fonts = _fonts,
@@ -334,14 +349,6 @@ var app_manifest := {
     fade_out_transition_texture = \
             preload("res://addons/godot_scaffold/assets/images/transition_out.png"),
     
-    google_analytics_id = "",
-    privacy_policy_url = "",
-    terms_and_conditions_url = "",
-    android_app_store_url = "",
-    ios_app_store_url = "",
-    support_url_base = "",
-    log_gestures_url = "",
-    
     cell_size = Vector2(32.0, 32.0),
     
     # Should match Project Settings > Display > Window > Size > Width/Height
@@ -354,5 +361,5 @@ var app_manifest := {
 
 var welcome_panel: WelcomePanel
 
-func register_app_manifest(manifest: Dictionary) -> void:
+func initialize(manifest: Dictionary) -> void:
     Gs.profiler.preregister_metric_keys(_metric_keys)

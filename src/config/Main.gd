@@ -488,14 +488,18 @@ extends SurfacerBootstrap
 # 
 ###############################################################################
 
-func _enter_tree() -> void:
-    on_app_ready(SquirrelAway.app_manifest, self)
+func _ready() -> void:
+    run(SquirrelAway.app_manifest, self)
 
-func on_app_ready( \
-        app_manifest: Dictionary, \
-        main: Node) -> void:
-    .on_app_ready(app_manifest, main)
-    SquirrelAway.register_app_manifest(app_manifest)
-    
-    if OS.get_name() == "HTML5":
-        JavaScript.eval("window.onAppReady()")
+#func _amend_app_manifest() -> void:
+#    ._amend_app_manifest()
+
+#func _register_app_manifest() -> void:
+#    ._register_app_manifest()
+
+func _initialize_framework() -> void:
+    ._initialize_framework()
+    SquirrelAway.initialize(app_manifest)
+
+#func _on_app_ready() -> void:
+#    ._on_app_ready()
