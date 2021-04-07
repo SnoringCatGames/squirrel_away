@@ -764,7 +764,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/LeftWallsItemController.gd"
 }, {
-"base": "Reference",
+"base": "VBoxContainer",
 "class": "Legend",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/Legend.gd"
