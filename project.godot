@@ -1059,6 +1059,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/surface/PositionAlongSurface.gd"
 }, {
+"base": "Screen",
+"class": "PrecomputePlatformGraphsScreen",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/PrecomputePlatformGraphsScreen.gd"
+}, {
 "base": "Reference",
 "class": "PriorityQueue",
 "language": "GDScript",
@@ -1177,7 +1182,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Screen",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/screen.gd"
+"path": "res://addons/scaffolder/src/gui/Screen.gd"
 }, {
 "base": "MarginContainer",
 "class": "SelectionDescription",
@@ -1214,7 +1219,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/config/SquirrelAwayLevel.gd"
 }, {
-"base": "ScaffoldLevelConfig",
+"base": "ScaffolderLevelConfig",
 "class": "SquirrelAwayLevelConfig",
 "language": "GDScript",
 "path": "res://src/config/SquirrelAwayLevelConfig.gd"
@@ -1299,7 +1304,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/surface/SurfaceType.gd"
 }, {
-"base": "ScaffoldBootstrap",
+"base": "ScaffolderBootstrap",
 "class": "SurfacerBootstrap",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/SurfacerBootstrap.gd"
@@ -1319,7 +1324,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/utils/SurfacerDrawUtils.gd"
 }, {
-"base": "ScaffoldLevel",
+"base": "ScaffolderLevel",
 "class": "SurfacerLevel",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/SurfacerLevel.gd"
@@ -1680,6 +1685,7 @@ _global_script_class_icons={
 "PolylineAnnotationElement": "",
 "PolylineLegendItem": "",
 "PositionAlongSurface": "",
+"PrecomputePlatformGraphsScreen": "",
 "PriorityQueue": "",
 "Profiler": "",
 "ProfilerCountItemController": "",

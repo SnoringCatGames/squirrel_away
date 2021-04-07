@@ -239,12 +239,17 @@ var _player_param_classes := [
 
 var app_manifest := {
     # TODO: Remember to reset these when creating releases.
+    precompute_platform_graph_for_levels = [ \
+        "3",
+#        "6",
+    ],
     debug = _debug,
-    #debug = false
+#    debug = false
     playtest = _playtest,
     also_prints_to_stdout = true and _debug,
     is_profiler_enabled = _debug or _playtest,
     are_all_levels_unlocked = true,
+    is_splash_skipped = _debug,
     is_inspector_enabled_default = true or _debug or _playtest,
     inspector_panel_starts_open = false,
     debug_window_size = _screen_resolutions.full_screen,
@@ -276,9 +281,9 @@ var app_manifest := {
     
     theme = preload("res://src/config/default_theme.tres"),
     
-    screen_filename_exclusions = [
-        "RateAppScreen.tscn",
-        "ConfirmDataDeletionScreen.tscn",
+    screen_path_exclusions = [
+        "res://addons/scaffolder/src/gui/screens/RateAppScreen.tscn",
+        "res://addons/scaffolder/src/gui/screens/ConfirmDataDeletionScreen.tscn",
     ],
     screen_path_inclusions = [],
     settings_main_item_class_exclusions = [],
@@ -339,8 +344,8 @@ var app_manifest := {
     developer_splash = preload( \
             "res://addons/scaffolder/assets/images/gui/snoring_cat_logo_splash.png"),
     
-    godot_splash_screen_duration_sec = 0.8 if !_debug else 0.0,
-    developer_splash_screen_duration_sec = 1.0 if !_debug else 0.0,
+    godot_splash_screen_duration_sec = 0.8,
+    developer_splash_screen_duration_sec = 1.0,
     
     main_menu_image_scene_path = "res://src/gui/MainMenuImage.tscn",
     
