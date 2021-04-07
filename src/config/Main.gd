@@ -16,3 +16,6 @@ func _initialize_framework() -> void:
 
 #func _on_app_ready() -> void:
 #    ._on_app_ready()
+
+#func _on_splash_finished() -> void:
+#    ._on_splash_finished()
