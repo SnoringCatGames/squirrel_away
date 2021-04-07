@@ -321,7 +321,7 @@ var app_manifest := {
     level_end_sound = "cadence",
     
     third_party_license_text = \
-            ScaffoldThirdPartyLicenses.TEXT + \
+            ScaffolderThirdPartyLicenses.TEXT + \
             SurfacerThirdPartyLicenses.TEXT + \
             SquirrelAwayThirdPartyLicenses.TEXT,
     special_thanks_text = """
