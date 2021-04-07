@@ -6,10 +6,16 @@ This simple game showcases procedural pathfinding across 2D-platformer surfaces 
 
 In this game, the user can click anywhere in the level, and the cat character will then jump, walk, and climb across platforms in order to reach that target destination.
 
+## Getting set up
+
+> **NOTE:** This repo uses Git submodules to include frameworks.
+
+To learn more about how the code works, checkout the [Surfacer](https://github.com/snoringcatgames/surfacer/) and [Scaffolder](https://github.com/snoringcatgames/scaffolder/) READMEs.
+
 ## Software used
 
 -   [Surfacer](https://github.com/snoringcatgames/surfacer/): A framework that enables procedural path-finding across 2D platforms.
--   [Godot Scaffold](https://github.com/snoringcatgames/godot-scaffold/): A framework that provides some general app infrastructure.
+-   [Scaffolder](https://github.com/snoringcatgames/scaffolder/): A framework that provides some general app infrastructure.
 -   [Godot](https://godotengine.org/): Game engine.
 -   [Piskel](https://www.piskelapp.com/user/5663844106502144): Pixel-art image editor.
 -   [Aseprite](https://www.aseprite.org/): Pixel-art image editor.
