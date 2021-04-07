@@ -1,6 +1,6 @@
-[submodule "addons/godot_scaffold"]
-	path = addons/godot_scaffold
-	url = https://github.com/SnoringCatGames/godot_scaffold.git
+[submodule "addons/scaffolder"]
+	path = addons/scaffolder
+	url = https://github.com/SnoringCatGames/scaffolder.git
 	update = merge
 [submodule "addons/surfacer"]
 	path = addons/surfacer
