@@ -1109,40 +1109,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/data/SaveState.gd"
 }, {
-"base": "Node",
-"class": "ScaffoldBootstrap",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/config/ScaffoldBootstrap.gd"
-}, {
 "base": "Control",
 "class": "ScaffoldCheckBox",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/ScaffoldCheckBox.gd"
 }, {
 "base": "Node",
-"class": "ScaffoldColors",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/config/ScaffoldColors.gd"
-}, {
-"base": "Node",
-"class": "ScaffoldConfig",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/config/ScaffoldConfig.gd"
-}, {
-"base": "Node",
 "class": "ScaffoldGeometry",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/Geometry.gd"
-}, {
-"base": "Node2D",
-"class": "ScaffoldLevel",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/config/ScaffoldLevel.gd"
-}, {
-"base": "Node",
-"class": "ScaffoldLevelConfig",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/config/ScaffoldLevelConfig.gd"
 }, {
 "base": "Node",
 "class": "ScaffoldLog",
@@ -1153,11 +1128,6 @@ _global_script_classes=[ {
 "class": "ScaffoldNavigation",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/Navigation.gd"
-}, {
-"base": "Node",
-"class": "ScaffoldStyles",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/config/ScaffoldStyles.gd"
 }, {
 "base": "Control",
 "class": "ScaffoldTextureButton",
@@ -1170,9 +1140,39 @@ _global_script_classes=[ {
 "path": "res://addons/scaffolder/src/gui/ScaffoldTextureRect.gd"
 }, {
 "base": "Node",
-"class": "ScaffoldThirdPartyLicenses",
+"class": "ScaffolderBootstrap",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/config/ScaffoldThirdPartyLicenses.gd"
+"path": "res://addons/scaffolder/src/config/ScaffolderBootstrap.gd"
+}, {
+"base": "Node",
+"class": "ScaffolderColors",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/config/ScaffolderColors.gd"
+}, {
+"base": "Node",
+"class": "ScaffolderConfig",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/config/ScaffolderConfig.gd"
+}, {
+"base": "Node2D",
+"class": "ScaffolderLevel",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/config/ScaffolderLevel.gd"
+}, {
+"base": "Node",
+"class": "ScaffolderLevelConfig",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/config/ScaffolderLevelConfig.gd"
+}, {
+"base": "Node",
+"class": "ScaffolderStyles",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/config/ScaffolderStyles.gd"
+}, {
+"base": "Node",
+"class": "ScaffolderThirdPartyLicenses",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/config/ScaffolderThirdPartyLicenses.gd"
 }, {
 "base": "Node2D",
 "class": "Screen",
@@ -1690,19 +1690,19 @@ _global_script_class_icons={
 "RulerAnnotator": "",
 "RulerAnnotatorSettingsLabeledControlItem": "",
 "SaveState": "",
-"ScaffoldBootstrap": "",
 "ScaffoldCheckBox": "res://addons/scaffolder/assets/images/editor_icons/ScaffoldCheckBox.png",
-"ScaffoldColors": "",
-"ScaffoldConfig": "",
 "ScaffoldGeometry": "",
-"ScaffoldLevel": "",
-"ScaffoldLevelConfig": "",
 "ScaffoldLog": "",
 "ScaffoldNavigation": "",
-"ScaffoldStyles": "",
 "ScaffoldTextureButton": "res://addons/scaffolder/assets/images/editor_icons/ScaffoldTextureButton.png",
 "ScaffoldTextureRect": "res://addons/scaffolder/assets/images/editor_icons/ScaffoldTextureRect.png",
-"ScaffoldThirdPartyLicenses": "",
+"ScaffolderBootstrap": "",
+"ScaffolderColors": "",
+"ScaffolderConfig": "",
+"ScaffolderLevel": "",
+"ScaffolderLevelConfig": "",
+"ScaffolderStyles": "",
+"ScaffolderThirdPartyLicenses": "",
 "Screen": "",
 "SelectionDescription": "",
 "SettingsScreen": "",
@@ -1775,7 +1775,7 @@ config/quit_on_go_back=false
 
 [autoload]
 
-Gs="*res://addons/scaffolder/src/config/ScaffoldConfig.gd"
+Gs="*res://addons/scaffolder/src/config/ScaffolderConfig.gd"
 Surfacer="*res://addons/surfacer/src/config/SurfacerConfig.gd"
 SquirrelAway="*res://src/config/SquirrelAwayConfig.gd"
 

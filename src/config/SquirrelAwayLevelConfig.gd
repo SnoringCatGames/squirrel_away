@@ -1,5 +1,5 @@
 class_name SquirrelAwayLevelConfig
-extends ScaffoldLevelConfig
+extends ScaffolderLevelConfig
 
 const ARE_LEVELS_SCENE_BASED := true
 
