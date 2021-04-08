@@ -3,9 +3,6 @@
 [ext_resource path="res://src/players/cat/CatPlayer.gd" type="Script" id=1]
 [ext_resource path="res://src/players/cat/CatAnimator.tscn" type="PackedScene" id=2]
 
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 30.0
 height = 54.0
