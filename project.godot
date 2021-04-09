@@ -344,6 +344,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/calculators/EdgeCalculator.gd"
 }, {
+"base": "Node",
+"class": "EdgeFromJsonFactory",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/platform_graph/edge/edges/EdgeFromJsonFactory.gd"
+}, {
 "base": "Reference",
 "class": "EdgeInstruction",
 "language": "GDScript",
@@ -1552,6 +1557,7 @@ _global_script_class_icons={
 "EdgeCalcResultMetadataItemController": "",
 "EdgeCalcResultType": "",
 "EdgeCalculator": "",
+"EdgeFromJsonFactory": "",
 "EdgeInstruction": "",
 "EdgeInstructions": "",
 "EdgeInstructionsUtils": "",
