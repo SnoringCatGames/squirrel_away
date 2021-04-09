@@ -82,7 +82,7 @@ func _parse_squirrel_destinations() -> void:
                             squirrel_player)
             squirrel_destinations.push_back(destination)
     else:
-        for i in range(6):
+        for i in 6:
             squirrel_destinations.push_back( \
                     _create_random_squirrel_spawn_position())
 
