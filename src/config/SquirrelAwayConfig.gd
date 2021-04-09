@@ -250,6 +250,7 @@ var app_manifest := {
     is_profiler_enabled = _debug or _playtest,
     are_all_levels_unlocked = true,
     is_splash_skipped = _debug,
+    are_loaded_surfaces_deeply_validated = true,
     is_inspector_enabled_default = true or _debug or _playtest,
     inspector_panel_starts_open = false,
     debug_window_size = _screen_resolutions.full_screen,
