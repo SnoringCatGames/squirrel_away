@@ -14,8 +14,8 @@ func _initialize_framework() -> void:
     ._initialize_framework()
     SquirrelAway.initialize(app_manifest)
 
-#func _on_app_ready() -> void:
-#    ._on_app_ready()
+#func _on_app_initialized() -> void:
+#    ._on_app_initialized()
 
 #func _on_splash_finished() -> void:
 #    ._on_splash_finished()

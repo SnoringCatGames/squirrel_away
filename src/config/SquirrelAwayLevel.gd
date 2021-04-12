@@ -24,8 +24,7 @@ func start() -> void:
             Surfacer.player_params[default_player_name] \
                     .movement_params.player_resource_path, \
             Vector2.ZERO, \
-            true, \
-            false)
+            true)
     var starting_squirrel_positions := [
         Vector2(192.0, -192.0),
 #        Vector2(-192.0, 192.0),
@@ -35,7 +34,6 @@ func start() -> void:
                 Surfacer.player_params["squirrel"].movement_params \
                         .player_resource_path, \
                 squirrel_position, \
-                false, \
                 false)
 
 func _destroy() -> void:
@@ -73,7 +71,8 @@ func _parse_squirrel_destinations() -> void:
     if !configured_destinations.empty():
         assert(configured_destinations.size() == 1)
         var squirrel_player: SquirrelPlayer = \
-                platform_graphs["squirrel"].collision_params.player
+                _get_platform_graph_for_player("squirrel") \
+                .collision_params.player
         for configured_point in configured_destinations[0].get_children():
             assert(configured_point is Position2D)
             var destination := \
@@ -87,11 +86,11 @@ func _parse_squirrel_destinations() -> void:
                     _create_random_squirrel_spawn_position())
 
 func _create_random_squirrel_spawn_position() -> PositionAlongSurface:
-    var bounds := surface_parser.combined_tile_map_rect.grow( \
+    var bounds := graph_parser.surface_parser.combined_tile_map_rect.grow( \
             -SquirrelPlayer.SQUIRREL_SPAWN_LEVEL_OUTER_MARGIN)
     var x := randf() * bounds.size.x + bounds.position.x
     var y := randf() * bounds.size.y + bounds.position.y
     var point := Vector2(x, y)
     return SurfaceParser.find_closest_position_on_a_surface( \
             point, \
-            fake_players["squirrel"])
+            graph_parser.fake_players["squirrel"])

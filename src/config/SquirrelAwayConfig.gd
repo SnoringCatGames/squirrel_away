@@ -21,17 +21,31 @@ var _screen_resolutions := {
 var group_name_squirrel_destinations := "squirrel_destinations"
 
 var _fonts := {
-    main_xs = preload("res://addons/scaffolder/assets/fonts/main_font_xs.tres"),
+    main_xs = preload( \
+            "res://addons/scaffolder/assets/fonts/main_font_xs.tres"),
     main_xs_italic = preload( \
             "res://addons/scaffolder/assets/fonts/main_font_xs_italic.tres"),
-    main_s = preload("res://addons/scaffolder/assets/fonts/main_font_s.tres"),
-    main_m = preload("res://addons/scaffolder/assets/fonts/main_font_m.tres"),
+    main_s = preload( \
+            "res://addons/scaffolder/assets/fonts/main_font_s.tres"),
+    main_m = preload( \
+            "res://addons/scaffolder/assets/fonts/main_font_m.tres"),
     main_m_bold = preload( \
             "res://addons/scaffolder/assets/fonts/main_font_m_bold.tres"),
     main_m_italic = preload( \
             "res://addons/scaffolder/assets/fonts/main_font_m_italic.tres"),
-    main_l = preload("res://addons/scaffolder/assets/fonts/main_font_l.tres"),
-    main_xl = preload("res://addons/scaffolder/assets/fonts/main_font_xl.tres"),
+    main_l = preload( \
+            "res://addons/scaffolder/assets/fonts/main_font_l.tres"),
+    main_xl = preload( \
+            "res://addons/scaffolder/assets/fonts/main_font_xl.tres"),
+    
+    header_s = preload( \
+            "res://addons/scaffolder/assets/fonts/header_font_s.tres"),
+    header_m = preload( \
+            "res://addons/scaffolder/assets/fonts/header_font_m.tres"),
+    header_l = preload( \
+            "res://addons/scaffolder/assets/fonts/header_font_l.tres"),
+    header_xl = preload( \
+            "res://addons/scaffolder/assets/fonts/header_font_xl.tres"),
 }
 
 var _sounds_manifest := [
