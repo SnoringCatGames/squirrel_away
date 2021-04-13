@@ -42,6 +42,10 @@ func _init_production_params() -> void:
     forces_player_velocity_to_zero_at_path_end = false
     syncs_player_position_to_edge_trajectory = true
     syncs_player_velocity_to_edge_trajectory = true
+    includes_discrete_frame_state = true
+    includes_continuous_frame_positions = true
+    includes_continuous_frame_velocities = true
+    
     retries_navigation_when_interrupted = true
     distance_squared_threshold_for_considering_additional_jump_land_points = 32.0 * 32.0
     stops_after_finding_first_valid_edge_for_a_surface_pair = false
@@ -58,7 +62,6 @@ func _init_production_params() -> void:
     prevents_path_end_points_from_protruding_past_surface_ends_with_extra_offsets = true
     reuses_previous_waypoints_when_backtracking_on_jump_height = false
     asserts_no_preexisting_collisions_during_edge_calculations = false
-    calculates_discrete_frame_state = true
     
     max_horizontal_speed_default = 600.0
     min_horizontal_speed = 5.0
@@ -157,6 +160,9 @@ func _init_debug_params() -> void:
     syncs_player_position_to_edge_trajectory = true
     syncs_player_velocity_to_edge_trajectory = true
 #    syncs_player_velocity_to_edge_trajectory = false
+    includes_discrete_frame_state = true
+    includes_continuous_frame_positions = true
+    includes_continuous_frame_velocities = true
     retries_navigation_when_interrupted = true
 #    distance_squared_threshold_for_considering_additional_jump_land_points = 128.0 * 128.0
     distance_squared_threshold_for_considering_additional_jump_land_points = 32.0 * 32.0
@@ -175,7 +181,6 @@ func _init_debug_params() -> void:
     prevents_path_end_points_from_protruding_past_surface_ends_with_extra_offsets = true
     reuses_previous_waypoints_when_backtracking_on_jump_height = false
     asserts_no_preexisting_collisions_during_edge_calculations = false
-    calculates_discrete_frame_state = true
     
     max_horizontal_speed_default = 400.0
     min_horizontal_speed = 5.0
