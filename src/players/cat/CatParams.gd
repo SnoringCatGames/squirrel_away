@@ -40,12 +40,6 @@ func _init_production_params() -> void:
     forces_player_velocity_to_match_edge_at_start = true
     forces_player_position_to_match_path_at_end = false
     forces_player_velocity_to_zero_at_path_end = false
-    # FIXME: -------------------------
-#    syncs_player_position_to_edge_trajectory = false
-#    syncs_player_velocity_to_edge_trajectory = false
-#    includes_discrete_frame_state = false
-#    includes_continuous_frame_positions = false
-#    includes_continuous_frame_velocities = false
     syncs_player_position_to_edge_trajectory = true
     syncs_player_velocity_to_edge_trajectory = true
     includes_discrete_frame_state = true
