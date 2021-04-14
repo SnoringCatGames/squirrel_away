@@ -41,7 +41,7 @@ func unblink() -> void:
     $Hip/Torso/Neck/Head.region_rect = HEAD_UNBLINK_REGION
 
 func _play_animation( \
-        name: String, \
+        name: String,
         playback_rate: float = 1) -> bool:
     if ._play_animation(name, playback_rate):
         # In case we transition out mid-blink.

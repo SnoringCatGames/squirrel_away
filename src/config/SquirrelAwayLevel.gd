@@ -25,8 +25,8 @@ func _on_graphs_parsed() -> void:
     # will track the player, which makes the loading screen look offset.
     add_player( \
             Surfacer.player_params[default_player_name] \
-                    .movement_params.player_resource_path, \
-            Vector2.ZERO, \
+                    .movement_params.player_resource_path,
+            Vector2.ZERO,
             true)
     var starting_squirrel_positions := [
         Vector2(192.0, -192.0),
@@ -35,8 +35,8 @@ func _on_graphs_parsed() -> void:
     for squirrel_position in starting_squirrel_positions:
         add_player( \
                 Surfacer.player_params["squirrel"].movement_params \
-                        .player_resource_path, \
-                squirrel_position, \
+                        .player_resource_path,
+                squirrel_position,
                 false)
 
 func _destroy() -> void:
@@ -58,7 +58,7 @@ func _get_music_name() -> String:
 func _show_welcome_panel() -> void:
     assert(SquirrelAway.welcome_panel == null)
     SquirrelAway.welcome_panel = Gs.utils.add_scene( \
-            Gs.canvas_layers.layers.hud, \
+            Gs.canvas_layers.layers.hud,
             _WELCOME_PANEL_RESOURCE_PATH)
 
 func _hide_welcome_panel() -> void:
@@ -80,7 +80,7 @@ func _parse_squirrel_destinations() -> void:
             assert(configured_point is Position2D)
             var destination := \
                     SurfaceParser.find_closest_position_on_a_surface( \
-                            configured_point.position, \
+                            configured_point.position,
                             squirrel_player)
             squirrel_destinations.push_back(destination)
     else:
@@ -95,5 +95,5 @@ func _create_random_squirrel_spawn_position() -> PositionAlongSurface:
     var y := randf() * bounds.size.y + bounds.position.y
     var point := Vector2(x, y)
     return SurfaceParser.find_closest_position_on_a_surface( \
-            point, \
+            point,
             graph_parser.fake_players["squirrel"])

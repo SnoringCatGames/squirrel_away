@@ -28,7 +28,7 @@ func _ready() -> void:
         return
     
     Gs.time.set_timeout( \
-            funcref(self, "_trigger_new_navigation_recurring"), \
+            funcref(self, "_trigger_new_navigation_recurring"),
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC)
 
 func _trigger_new_navigation_recurring() -> void:
@@ -38,7 +38,7 @@ func _trigger_new_navigation_recurring() -> void:
     if !navigator.is_currently_navigating:
         _start_new_navigation()
     Gs.time.set_timeout( \
-            funcref(self, "_trigger_new_navigation_recurring"), \
+            funcref(self, "_trigger_new_navigation_recurring"),
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC)
 
 func _update_navigator(delta_sec: float) -> void:
@@ -68,8 +68,8 @@ func _start_new_navigation() -> void:
     var next_destination := previous_destination
     while next_destination.target_point == Vector2.INF or \
             Gs.geometry.are_points_equal_with_epsilon( \
-                    next_destination.target_point, \
-                    previous_destination.target_point, \
+                    next_destination.target_point,
+                    previous_destination.target_point,
                     128.0):
         index = floor(randf() * possible_destinations.size() - 0.00001)
         next_destination = possible_destinations[index]
@@ -79,7 +79,7 @@ func _start_new_navigation() -> void:
     var duration: float = Gs.profiler.stop("start_new_squirrel_navigation")
     print_msg(("SQUIRREL NEW NAV    ;" + \
             "%8.3fs; " + \
-            "calc duration=%sms"), [ \
-        Gs.time.elapsed_play_time_actual_sec, \
-        duration, \
+            "calc duration=%sms"), [
+        Gs.time.elapsed_play_time_actual_sec,
+        duration,
     ])
