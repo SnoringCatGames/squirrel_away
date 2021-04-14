@@ -1234,7 +1234,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/config/SquirrelAwayLevel.gd"
 }, {
-"base": "ScaffoldLevelConfig",
+"base": "ScaffolderLevelConfig",
 "class": "SquirrelAwayLevelConfig",
 "language": "GDScript",
 "path": "res://src/config/SquirrelAwayLevelConfig.gd"

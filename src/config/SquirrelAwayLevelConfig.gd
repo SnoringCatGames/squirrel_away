@@ -30,12 +30,12 @@ var level_manifest := {
         priority = 40,
         scene_path = LEVELS_PATH_PREFIX + "Level4.tscn",
     },
-    "5": {
-        name = "Dev level 5",
-        version = "0.0.1",
-        priority = 50,
-        scene_path = LEVELS_PATH_PREFIX + "Level5.tscn",
-    },
+#    "5": {
+#        name = "Dev level 5",
+#        version = "0.0.1",
+#        priority = 50,
+#        scene_path = LEVELS_PATH_PREFIX + "Level5.tscn",
+#    },
     "6": {
         name = "Dev level 6",
         version = "0.0.1",
@@ -67,4 +67,5 @@ func get_unlock_hint(level_id: String) -> String:
 
 func get_suggested_next_level() -> String:
     # TODO
-    return get_level_ids().front()
+#    return get_level_ids().front()
+    return "7"
