@@ -254,11 +254,11 @@ var _player_param_classes := [
 var app_manifest := {
     # TODO: Remember to reset these when creating releases.
     precompute_platform_graph_for_levels = [ \
-#        "3",
-#        "4",
-#        "5",
-#        "6",
-#        "7",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
     ],
     debug = _debug,
 #    debug = false
