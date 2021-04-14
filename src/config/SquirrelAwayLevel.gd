@@ -12,8 +12,8 @@ var squirrel_destinations := []
 func start() -> void:
     .start()
 
-func _on_graphs_parsed() -> void:
-    ._on_graphs_parsed()
+func _on_loaded() -> void:
+    ._on_loaded()
     
     _show_welcome_panel()
     
