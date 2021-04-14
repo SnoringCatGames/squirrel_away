@@ -49,10 +49,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/AllDefaultAction.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "Analytics",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/data/analytics.gd"
+"path": "res://addons/scaffolder/src/data/Analytics.gd"
 }, {
 "base": "Reference",
 "class": "AnnotationElement",
@@ -877,7 +877,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Navigator",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/navigator.gd"
+"path": "res://addons/surfacer/src/platform_graph/Navigator.gd"
 }, {
 "base": "Node2D",
 "class": "NavigatorAnnotator",
@@ -1189,7 +1189,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/config/ScaffolderThirdPartyLicenses.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "Screen",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screen.gd"

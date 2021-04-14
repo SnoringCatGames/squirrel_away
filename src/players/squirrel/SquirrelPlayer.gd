@@ -77,8 +77,8 @@ func _start_new_navigation() -> void:
     previous_destination = next_destination
     
     var duration: float = Gs.profiler.stop("start_new_squirrel_navigation")
-    print_msg(("SQUIRREL NEW NAV    ;" + \
-            "%8.3fs; " + \
+    print_msg(("SQUIRREL NEW NAV    ;" +
+            "%8.3fs; " +
             "calc duration=%sms"), [
         Gs.time.elapsed_play_time_actual_sec,
         duration,
