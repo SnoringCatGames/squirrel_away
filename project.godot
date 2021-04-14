@@ -49,10 +49,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/AllDefaultAction.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "Analytics",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/data/Analytics.gd"
+"path": "res://addons/scaffolder/src/data/analytics.gd"
 }, {
 "base": "Reference",
 "class": "AnnotationElement",
@@ -74,7 +74,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/AnnotatorType.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "Annotators",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/annotators.gd"
@@ -292,7 +292,7 @@ _global_script_classes=[ {
 "base": "EdgeAttempt",
 "class": "Edge",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/edge/edges/Edge.gd"
+"path": "res://addons/surfacer/src/platform_graph/edge/edges/edge.gd"
 }, {
 "base": "AnnotationElement",
 "class": "EdgeAnnotationElement",
@@ -877,7 +877,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Navigator",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/Navigator.gd"
+"path": "res://addons/surfacer/src/platform_graph/navigator.gd"
 }, {
 "base": "Node2D",
 "class": "NavigatorAnnotator",
@@ -1189,10 +1189,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/config/ScaffolderThirdPartyLicenses.gd"
 }, {
-"base": "Node2D",
+"base": "Reference",
 "class": "Screen",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/Screen.gd"
+"path": "res://addons/scaffolder/src/gui/screen.gd"
 }, {
 "base": "MarginContainer",
 "class": "SelectionDescription",
@@ -1272,7 +1272,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Surface",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/surface/Surface.gd"
+"path": "res://addons/surfacer/src/platform_graph/surface/surface.gd"
 }, {
 "base": "AnnotationElement",
 "class": "SurfaceAnnotationElement",

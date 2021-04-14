@@ -25,7 +25,7 @@ func _create_params() -> PlayerAnimatorParams:
     return animator_params
 
 func _play_animation( \
-        name: String, \
+        name: String,
         playback_rate: float = 1) -> bool:
     _show_sprite(name)
     return ._play_animation(name, playback_rate)
