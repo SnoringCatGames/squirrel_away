@@ -44,7 +44,7 @@ animations = [ {
 } ]
 
 [node name="LoadingImage" type="Control"]
-margin_right = 280.0
+margin_right = 322.0
 margin_bottom = 176.0
 rect_min_size = Vector2( 322, 176 )
 script = ExtResource( 2 )
@@ -64,5 +64,5 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Control"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
-frame = 1
+frame = 5
 playing = true
