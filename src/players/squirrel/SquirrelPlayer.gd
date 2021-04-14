@@ -27,7 +27,7 @@ func _ready() -> void:
         # hood.
         return
     
-    Gs.time.set_timeout( \
+    Gs.time.set_timeout(
             funcref(self, "_trigger_new_navigation_recurring"),
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC)
 
@@ -37,7 +37,7 @@ func _trigger_new_navigation_recurring() -> void:
     
     if !navigator.is_currently_navigating:
         _start_new_navigation()
-    Gs.time.set_timeout( \
+    Gs.time.set_timeout(
             funcref(self, "_trigger_new_navigation_recurring"),
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC)
 
@@ -67,7 +67,7 @@ func _start_new_navigation() -> void:
     var index: int
     var next_destination := previous_destination
     while next_destination.target_point == Vector2.INF or \
-            Gs.geometry.are_points_equal_with_epsilon( \
+            Gs.geometry.are_points_equal_with_epsilon(
                     next_destination.target_point,
                     previous_destination.target_point,
                     128.0):

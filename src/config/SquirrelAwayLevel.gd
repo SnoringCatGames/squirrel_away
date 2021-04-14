@@ -23,7 +23,7 @@ func _on_graphs_parsed() -> void:
     #        Level.
     # Add the player after removing the loading screen, since the camera
     # will track the player, which makes the loading screen look offset.
-    add_player( \
+    add_player(
             Surfacer.player_params[default_player_name] \
                     .movement_params.player_resource_path,
             Vector2.ZERO,
@@ -33,7 +33,7 @@ func _on_graphs_parsed() -> void:
 #        Vector2(-192.0, 192.0),
     ]
     for squirrel_position in starting_squirrel_positions:
-        add_player( \
+        add_player(
                 Surfacer.player_params["squirrel"].movement_params \
                         .player_resource_path,
                 squirrel_position,
@@ -57,7 +57,7 @@ func _get_music_name() -> String:
 
 func _show_welcome_panel() -> void:
     assert(SquirrelAway.welcome_panel == null)
-    SquirrelAway.welcome_panel = Gs.utils.add_scene( \
+    SquirrelAway.welcome_panel = Gs.utils.add_scene(
             Gs.canvas_layers.layers.hud,
             _WELCOME_PANEL_RESOURCE_PATH)
 
@@ -69,7 +69,7 @@ func _hide_welcome_panel() -> void:
 # FIXME: Decouple this squirrel-specific logic from the rest of the framework.
 func _parse_squirrel_destinations() -> void:
     squirrel_destinations.clear()
-    var configured_destinations := get_tree().get_nodes_in_group( \
+    var configured_destinations := get_tree().get_nodes_in_group(
             SquirrelAway.group_name_squirrel_destinations)
     if !configured_destinations.empty():
         assert(configured_destinations.size() == 1)
@@ -79,21 +79,21 @@ func _parse_squirrel_destinations() -> void:
         for configured_point in configured_destinations[0].get_children():
             assert(configured_point is Position2D)
             var destination := \
-                    SurfaceParser.find_closest_position_on_a_surface( \
+                    SurfaceParser.find_closest_position_on_a_surface(
                             configured_point.position,
                             squirrel_player)
             squirrel_destinations.push_back(destination)
     else:
         for i in 6:
-            squirrel_destinations.push_back( \
+            squirrel_destinations.push_back(
                     _create_random_squirrel_spawn_position())
 
 func _create_random_squirrel_spawn_position() -> PositionAlongSurface:
-    var bounds := graph_parser.surface_parser.combined_tile_map_rect.grow( \
+    var bounds := graph_parser.surface_parser.combined_tile_map_rect.grow(
             -SquirrelPlayer.SQUIRREL_SPAWN_LEVEL_OUTER_MARGIN)
     var x := randf() * bounds.size.x + bounds.position.x
     var y := randf() * bounds.size.y + bounds.position.y
     var point := Vector2(x, y)
-    return SurfaceParser.find_closest_position_on_a_surface( \
+    return SurfaceParser.find_closest_position_on_a_surface(
             point,
             graph_parser.fake_players["squirrel"])
