@@ -629,6 +629,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/settings_items/HapticFeedbackSettingsLabeledControlItem.gd"
 }, {
+"base": "LabeledControlItem",
+"class": "HeaderLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/labeled_control_list/HeaderLabeledControlItem.gd"
+}, {
 "base": "TextLabeledControlItem",
 "class": "HighScoreLabeledControlItem",
 "language": "GDScript",
@@ -1619,6 +1624,7 @@ _global_script_class_icons={
 "GodotSplashScreen": "",
 "GridIndicesAnnotator": "",
 "HapticFeedbackSettingsLabeledControlItem": "",
+"HeaderLabeledControlItem": "",
 "HighScoreLabeledControlItem": "",
 "HorizontalMovementUtils": "",
 "HsvColorParams": "",
