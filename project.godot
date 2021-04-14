@@ -830,6 +830,11 @@ _global_script_classes=[ {
 "path": "res://addons/scaffolder/src/gui/screens/LevelSelectScreen.gd"
 }, {
 "base": "Control",
+"class": "LoadingImage",
+"language": "GDScript",
+"path": "res://src/gui/LoadingImage.gd"
+}, {
+"base": "Control",
 "class": "LockAnimation",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/level_select/LockAnimation.gd"
@@ -843,11 +848,6 @@ _global_script_classes=[ {
 "class": "Main",
 "language": "GDScript",
 "path": "res://src/config/Main.gd"
-}, {
-"base": "Control",
-"class": "MainMenuImage",
-"language": "GDScript",
-"path": "res://src/gui/MainMenuImage.gd"
 }, {
 "base": "Screen",
 "class": "MainMenuScreen",
@@ -1664,10 +1664,10 @@ _global_script_class_icons={
 "LevelSelectItemLockedHeader": "",
 "LevelSelectItemUnlockedHeader": "",
 "LevelSelectScreen": "",
+"LoadingImage": "",
 "LockAnimation": "",
 "LogSurfacerEventsSettingsLabeledControlItem": "",
 "Main": "",
-"MainMenuImage": "",
 "MainMenuScreen": "",
 "MatchExpectedEdgeTrajectoryAction": "",
 "MovementParams": "",

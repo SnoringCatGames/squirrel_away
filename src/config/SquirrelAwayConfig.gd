@@ -366,7 +366,8 @@ var app_manifest := {
     godot_splash_screen_duration_sec = 0.8,
     developer_splash_screen_duration_sec = 1.0,
     
-    main_menu_image_scene_path = "res://src/gui/MainMenuImage.tscn",
+    main_menu_image_scene_path = "res://src/gui/LoadingImage.tscn",
+    loading_image_scene_path = "res://src/gui/LoadingImage.tscn",
     
     fade_in_transition_texture = \
             preload("res://addons/scaffolder/assets/images/transition_in.png"),
