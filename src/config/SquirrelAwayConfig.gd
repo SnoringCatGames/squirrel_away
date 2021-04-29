@@ -261,7 +261,7 @@ var app_manifest := {
 #        "6",
 #        "7",
     ],
-    ignores_platform_graph_save_files = false,
+    ignores_platform_graph_save_files = true,
     debug = _debug,
 #    debug = false
     playtest = _playtest,

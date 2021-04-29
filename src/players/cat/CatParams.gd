@@ -23,7 +23,8 @@ func _init_production_params() -> void:
     slow_rise_gravity_multiplier = 0.38
     rise_double_jump_gravity_multiplier = 0.68
     
-    jump_boost = -900.0
+    jump_boost = -1500.0
+#    jump_boost = -900.0
     in_air_horizontal_acceleration = 3200.0
     max_jump_chain = 2
     wall_jump_horizontal_boost = 400.0
