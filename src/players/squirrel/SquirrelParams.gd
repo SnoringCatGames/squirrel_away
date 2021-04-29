@@ -14,6 +14,8 @@ func _init() -> void:
     shape.height = 9.0
     collider_shape = shape
     collider_rotation = PI / 2.0
+    passing_platform_corner_calc_shape = collider_shape
+    passing_platform_corner_calc_shape_rotation = collider_rotation
     
     gravity_fast_fall = Gs.geometry.GRAVITY
     slow_rise_gravity_multiplier = 0.38
