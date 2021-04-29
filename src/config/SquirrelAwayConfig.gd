@@ -184,32 +184,32 @@ var _metric_keys := [
 ]
 
 var _debug_params := {
-#    limit_parsing = {
-#        player_name = "cat",
-#        
+    limit_parsing = {
+        player_name = "cat",
+        
+        edge_type = EdgeType.JUMP_INTER_SURFACE_EDGE,
 #        edge_type = EdgeType.CLIMB_OVER_WALL_TO_FLOOR_EDGE,
 #        edge_type = EdgeType.FALL_FROM_WALL_EDGE,
 #        edge_type = EdgeType.FALL_FROM_FLOOR_EDGE,
-#        edge_type = EdgeType.JUMP_INTER_SURFACE_EDGE,
 #        edge_type = EdgeType.CLIMB_DOWN_WALL_TO_FLOOR_EDGE,
 #        edge_type = EdgeType.WALK_TO_ASCEND_WALL_FROM_FLOOR_EDGE,
-#        
-#        edge = {
-#            origin = {
-#                surface_side = SurfaceSide.RIGHT_WALL,
-#                surface_start_vertex = Vector2(64, 768),
-#                #position = Vector2(64, 704),
-#                epsilon = 10,
-#            },
-#            destination = {
-#                surface_side = SurfaceSide.LEFT_WALL,
-#                surface_start_vertex = Vector2(-384, 704),
-#                #position = Vector2(-384, 737),
-#                epsilon = 10,
-#            },
-#            #velocity_start = Vector2(0, -1000),
-#        },
-#    },
+        
+        edge = {
+            origin = {
+                surface_side = SurfaceSide.FLOOR,
+                surface_start_vertex = Vector2(-64, 64),
+                position = Vector2(64, 64),
+                epsilon = 10,
+            },
+            destination = {
+                surface_side = SurfaceSide.FLOOR,
+                surface_start_vertex = Vector2(128, -128),
+                position = Vector2(128, -128),
+                epsilon = 10,
+            },
+            #velocity_start = Vector2(0, -1000),
+        },
+    },
     extra_annotations = {},
 }
 
@@ -259,6 +259,7 @@ var app_manifest := {
 #        "6",
 #        "7",
     ],
+    ignores_platform_graph_save_files = true,
     debug = _debug,
 #    debug = false
     playtest = _playtest,
@@ -276,6 +277,7 @@ var app_manifest := {
     thread_count = OS.get_processor_count() if _uses_threads else 1,
     is_mobile_supported = true,
     is_data_deletion_button_shown = false,
+    default_player_name = 'cat',
     
     app_name = "Squirrel Away",
     app_id = "games.snoringcat.squirrel_away",

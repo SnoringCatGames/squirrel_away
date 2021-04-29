@@ -8,8 +8,8 @@ const CAT_IS_CLOSE_DISTANCE_SQUARED_THRESHOLD := 512.0 * 512.0
 const SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC := 3.0
 
 var was_cat_close_last_frame := false
-var previous_destination := \
-        MovementUtils.create_position_without_surface(Vector2.INF)
+var previous_destination := PositionAlongSurfaceFactory \
+        .create_position_without_surface(Vector2.INF)
 
 func _init().("squirrel") -> void:
     pass
