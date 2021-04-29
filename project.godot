@@ -229,6 +229,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screens/DataAgreementScreen.gd"
 }, {
+"base": "SurfacerLevel",
+"class": "DebugLevel",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/level/DebugLevel.gd"
+}, {
 "base": "Node2D",
 "class": "DebugPanel",
 "language": "GDScript",
@@ -392,7 +397,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "EdgeStepCalcResultMetadataItemControllerFactory",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/EdgeStepCalcResultMetadatItemControllerFactory.gd"
+"path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/EdgeStepCalcResultMetadataItemControllerFactory.gd"
 }, {
 "base": "Reference",
 "class": "EdgeStepCalcResultType",
@@ -1074,6 +1079,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/surface/PositionAlongSurface.gd"
 }, {
+"base": "Node",
+"class": "PositionAlongSurfaceFactory",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/platform_graph/edge/utils/PositionAlongSurfaceFactory.gd"
+}, {
 "base": "Screen",
 "class": "PrecomputePlatformGraphsScreen",
 "language": "GDScript",
@@ -1347,7 +1357,7 @@ _global_script_classes=[ {
 "base": "ScaffolderLevel",
 "class": "SurfacerLevel",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/config/SurfacerLevel.gd"
+"path": "res://addons/surfacer/src/level/SurfacerLevel.gd"
 }, {
 "base": "Node",
 "class": "SurfacerThirdPartyLicenses",
@@ -1544,6 +1554,7 @@ _global_script_class_icons={
 "CreditsScreen": "",
 "CurrentScoreLabeledControlItem": "",
 "DataAgreementScreen": "",
+"DebugLevel": "",
 "DebugPanel": "res://addons/scaffolder/assets/images/editor_icons/DebugPanel.png",
 "DebugPanelSettingsLabeledControlItem": "",
 "DebugTimeDisplaySettingsLabeledControlItem": "",
@@ -1713,6 +1724,7 @@ _global_script_class_icons={
 "PolylineAnnotationElement": "",
 "PolylineLegendItem": "",
 "PositionAlongSurface": "",
+"PositionAlongSurfaceFactory": "",
 "PrecomputePlatformGraphsScreen": "",
 "PriorityQueue": "",
 "Profiler": "",

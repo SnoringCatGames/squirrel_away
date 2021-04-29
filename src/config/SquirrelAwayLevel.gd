@@ -4,8 +4,6 @@ extends SurfacerLevel
 
 const _WELCOME_PANEL_RESOURCE_PATH := "res://src/gui/WelcomePanel.tscn"
 
-var default_player_name := "cat"
-
 # Array<PositionAlongSurface>
 var squirrel_destinations := []
 
@@ -24,7 +22,7 @@ func _on_loaded() -> void:
     # Add the player after removing the loading screen, since the camera
     # will track the player, which makes the loading screen look offset.
     add_player(
-            Surfacer.player_params[default_player_name] \
+            Surfacer.player_params[Surfacer.default_player_name] \
                     .movement_params.player_resource_path,
             Vector2.ZERO,
             true)
