@@ -150,6 +150,8 @@ var _colors_manifest := {
     button_hover_hsv_delta = {h=-0.03, s=-0.15, v=0.15},
     button_pressed_hsv_delta = {h=0.05, s=-0.05, v=-0.1},
     dropdown_color = Color("473d2d"),
+    tooltip_color = Color("080808"),
+    tooltip_bg_color = Color("BBBBBB"),
     dropdown_disabled_hsv_delta = {h=0.0, s=-0.4, v=0.15, a=-0.2},
     dropdown_focused_hsv_delta = {h=0.05, s=-0.15, v=0.15},
     dropdown_hover_hsv_delta = {h=0.05, s=-0.15, v=0.15},
@@ -184,32 +186,32 @@ var _metric_keys := [
 ]
 
 var _debug_params := {
-    limit_parsing = {
-        player_name = "cat",
-        
-        edge_type = EdgeType.JUMP_INTER_SURFACE_EDGE,
-#        edge_type = EdgeType.CLIMB_OVER_WALL_TO_FLOOR_EDGE,
-#        edge_type = EdgeType.FALL_FROM_WALL_EDGE,
-#        edge_type = EdgeType.FALL_FROM_FLOOR_EDGE,
-#        edge_type = EdgeType.CLIMB_DOWN_WALL_TO_FLOOR_EDGE,
-#        edge_type = EdgeType.WALK_TO_ASCEND_WALL_FROM_FLOOR_EDGE,
-        
-        edge = {
-            origin = {
-                surface_side = SurfaceSide.FLOOR,
-                surface_start_vertex = Vector2(-64, 64),
-                position = Vector2(64, 64),
-                epsilon = 10,
-            },
-            destination = {
-                surface_side = SurfaceSide.FLOOR,
-                surface_start_vertex = Vector2(128, -128),
-                position = Vector2(128, -128),
-                epsilon = 10,
-            },
-            #velocity_start = Vector2(0, -1000),
-        },
-    },
+#    limit_parsing = {
+#        player_name = "cat",
+#
+#        edge_type = EdgeType.JUMP_INTER_SURFACE_EDGE,
+##        edge_type = EdgeType.CLIMB_OVER_WALL_TO_FLOOR_EDGE,
+##        edge_type = EdgeType.FALL_FROM_WALL_EDGE,
+##        edge_type = EdgeType.FALL_FROM_FLOOR_EDGE,
+##        edge_type = EdgeType.CLIMB_DOWN_WALL_TO_FLOOR_EDGE,
+##        edge_type = EdgeType.WALK_TO_ASCEND_WALL_FROM_FLOOR_EDGE,
+#
+#        edge = {
+#            origin = {
+#                surface_side = SurfaceSide.FLOOR,
+#                surface_start_vertex = Vector2(-64, 64),
+#                position = Vector2(64, 64),
+#                epsilon = 10,
+#            },
+#            destination = {
+#                surface_side = SurfaceSide.FLOOR,
+#                surface_start_vertex = Vector2(128, -128),
+#                position = Vector2(128, -128),
+#                epsilon = 10,
+#            },
+#            #velocity_start = Vector2(0, -1000),
+#        },
+#    },
     extra_annotations = {},
 }
 
@@ -259,7 +261,7 @@ var app_manifest := {
 #        "6",
 #        "7",
     ],
-    ignores_platform_graph_save_files = true,
+    ignores_platform_graph_save_files = false,
     debug = _debug,
 #    debug = false
     playtest = _playtest,
