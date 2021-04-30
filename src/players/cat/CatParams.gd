@@ -18,13 +18,20 @@ func _init_production_params() -> void:
     shape.height = 54.0
     collider_shape = shape
     collider_rotation = PI / 2.0
-    passing_platform_corner_calc_shape = collider_shape
-    passing_platform_corner_calc_shape_rotation = collider_rotation
+    
+    var platform_corner_calc_shape := RectangleShape2D.new()
+    platform_corner_calc_shape.extents = \
+            Vector2(shape.radius + shape.height / 2.0, shape.radius)
+    var platform_corner_calc_shape_rotation := 0.0
+    passing_platform_corner_calc_shape = platform_corner_calc_shape
+    passing_platform_corner_calc_shape_rotation = \
+            platform_corner_calc_shape_rotation
     
     gravity_fast_fall = Gs.geometry.GRAVITY
     slow_rise_gravity_multiplier = 0.38
     rise_double_jump_gravity_multiplier = 0.68
     
+    # FIXME: ------------------------ Undo
     jump_boost = -1500.0
 #    jump_boost = -900.0
     in_air_horizontal_acceleration = 3200.0
@@ -130,8 +137,14 @@ func _init_debug_params() -> void:
     shape.height = 54.0
     collider_shape = shape
     collider_rotation = PI / 2.0
-    passing_platform_corner_calc_shape = collider_shape
-    passing_platform_corner_calc_shape_rotation = collider_rotation
+    
+    var platform_corner_calc_shape := RectangleShape2D.new()
+    platform_corner_calc_shape.extents = \
+            Vector2(shape.radius + shape.height / 2.0, shape.radius)
+    var platform_corner_calc_shape_rotation := 0.0
+    passing_platform_corner_calc_shape = platform_corner_calc_shape
+    passing_platform_corner_calc_shape_rotation = \
+            platform_corner_calc_shape_rotation
     
     gravity_fast_fall = Gs.geometry.GRAVITY
     slow_rise_gravity_multiplier = 0.18
