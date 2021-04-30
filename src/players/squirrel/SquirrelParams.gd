@@ -15,13 +15,14 @@ func _init() -> void:
     collider_shape = shape
     collider_rotation = PI / 2.0
     
-    var platform_corner_calc_shape := RectangleShape2D.new()
-    platform_corner_calc_shape.extents = \
+    var fall_from_floor_shape := RectangleShape2D.new()
+    fall_from_floor_shape.extents = \
             Vector2(shape.radius + shape.height / 2.0, shape.radius)
-    var platform_corner_calc_shape_rotation := 0.0
-    passing_platform_corner_calc_shape = platform_corner_calc_shape
-    passing_platform_corner_calc_shape_rotation = \
-            platform_corner_calc_shape_rotation
+    fall_from_floor_corner_calc_shape = fall_from_floor_shape
+    fall_from_floor_corner_calc_shape_rotation = 0.0
+    
+    climb_over_wall_corner_calc_shape = collider_shape
+    climb_over_wall_corner_calc_shape_rotation = collider_rotation
     
     gravity_fast_fall = Gs.geometry.GRAVITY
     slow_rise_gravity_multiplier = 0.38
