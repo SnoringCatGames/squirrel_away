@@ -80,7 +80,7 @@ func _init() -> void:
     dash_fade_duration = 0.1
     dash_cooldown = 1.0
     
-    friction_coefficient = 0.75
+    friction_coefficient = 1.25
     
     uses_duration_instead_of_distance_for_edge_weight = true
     additional_edge_weight_offset = 64.0
