@@ -40,9 +40,9 @@ func _init_production_params() -> void:
     wall_jump_horizontal_boost = 400.0
     wall_fall_horizontal_boost = 20.0
     
-    walk_acceleration = 350.0
+    walk_acceleration = 10500.0
     climb_up_speed = -350.0
-    climb_down_speed = 150.0
+    climb_down_speed = 175.0
     
     minimizes_velocity_change_when_jumping = false
     optimizes_edge_jump_positions_at_run_time = true
@@ -87,7 +87,7 @@ func _init_production_params() -> void:
     dash_fade_duration = 0.1
     dash_cooldown = 1.0
     
-    friction_coefficient = 0.025
+    friction_coefficient = 0.75
     
     uses_duration_instead_of_distance_for_edge_weight = true
     additional_edge_weight_offset = 128.0
@@ -161,7 +161,7 @@ func _init_debug_params() -> void:
     wall_jump_horizontal_boost = 400.0
     wall_fall_horizontal_boost = 20.0
     
-    walk_acceleration = 350.0
+    walk_acceleration = 10500.0
     climb_up_speed = -350.0
     climb_down_speed = 150.0
     
@@ -215,7 +215,7 @@ func _init_debug_params() -> void:
     dash_fade_duration = 0.1
     dash_cooldown = 1.0
     
-    friction_coefficient = 0.01
+    friction_coefficient = 0.3
     
     uses_duration_instead_of_distance_for_edge_weight = true
     additional_edge_weight_offset = 128.0
