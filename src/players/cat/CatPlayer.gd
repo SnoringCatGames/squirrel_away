@@ -8,7 +8,7 @@ var just_collided_with_new_computer_player := false
 func _init().("cat") -> void:
     pass
 
-func _process_sfx() -> void:
+func _process_sounds() -> void:
     if just_triggered_jump:
         Gs.audio.play_sound("cat_jump")
     

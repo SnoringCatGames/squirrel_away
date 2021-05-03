@@ -14,7 +14,7 @@ var previous_destination := PositionAlongSurfaceFactory \
 func _init().("squirrel") -> void:
     pass
 
-func _process_sfx() -> void:
+func _process_sounds() -> void:
     if just_triggered_jump:
         Gs.audio.play_sound("squirrel_jump")
     
