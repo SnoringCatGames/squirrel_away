@@ -257,7 +257,7 @@ var app_manifest := {
     # TODO: Remember to reset these when creating releases.
     precompute_platform_graph_for_levels = [
 #        "3",
-        "4",
+#        "4",
 #        "6",
 #        "7",
     ],
@@ -383,6 +383,7 @@ var app_manifest := {
     default_game_area_size = Vector2(1024, 768),
     aspect_ratio_max = 2.0 / 1.0,
     aspect_ratio_min = 1.0 / 2.0,
+    camera_smoothing_speed = 10.0,
     default_camera_zoom = 1.0,
     uses_level_scores = true,
 }
