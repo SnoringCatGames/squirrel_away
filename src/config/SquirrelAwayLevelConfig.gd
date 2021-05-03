@@ -1,5 +1,5 @@
 class_name SquirrelAwayLevelConfig
-extends ScaffolderLevelConfig
+extends SurfacerLevelConfig
 
 const ARE_LEVELS_SCENE_BASED := true
 
@@ -11,47 +11,57 @@ var level_manifest := {
 #        version = "0.0.1",
 #        priority = 10,
 #        scene_path = LEVELS_PATH_PREFIX + "Level1.tscn",
+#        player_names = ["cat"],
 #    },
 #    "2": {
 #        name = "Dev level 2",
 #        version = "0.0.1",
 #        priority = 20,
 #        scene_path = LEVELS_PATH_PREFIX + "Level2.tscn",
+#        player_names = ["cat"],
 #    },
     "3": {
         name = "Dev level 3",
         version = "0.0.1",
         priority = 30,
         scene_path = LEVELS_PATH_PREFIX + "Level3.tscn",
+        player_names = ["cat"],
     },
     "4": {
         name = "Dev level 4",
         version = "0.0.1",
         priority = 40,
         scene_path = LEVELS_PATH_PREFIX + "Level4.tscn",
+        player_names = ["cat"],
     },
 #    "5": {
 #        name = "Dev level 5",
 #        version = "0.0.1",
 #        priority = 50,
 #        scene_path = LEVELS_PATH_PREFIX + "Level5.tscn",
+#        player_names = ["cat"],
 #    },
     "6": {
         name = "Dev level 6",
         version = "0.0.1",
         priority = 60,
         scene_path = LEVELS_PATH_PREFIX + "Level6.tscn",
+        player_names = ["cat", "squirrel"],
     },
     "7": {
         name = "Dev level 7",
         version = "0.0.1",
         priority = 70,
         scene_path = LEVELS_PATH_PREFIX + "Level7.tscn",
+        player_names = ["cat", "squirrel"],
     },
 }
 
 func _init().(ARE_LEVELS_SCENE_BASED) -> void:
     pass
+
+#func _sanitize_level_config(config: Dictionary) -> void:
+#    ._sanitize_level_config(config)
 
 func get_level_config(level_id: String) -> Dictionary:
     return level_manifest[level_id]
