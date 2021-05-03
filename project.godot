@@ -1244,7 +1244,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/config/SquirrelAwayLevel.gd"
 }, {
-"base": "ScaffolderLevelConfig",
+"base": "SurfacerLevelConfig",
 "class": "SquirrelAwayLevelConfig",
 "language": "GDScript",
 "path": "res://src/config/SquirrelAwayLevelConfig.gd"
@@ -1358,6 +1358,11 @@ _global_script_classes=[ {
 "class": "SurfacerLevel",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/level/SurfacerLevel.gd"
+}, {
+"base": "ScaffolderLevelConfig",
+"class": "SurfacerLevelConfig",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/config/SurfacerLevelConfig.gd"
 }, {
 "base": "Node",
 "class": "SurfacerThirdPartyLicenses",
@@ -1780,6 +1785,7 @@ _global_script_class_icons={
 "SurfacerConfig": "",
 "SurfacerDrawUtils": "",
 "SurfacerLevel": "",
+"SurfacerLevelConfig": "",
 "SurfacerThirdPartyLicenses": "",
 "SurfacesAnnotator": "",
 "SurfacesAnnotatorSettingsLabeledControlItem": "",

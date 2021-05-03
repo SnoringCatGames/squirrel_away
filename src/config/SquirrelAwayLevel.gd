@@ -4,8 +4,14 @@ extends SurfacerLevel
 
 const _WELCOME_PANEL_RESOURCE_PATH := "res://src/gui/WelcomePanel.tscn"
 
+var _does_level_have_squirrels := false
+
 # Array<PositionAlongSurface>
 var squirrel_destinations := []
+
+func _enter_tree() -> void:
+    _does_level_have_squirrels = \
+            Gs.level_config.get_level_config(_id).player_names.has("squirrel")
 
 func start() -> void:
     .start()
@@ -14,8 +20,6 @@ func _on_loaded() -> void:
     ._on_loaded()
     
     _show_welcome_panel()
-    
-    _parse_squirrel_destinations()
     
     # FIXME: Move this player creation (and readiness recording) back into
     #        Level.
@@ -26,16 +30,19 @@ func _on_loaded() -> void:
                     .movement_params.player_resource_path,
             Vector2.ZERO,
             true)
-    var starting_squirrel_positions := [
-        Vector2(192.0, -192.0),
-#        Vector2(-192.0, 192.0),
-    ]
-    for squirrel_position in starting_squirrel_positions:
-        add_player(
-                Surfacer.player_params["squirrel"].movement_params \
-                        .player_resource_path,
-                squirrel_position,
-                false)
+    
+    if _does_level_have_squirrels:
+        _parse_squirrel_destinations()
+        var starting_squirrel_positions := [
+            Vector2(192.0, -192.0),
+    #        Vector2(-192.0, 192.0),
+        ]
+        for squirrel_position in starting_squirrel_positions:
+            add_player(
+                    Surfacer.player_params["squirrel"].movement_params \
+                            .player_resource_path,
+                    squirrel_position,
+                    false)
 
 func _destroy() -> void:
     _hide_welcome_panel()
