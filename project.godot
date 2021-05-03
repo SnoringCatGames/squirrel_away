@@ -1287,7 +1287,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Surface",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/surface/surface.gd"
+"path": "res://addons/surfacer/src/platform_graph/surface/Surface.gd"
 }, {
 "base": "AnnotationElement",
 "class": "SurfaceAnnotationElement",
