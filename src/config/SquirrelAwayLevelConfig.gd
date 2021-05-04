@@ -26,6 +26,21 @@ var level_manifest := {
         priority = 30,
         scene_path = LEVELS_PATH_PREFIX + "Level3.tscn",
         player_names = ["cat"],
+        intro_choreography = [
+            {
+                is_user_interaction_enabled = false,
+                zoom = 0.25,
+                destination = SurfacerLevelConfig \
+                        .INTRO_CHOREOGRAPHY_DESTINATION_GROUP_NAME,
+            },
+            {
+                duration = 0.8,
+                zoom = 1.0,
+            },
+            {
+                is_user_interaction_enabled = true,
+            }
+        ],
     },
     "4": {
         name = "Dev level 4",

@@ -45,14 +45,14 @@ func _update_navigator(delta_sec: float) -> void:
     if is_human_player:
         return
     
-    var cat_position: Vector2 = Surfacer.current_player_for_clicks.position
+    var cat_position: Vector2 = Surfacer.human_player.position
     var is_cat_close := \
             self.position.distance_squared_to(cat_position) <= \
             CAT_IS_CLOSE_DISTANCE_SQUARED_THRESHOLD
     
     if is_cat_close and \
             (!was_cat_close_last_frame or \
-            navigator.reached_destination):
+            navigator.has_reached_destination):
         _start_new_navigation()
     
     was_cat_close_last_frame = is_cat_close
