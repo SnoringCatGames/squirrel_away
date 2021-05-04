@@ -39,7 +39,7 @@ func _check_for_squirrel_collision() -> void:
     
     # Calculate current computer-player collisions.
     var colliding_computer_players := []
-    for computer_player in get_tree().get_nodes_in_group(
+    for computer_player in Gs.utils.get_all_nodes_in_group(
             Surfacer.group_name_computer_players):
         collider_half_width_height = \
                 computer_player.movement_params.collider_half_width_height

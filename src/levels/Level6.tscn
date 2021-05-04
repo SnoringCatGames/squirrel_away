@@ -39,3 +39,12 @@ position = Vector2( 449.52, -566.063 )
 
 [node name="Position2D8" type="Position2D" parent="SquirrelDestinations"]
 position = Vector2( -922.825, -582.711 )
+
+[node name="IntroChoreographyDestination" type="Position2D" parent="." groups=[
+"intro_choreography_destination",
+]]
+
+[node name="PlayerStartPosition" type="Position2D" parent="." groups=[
+"player_start_position",
+]]
+position = Vector2( 192, -192 )

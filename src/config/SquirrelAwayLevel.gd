@@ -13,23 +13,13 @@ func _enter_tree() -> void:
     _does_level_have_squirrels = \
             Gs.level_config.get_level_config(_id).player_names.has("squirrel")
 
-func start() -> void:
-    .start()
+#func _load() -> void:
+#    ._load()
 
-func _on_loaded() -> void:
-    ._on_loaded()
+func _start() -> void:
+    ._start()
     
     _show_welcome_panel()
-    
-    # FIXME: Move this player creation (and readiness recording) back into
-    #        Level.
-    # Add the player after removing the loading screen, since the camera
-    # will track the player, which makes the loading screen look offset.
-    add_player(
-            Surfacer.player_params[Surfacer.default_player_name] \
-                    .movement_params.player_resource_path,
-            Vector2.ZERO,
-            true)
     
     if _does_level_have_squirrels:
         _parse_squirrel_destinations()
@@ -49,8 +39,8 @@ func _destroy() -> void:
     squirrel_destinations.clear()
     ._destroy()
 
-func quit(immediately := true) -> void:
-    .quit(immediately)
+#func quit(immediately := true) -> void:
+#    .quit(immediately)
 
 func _on_initial_input() -> void:
     # Close the welcome panel on any mouse or key click event.
@@ -74,7 +64,7 @@ func _hide_welcome_panel() -> void:
 # FIXME: Decouple this squirrel-specific logic from the rest of the framework.
 func _parse_squirrel_destinations() -> void:
     squirrel_destinations.clear()
-    var configured_destinations := get_tree().get_nodes_in_group(
+    var configured_destinations := Gs.utils.get_all_nodes_in_group(
             SquirrelAway.group_name_squirrel_destinations)
     if !configured_destinations.empty():
         assert(configured_destinations.size() == 1)
