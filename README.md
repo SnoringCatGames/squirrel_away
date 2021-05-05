@@ -8,7 +8,7 @@ In this game, the user can click anywhere in the level, and the cat character wi
 
 ## Getting set up
 
-> **NOTE:** This repo uses Git submodules to include frameworks.
+> **NOTE:** This repo uses [Git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to include frameworks.
 
 To learn more about how the code works, checkout the [Surfacer](https://github.com/SnoringCatGames/surfacer/) and [Scaffolder](https://github.com/SnoringCatGames/scaffolder/) READMEs.
 

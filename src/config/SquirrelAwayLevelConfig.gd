@@ -29,7 +29,7 @@ var level_manifest := {
         intro_choreography = [
             {
                 is_user_interaction_enabled = false,
-                zoom = 0.25,
+                zoom = 0.5,
                 destination = SurfacerLevelConfig \
                         .INTRO_CHOREOGRAPHY_DESTINATION_GROUP_NAME,
             },

@@ -50,7 +50,7 @@ func _init() -> void:
     includes_discrete_frame_state = true
     includes_continuous_frame_positions = true
     includes_continuous_frame_velocities = true
-    bypasses_runtime_physics = true
+    bypasses_runtime_physics = false
     
     retries_navigation_when_interrupted = true
     distance_squared_threshold_for_considering_additional_jump_land_points = 32.0 * 32.0
