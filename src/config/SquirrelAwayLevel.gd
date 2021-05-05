@@ -2,8 +2,6 @@ tool
 class_name SquirrelAwayLevel
 extends SurfacerLevel
 
-const _WELCOME_PANEL_RESOURCE_PATH := "res://src/gui/WelcomePanel.tscn"
-
 var _does_level_have_squirrels := false
 
 # Array<PositionAlongSurface>
@@ -19,8 +17,6 @@ func _enter_tree() -> void:
 func _start() -> void:
     ._start()
     
-    _show_welcome_panel()
-    
     if _does_level_have_squirrels:
         _parse_squirrel_destinations()
         var starting_squirrel_positions := [
@@ -35,14 +31,11 @@ func _start() -> void:
                     false)
 
 func _destroy() -> void:
-    _hide_welcome_panel()
     squirrel_destinations.clear()
     ._destroy()
 
-func _on_initial_input() -> void:
-    # Close the welcome panel on any mouse or key click event.
-    if is_instance_valid(SquirrelAway.welcome_panel):
-        _hide_welcome_panel()
+#func _on_initial_input() -> void:
+#    ._on_initial_input()
 
 #func quit(immediately := true) -> void:
 #    .quit(immediately)
@@ -52,17 +45,6 @@ func _on_initial_input() -> void:
 
 func _get_music_name() -> String:
     return "on_a_quest"
-
-func _show_welcome_panel() -> void:
-    assert(SquirrelAway.welcome_panel == null)
-    SquirrelAway.welcome_panel = Gs.utils.add_scene(
-            Gs.canvas_layers.layers.hud,
-            _WELCOME_PANEL_RESOURCE_PATH)
-
-func _hide_welcome_panel() -> void:
-    if SquirrelAway.welcome_panel != null:
-        SquirrelAway.welcome_panel.queue_free()
-        SquirrelAway.welcome_panel = null
 
 # FIXME: Decouple this squirrel-specific logic from the rest of the framework.
 func _parse_squirrel_destinations() -> void:

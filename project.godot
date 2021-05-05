@@ -1517,7 +1517,7 @@ _global_script_classes=[ {
 "base": "VBoxContainer",
 "class": "WelcomePanel",
 "language": "GDScript",
-"path": "res://src/gui/WelcomePanel.gd"
+"path": "res://addons/scaffolder/src/gui/WelcomePanel.gd"
 } ]
 _global_script_class_icons={
 "AccordionPanel": "res://addons/scaffolder/assets/images/editor_icons/AccordionPanel.png",
