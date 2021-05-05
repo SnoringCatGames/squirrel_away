@@ -1518,6 +1518,11 @@ _global_script_classes=[ {
 "class": "WelcomePanel",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/WelcomePanel.gd"
+}, {
+"base": "CheckboxLabeledControlItem",
+"class": "WelcomePanelSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/settings_items/WelcomePanelSettingsLabeledControlItem.gd"
 } ]
 _global_script_class_icons={
 "AccordionPanel": "res://addons/scaffolder/assets/images/editor_icons/AccordionPanel.png",
@@ -1821,7 +1826,8 @@ _global_script_class_icons={
 "Waypoint": "",
 "WaypointUtils": "",
 "WaypointValidity": "",
-"WelcomePanel": ""
+"WelcomePanel": "",
+"WelcomePanelSettingsLabeledControlItem": ""
 }
 
 [application]
