@@ -371,6 +371,7 @@ var app_manifest := {
     
     main_menu_image_scene_path = "res://src/gui/LoadingImage.tscn",
     loading_image_scene_path = "res://src/gui/LoadingImage.tscn",
+    welcome_panel_resource_path = ScaffolderConfig.WELCOME_PANEL_RESOURCE_PATH,
     
     fade_in_transition_texture = \
             preload("res://addons/scaffolder/assets/images/transition_in.png"),
@@ -387,8 +388,6 @@ var app_manifest := {
     default_camera_zoom = 1.0,
     uses_level_scores = true,
 }
-
-var welcome_panel: WelcomePanel
 
 func initialize(manifest: Dictionary) -> void:
     Gs.profiler.preregister_metric_keys(_metric_keys)
