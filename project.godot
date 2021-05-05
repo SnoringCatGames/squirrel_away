@@ -899,6 +899,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/NavBar.gd"
 }, {
+"base": "CheckboxLabeledControlItem",
+"class": "NavigationDestinationAnnotatorSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/settings_items/NavigationDestinationAnnotatorSettingsLabeledControlItem.gd"
+}, {
 "base": "Reference",
 "class": "Navigator",
 "language": "GDScript",
@@ -1723,6 +1728,7 @@ _global_script_class_icons={
 "MovementUtils": "",
 "MusicSettingsLabeledControlItem": "",
 "NavBar": "res://addons/scaffolder/assets/images/editor_icons/NavBar.png",
+"NavigationDestinationAnnotatorSettingsLabeledControlItem": "",
 "Navigator": "",
 "NavigatorAnnotator": "",
 "NotificationScreen": "",
