@@ -39,13 +39,16 @@ func _destroy() -> void:
     squirrel_destinations.clear()
     ._destroy()
 
-#func quit(immediately := true) -> void:
-#    .quit(immediately)
-
 func _on_initial_input() -> void:
     # Close the welcome panel on any mouse or key click event.
     if is_instance_valid(SquirrelAway.welcome_panel):
         _hide_welcome_panel()
+
+#func quit(immediately := true) -> void:
+#    .quit(immediately)
+
+#func _on_intro_choreography_finished() -> void:
+#    ._on_intro_choreography_finished()
 
 func _get_music_name() -> String:
     return "on_a_quest"
