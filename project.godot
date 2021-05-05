@@ -724,6 +724,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/IntraSurfaceEdge.gd"
 }, {
+"base": "CheckboxLabeledControlItem",
+"class": "IntroChoreographySettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/settings_items/IntroChoreographySettingsLabeledControlItem.gd"
+}, {
 "base": "Reference",
 "class": "IosModelNames",
 "language": "GDScript",
@@ -1668,6 +1673,7 @@ _global_script_class_icons={
 "InstructionsPlayback": "",
 "InterSurfaceEdgesResult": "",
 "IntraSurfaceEdge": "",
+"IntroChoreographySettingsLabeledControlItem": "",
 "IosModelNames": "",
 "IosResolutions": "",
 "JumpFromSurfaceToAirCalculator": "",
