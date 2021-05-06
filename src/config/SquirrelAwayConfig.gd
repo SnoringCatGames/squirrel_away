@@ -138,20 +138,22 @@ var _music_manifest := [
 ]
 
 var _colors_manifest := {
+    # Scaffolder colors.
+    
     # Should match Project Settings > Application > Boot Splash > Bg Color
     # Should match Project Settings > Rendering > Environment > Default Clear Color
-    background_color = Color("473d2d"),
-    font_color = Color("eeeeee"),
-    header_font_color = Color("eeeeee"),
-    button_color = Color("3e7025"),
-    shiny_button_highlight_color = Color("72d113"),
+    background = Color("473d2d"),
+    font = Color("eeeeee"),
+    header_font = Color("eeeeee"),
+    button = Color("3e7025"),
+    shiny_button_highlight = Color("72d113"),
     button_disabled_hsv_delta = {h=0.0, s=-0.4, v=0.15, a=-0.2},
     button_focused_hsv_delta = {h=-0.03, s=-0.15, v=0.15},
     button_hover_hsv_delta = {h=-0.03, s=-0.15, v=0.15},
     button_pressed_hsv_delta = {h=0.05, s=-0.05, v=-0.1},
-    dropdown_color = Color("473d2d"),
-    tooltip_color = Color("080808"),
-    tooltip_bg_color = Color("BBBBBB"),
+    dropdown = Color("473d2d"),
+    tooltip = Color("080808"),
+    tooltip_bg = Color("bbbbbb"),
     dropdown_disabled_hsv_delta = {h=0.0, s=-0.4, v=0.15, a=-0.2},
     dropdown_focused_hsv_delta = {h=0.05, s=-0.15, v=0.15},
     dropdown_hover_hsv_delta = {h=0.05, s=-0.15, v=0.15},
@@ -161,7 +163,23 @@ var _colors_manifest := {
     scroll_bar_grabber_normal_hsv_delta = {h=0.05, s=-0.2, v=-0.1},
     scroll_bar_grabber_hover_hsv_delta = {h=0.0, s=0.15, v=0.2},
     scroll_bar_grabber_pressed_hsv_delta = {h=0.08, s=-0.15, v=-0.1},
-    zebra_stripe_even_row_color_hsv_delta = {h=0.01, s=-0.05, v=0.05},
+    zebra_stripe_even_row_hsv_delta = {h=0.01, s=-0.05, v=0.05},
+    
+    # Surfacer colors.
+    
+    click = ScaffolderColors.static_opacify(
+            SurfacerColors.WHITE, ScaffolderColors.ALPHA_SLIGHTLY_FAINT),
+    surface_click_selection = ScaffolderColors.static_opacify(
+            SurfacerColors.WHITE, ScaffolderColors.ALPHA_SOLID),
+    grid_indices = ScaffolderColors.static_opacify(
+            SurfacerColors.WHITE, ScaffolderColors.ALPHA_FAINT),
+    ruler = SurfacerColors.WHITE,
+    invalid = SurfacerColors.RED,
+    navigation = Color("40ff00"),
+    player_position = Color("00db0b"),
+    recent_movement = Color("ffda85"),
+    inspector_origin = ScaffolderColors.static_opacify(
+            SurfacerColors.ORANGE, ScaffolderColors.ALPHA_FAINT),
 }
 
 var _styles_manifest := {
@@ -319,6 +337,7 @@ var app_manifest := {
     level_select_item_class_exclusions = [],
     level_select_item_class_inclusions = [],
     
+    colors_class = SurfacerColors,
     draw_utils_class = SurfacerDrawUtils,
     level_config_class = SquirrelAwayLevelConfig,
     
@@ -389,5 +408,5 @@ var app_manifest := {
     uses_level_scores = true,
 }
 
-func initialize(manifest: Dictionary) -> void:
+func initialize() -> void:
     Gs.profiler.preregister_metric_keys(_metric_keys)

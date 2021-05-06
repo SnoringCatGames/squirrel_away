@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _initialize_framework() -> void:
     ._initialize_framework()
-    SquirrelAway.initialize(app_manifest)
+    SquirrelAway.initialize()
 
 #func _on_app_initialized() -> void:
 #    ._on_app_initialized()
