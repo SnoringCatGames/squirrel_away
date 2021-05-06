@@ -1372,7 +1372,7 @@ _global_script_classes=[ {
 "base": "ScaffolderColors",
 "class": "SurfacerColors",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/utils/SurfacerColors.gd"
+"path": "res://addons/surfacer/src/config/SurfacerColors.gd"
 }, {
 "base": "Node",
 "class": "SurfacerConfig",
