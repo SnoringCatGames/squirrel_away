@@ -37,12 +37,10 @@ var level_manifest := {
                         .INTRO_CHOREOGRAPHY_DESTINATION_GROUP_NAME,
             },
             {
+                is_user_interaction_enabled = true,
                 duration = 0.4,
                 zoom = 1.0,
             },
-            {
-                is_user_interaction_enabled = true,
-            }
         ],
     },
     "4": {
