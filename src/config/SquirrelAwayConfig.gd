@@ -397,7 +397,7 @@ var app_manifest := {
     fade_out_transition_texture = \
             preload("res://addons/scaffolder/assets/images/transition_out.png"),
     
-    cell_size = Vector2(32.0, 32.0),
+    cell_size = Vector2(64.0, 64.0),
     
     # Should match Project Settings > Display > Window > Size > Width/Height
     default_game_area_size = Vector2(1024, 768),

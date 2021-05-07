@@ -80,6 +80,6 @@ func _start_new_navigation() -> void:
     print_msg(("SQUIRREL NEW NAV    ;" +
             "%8.3fs; " +
             "calc duration=%sms"), [
-        Gs.time.elapsed_play_time_actual_sec,
+        Gs.time.get_play_time_sec(),
         duration,
     ])
