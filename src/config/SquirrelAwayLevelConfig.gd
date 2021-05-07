@@ -28,11 +28,13 @@ var level_manifest := {
         player_names = ["cat"],
         intro_choreography = [
             {
+                is_user_interaction_enabled = false,
+                zoom = 0.5,
+            },
+            {
                 duration = 0.3,
             },
             {
-                is_user_interaction_enabled = false,
-                zoom = 0.5,
                 destination = SurfacerLevelConfig \
                         .INTRO_CHOREOGRAPHY_DESTINATION_GROUP_NAME,
             },
@@ -42,7 +44,7 @@ var level_manifest := {
             },
             {
                 is_user_interaction_enabled = true,
-            }
+            },
         ],
     },
     "4": {
