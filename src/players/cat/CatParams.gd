@@ -32,7 +32,7 @@ func _init_production_params() -> void:
     slow_rise_gravity_multiplier = 0.38
     rise_double_jump_gravity_multiplier = 0.68
     
-    # FIXME: ------------------------ Undo
+    # TODO: Revert
     jump_boost = -1500.0
 #    jump_boost = -900.0
     in_air_horizontal_acceleration = 3200.0
