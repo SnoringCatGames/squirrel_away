@@ -29,7 +29,9 @@ func _ready() -> void:
     
     Gs.time.set_timeout(
             funcref(self, "_trigger_new_navigation_recurring"),
-            SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC)
+            SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC,
+            [],
+            Time.PLAY_PHYSICS_TIME)
 
 func _trigger_new_navigation_recurring() -> void:
     if is_human_player:
@@ -39,7 +41,9 @@ func _trigger_new_navigation_recurring() -> void:
         _start_new_navigation()
     Gs.time.set_timeout(
             funcref(self, "_trigger_new_navigation_recurring"),
-            SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC)
+            SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC,
+            [],
+            Time.PLAY_PHYSICS_TIME)
 
 func _update_navigator(modified_delta_sec: float) -> void:
     if is_human_player:
