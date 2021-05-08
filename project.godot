@@ -1264,6 +1264,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/ShinyButton.gd"
 }, {
+"base": "LabeledControlItem",
+"class": "SliderLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/labeled_control_list/SliderLabeledControlItem.gd"
+}, {
 "base": "CheckboxLabeledControlItem",
 "class": "SoundEffectsSettingsLabeledControlItem",
 "language": "GDScript",
@@ -1309,7 +1314,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/players/squirrel/SquirrelPlayer.gd"
 }, {
-"base": "LabeledControlItem",
+"base": "TextLabeledControlItem",
 "class": "StaticTextLabeledControlItem",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_list/StaticTextLabeledControlItem.gd"
@@ -1811,6 +1816,7 @@ _global_script_class_icons={
 "SelectionDescription": "",
 "SettingsScreen": "",
 "ShinyButton": "res://addons/scaffolder/assets/images/editor_icons/ShinyButton.png",
+"SliderLabeledControlItem": "",
 "SoundEffectsSettingsLabeledControlItem": "",
 "SquirrelAnimator": "",
 "SquirrelAwayConfig": "",
