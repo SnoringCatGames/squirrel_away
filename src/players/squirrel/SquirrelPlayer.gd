@@ -31,7 +31,7 @@ func _ready() -> void:
             funcref(self, "_trigger_new_navigation_recurring"),
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC,
             [],
-            Time.PLAY_PHYSICS_TIME)
+            TimeType.PLAY_PHYSICS)
 
 func _trigger_new_navigation_recurring() -> void:
     if is_human_player:
@@ -43,7 +43,7 @@ func _trigger_new_navigation_recurring() -> void:
             funcref(self, "_trigger_new_navigation_recurring"),
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC,
             [],
-            Time.PLAY_PHYSICS_TIME)
+            TimeType.PLAY_PHYSICS)
 
 func _update_navigator(modified_delta_sec: float) -> void:
     if is_human_player:
