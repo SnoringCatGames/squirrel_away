@@ -1454,6 +1454,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/pause_items/TimeLabeledControlItem.gd"
 }, {
+"base": "SliderLabeledControlItem",
+"class": "TimeScaleSettingsLabeledControlItem",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/settings_items/TimeScaleSettingsLabeledControlItem.gd"
+}, {
 "base": "Reference",
 "class": "TimeType",
 "language": "GDScript",
@@ -1854,6 +1859,7 @@ _global_script_class_icons={
 "ThirdPartyLicensesScreen": "",
 "Time": "",
 "TimeLabeledControlItem": "",
+"TimeScaleSettingsLabeledControlItem": "",
 "TimeType": "",
 "TotalPlaysLabeledControlItem": "",
 "UUID": "",
