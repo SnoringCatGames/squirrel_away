@@ -43,8 +43,12 @@ func _destroy() -> void:
 #func _on_intro_choreography_finished() -> void:
 #    ._on_intro_choreography_finished()
 
-func _get_music_name() -> String:
+func get_music_name() -> String:
     return "on_a_quest"
+
+func get_slow_motion_music_name() -> String:
+    # FIXME: Add slo-mo music
+    return ""
 
 # FIXME: Decouple this squirrel-specific logic from the rest of the framework.
 func _parse_squirrel_destinations() -> void:

@@ -298,6 +298,7 @@ var app_manifest := {
     is_mobile_supported = true,
     is_data_deletion_button_shown = false,
     default_player_name = 'cat',
+    nav_selection_slowmo_time_scale = 0.02,
     
     app_name = "Squirrel Away",
     app_id = "games.snoringcat.squirrel_away",
