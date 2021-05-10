@@ -97,5 +97,8 @@ func get_unlock_hint(level_id: String) -> String:
 
 func get_suggested_next_level() -> String:
     # TODO
-#    return get_level_ids().front()
-    return "7"
+    var last_level_played_id := Gs.save_state.get_last_level_played()
+    if last_level_played_id != "":
+        return last_level_played_id
+    else:
+        return get_level_ids().front()
