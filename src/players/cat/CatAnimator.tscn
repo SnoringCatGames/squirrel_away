@@ -3,11 +3,6 @@
 [ext_resource path="res://src/players/cat/CatAnimator.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/players/cat_parts.png" type="Texture" id=2]
 
-
-
-
-
-
 [sub_resource type="Animation" id=1]
 length = 2.4
 loop = true
