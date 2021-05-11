@@ -42,8 +42,9 @@ func unblink() -> void:
 
 func _play_animation(
         name: String,
-        playback_rate: float = 1) -> bool:
-    if ._play_animation(name, playback_rate):
+        playback_rate: float = 1,
+        blend := 0.1) -> bool:
+    if ._play_animation(name, playback_rate, blend):
         # In case we transition out mid-blink.
         unblink()
         
