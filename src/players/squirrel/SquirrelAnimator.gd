@@ -26,9 +26,10 @@ func _create_params() -> PlayerAnimatorParams:
 
 func _play_animation(
         name: String,
-        playback_rate: float = 1) -> bool:
+        playback_rate: float = 1,
+        blend := 0.1) -> bool:
     _show_sprite(name)
-    return ._play_animation(name, playback_rate)
+    return ._play_animation(name, playback_rate, blend)
 
 func _show_sprite(animation_name: String) -> void:
     # Hide the other sprites.
