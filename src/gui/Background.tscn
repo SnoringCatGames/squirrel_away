@@ -11,7 +11,9 @@
 motion_scale = Vector2( 0.1, 0.1 )
 motion_mirroring = Vector2( 1843, 1843 )
 
-[node name="Sprite" type="Sprite" parent="FarLeaves"]
+[node name="Sprite" type="Sprite" parent="FarLeaves" groups=[
+"desaturatables",
+]]
 scale = Vector2( 1.8, 1.8 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -21,7 +23,9 @@ region_rect = Rect2( 0, 0, 1024, 1024 )
 motion_scale = Vector2( 0.3, 0.3 )
 motion_mirroring = Vector2( 1843, 1843 )
 
-[node name="Sprite" type="Sprite" parent="FarTrees"]
+[node name="Sprite" type="Sprite" parent="FarTrees" groups=[
+"desaturatables",
+]]
 scale = Vector2( 1.8, 1.8 )
 texture = ExtResource( 3 )
 region_enabled = true
@@ -31,7 +35,9 @@ region_rect = Rect2( 0, 0, 1024, 1024 )
 motion_scale = Vector2( 0.6, 0.6 )
 motion_mirroring = Vector2( 1843, 1843 )
 
-[node name="Sprite" type="Sprite" parent="NearTrees"]
+[node name="Sprite" type="Sprite" parent="NearTrees" groups=[
+"desaturatables",
+]]
 scale = Vector2( 1.8, 1.8 )
 texture = ExtResource( 4 )
 region_enabled = true
@@ -42,7 +48,9 @@ visible = false
 motion_scale = Vector2( 0.8, 0 )
 motion_mirroring = Vector2( 1843, 0 )
 
-[node name="Sprite" type="Sprite" parent="NearBushes"]
+[node name="Sprite" type="Sprite" parent="NearBushes" groups=[
+"desaturatables",
+]]
 scale = Vector2( 1.8, 1.8 )
 texture = ExtResource( 5 )
 region_enabled = true
