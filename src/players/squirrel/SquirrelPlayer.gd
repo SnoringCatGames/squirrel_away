@@ -45,7 +45,7 @@ func _trigger_new_navigation_recurring() -> void:
             [],
             TimeType.PLAY_PHYSICS)
 
-func _update_navigator(modified_delta_sec: float) -> void:
+func _update_navigator(delta_scaled_sec: float) -> void:
     if is_human_player:
         return
     
@@ -61,7 +61,7 @@ func _update_navigator(modified_delta_sec: float) -> void:
     
     was_cat_close_last_frame = is_cat_close
     
-    ._update_navigator(modified_delta_sec)
+    ._update_navigator(delta_scaled_sec)
 
 func _start_new_navigation() -> void:
     Gs.profiler.start("start_new_squirrel_navigation")

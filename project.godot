@@ -1009,6 +1009,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/PlayerActionType.gd"
 }, {
+"base": "Reference",
+"class": "PlayerAnimationState",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/PlayerAnimationState.gd"
+}, {
 "base": "Node2D",
 "class": "PlayerAnimator",
 "language": "GDScript",
@@ -1775,6 +1780,7 @@ _global_script_class_icons={
 "PlayerActionSource": "",
 "PlayerActionState": "",
 "PlayerActionType": "",
+"PlayerAnimationState": "",
 "PlayerAnimator": "",
 "PlayerAnimatorParams": "",
 "PlayerAnnotator": "",
