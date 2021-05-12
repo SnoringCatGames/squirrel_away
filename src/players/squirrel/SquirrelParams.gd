@@ -139,6 +139,6 @@ func _init_animator_params() -> void:
     animator_params.rest_on_wall_playback_rate = 1.0
     animator_params.jump_rise_playback_rate = 1.0
     animator_params.jump_fall_playback_rate = 1.0
-    animator_params.walk_playback_rate = 2.3
-    animator_params.climb_up_playback_rate = 2.3
-    animator_params.climb_down_playback_rate = 2.3
+    animator_params.walk_playback_rate = 2.5
+    animator_params.climb_up_playback_rate = 2.5
+    animator_params.climb_down_playback_rate = 2.5
