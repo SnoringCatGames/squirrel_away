@@ -2,13 +2,12 @@ class_name SquirrelAnimator
 extends PlayerAnimator
 
 func _play_animation(
-        name: String,
-        playback_rate: float = 1,
+        animation_type: int,
         blend := 0.1) -> bool:
-    _show_sprite(name)
-    return ._play_animation(name, playback_rate, blend)
+    _show_sprite(animation_type)
+    return ._play_animation(animation_type, blend)
 
-func _show_sprite(animation_name: String) -> void:
+func _show_sprite(animation_type: int) -> void:
     # Hide the other sprites.
     var sprites := [
         $Run,
@@ -23,20 +22,20 @@ func _show_sprite(animation_name: String) -> void:
         sprite.visible = false
     
     # Show the current sprite.
-    match animation_name:
-        "Run":
+    match animation_type:
+        PlayerAnimationType.WALK:
             $Run.visible = true
-        "ClimbUp":
+        PlayerAnimationType.CLIMB_UP:
             $ClimbUp.visible = true
-        "ClimbDown":
+        PlayerAnimationType.CLIMB_DOWN:
             $ClimbDown.visible = true
-        "Stand":
+        PlayerAnimationType.REST:
             $Stand.visible = true
-        "HoldWall":
+        PlayerAnimationType.REST_ON_WALL:
             $HoldWall.visible = true
-        "JumpFall":
+        PlayerAnimationType.JUMP_FALL:
             $JumpFall.visible = true
-        "JumpRise":
+        PlayerAnimationType.JUMP_RISE:
             $JumpRise.visible = true
         _:
             Gs.logger.error()
