@@ -1,9 +1,10 @@
 class_name SquirrelAwayConfig
 extends Node
 
-var _debug := OS.is_debug_build()
-#var _debug := false
-var _playtest := true
+#var _debug := OS.is_debug_build()
+var _debug := false
+#var _playtest := true
+var _playtest := false
 var _uses_threads := true and OS.can_use_threads()
 
 # Useful for getting screenshots at specific resolutions.
@@ -304,7 +305,7 @@ var app_manifest := {
     
     app_name = "Squirrel Away",
     app_id = "games.snoringcat.squirrel_away",
-    app_version = "0.0.2",
+    app_version = "0.0.3",
     score_version = "0.0.1",
     data_agreement_version = "0.0.1",
     
