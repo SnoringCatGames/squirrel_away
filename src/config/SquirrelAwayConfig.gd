@@ -1,9 +1,9 @@
 class_name SquirrelAwayConfig
 extends Node
 
-#var _debug := OS.is_debug_build()
-var _debug := false
-var _playtest := false
+var _debug := OS.is_debug_build()
+#var _debug := false
+var _playtest := true
 var _uses_threads := true and OS.can_use_threads()
 
 # Useful for getting screenshots at specific resolutions.
@@ -291,8 +291,8 @@ var app_manifest := {
     are_loaded_surfaces_deeply_validated = true,
     is_inspector_enabled_default = true or _debug or _playtest,
     inspector_panel_starts_open = false,
-    debug_window_size = _screen_resolutions.default,
-#    debug_window_size = _screen_resolutions.full_screen,
+#    debug_window_size = _screen_resolutions.default,
+    debug_window_size = _screen_resolutions.full_screen,
     uses_threads = _uses_threads,
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     thread_count = OS.get_processor_count() if _uses_threads else 1,
