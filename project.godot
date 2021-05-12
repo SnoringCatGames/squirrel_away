@@ -719,11 +719,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/InstructionsPlayback.gd"
 }, {
-"base": "",
-"class": "IntegrationTestBed",
-"language": "GDScript",
-"path": "res://addons/surfacer/test/data/IntegrationTestBed.gd"
-}, {
 "base": "Reference",
 "class": "InterSurfaceEdgesResult",
 "language": "GDScript",
@@ -783,11 +778,6 @@ _global_script_classes=[ {
 "class": "JumpLandPositionsUtils",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/utils/JumpLandPositionsUtils.gd"
-}, {
-"base": "UnitTestBed",
-"class": "JumpLandPositionsUtilsTestBed",
-"language": "GDScript",
-"path": "res://addons/surfacer/test/tests/jump_land_positions_utils/jump_land_positions_utils_test_bed.gd"
 }, {
 "base": "Reference",
 "class": "LabeledControlItem",
@@ -1023,6 +1013,11 @@ _global_script_classes=[ {
 "class": "PlayerAnimationState",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/PlayerAnimationState.gd"
+}, {
+"base": "Reference",
+"class": "PlayerAnimationType",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/animator/PlayerAnimationType.gd"
 }, {
 "base": "Node2D",
 "class": "PlayerAnimator",
@@ -1454,16 +1449,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/SurfacesTileMap.gd"
 }, {
-"base": "Player",
-"class": "TestPlayer",
-"language": "GDScript",
-"path": "res://addons/surfacer/test/data/TestPlayer.gd"
-}, {
-"base": "MovementParams",
-"class": "TestPlayerParams",
-"language": "GDScript",
-"path": "res://addons/surfacer/test/data/TestPlayerParams.gd"
-}, {
 "base": "LabeledControlItem",
 "class": "TextLabeledControlItem",
 "language": "GDScript",
@@ -1503,11 +1488,6 @@ _global_script_classes=[ {
 "class": "UUID",
 "language": "GDScript",
 "path": "res://addons/crypto_uuid_v4/uuid.gd"
-}, {
-"base": "",
-"class": "UnitTestBed",
-"language": "GDScript",
-"path": "res://addons/surfacer/test/data/UnitTestBed.gd"
 }, {
 "base": "PlayerActionSource",
 "class": "UserActionSource",
@@ -1747,7 +1727,6 @@ _global_script_class_icons={
 "InstructionStartLegendItem": "",
 "InstructionsActionSource": "",
 "InstructionsPlayback": "",
-"IntegrationTestBed": "",
 "InterSurfaceEdgesResult": "",
 "IntraSurfaceEdge": "",
 "IntroChoreographySettingsLabeledControlItem": "",
@@ -1760,7 +1739,6 @@ _global_script_class_icons={
 "JumpLandPositions": "",
 "JumpLandPositionsAnnotationElement": "",
 "JumpLandPositionsUtils": "",
-"JumpLandPositionsUtilsTestBed": "",
 "LabeledControlItem": "",
 "LabeledControlList": "res://addons/scaffolder/assets/images/editor_icons/LabeledControlList.png",
 "LeftWallsItemController": "",
@@ -1808,6 +1786,7 @@ _global_script_class_icons={
 "PlayerActionState": "",
 "PlayerActionType": "",
 "PlayerAnimationState": "",
+"PlayerAnimationType": "",
 "PlayerAnimator": "",
 "PlayerAnimatorParams": "",
 "PlayerAnnotator": "",
@@ -1894,8 +1873,6 @@ _global_script_class_icons={
 "SurfacesGroupItemController": "",
 "SurfacesOfSideGroupItemController": "",
 "SurfacesTileMap": "",
-"TestPlayer": "",
-"TestPlayerParams": "",
 "TextLabeledControlItem": "",
 "ThirdPartyLicensesScreen": "",
 "Time": "",
@@ -1904,7 +1881,6 @@ _global_script_class_icons={
 "TimeType": "",
 "TotalPlaysLabeledControlItem": "",
 "UUID": "",
-"UnitTestBed": "",
 "UserActionSource": "",
 "Utils": "",
 "ValidEdgeItemController": "",
