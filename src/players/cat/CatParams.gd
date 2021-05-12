@@ -261,6 +261,9 @@ func _init_debug_params() -> void:
 func _init_animator_params() -> void:
     animator_params = PlayerAnimatorParams.new()
     
+    animator_params.player_animator_scene_path = \
+            "res://src/players/cat/CatAnimator.tscn"
+    
     animator_params.faces_right_by_default = false
     
     animator_params.rest_name = "Rest"
