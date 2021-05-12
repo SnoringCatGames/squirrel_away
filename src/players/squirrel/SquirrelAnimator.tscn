@@ -9,17 +9,7 @@
 [ext_resource path="res://assets/images/players/squirrel_jump_rise_spritesheet.png" type="Texture" id=7]
 [ext_resource path="res://assets/images/players/squirrel_resting_on_wall_spritesheet.png" type="Texture" id=8]
 
-
-
-
-
-
-
-
-
-
-
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=1]
 resource_name = "ClimbDown"
 length = 0.56
 loop = true
@@ -37,7 +27,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=2]
 resource_name = "ClimbUp"
 length = 0.56
 loop = true
@@ -55,7 +45,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=3]
 resource_name = "HoldWall"
 length = 1.12
 loop = true
@@ -73,7 +63,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=4]
 resource_name = "JumpFall"
 length = 0.07
 loop = true
@@ -91,7 +81,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=5]
 resource_name = "JumpRise"
 length = 0.07
 step = 0.07
@@ -108,7 +98,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=6]
 resource_name = "Run"
 length = 0.56
 loop = true
@@ -126,7 +116,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=7]
 resource_name = "Stand"
 length = 1.12
 loop = true
@@ -155,38 +145,38 @@ __meta__ = {
 visible = false
 position = Vector2( -9.68032, -3.99701 )
 texture = ExtResource( 2 )
-vframes = 4
 hframes = 2
+vframes = 4
 frame = 7
 
 [node name="ClimbUp" type="Sprite" parent="."]
 visible = false
 position = Vector2( -0.401004, 12.5892 )
 texture = ExtResource( 3 )
-vframes = 2
 hframes = 4
+vframes = 2
 frame = 5
 
 [node name="ClimbDown" type="Sprite" parent="."]
 visible = false
 position = Vector2( -0.403453, -13.0153 )
 texture = ExtResource( 4 )
-vframes = 2
 hframes = 4
+vframes = 2
 
 [node name="Stand" type="Sprite" parent="."]
 position = Vector2( -10.6186, -5.00692 )
 texture = ExtResource( 5 )
-vframes = 4
 hframes = 2
+vframes = 4
 frame = 7
 
 [node name="HoldWall" type="Sprite" parent="."]
 visible = false
 position = Vector2( -0.420696, 13.2978 )
 texture = ExtResource( 8 )
-vframes = 2
 hframes = 4
+vframes = 2
 frame = 7
 
 [node name="JumpFall" type="Sprite" parent="."]
@@ -200,10 +190,10 @@ position = Vector2( -12.8436, -3.53401 )
 texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ClimbDown = SubResource( 26 )
-anims/ClimbUp = SubResource( 8 )
-anims/HoldWall = SubResource( 27 )
-anims/JumpFall = SubResource( 28 )
-anims/JumpRise = SubResource( 29 )
-anims/Run = SubResource( 30 )
-anims/Stand = SubResource( 31 )
+anims/ClimbDown = SubResource( 1 )
+anims/ClimbUp = SubResource( 2 )
+anims/HoldWall = SubResource( 3 )
+anims/JumpFall = SubResource( 4 )
+anims/JumpRise = SubResource( 5 )
+anims/Run = SubResource( 6 )
+anims/Stand = SubResource( 7 )
