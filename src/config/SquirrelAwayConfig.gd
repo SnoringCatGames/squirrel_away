@@ -1,8 +1,9 @@
 class_name SquirrelAwayConfig
 extends Node
 
-var _debug := OS.is_debug_build()
-var _playtest := true
+#var _debug := OS.is_debug_build()
+var _debug := false
+var _playtest := false
 var _uses_threads := true and OS.can_use_threads()
 
 # Useful for getting screenshots at specific resolutions.
@@ -284,7 +285,7 @@ var app_manifest := {
 #    debug = false
     playtest = _playtest,
     also_prints_to_stdout = true and _debug,
-    is_profiler_enabled = _debug or _playtest,
+    is_profiler_enabled = true,
     are_all_levels_unlocked = true,
     is_splash_skipped = _debug,
     are_loaded_surfaces_deeply_validated = true,
