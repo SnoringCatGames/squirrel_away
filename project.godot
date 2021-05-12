@@ -1070,6 +1070,11 @@ _global_script_classes=[ {
 "path": "res://addons/surfacer/src/gui/settings_items/PlayerPositionAnnotatorSettingsLabeledControlItem.gd"
 }, {
 "base": "Node2D",
+"class": "PlayerPrediction",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/PlayerPrediction.gd"
+}, {
+"base": "Node2D",
 "class": "PlayerRecentMovementAnnotator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/PlayerRecentMovementAnnotator.gd"
@@ -1797,6 +1802,7 @@ _global_script_class_icons={
 "PlayerPointerHandler": "",
 "PlayerPositionAnnotator": "",
 "PlayerPositionAnnotatorSettingsLabeledControlItem": "",
+"PlayerPrediction": "",
 "PlayerRecentMovementAnnotator": "",
 "PlayerSurfaceAnnotator": "",
 "PlayerSurfaceState": "",
