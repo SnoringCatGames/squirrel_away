@@ -303,6 +303,8 @@ var app_manifest := {
     default_player_name = 'cat',
     nav_selection_slow_mo_time_scale = 0.02,
     nav_selection_slow_mo_saturation = 0.2,
+    nav_selection_prediction_opacity = 0.5,
+    nav_selection_prediction_tween_duration = 0.15,
     
     is_human_current_nav_trajectory_shown_with_slow_mo = false,
     is_computer_current_nav_trajectory_shown_with_slow_mo = true,
