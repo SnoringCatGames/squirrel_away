@@ -1,10 +1,10 @@
 class_name SquirrelAwayConfig
 extends Node
 
-#var _debug := OS.is_debug_build()
-var _debug := false
-#var _playtest := true
-var _playtest := false
+var _debug := OS.is_debug_build()
+#var _debug := false
+var _playtest := true
+#var _playtest := false
 var _uses_threads := true and OS.can_use_threads()
 
 # Useful for getting screenshots at specific resolutions.
@@ -177,7 +177,8 @@ var _colors_manifest := {
             SurfacerColors.WHITE, ScaffolderColors.ALPHA_FAINT),
     ruler = SurfacerColors.WHITE,
     invalid = SurfacerColors.RED,
-    navigation = Color("40ff00"),
+    human_navigation = Color("40ff00"),
+    computer_navigation = Color("ff8000"),
     player_position = Color("00db0b"),
     recent_movement = Color("ffda85"),
     inspector_origin = ScaffolderColors.static_opacify(
