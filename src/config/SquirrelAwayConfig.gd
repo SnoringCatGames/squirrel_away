@@ -303,6 +303,13 @@ var app_manifest := {
     nav_selection_slow_mo_time_scale = 0.02,
     nav_selection_slow_mo_saturation = 0.2,
     
+    is_human_current_nav_trajectory_shown_with_slow_mo = false,
+    is_computer_current_nav_trajectory_shown_with_slow_mo = true,
+    is_human_current_nav_trajectory_shown_without_slow_mo = true,
+    is_computer_current_nav_trajectory_shown_without_slow_mo = false,
+    is_human_prediction_shown = true,
+    is_computer_prediction_shown = true,
+    
     app_name = "Squirrel Away",
     app_id = "games.snoringcat.squirrel_away",
     app_version = "0.0.3",
