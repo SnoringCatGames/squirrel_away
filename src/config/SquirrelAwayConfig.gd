@@ -305,11 +305,17 @@ var app_manifest := {
     nav_selection_slow_mo_saturation = 0.2,
     nav_selection_prediction_opacity = 0.5,
     nav_selection_prediction_tween_duration = 0.15,
+    new_path_pulse_duration_multiplier = 0.3,
+    new_path_pulse_time_length = 1.0,
     
     is_human_current_nav_trajectory_shown_with_slow_mo = false,
     is_computer_current_nav_trajectory_shown_with_slow_mo = true,
     is_human_current_nav_trajectory_shown_without_slow_mo = true,
     is_computer_current_nav_trajectory_shown_without_slow_mo = false,
+    is_human_nav_pulse_shown_with_slow_mo = false,
+    is_computer_nav_pulse_shown_with_slow_mo = true,
+    is_human_nav_pulse_shown_without_slow_mo = true,
+    is_computer_nav_pulse_shown_without_slow_mo = false,
     is_human_prediction_shown = true,
     is_computer_prediction_shown = true,
     
