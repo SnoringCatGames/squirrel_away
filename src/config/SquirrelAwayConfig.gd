@@ -316,6 +316,8 @@ var app_manifest := {
     is_computer_nav_pulse_shown_with_slow_mo = true,
     is_human_nav_pulse_shown_without_slow_mo = true,
     is_computer_nav_pulse_shown_without_slow_mo = false,
+    does_human_nav_pulse_grow = false,
+    does_computer_nav_pulse_grow = true,
     is_human_prediction_shown = true,
     is_computer_prediction_shown = true,
     
