@@ -264,7 +264,6 @@ var _edge_movement_classes := [
     preload("res://addons/surfacer/src/platform_graph/edge/calculators/FallFromFloorCalculator.gd"),
     preload("res://addons/surfacer/src/platform_graph/edge/calculators/FallFromWallCalculator.gd"),
     preload("res://addons/surfacer/src/platform_graph/edge/calculators/JumpInterSurfaceCalculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/JumpFromSurfaceToAirCalculator.gd"),
     preload("res://addons/surfacer/src/platform_graph/edge/calculators/WalkToAscendWallFromFloorCalculator.gd"),
 ]
 
@@ -277,10 +276,10 @@ var _player_param_classes := [
 var app_manifest := {
     # TODO: Remember to reset these when creating releases.
     precompute_platform_graph_for_levels = [
-#        "3",
-#        "4",
-#        "6",
-#        "7",
+        "3",
+        "4",
+        "6",
+        "7",
     ],
     ignores_platform_graph_save_files = false,
     debug = _debug,

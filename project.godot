@@ -34,11 +34,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/AirJumpAction.gd"
 }, {
-"base": "Edge",
-"class": "AirToAirEdge",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/edge/edges/AirToAirEdge.gd"
-}, {
 "base": "EdgeCalculator",
 "class": "AirToSurfaceCalculator",
 "language": "GDScript",
@@ -740,16 +735,6 @@ _global_script_classes=[ {
 "path": "res://addons/scaffolder/src/utils/IosResolutions.gd"
 }, {
 "base": "EdgeCalculator",
-"class": "JumpFromSurfaceToAirCalculator",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/edge/calculators/JumpFromSurfaceToAirCalculator.gd"
-}, {
-"base": "Edge",
-"class": "JumpFromSurfaceToAirEdge",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/edge/edges/JumpFromSurfaceToAirEdge.gd"
-}, {
-"base": "EdgeCalculator",
 "class": "JumpInterSurfaceCalculator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/calculators/JumpInterSurfaceCalculator.gd"
@@ -1098,6 +1083,11 @@ _global_script_classes=[ {
 "class": "PlayerType",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/PlayerType.gd"
+}, {
+"base": "Reference",
+"class": "PointerSelectionPosition",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/PointerSelectionPosition.gd"
 }, {
 "base": "AnnotationElement",
 "class": "PolylineAnnotationElement",
@@ -1595,7 +1585,6 @@ _global_script_class_icons={
 "AirDashAction": "",
 "AirDefaultAction": "",
 "AirJumpAction": "",
-"AirToAirEdge": "",
 "AirToSurfaceCalculator": "",
 "AirToSurfaceEdge": "",
 "AllDefaultAction": "",
@@ -1736,8 +1725,6 @@ _global_script_class_icons={
 "IntroChoreographySettingsLabeledControlItem": "",
 "IosModelNames": "",
 "IosResolutions": "",
-"JumpFromSurfaceToAirCalculator": "",
-"JumpFromSurfaceToAirEdge": "",
 "JumpInterSurfaceCalculator": "",
 "JumpInterSurfaceEdge": "",
 "JumpLandPositions": "",
@@ -1808,6 +1795,7 @@ _global_script_class_icons={
 "PlayerSurfaceState": "",
 "PlayerTileAnnotator": "",
 "PlayerType": "",
+"PointerSelectionPosition": "",
 "PolylineAnnotationElement": "",
 "PolylineLegendItem": "",
 "PositionAlongSurface": "",
