@@ -74,9 +74,9 @@ func _init_production_params() -> void:
     prevents_path_end_points_from_protruding_past_surface_ends_with_extra_offsets = true
     reuses_previous_waypoints_when_backtracking_on_jump_height = false
     asserts_no_preexisting_collisions_during_edge_calculations = false
-    # FIXME: REENABLE after comparing performance ---------------------------------
-    checks_for_alternate_intersection_points_for_very_oblique_collisions = false
+    checks_for_alternate_intersection_points_for_very_oblique_collisions = true
     oblique_collison_normal_aspect_ratio_threshold_threshold = 10.0
+    min_valid_frame_count_when_colliding_early_with_expected_surface = 4
     
     max_horizontal_speed_default = 600.0
     min_horizontal_speed = 5.0
@@ -206,9 +206,9 @@ func _init_debug_params() -> void:
     prevents_path_end_points_from_protruding_past_surface_ends_with_extra_offsets = true
     reuses_previous_waypoints_when_backtracking_on_jump_height = false
     asserts_no_preexisting_collisions_during_edge_calculations = false
-    # FIXME: REENABLE after comparing performance ---------------------------------
-    checks_for_alternate_intersection_points_for_very_oblique_collisions = false
+    checks_for_alternate_intersection_points_for_very_oblique_collisions = true
     oblique_collison_normal_aspect_ratio_threshold_threshold = 10.0
+    min_valid_frame_count_when_colliding_early_with_expected_surface = 4
     
     max_horizontal_speed_default = 400.0
     min_horizontal_speed = 5.0

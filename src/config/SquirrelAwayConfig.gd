@@ -281,8 +281,8 @@ var app_manifest := {
 #        "6",
 #        "7",
     ],
-    ignores_platform_graph_save_files = true,
-#    ignores_platform_graph_save_files = false,
+#    ignores_platform_graph_save_files = true,
+    ignores_platform_graph_save_files = false,
     debug = _debug,
 #    debug = false
     playtest = _playtest,
