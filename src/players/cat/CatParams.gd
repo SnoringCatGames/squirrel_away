@@ -123,7 +123,7 @@ func _init_production_params() -> void:
         ClimbOverWallToFloorCalculator.NAME,
         FallFromWallCalculator.NAME,
         FallFromFloorCalculator.NAME,
-        JumpInterSurfaceCalculator.NAME,
+        JumpFromSurfaceCalculator.NAME,
         ClimbDownWallToFloorCalculator.NAME,
         WalkToAscendWallFromFloorCalculator.NAME,
     ]
@@ -259,7 +259,7 @@ func _init_debug_params() -> void:
         ClimbOverWallToFloorCalculator.NAME,
         FallFromWallCalculator.NAME,
         FallFromFloorCalculator.NAME,
-        JumpInterSurfaceCalculator.NAME,
+        JumpFromSurfaceCalculator.NAME,
         ClimbDownWallToFloorCalculator.NAME,
         WalkToAscendWallFromFloorCalculator.NAME,
     ]

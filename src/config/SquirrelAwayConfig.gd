@@ -258,12 +258,12 @@ var _player_action_classes := [
 ]
 
 var _edge_movement_classes := [
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/AirToSurfaceCalculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/FromAirCalculator.gd"),
     preload("res://addons/surfacer/src/platform_graph/edge/calculators/ClimbDownWallToFloorCalculator.gd"),
     preload("res://addons/surfacer/src/platform_graph/edge/calculators/ClimbOverWallToFloorCalculator.gd"),
     preload("res://addons/surfacer/src/platform_graph/edge/calculators/FallFromFloorCalculator.gd"),
     preload("res://addons/surfacer/src/platform_graph/edge/calculators/FallFromWallCalculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/JumpInterSurfaceCalculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/JumpFromSurfaceCalculator.gd"),
     preload("res://addons/surfacer/src/platform_graph/edge/calculators/WalkToAscendWallFromFloorCalculator.gd"),
 ]
 
