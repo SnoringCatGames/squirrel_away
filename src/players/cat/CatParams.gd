@@ -47,6 +47,7 @@ func _init_production_params() -> void:
     minimizes_velocity_change_when_jumping = false
     optimizes_edge_jump_positions_at_run_time = true
     optimizes_edge_land_positions_at_run_time = true
+    also_optimizes_preselection_path = true
     forces_player_position_to_match_edge_at_start = true
     forces_player_velocity_to_match_edge_at_start = true
     forces_player_position_to_match_path_at_end = false
@@ -177,6 +178,8 @@ func _init_debug_params() -> void:
     optimizes_edge_jump_positions_at_run_time = true
 #    optimizes_edge_land_positions_at_run_time = false
     optimizes_edge_land_positions_at_run_time = true
+#    also_optimizes_preselection_path = false
+    also_optimizes_preselection_path = true
     forces_player_position_to_match_edge_at_start = true
 #    forces_player_position_to_match_edge_at_start = false
     forces_player_velocity_to_match_edge_at_start = true
