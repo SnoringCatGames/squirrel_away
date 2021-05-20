@@ -77,6 +77,7 @@ func _init_production_params() -> void:
     checks_for_alternate_intersection_points_for_very_oblique_collisions = true
     oblique_collison_normal_aspect_ratio_threshold_threshold = 10.0
     min_valid_frame_count_when_colliding_early_with_expected_surface = 4
+    reached_in_air_destination_distance_squared_threshold = 10.0 * 10.0
     
     max_horizontal_speed_default = 600.0
     min_horizontal_speed = 5.0
@@ -209,6 +210,7 @@ func _init_debug_params() -> void:
     checks_for_alternate_intersection_points_for_very_oblique_collisions = true
     oblique_collison_normal_aspect_ratio_threshold_threshold = 10.0
     min_valid_frame_count_when_colliding_early_with_expected_surface = 4
+    reached_in_air_destination_distance_squared_threshold = 10.0 * 10.0
     
     max_horizontal_speed_default = 400.0
     min_horizontal_speed = 5.0
