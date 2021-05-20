@@ -78,6 +78,7 @@ func _init_production_params() -> void:
     oblique_collison_normal_aspect_ratio_threshold_threshold = 10.0
     min_valid_frame_count_when_colliding_early_with_expected_surface = 4
     reached_in_air_destination_distance_squared_threshold = 10.0 * 10.0
+    max_edges_to_remove_from_end_of_path_for_optimization_to_in_air_destination = 2
     
     max_horizontal_speed_default = 600.0
     min_horizontal_speed = 5.0
@@ -211,6 +212,7 @@ func _init_debug_params() -> void:
     oblique_collison_normal_aspect_ratio_threshold_threshold = 10.0
     min_valid_frame_count_when_colliding_early_with_expected_surface = 4
     reached_in_air_destination_distance_squared_threshold = 10.0 * 10.0
+    max_edges_to_remove_from_end_of_path_for_optimization_to_in_air_destination = 2
     
     max_horizontal_speed_default = 400.0
     min_horizontal_speed = 5.0
