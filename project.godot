@@ -574,7 +574,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/calculators/FromAirCalculator.gd"
 }, {
-"base": "Reference",
+"base": "Edge",
 "class": "FromAirEdge",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/FromAirEdge.gd"
