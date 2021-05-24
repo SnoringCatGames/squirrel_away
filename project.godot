@@ -39,10 +39,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/AllDefaultAction.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "Analytics",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/data/analytics.gd"
+"path": "res://addons/scaffolder/src/data/Analytics.gd"
 }, {
 "base": "Reference",
 "class": "AnnotationElement",
