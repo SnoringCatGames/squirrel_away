@@ -80,6 +80,11 @@ _global_script_classes=[ {
 "path": "res://addons/scaffolder/src/utils/CameraController.gd"
 }, {
 "base": "Node2D",
+"class": "CameraPanController",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/level/CameraPanController.gd"
+}, {
+"base": "Node2D",
 "class": "CameraShake",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/CameraShake.gd"
@@ -1594,6 +1599,7 @@ _global_script_class_icons={
 "Annotators": "",
 "Audio": "",
 "CameraController": "",
+"CameraPanController": "",
 "CameraShake": "",
 "CanvasLayers": "",
 "CapVelocityAction": "",
