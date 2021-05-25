@@ -316,7 +316,7 @@ var app_manifest := {
     max_pan_distance_from_pointer = 512.0,
     duration_to_max_pan_from_pointer_at_max_control = 0.67,
     duration_to_max_zoom_from_pointer_at_max_control = 3.0,
-    screen_size_ratio_distance_from_edge_to_start_pan_from_pointer = 0.4,
+    screen_size_ratio_distance_from_edge_to_start_pan_from_pointer = 0.3,
     
     is_human_current_nav_trajectory_shown_with_slow_mo = false,
     is_computer_current_nav_trajectory_shown_with_slow_mo = true,
