@@ -136,6 +136,8 @@ var _music_manifest := [
     {
         name = "on_a_quest",
         volume_db = 0.0,
+        bpm = 150.0,
+        meter = 4,
     },
 ]
 
