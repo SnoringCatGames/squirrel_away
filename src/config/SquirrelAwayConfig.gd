@@ -306,6 +306,7 @@ var app_manifest := {
     is_data_deletion_button_shown = false,
     default_player_name = 'cat',
     nav_selection_slow_mo_time_scale = 0.02,
+    nav_selection_slow_mo_tick_tock_tempo_multiplier = 50,
     nav_selection_slow_mo_saturation = 0.2,
     nav_selection_prediction_opacity = 0.5,
     nav_selection_prediction_tween_duration = 0.15,

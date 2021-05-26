@@ -1284,6 +1284,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/utils/SlowMotionHandler.gd"
 }, {
+"base": "Node",
+"class": "SlowMotionMusic",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/utils/SlowMotionMusic.gd"
+}, {
 "base": "CheckboxLabeledControlItem",
 "class": "SoundEffectsSettingsLabeledControlItem",
 "language": "GDScript",
@@ -1840,6 +1845,7 @@ _global_script_class_icons={
 "ShinyButton": "res://addons/scaffolder/assets/images/editor_icons/ShinyButton.png",
 "SliderLabeledControlItem": "",
 "SlowMotionHandler": "",
+"SlowMotionMusic": "",
 "SoundEffectsSettingsLabeledControlItem": "",
 "SquirrelAnimator": "",
 "SquirrelAwayConfig": "",
