@@ -1045,9 +1045,9 @@ _global_script_classes=[ {
 "path": "res://addons/surfacer/src/player/PlayerParamsUtils.gd"
 }, {
 "base": "Node2D",
-"class": "PlayerPointerHandler",
+"class": "PlayerPointerListener",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/PlayerPointerHandler.gd"
+"path": "res://addons/surfacer/src/player/PlayerPointerListener.gd"
 }, {
 "base": "Node2D",
 "class": "PlayerPositionAnnotator",
@@ -1280,9 +1280,9 @@ _global_script_classes=[ {
 "path": "res://addons/scaffolder/src/gui/labeled_control_list/SliderLabeledControlItem.gd"
 }, {
 "base": "Node",
-"class": "SlowMotionHandler",
+"class": "SlowMotionController",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/utils/SlowMotionHandler.gd"
+"path": "res://addons/surfacer/src/utils/SlowMotionController.gd"
 }, {
 "base": "Node",
 "class": "SlowMotionMusic",
@@ -1797,7 +1797,7 @@ _global_script_class_icons={
 "PlayerNavigationState": "",
 "PlayerParams": "",
 "PlayerParamsUtils": "",
-"PlayerPointerHandler": "",
+"PlayerPointerListener": "",
 "PlayerPositionAnnotator": "",
 "PlayerPositionAnnotatorSettingsLabeledControlItem": "",
 "PlayerPrediction": "",
@@ -1844,7 +1844,7 @@ _global_script_class_icons={
 "SettingsScreen": "",
 "ShinyButton": "res://addons/scaffolder/assets/images/editor_icons/ShinyButton.png",
 "SliderLabeledControlItem": "",
-"SlowMotionHandler": "",
+"SlowMotionController": "",
 "SlowMotionMusic": "",
 "SoundEffectsSettingsLabeledControlItem": "",
 "SquirrelAnimator": "",
