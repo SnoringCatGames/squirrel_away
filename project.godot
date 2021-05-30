@@ -574,7 +574,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/FloorsItemController.gd"
 }, {
-"base": "EdgeCalculator",
+"base": "Reference",
 "class": "FromAirCalculator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/calculators/FromAirCalculator.gd"
