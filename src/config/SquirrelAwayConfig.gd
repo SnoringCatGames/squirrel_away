@@ -304,6 +304,7 @@ var app_manifest := {
     thread_count = OS.get_processor_count() if _uses_threads else 1,
     is_mobile_supported = true,
     is_data_deletion_button_shown = false,
+    is_music_speed_change_supported = false,
     default_player_name = 'cat',
     nav_selection_slow_mo_time_scale = 0.02,
     nav_selection_slow_mo_tick_tock_tempo_multiplier = 50,
