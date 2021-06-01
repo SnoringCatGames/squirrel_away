@@ -139,6 +139,12 @@ var _music_manifest := [
         bpm = 150.0,
         meter = 4,
     },
+    {
+        name = "pause_menu",
+        volume_db = 0.0,
+        bpm = 112.5,
+        meter = 4,
+    },
 ]
 
 var _colors_manifest := {
@@ -398,8 +404,11 @@ var app_manifest := {
     edge_movement_classes = _edge_movement_classes,
     player_param_classes = _player_param_classes,
     
+    pauses_level_music_on_pause = true,
     main_menu_music = "on_a_quest",
     game_over_music = "on_a_quest",
+    pause_menu_music = "pause_menu",
+    default_level_music = "on_a_quest",
     godot_splash_sound = "achievement",
     developer_splash_sound = "single_cat_snore",
     level_end_sound = "cadence",
