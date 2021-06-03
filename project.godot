@@ -944,7 +944,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/legend_items/OriginSurfaceLegendItem.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "PathBeatPrediction",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/PathBeatPrediction.gd"
