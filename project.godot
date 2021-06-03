@@ -137,7 +137,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "CircularBuffer",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/CircularBuffer.gd"
+"path": "res://addons/scaffolder/src/utils/data_structures/CircularBuffer.gd"
 }, {
 "base": "TransientAnnotator",
 "class": "ClickAnnotator",
@@ -1152,12 +1152,12 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "PriorityQueue",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/PriorityQueue.gd"
+"path": "res://addons/scaffolder/src/utils/data_structures/PriorityQueue.gd"
 }, {
 "base": "Node",
 "class": "Profiler",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/Profiler.gd"
+"path": "res://addons/scaffolder/src/utils/time/Profiler.gd"
 }, {
 "base": "InspectorItemController",
 "class": "ProfilerCountItemController",
@@ -1272,7 +1272,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "ScaffolderTween",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/ScaffolderTween.gd"
+"path": "res://addons/scaffolder/src/utils/time/ScaffolderTween.gd"
 }, {
 "base": "Node2D",
 "class": "Screen",
@@ -1362,7 +1362,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Stopwatch",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/Stopwatch.gd"
+"path": "res://addons/scaffolder/src/utils/time/Stopwatch.gd"
 }, {
 "base": "StyleBoxFlat",
 "class": "StyleBoxFlatScalable",
@@ -1482,7 +1482,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Time",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/Time.gd"
+"path": "res://addons/scaffolder/src/utils/time/Time.gd"
 }, {
 "base": "TextLabeledControlItem",
 "class": "TimeLabeledControlItem",
@@ -1497,7 +1497,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "TimeType",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/TimeType.gd"
+"path": "res://addons/scaffolder/src/utils/time/TimeType.gd"
 }, {
 "base": "TextLabeledControlItem",
 "class": "TotalPlaysLabeledControlItem",
