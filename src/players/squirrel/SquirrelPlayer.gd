@@ -5,7 +5,7 @@ const TILE_MAP_COLLISION_LAYER := 7
 const SQUIRREL_SPAWN_COLLISION_MARGIN := 1.0
 const SQUIRREL_SPAWN_LEVEL_OUTER_MARGIN := 256.0
 const CAT_IS_CLOSE_DISTANCE_SQUARED_THRESHOLD := 512.0 * 512.0
-const SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC := 3.0
+const SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL := 3.0
 
 var was_cat_close_last_frame := false
 var previous_destination := PositionAlongSurfaceFactory \
@@ -29,7 +29,7 @@ func _ready() -> void:
     
     Gs.time.set_timeout(
             funcref(self, "_trigger_new_navigation_recurring"),
-            SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC,
+            SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL,
             [],
             TimeType.PLAY_PHYSICS)
 
@@ -41,11 +41,11 @@ func _trigger_new_navigation_recurring() -> void:
         _start_new_navigation()
     Gs.time.set_timeout(
             funcref(self, "_trigger_new_navigation_recurring"),
-            SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL_SEC,
+            SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL,
             [],
             TimeType.PLAY_PHYSICS)
 
-func _update_navigator(delta_scaled_sec: float) -> void:
+func _update_navigator(delta_scaled: float) -> void:
     if is_human_player:
         return
     
@@ -61,7 +61,7 @@ func _update_navigator(delta_scaled_sec: float) -> void:
     
     was_cat_close_last_frame = is_cat_close
     
-    ._update_navigator(delta_scaled_sec)
+    ._update_navigator(delta_scaled)
 
 func _start_new_navigation() -> void:
     Gs.profiler.start("start_new_squirrel_navigation")
@@ -84,6 +84,6 @@ func _start_new_navigation() -> void:
     print_msg(("SQUIRREL NEW NAV    ;" +
             "%8.3fs; " +
             "calc duration=%sms"), [
-        Gs.time.get_play_time_sec(),
+        Gs.time.get_play_time(),
         duration,
     ])
