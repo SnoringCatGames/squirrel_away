@@ -934,6 +934,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/legend_items/OriginSurfaceLegendItem.gd"
 }, {
+"base": "Node",
+"class": "PathBeatPrediction",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/platform_graph/PathBeatPrediction.gd"
+}, {
 "base": "Node2D",
 "class": "PathPreselectionAnnotator",
 "language": "GDScript",
@@ -1780,6 +1785,7 @@ _global_script_class_icons={
 "OriginSurfaceAnnotationElement": "",
 "OriginSurfaceItemController": "",
 "OriginSurfaceLegendItem": "",
+"PathBeatPrediction": "",
 "PathPreselectionAnnotator": "",
 "PauseButton": "",
 "PauseScreen": "",
