@@ -14,13 +14,6 @@ var previous_destination := PositionAlongSurfaceFactory \
 func _init().("squirrel") -> void:
     pass
 
-func _process_sounds() -> void:
-    if just_triggered_jump:
-        Gs.audio.play_sound("squirrel_jump")
-    
-    if surface_state.just_left_air:
-        Gs.audio.play_sound("squirrel_land")
-
 func _ready() -> void:
     if is_fake:
         # Fake players are only used for testing potential collisions under the
@@ -32,6 +25,13 @@ func _ready() -> void:
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL,
             [],
             TimeType.PLAY_PHYSICS)
+
+func _process_sounds() -> void:
+    if just_triggered_jump:
+        Gs.audio.play_sound("squirrel_jump")
+    
+    if surface_state.just_left_air:
+        Gs.audio.play_sound("squirrel_land")
 
 func _trigger_new_navigation_recurring() -> void:
     if is_human_player:
