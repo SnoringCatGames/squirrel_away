@@ -434,8 +434,8 @@ var app_manifest := {
     developer_splash = preload( \
             "res://addons/scaffolder/assets/images/gui/snoring_cat_logo_splash.png"),
     
-    godot_splash_screen_duration_sec = 0.8,
-    developer_splash_screen_duration_sec = 1.0,
+    godot_splash_screen_duration = 0.8,
+    developer_splash_screen_duration = 1.0,
     
     main_menu_image_scene_path = "res://src/gui/LoadingImage.tscn",
     loading_image_scene_path = "res://src/gui/LoadingImage.tscn",
