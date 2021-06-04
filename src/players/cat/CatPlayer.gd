@@ -24,12 +24,10 @@ func _update_surface_state(preserves_just_changed_state := false) -> void:
 
 # TODO: Replace with a more accurate/standard collision/mask-layer setup.
 func _check_for_squirrel_collision() -> void:
+    var collider_half_width_height := movement_params.collider_half_width_height
+
     var cat_min_half_dimension: float
     var cat_max_half_dimension: float
-    var cp_min_half_dimension: float
-    var cp_max_half_dimension: float
-    
-    var collider_half_width_height := movement_params.collider_half_width_height
     if collider_half_width_height.x > collider_half_width_height.y:
         cat_max_half_dimension = collider_half_width_height.x
         cat_min_half_dimension = collider_half_width_height.y
@@ -43,6 +41,9 @@ func _check_for_squirrel_collision() -> void:
             Surfacer.group_name_computer_players):
         collider_half_width_height = \
                 computer_player.movement_params.collider_half_width_height
+        
+        var cp_min_half_dimension: float
+        var cp_max_half_dimension: float
         if collider_half_width_height.x > collider_half_width_height.y:
             cp_max_half_dimension = collider_half_width_height.x
             cp_min_half_dimension = collider_half_width_height.y
