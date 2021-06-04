@@ -82,6 +82,7 @@ var level_manifest := {
 func _init().(ARE_LEVELS_SCENE_BASED) -> void:
     pass
 
+
 #func _sanitize_level_config(config: Dictionary) -> void:
 #    ._sanitize_level_config(config)
 
