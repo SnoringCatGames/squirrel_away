@@ -1189,7 +1189,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/right_walls_item_controller.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "RulerAnnotator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/ruler_annotator.gd"
@@ -1299,7 +1299,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_list/slider_labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "SlowMotionController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/utils/slow_motion_controller.gd"
