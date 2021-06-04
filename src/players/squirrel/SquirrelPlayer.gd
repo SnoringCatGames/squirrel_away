@@ -68,14 +68,14 @@ func _start_new_navigation() -> void:
     
     var possible_destinations: Array = \
             Gs.level.squirrel_destinations
-    var index: int
     var next_destination := previous_destination
     while next_destination.target_point == Vector2.INF or \
             Gs.geometry.are_points_equal_with_epsilon(
                     next_destination.target_point,
                     previous_destination.target_point,
                     128.0):
-        index = floor(randf() * possible_destinations.size() - 0.00001)
+        var index: int = \
+                floor(randf() * possible_destinations.size() - 0.00001)
         next_destination = possible_destinations[index]
     navigator.navigate_to_position(next_destination)
     previous_destination = next_destination

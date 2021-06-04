@@ -167,7 +167,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "CollisionCalcParams",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/edge/models/CollisionCalculationParams.gd"
+"path": "res://addons/surfacer/src/platform_graph/edge/models/CollisionCalcParams.gd"
 }, {
 "base": "Reference",
 "class": "CollisionCalcResultMetadata",
@@ -574,7 +574,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/FloorsItemController.gd"
 }, {
-"base": "Reference",
+"base": "EdgeCalculator",
 "class": "FromAirCalculator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/calculators/FromAirCalculator.gd"
