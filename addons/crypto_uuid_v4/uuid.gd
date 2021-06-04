@@ -1,7 +1,5 @@
 class_name UUID
 extends Reference
-
-
 # Crypto UUID v4
 #
 # Provides cryptographically secure UUID v4 objects.
