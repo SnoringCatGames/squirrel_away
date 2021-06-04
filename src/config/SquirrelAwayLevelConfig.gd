@@ -1,6 +1,7 @@
 class_name SquirrelAwayLevelConfig
 extends SurfacerLevelConfig
 
+
 const ARE_LEVELS_SCENE_BASED := true
 
 const LEVELS_PATH_PREFIX := "res://src/levels/"

@@ -1,6 +1,7 @@
 class_name SquirrelPlayer
 extends Player
 
+
 const TILE_MAP_COLLISION_LAYER := 7
 const SQUIRREL_SPAWN_COLLISION_MARGIN := 1.0
 const SQUIRREL_SPAWN_LEVEL_OUTER_MARGIN := 256.0

@@ -1,6 +1,7 @@
 class_name CatAnimator
 extends PlayerAnimator
 
+
 const HEAD_UNBLINK_REGION := Rect2(26, 39, 22, 18)
 const HEAD_BLINK_REGION := Rect2(47, 91, 22, 18)
 
