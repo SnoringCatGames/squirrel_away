@@ -48,13 +48,13 @@ var level_manifest := {
             },
         ],
     },
-    "4": {
-        name = "Dev level 4",
-        version = "0.0.1",
-        priority = 40,
-        scene_path = LEVELS_PATH_PREFIX + "level4.tscn",
-        player_names = ["cat"],
-    },
+#    "4": {
+#        name = "Dev level 4",
+#        version = "0.0.1",
+#        priority = 40,
+#        scene_path = LEVELS_PATH_PREFIX + "level4.tscn",
+#        player_names = ["cat"],
+#    },
 #    "5": {
 #        name = "Dev level 5",
 #        version = "0.0.1",
@@ -62,13 +62,13 @@ var level_manifest := {
 #        scene_path = LEVELS_PATH_PREFIX + "level5.tscn",
 #        player_names = ["cat"],
 #    },
-    "6": {
-        name = "Dev level 6",
-        version = "0.0.1",
-        priority = 60,
-        scene_path = LEVELS_PATH_PREFIX + "level6.tscn",
-        player_names = ["cat", "squirrel"],
-    },
+#    "6": {
+#        name = "Dev level 6",
+#        version = "0.0.1",
+#        priority = 60,
+#        scene_path = LEVELS_PATH_PREFIX + "level6.tscn",
+#        player_names = ["cat", "squirrel"],
+#    },
     "7": {
         name = "Dev level 7",
         version = "0.0.1",
@@ -105,7 +105,8 @@ func get_unlock_hint(level_id: String) -> String:
 func get_suggested_next_level() -> String:
     # TODO
     var last_level_played_id := Gs.save_state.get_last_level_played()
-    if last_level_played_id != "":
+    if last_level_played_id != "" and \
+            level_manifest.has(last_level_played_id):
         return last_level_played_id
     else:
         return get_level_ids().front()
