@@ -62,13 +62,13 @@ var level_manifest := {
 #        scene_path = LEVELS_PATH_PREFIX + "level5.tscn",
 #        player_names = ["cat"],
 #    },
-#    "6": {
-#        name = "Dev level 6",
-#        version = "0.0.1",
-#        priority = 60,
-#        scene_path = LEVELS_PATH_PREFIX + "level6.tscn",
-#        player_names = ["cat", "squirrel"],
-#    },
+    "6": {
+        name = "Dev level 6",
+        version = "0.0.1",
+        priority = 60,
+        scene_path = LEVELS_PATH_PREFIX + "level6.tscn",
+        player_names = ["cat", "squirrel"],
+    },
     "7": {
         name = "Dev level 7",
         version = "0.0.1",

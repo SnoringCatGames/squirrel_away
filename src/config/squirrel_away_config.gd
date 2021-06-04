@@ -304,6 +304,7 @@ var app_manifest := {
     are_loaded_surfaces_deeply_validated = true,
     is_inspector_enabled_default = true or _debug or _playtest,
     inspector_panel_starts_open = false,
+    are_beats_tracked = true,
 #    debug_window_size = _screen_resolutions.default,
     debug_window_size = _screen_resolutions.full_screen,
     uses_threads = _uses_threads,

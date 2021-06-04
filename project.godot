@@ -69,10 +69,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/annotators.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "Audio",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/audio.gd"
+}, {
+"base": "Node",
+"class": "BeatTracker",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/utils/beat_tracker.gd"
 }, {
 "base": "Reference",
 "class": "CameraController",
@@ -1304,7 +1309,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/utils/slow_motion_controller.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "SlowMotionMusic",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/utils/slow_motion_music.gd"
@@ -1628,6 +1633,7 @@ _global_script_class_icons={
 "AnnotatorType": "",
 "Annotators": "",
 "Audio": "",
+"BeatTracker": "",
 "CameraController": "",
 "CameraPanController": "",
 "CameraShake": "",
