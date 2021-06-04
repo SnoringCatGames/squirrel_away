@@ -1,6 +1,7 @@
 class_name Main
 extends SurfacerBootstrap
 
+
 func _ready() -> void:
     run(SquirrelAway.app_manifest, self)
 
@@ -9,6 +10,7 @@ func _ready() -> void:
 
 #func _register_app_manifest() -> void:
 #    ._register_app_manifest()
+
 
 func _initialize_framework() -> void:
     ._initialize_framework()

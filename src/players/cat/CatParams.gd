@@ -1,9 +1,11 @@
 class_name CatParams
 extends MovementParams
 
+
 func _init_params() -> void:
     _init_production_params()
 #    _init_debug_params()
+
 
 func _init_production_params() -> void:
     name = "cat"
@@ -130,6 +132,7 @@ func _init_production_params() -> void:
         ClimbDownWallToFloorCalculator.NAME,
         WalkToAscendWallFromFloorCalculator.NAME,
     ]
+
 
 # These params are "floaty" and have been useful for debugging.
 func _init_debug_params() -> void:
@@ -270,6 +273,7 @@ func _init_debug_params() -> void:
         ClimbDownWallToFloorCalculator.NAME,
         WalkToAscendWallFromFloorCalculator.NAME,
     ]
+
 
 func _init_animator_params() -> void:
     animator_params = PlayerAnimatorParams.new()

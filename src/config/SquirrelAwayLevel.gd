@@ -7,12 +7,14 @@ var _does_level_have_squirrels := false
 # Array<PositionAlongSurface>
 var squirrel_destinations := []
 
+
 func _enter_tree() -> void:
     _does_level_have_squirrels = \
             Gs.level_config.get_level_config(_id).player_names.has("squirrel")
 
 #func _load() -> void:
 #    ._load()
+
 
 func _start() -> void:
     ._start()
@@ -30,6 +32,7 @@ func _start() -> void:
                     squirrel_position,
                     false)
 
+
 func _destroy() -> void:
     squirrel_destinations.clear()
     ._destroy()
@@ -43,12 +46,15 @@ func _destroy() -> void:
 #func _on_intro_choreography_finished() -> void:
 #    ._on_intro_choreography_finished()
 
+
 func get_music_name() -> String:
     return "on_a_quest"
+
 
 func get_slow_motion_music_name() -> String:
     # FIXME: Add slo-mo music
     return ""
+
 
 # FIXME: Decouple this squirrel-specific logic from the rest of the framework.
 func _parse_squirrel_destinations() -> void:
@@ -71,6 +77,7 @@ func _parse_squirrel_destinations() -> void:
         for i in 6:
             squirrel_destinations.push_back(
                     _create_random_squirrel_spawn_position())
+
 
 func _create_random_squirrel_spawn_position() -> PositionAlongSurface:
     var bounds := graph_parser.surface_parser.combined_tile_map_rect.grow(

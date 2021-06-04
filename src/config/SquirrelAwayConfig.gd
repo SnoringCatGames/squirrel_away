@@ -457,5 +457,6 @@ var app_manifest := {
     uses_level_scores = true,
 }
 
+
 func initialize() -> void:
     Gs.profiler.preregister_metric_keys(_metric_keys)

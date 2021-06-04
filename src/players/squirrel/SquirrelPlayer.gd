@@ -11,8 +11,10 @@ var was_cat_close_last_frame := false
 var previous_destination := PositionAlongSurfaceFactory \
         .create_position_without_surface(Vector2.INF)
 
+
 func _init().("squirrel") -> void:
     pass
+
 
 func _ready() -> void:
     if is_fake:
@@ -26,12 +28,14 @@ func _ready() -> void:
             [],
             TimeType.PLAY_PHYSICS)
 
+
 func _process_sounds() -> void:
     if just_triggered_jump:
         Gs.audio.play_sound("squirrel_jump")
     
     if surface_state.just_left_air:
         Gs.audio.play_sound("squirrel_land")
+
 
 func _trigger_new_navigation_recurring() -> void:
     if is_human_player:
@@ -44,6 +48,7 @@ func _trigger_new_navigation_recurring() -> void:
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL,
             [],
             TimeType.PLAY_PHYSICS)
+
 
 func _update_navigator(delta_scaled: float) -> void:
     if is_human_player:
@@ -62,6 +67,7 @@ func _update_navigator(delta_scaled: float) -> void:
     was_cat_close_last_frame = is_cat_close
     
     ._update_navigator(delta_scaled)
+
 
 func _start_new_navigation() -> void:
     Gs.profiler.start("start_new_squirrel_navigation")

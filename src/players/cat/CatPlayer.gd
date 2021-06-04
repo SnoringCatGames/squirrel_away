@@ -5,8 +5,10 @@ extends Player
 var current_colliding_computer_players := {}
 var just_collided_with_new_computer_player := false
 
+
 func _init().("cat") -> void:
     pass
+
 
 func _process_sounds() -> void:
     if just_triggered_jump:
@@ -18,9 +20,11 @@ func _process_sounds() -> void:
     if just_collided_with_new_computer_player:
         Gs.audio.play_sound("contact")
 
+
 func _update_surface_state(preserves_just_changed_state := false) -> void:
     ._update_surface_state(preserves_just_changed_state)
     _check_for_squirrel_collision()
+
 
 # TODO: Replace with a more accurate/standard collision/mask-layer setup.
 func _check_for_squirrel_collision() -> void:
