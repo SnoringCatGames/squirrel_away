@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
+"base": "Control",
 "class": "AccordionPanel",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/accordion_panel.gd"
@@ -119,7 +119,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/ceilings_item_controller.gd"
 }, {
-"base": "Reference",
+"base": "PanelContainer",
 "class": "CenteredPanel",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/centered_panel.gd"
@@ -209,7 +209,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/legend_items/continuous_edge_trajectory_legend_item.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "CrashReporter",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/data/crash_reporter.gd"
@@ -234,7 +234,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/level/debug_level.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "DebugPanel",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/debug_panel.gd"
@@ -584,7 +584,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/from_air_edge.gd"
 }, {
-"base": "Reference",
+"base": "PanelContainer",
 "class": "FullScreenPanel",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/full_screen_panel.gd"
@@ -769,7 +769,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_list/labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "VBoxContainer",
 "class": "LabeledControlList",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_list/labeled_control_list.gd"
@@ -849,7 +849,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/settings_items/log_surfacer_events_settings_labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "SurfacerBootstrap",
 "class": "Main",
 "language": "GDScript",
 "path": "res://src/config/main.gd"
@@ -884,7 +884,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/settings_items/music_settings_labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "PanelContainer",
 "class": "NavBar",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/nav_bar.gd"
@@ -1204,12 +1204,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/data/save_state.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "ScaffolderBootstrap",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/config/scaffolder_bootstrap.gd"
 }, {
-"base": "Reference",
+"base": "Control",
 "class": "ScaffolderCheckBox",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/scaffolder_check_box.gd"
@@ -1254,12 +1254,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/config/scaffolder_styles.gd"
 }, {
-"base": "Reference",
+"base": "Control",
 "class": "ScaffolderTextureButton",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/scaffolder_texture_button.gd"
 }, {
-"base": "Reference",
+"base": "Control",
 "class": "ScaffolderTextureRect",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/scaffolder_texture_rect.gd"
@@ -1289,7 +1289,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screens/settings_screen.gd"
 }, {
-"base": "Reference",
+"base": "Button",
 "class": "ShinyButton",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/shiny_button.gd"
@@ -1324,7 +1324,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/config/squirrel_away_config.gd"
 }, {
-"base": "Reference",
+"base": "SurfacerLevel",
 "class": "SquirrelAwayLevel",
 "language": "GDScript",
 "path": "res://src/config/squirrel_away_level.gd"
@@ -1409,12 +1409,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/surface/surface_type.gd"
 }, {
-"base": "Reference",
+"base": "ScaffolderBootstrap",
 "class": "SurfacerBootstrap",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/surfacer_bootstrap.gd"
 }, {
-"base": "Reference",
+"base": "ScaffolderColors",
 "class": "SurfacerColors",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/surfacer_colors.gd"
@@ -1615,7 +1615,7 @@ _global_script_classes=[ {
 "path": "res://addons/scaffolder/src/gui/settings_items/welcome_panel_settings_labeled_control_item.gd"
 } ]
 _global_script_class_icons={
-"AccordionPanel": "",
+"AccordionPanel": "res://addons/scaffolder/assets/images/editor_icons/accordion_panel.png",
 "ActiveTrajectoryAnnotatorSettingsLabeledControlItem": "",
 "AirDashAction": "",
 "AirDefaultAction": "",
@@ -1637,7 +1637,7 @@ _global_script_class_icons={
 "CatParams": "",
 "CatPlayer": "",
 "CeilingsItemController": "",
-"CenteredPanel": "",
+"CenteredPanel": "res://addons/scaffolder/assets/images/editor_icons/centered_panel.png",
 "CheckboxLabeledControlItem": "",
 "Choreographer": "",
 "CircularBuffer": "",
@@ -1660,7 +1660,7 @@ _global_script_class_icons={
 "CurrentScoreLabeledControlItem": "",
 "DataAgreementScreen": "",
 "DebugLevel": "",
-"DebugPanel": "",
+"DebugPanel": "res://addons/scaffolder/assets/images/editor_icons/debug_panel.png",
 "DebugPanelSettingsLabeledControlItem": "",
 "DebugTimeDisplaySettingsLabeledControlItem": "",
 "DescriptionItemController": "",
@@ -1730,7 +1730,7 @@ _global_script_class_icons={
 "FloorsItemController": "",
 "FromAirCalculator": "",
 "FromAirEdge": "",
-"FullScreenPanel": "",
+"FullScreenPanel": "res://addons/scaffolder/assets/images/editor_icons/full_screen_panel.png",
 "GameOverScoreLabeledControlItem": "",
 "GameOverScreen": "",
 "GameOverTimeLabeledControlItem": "",
@@ -1767,7 +1767,7 @@ _global_script_class_icons={
 "JumpLandPositionsAnnotationElement": "",
 "JumpLandPositionsUtils": "",
 "LabeledControlItem": "",
-"LabeledControlList": "",
+"LabeledControlList": "res://addons/scaffolder/assets/images/editor_icons/labeled_control_list.png",
 "LeftWallsItemController": "",
 "Legend": "",
 "LegendItem": "",
@@ -1790,7 +1790,7 @@ _global_script_class_icons={
 "MovementParams": "",
 "MovementUtils": "",
 "MusicSettingsLabeledControlItem": "",
-"NavBar": "",
+"NavBar": "res://addons/scaffolder/assets/images/editor_icons/nav_bar.png",
 "NavigationDestinationAnnotatorSettingsLabeledControlItem": "",
 "NavigationPulseAnnotator": "",
 "Navigator": "",
@@ -1855,7 +1855,7 @@ _global_script_class_icons={
 "RulerAnnotatorSettingsLabeledControlItem": "",
 "SaveState": "",
 "ScaffolderBootstrap": "",
-"ScaffolderCheckBox": "",
+"ScaffolderCheckBox": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_check_box.png",
 "ScaffolderColors": "",
 "ScaffolderConfig": "",
 "ScaffolderGeometry": "",
@@ -1864,14 +1864,14 @@ _global_script_class_icons={
 "ScaffolderLog": "",
 "ScaffolderNavigation": "",
 "ScaffolderStyles": "",
-"ScaffolderTextureButton": "",
-"ScaffolderTextureRect": "",
+"ScaffolderTextureButton": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_texture_button.png",
+"ScaffolderTextureRect": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_texture_rect.png",
 "ScaffolderThirdPartyLicenses": "",
 "ScaffolderTween": "",
 "Screen": "",
 "SelectionDescription": "",
 "SettingsScreen": "",
-"ShinyButton": "",
+"ShinyButton": "res://addons/scaffolder/assets/images/editor_icons/shiny_button.png",
 "SliderLabeledControlItem": "",
 "SlowMotionController": "",
 "SlowMotionMusic": "",

@@ -13,6 +13,7 @@ func _enter_tree() -> void:
     _does_level_have_squirrels = \
             Gs.level_config.get_level_config(_id).player_names.has("squirrel")
 
+
 #func _load() -> void:
 #    ._load()
 
@@ -38,11 +39,14 @@ func _destroy() -> void:
     squirrel_destinations.clear()
     ._destroy()
 
+
 #func _on_initial_input() -> void:
 #    ._on_initial_input()
 
+
 #func quit(immediately := true) -> void:
 #    .quit(immediately)
+
 
 #func _on_intro_choreography_finished() -> void:
 #    ._on_intro_choreography_finished()
