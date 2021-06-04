@@ -2,6 +2,7 @@ tool
 class_name SquirrelAwayTileMap
 extends SurfacesTileMap
 
+
 const DEFAULT_TILE_SET := \
         preload("res://src/levels/squirrel_away_tile_set.tres")
 

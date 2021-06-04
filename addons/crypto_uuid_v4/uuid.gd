@@ -1,6 +1,7 @@
 class_name UUID
 extends Reference
 
+
 # Crypto UUID v4
 #
 # Provides cryptographically secure UUID v4 objects.
@@ -16,7 +17,6 @@ extends Reference
 # over messing with these, please
 var _data: PoolByteArray
 var _string: String
-
 
 
 func _init(from = null):
@@ -46,7 +46,6 @@ func _init(from = null):
     assert(_data[8] & 0xc0 == 0x80)
 
 
-
 # Special string representation
 # Cached for rapid comparisons
 func _to_string() -> String:
@@ -54,7 +53,6 @@ func _to_string() -> String:
         return _string
     _string = format(_data)
     return _string
-
 
 
 # Compare a UUID object with another UUID, String, or PoolByteArray.
@@ -85,11 +83,9 @@ func is_equal(object) -> bool:
     return _string == str(object)
 
 
-
 # Convinience func, essentially str(UUID.new())
 static func v4() -> String:
     return format(v4bin())
-
 
 
 # Generate efficient binary representation
@@ -132,11 +128,9 @@ static func format(data: PoolByteArray) -> String:
     return '%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x' % (data as Array)
 
 
-
 # Private helper func
 static func _randb() -> int:
     return randi() % 0x100
-
 
 
 static func _hex_byte(text: String, offset: int) -> int:

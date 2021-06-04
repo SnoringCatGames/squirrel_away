@@ -1,6 +1,7 @@
 class_name CatPlayer
 extends Player
 
+
 # Dictionary<Player, boolean>
 var current_colliding_computer_players := {}
 var just_collided_with_new_computer_player := false

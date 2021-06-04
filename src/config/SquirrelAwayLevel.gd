@@ -2,6 +2,7 @@ tool
 class_name SquirrelAwayLevel
 extends SurfacerLevel
 
+
 var _does_level_have_squirrels := false
 
 # Array<PositionAlongSurface>

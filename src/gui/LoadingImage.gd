@@ -1,6 +1,7 @@
 class_name LoadingImage
 extends Control
 
+
 var _base_scale := 1.0
 
 
