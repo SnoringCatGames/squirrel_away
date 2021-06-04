@@ -246,40 +246,40 @@ var _debug_params := {
 }
 
 var _player_action_classes := [
-    preload("res://addons/surfacer/src/player/action/action_handlers/AirDashAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/AirDefaultAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/AirJumpAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/AllDefaultAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/CapVelocityAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/FloorDashAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/FloorDefaultAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/FallThroughFloorAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/FloorFrictionAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/FloorJumpAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/FloorWalkAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/MatchExpectedEdgeTrajectoryAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/WallClimbAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/WallDashAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/WallDefaultAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/WallFallAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/WallJumpAction.gd"),
-    preload("res://addons/surfacer/src/player/action/action_handlers/WallWalkAction.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/air_dash_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/air_default_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/air_jump_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/all_default_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/cap_velocity_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/floor_dash_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/floor_default_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/fall_through_floor_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/floor_friction_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/floor_jump_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/floor_walk_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/match_expected_edge_trajectory_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/wall_climb_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/wall_dash_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/wall_default_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/wall_fall_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/wall_jump_action.gd"),
+    preload("res://addons/surfacer/src/player/action/action_handlers/wall_walk_action.gd"),
 ]
 
 var _edge_movement_classes := [
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/FromAirCalculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/ClimbDownWallToFloorCalculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/ClimbOverWallToFloorCalculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/FallFromFloorCalculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/FallFromWallCalculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/JumpFromSurfaceCalculator.gd"),
-    preload("res://addons/surfacer/src/platform_graph/edge/calculators/WalkToAscendWallFromFloorCalculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/from_air_calculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/climb_down_wall_to_floor_calculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/climb_over_wall_to_floor_calculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/fall_from_floor_calculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/fall_from_wall_calculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/jump_from_surface_calculator.gd"),
+    preload("res://addons/surfacer/src/platform_graph/edge/calculators/walk_to_ascend_wall_from_floor_calculator.gd"),
 ]
 
 var _player_param_classes := [
-    preload("res://src/players/cat/CatParams.gd"),
-    preload("res://src/players/squirrel/SquirrelParams.gd"),
-#    preload("res://test/data/TestPlayerParams.gd"),
+    preload("res://src/players/cat/cat_params.gd"),
+    preload("res://src/players/squirrel/squirrel_params.gd"),
+#    preload("res://test/data/test_player_params.gd"),
 ]
 
 var app_manifest := {
@@ -369,8 +369,8 @@ var app_manifest := {
     theme = preload("res://src/config/default_theme.tres"),
     
     screen_path_exclusions = [
-        "res://addons/scaffolder/src/gui/screens/RateAppScreen.tscn",
-        "res://addons/scaffolder/src/gui/screens/ConfirmDataDeletionScreen.tscn",
+        "res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn",
+        "res://addons/scaffolder/src/gui/screens/confirm_data_deletion_screen.tscn",
     ],
     screen_path_inclusions = [],
     settings_main_item_class_exclusions = [],
@@ -438,8 +438,8 @@ var app_manifest := {
     godot_splash_screen_duration = 0.8,
     developer_splash_screen_duration = 1.0,
     
-    main_menu_image_scene_path = "res://src/gui/LoadingImage.tscn",
-    loading_image_scene_path = "res://src/gui/LoadingImage.tscn",
+    main_menu_image_scene_path = "res://src/gui/loading_image.tscn",
+    loading_image_scene_path = "res://src/gui/loading_image.tscn",
     welcome_panel_resource_path = ScaffolderConfig.WELCOME_PANEL_RESOURCE_PATH,
     
     fade_in_transition_texture = \

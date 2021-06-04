@@ -9,7 +9,7 @@ func _init_params() -> void:
 
 func _init_production_params() -> void:
     name = "cat"
-    player_resource_path = "res://src/players/cat/CatPlayer.tscn"
+    player_resource_path = "res://src/players/cat/cat_player.tscn"
     
     can_grab_walls = true
     can_grab_ceilings = false
@@ -137,7 +137,7 @@ func _init_production_params() -> void:
 # These params are "floaty" and have been useful for debugging.
 func _init_debug_params() -> void:
     name = "cat"
-    player_resource_path = "res://src/players/cat/CatPlayer.tscn"
+    player_resource_path = "res://src/players/cat/cat_player.tscn"
     
     can_grab_walls = true
     can_grab_ceilings = false
@@ -279,7 +279,7 @@ func _init_animator_params() -> void:
     animator_params = PlayerAnimatorParams.new()
     
     animator_params.player_animator_scene_path = \
-            "res://src/players/cat/CatAnimator.tscn"
+            "res://src/players/cat/cat_animator.tscn"
     
     animator_params.faces_right_by_default = false
     
