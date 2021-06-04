@@ -1,15 +1,18 @@
 class_name SquirrelAnimator
 extends PlayerAnimator
 
+
 func set_static_frame(animation_state: PlayerAnimationState) -> void:
     _show_sprite(animation_state.animation_type)
     .set_static_frame(animation_state)
+
 
 func _play_animation(
         animation_type: int,
         blend := 0.1) -> bool:
     _show_sprite(animation_type)
     return ._play_animation(animation_type, blend)
+
 
 func _show_sprite(animation_type: int) -> void:
     # Hide the other sprites.

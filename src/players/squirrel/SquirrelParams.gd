@@ -1,6 +1,7 @@
 class_name SquirrelParams
 extends MovementParams
 
+
 func _init_params() -> void:
     name = "squirrel"
     player_resource_path = "res://src/players/squirrel/SquirrelPlayer.tscn"
@@ -124,6 +125,7 @@ func _init_params() -> void:
         ClimbDownWallToFloorCalculator.NAME,
         WalkToAscendWallFromFloorCalculator.NAME,
     ]
+
 
 func _init_animator_params() -> void:
     animator_params = PlayerAnimatorParams.new()

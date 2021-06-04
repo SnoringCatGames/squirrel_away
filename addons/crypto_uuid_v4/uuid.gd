@@ -18,6 +18,7 @@ var _data: PoolByteArray
 var _string: String
 
 
+
 func _init(from = null):
     if from is PoolByteArray:
         assert(from.size() == 16)
@@ -45,6 +46,7 @@ func _init(from = null):
     assert(_data[8] & 0xc0 == 0x80)
 
 
+
 # Special string representation
 # Cached for rapid comparisons
 func _to_string() -> String:
@@ -52,6 +54,7 @@ func _to_string() -> String:
         return _string
     _string = format(_data)
     return _string
+
 
 
 # Compare a UUID object with another UUID, String, or PoolByteArray.
@@ -82,9 +85,11 @@ func is_equal(object) -> bool:
     return _string == str(object)
 
 
+
 # Convinience func, essentially str(UUID.new())
 static func v4() -> String:
     return format(v4bin())
+
 
 
 # Generate efficient binary representation
@@ -120,15 +125,18 @@ static func v4bin() -> PoolByteArray:
     data[8] = (data[8] & 0x3f) | 0x80
     return data
 
+
 # Format any 16 bytes as a UUID.
 static func format(data: PoolByteArray) -> String:
     assert(data.size() == 16)
     return '%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x' % (data as Array)
 
 
+
 # Private helper func
 static func _randb() -> int:
     return randi() % 0x100
+
 
 
 static func _hex_byte(text: String, offset: int) -> int:
