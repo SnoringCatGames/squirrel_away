@@ -4,7 +4,7 @@ extends MovementParams
 
 func _init_params() -> void:
     name = "squirrel"
-    player_resource_path = "res://src/players/squirrel/SquirrelPlayer.tscn"
+    player_resource_path = "res://src/players/squirrel/squirrel_player.tscn"
     
     can_grab_walls = true
     can_grab_ceilings = false
@@ -131,7 +131,7 @@ func _init_animator_params() -> void:
     animator_params = PlayerAnimatorParams.new()
     
     animator_params.player_animator_scene_path = \
-            "res://src/players/squirrel/SquirrelAnimator.tscn"
+            "res://src/players/squirrel/squirrel_animator.tscn"
     
     animator_params.faces_right_by_default = true
     
