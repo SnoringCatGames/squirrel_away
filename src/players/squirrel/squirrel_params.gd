@@ -49,9 +49,9 @@ func _init_params() -> void:
     forces_player_velocity_to_zero_at_path_end = false
     syncs_player_position_to_edge_trajectory = true
     syncs_player_velocity_to_edge_trajectory = true
-    includes_discrete_frame_state = true
-    includes_continuous_frame_positions = true
-    includes_continuous_frame_velocities = true
+    includes_discrete_trajectory_state = true
+    includes_continuous_trajectory_positions = true
+    includes_continuous_trajectory_velocities = true
     bypasses_runtime_physics = false
     
     retries_navigation_when_interrupted = true
