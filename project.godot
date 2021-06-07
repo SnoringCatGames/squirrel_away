@@ -299,7 +299,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_list/dropdown_labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "EdgeAttempt",
 "class": "Edge",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/edge.gd"
@@ -1429,7 +1429,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/config/surfacer_config.gd"
 }, {
-"base": "Reference",
+"base": "DrawUtils",
 "class": "SurfacerDrawUtils",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/utils/surfacer_draw_utils.gd"
