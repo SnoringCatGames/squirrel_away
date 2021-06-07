@@ -52,6 +52,7 @@ func _init_params() -> void:
     includes_discrete_trajectory_state = true
     includes_continuous_trajectory_positions = true
     includes_continuous_trajectory_velocities = true
+    is_trajectory_state_stored_at_build_time = false
     bypasses_runtime_physics = false
     
     retries_navigation_when_interrupted = true
