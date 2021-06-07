@@ -159,12 +159,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/climb_down_wall_to_floor_edge.gd"
 }, {
-"base": "Reference",
+"base": "EdgeCalculator",
 "class": "ClimbOverWallToFloorCalculator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/calculators/climb_over_wall_to_floor_calculator.gd"
 }, {
-"base": "Reference",
+"base": "Edge",
 "class": "ClimbOverWallToFloorEdge",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/climb_over_wall_to_floor_edge.gd"
@@ -499,12 +499,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/failed_edges_group_item_controller.gd"
 }, {
-"base": "Reference",
+"base": "EdgeCalculator",
 "class": "FallFromFloorCalculator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/calculators/fall_from_floor_calculator.gd"
 }, {
-"base": "Reference",
+"base": "Edge",
 "class": "FallFromFloorEdge",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/fall_from_floor_edge.gd"
@@ -514,7 +514,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/calculators/fall_from_wall_calculator.gd"
 }, {
-"base": "Reference",
+"base": "Edge",
 "class": "FallFromWallEdge",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/fall_from_wall_edge.gd"
@@ -584,7 +584,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/calculators/from_air_calculator.gd"
 }, {
-"base": "Reference",
+"base": "Edge",
 "class": "FromAirEdge",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/from_air_edge.gd"
@@ -609,7 +609,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/game_over_items/game_over_time_labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "Screen",
 "class": "GameScreen",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screens/game_screen.gd"
@@ -749,7 +749,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/calculators/jump_from_surface_calculator.gd"
 }, {
-"base": "Reference",
+"base": "Edge",
 "class": "JumpFromSurfaceEdge",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/jump_from_surface_edge.gd"
@@ -1139,7 +1139,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/utils/position_along_surface_factory.gd"
 }, {
-"base": "Reference",
+"base": "Screen",
 "class": "PrecomputePlatformGraphsScreen",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/precompute_platform_graphs_screen.gd"
