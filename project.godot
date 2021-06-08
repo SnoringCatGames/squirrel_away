@@ -744,6 +744,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/ios_resolutions.gd"
 }, {
+"base": "Node",
+"class": "JsonUtils",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/utils/json_utils.gd"
+}, {
 "base": "Reference",
 "class": "JumpFromSurfaceCalculator",
 "language": "GDScript",
@@ -989,7 +994,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/platform_graph_item_controller.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "PlatformGraphParser",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/platform_graph_parser.gd"
@@ -1529,7 +1534,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/user_action_source.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "Utils",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/utils.gd"
@@ -1767,6 +1772,7 @@ _global_script_class_icons={
 "IntroChoreographySettingsLabeledControlItem": "",
 "IosModelNames": "",
 "IosResolutions": "",
+"JsonUtils": "",
 "JumpFromSurfaceCalculator": "",
 "JumpFromSurfaceEdge": "",
 "JumpLandPositions": "",
