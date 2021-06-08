@@ -299,6 +299,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_list/dropdown_labeled_control_item.gd"
 }, {
+"base": "InspectorItemController",
+"class": "DummyItemController",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/dummy_controller.gd"
+}, {
 "base": "EdgeAttempt",
 "class": "Edge",
 "language": "GDScript",
@@ -944,7 +949,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/annotation_elements/origin_surface_annotation_element.gd"
 }, {
-"base": "Reference",
+"base": "InspectorItemController",
 "class": "OriginSurfaceItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/origin_surface_item_controller.gd"
@@ -979,7 +984,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/platform_graph.gd"
 }, {
-"base": "Reference",
+"base": "Tree",
 "class": "PlatformGraphInspector",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/platform_graph_inspector.gd"
@@ -989,7 +994,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/platform_graph_inspector_selector.gd"
 }, {
-"base": "Reference",
+"base": "InspectorItemController",
 "class": "PlatformGraphItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/platform_graph_item_controller.gd"
@@ -1539,7 +1544,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/utils.gd"
 }, {
-"base": "Reference",
+"base": "EdgeAttemptItemController",
 "class": "ValidEdgeItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/valid_edge_item_controller.gd"
@@ -1683,6 +1688,7 @@ _global_script_class_icons={
 "DiscreteEdgeTrajectoryLegendItem": "",
 "DrawUtils": "",
 "DropdownLabeledControlItem": "",
+"DummyItemController": "",
 "Edge": "",
 "EdgeAnnotationElement": "",
 "EdgeAttempt": "",
