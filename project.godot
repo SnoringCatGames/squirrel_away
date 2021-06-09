@@ -1009,7 +1009,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/platform_graph_path.gd"
 }, {
-"base": "Reference",
+"base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/player.gd"

@@ -198,6 +198,7 @@ func _init_debug_params() -> void:
     includes_continuous_trajectory_velocities = true
     is_trajectory_state_stored_at_build_time = false
     bypasses_runtime_physics = false
+#    bypasses_runtime_physics = true
     retries_navigation_when_interrupted = true
 #    distance_squared_threshold_for_considering_additional_jump_land_points = 128.0 * 128.0
     distance_squared_threshold_for_considering_additional_jump_land_points = 32.0 * 32.0
