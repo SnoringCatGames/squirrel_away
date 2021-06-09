@@ -323,6 +323,8 @@ var app_manifest := {
     nav_selection_prediction_tween_duration = 0.15,
     new_path_pulse_duration_multiplier = 0.3,
     new_path_pulse_time_length = 1.0,
+    path_drag_update_throttle_interval = 0.2,
+    path_beat_update_throttle_interval = 0.2,
     
     # Params for CameraPanController.
     snaps_camera_back_to_player = true,
