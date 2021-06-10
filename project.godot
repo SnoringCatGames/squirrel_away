@@ -142,7 +142,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "CircularBuffer",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/data_structures/CircularBuffer.gd"
+"path": "res://addons/scaffolder/src/utils/structures/CircularBuffer.gd"
 }, {
 "base": "Reference",
 "class": "ClickAnnotator",
@@ -1167,7 +1167,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "PriorityQueue",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/data_structures/PriorityQueue.gd"
+"path": "res://addons/scaffolder/src/utils/structures/PriorityQueue.gd"
 }, {
 "base": "Reference",
 "class": "Profiler",
