@@ -64,5 +64,5 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Control"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
-frame = 5
+frame = 2
 playing = true
