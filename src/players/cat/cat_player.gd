@@ -1,5 +1,6 @@
+tool
 class_name CatPlayer
-extends Player
+extends SurfacerPlayer
 
 
 # Dictionary<Player, boolean>
@@ -13,13 +14,13 @@ func _init().("cat") -> void:
 
 func _process_sounds() -> void:
     if just_triggered_jump:
-        Gs.audio.play_sound("cat_jump")
+        Sc.audio.play_sound("cat_jump")
     
     if surface_state.just_left_air:
-        Gs.audio.play_sound("cat_land")
+        Sc.audio.play_sound("cat_land")
     
     if just_collided_with_new_computer_player:
-        Gs.audio.play_sound("contact")
+        Sc.audio.play_sound("contact")
 
 
 func _update_surface_state(preserves_just_changed_state := false) -> void:
@@ -42,8 +43,8 @@ func _check_for_squirrel_collision() -> void:
     
     # Calculate current computer-player collisions.
     var colliding_computer_players := []
-    for computer_player in Gs.utils.get_all_nodes_in_group(
-            Surfacer.group_name_computer_players):
+    for computer_player in Sc.utils.get_all_nodes_in_group(
+            Su.group_name_computer_players):
         collider_half_width_height = \
                 computer_player.movement_params.collider_half_width_height
         

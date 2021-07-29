@@ -11,7 +11,7 @@ var squirrel_destinations := []
 
 func _enter_tree() -> void:
     _does_level_have_squirrels = \
-            Gs.level_config.get_level_config(_id).player_names.has("squirrel")
+            Sc.level_config.get_level_config(_id).player_names.has("squirrel")
 
 
 #func _load() -> void:
@@ -29,7 +29,7 @@ func _start() -> void:
         ]
         for squirrel_position in starting_squirrel_positions:
             add_player(
-                    Surfacer.player_params["squirrel"].movement_params \
+                    Su.player_params["squirrel"].movement_params \
                             .player_resource_path,
                     squirrel_position,
                     false)
@@ -64,8 +64,8 @@ func get_slow_motion_music_name() -> String:
 # FIXME: Decouple this squirrel-specific logic from the rest of the framework.
 func _parse_squirrel_destinations() -> void:
     squirrel_destinations.clear()
-    var configured_destinations := Gs.utils.get_all_nodes_in_group(
-            SquirrelAway.group_name_squirrel_destinations)
+    var configured_destinations := Sc.utils.get_all_nodes_in_group(
+            App.group_name_squirrel_destinations)
     if !configured_destinations.empty():
         assert(configured_destinations.size() == 1)
         var squirrel_player: SquirrelPlayer = \

@@ -25,7 +25,7 @@ func _init_params() -> void:
     climb_over_wall_corner_calc_shape = collider_shape
     climb_over_wall_corner_calc_shape_rotation = collider_rotation
     
-    gravity_fast_fall = Gs.geometry.GRAVITY
+    gravity_fast_fall = Sc.geometry.GRAVITY
     slow_rise_gravity_multiplier = 0.38
     rise_double_jump_gravity_multiplier = 0.68
     
