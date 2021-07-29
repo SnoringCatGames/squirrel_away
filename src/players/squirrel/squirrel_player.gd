@@ -1,5 +1,6 @@
+tool
 class_name SquirrelPlayer
-extends Player
+extends SurfacerPlayer
 
 
 const TILE_MAP_COLLISION_LAYER := 7
@@ -23,7 +24,7 @@ func _ready() -> void:
         # hood.
         return
     
-    Gs.time.set_timeout(
+    Sc.time.set_timeout(
             funcref(self, "_trigger_new_navigation_recurring"),
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL,
             [],
@@ -32,10 +33,10 @@ func _ready() -> void:
 
 func _process_sounds() -> void:
     if just_triggered_jump:
-        Gs.audio.play_sound("squirrel_jump")
+        Sc.audio.play_sound("squirrel_jump")
     
     if surface_state.just_left_air:
-        Gs.audio.play_sound("squirrel_land")
+        Sc.audio.play_sound("squirrel_land")
 
 
 func _trigger_new_navigation_recurring() -> void:
@@ -44,7 +45,7 @@ func _trigger_new_navigation_recurring() -> void:
     
     if !navigator.is_currently_navigating:
         _start_new_navigation()
-    Gs.time.set_timeout(
+    Sc.time.set_timeout(
             funcref(self, "_trigger_new_navigation_recurring"),
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL,
             [],
@@ -55,7 +56,7 @@ func _update_navigator(delta_scaled: float) -> void:
     if is_human_player:
         return
     
-    var cat_position: Vector2 = Surfacer.human_player.position
+    var cat_position: Vector2 = Su.human_player.position
     var is_cat_close := \
             self.position.distance_squared_to(cat_position) <= \
             CAT_IS_CLOSE_DISTANCE_SQUARED_THRESHOLD
@@ -71,13 +72,13 @@ func _update_navigator(delta_scaled: float) -> void:
 
 
 func _start_new_navigation() -> void:
-    Gs.profiler.start("start_new_squirrel_navigation")
+    Sc.profiler.start("start_new_squirrel_navigation")
     
     var possible_destinations: Array = \
-            Gs.level.squirrel_destinations
+            Sc.level.squirrel_destinations
     var next_destination := previous_destination
     while next_destination.target_point == Vector2.INF or \
-            Gs.geometry.are_points_equal_with_epsilon(
+            Sc.geometry.are_points_equal_with_epsilon(
                     next_destination.target_point,
                     previous_destination.target_point,
                     128.0):
@@ -87,10 +88,10 @@ func _start_new_navigation() -> void:
     navigator.navigate_to_position(next_destination)
     previous_destination = next_destination
     
-    var duration: float = Gs.profiler.stop("start_new_squirrel_navigation")
+    var duration: float = Sc.profiler.stop("start_new_squirrel_navigation")
     print_msg(("SQUIRREL NEW NAV    ;" +
             "%8.3fs; " +
             "calc duration=%sms"), [
-        Gs.time.get_play_time(),
+        Sc.time.get_play_time(),
         duration,
     ])

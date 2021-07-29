@@ -98,13 +98,13 @@ func get_level_ids() -> Array:
 func get_unlock_hint(level_id: String) -> String:
     # TODO
     return "Not yet unlocked" if \
-            !Gs.save_state.get_level_is_unlocked(level_id) else \
+            !Sc.save_state.get_level_is_unlocked(level_id) else \
             ""
 
 
 func get_suggested_next_level() -> String:
     # TODO
-    var last_level_played_id := Gs.save_state.get_last_level_played()
+    var last_level_played_id := Sc.save_state.get_last_level_played()
     if last_level_played_id != "" and \
             level_manifest.has(last_level_played_id):
         return last_level_played_id
