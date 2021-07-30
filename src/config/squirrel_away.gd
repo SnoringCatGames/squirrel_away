@@ -88,8 +88,10 @@ var _metadata := {
     
     app_logo = preload("res://assets/images/gui/logo.png"),
     app_logo_scale = 2.0,
+    
     go_icon = preload("res://assets/images/gui/go_icon.png"),
     go_icon_scale = 1.5,
+    
     developer_name = "Snoring Cat LLC",
     developer_url = "https://snoringcat.games",
     
@@ -469,8 +471,6 @@ var _pause_item_manifest := [
     LevelLabeledControlItem,
     TimeLabeledControlItem,
     FastestTimeLabeledControlItem,
-    FollowersCountLabeledControlItem,
-    ScareCountLabeledControlItem,
 ]
 
 var _game_over_item_manifest := [
@@ -498,16 +498,6 @@ var _hud_manifest := {
             settings_enablement_label = "Time",
             enabled_by_default = true,
             settings_group_key = "hud",
-        },
-        {
-            item_class = FollowersCountLabeledControlItem,
-            settings_enablement_label = "Ducklings in tow",
-            enabled_by_default = true,
-            settings_group_key = "hud",
-            animation = {
-                modulate_color = HUD_KEY_VALUE_BOX_MODULATE_COLOR,
-                duration = 0.5,
-            },
         },
     ],
     is_inspector_enabled_default = false,
@@ -581,7 +571,7 @@ var _gui_manifest := {
     third_party_license_text = \
             ScaffolderThirdPartyLicenses.TEXT + \
             SurfacerThirdPartyLicenses.TEXT + \
-            ThirdPartyLicenses.TEXT,
+            SquirrelAwayThirdPartyLicenses.TEXT,
     special_thanks_text = """
 """,
     
@@ -627,7 +617,7 @@ var _metric_keys := [
     "start_new_squirrel_navigation",
 ]
 
-var _debug_params := {
+var _surfacer_debug_params := {
 #    limit_parsing = {
 #        player_name = "cat",
 #
@@ -715,11 +705,8 @@ var _movement_manifest := {
 }
 
 var _player_scenes := [
-    preload("res://src/players/duckling/duckling.tscn"),
-    preload("res://src/players/fox/fox.tscn"),
-    preload("res://src/players/momma/momma.tscn"),
-    preload("res://src/players/porcupine/porcupine.tscn"),
-    preload("res://src/players/run_away_duckling/run_away_duckling.tscn"),
+    preload("res://src/players/cat/cat.tscn"),
+    preload("res://src/players/squirrel/squirrel.tscn"),
 ]
 
 var _surfacer_manifest := {
@@ -753,8 +740,8 @@ var _surfacer_manifest := {
 }
 
 var app_manifest := {
-    level_config_class = MommaDuckLevelConfig,
-    level_session_class = MommaDuckLevelSession,
+    level_config_class = SquirrelAwayLevelConfig,
+    level_session_class = SquirrelAwayLevelSession,
     
     metadata = _metadata,
     audio_manifest = _audio_manifest,

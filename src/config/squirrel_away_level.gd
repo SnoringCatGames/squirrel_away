@@ -65,7 +65,7 @@ func get_slow_motion_music_name() -> String:
 func _parse_squirrel_destinations() -> void:
     squirrel_destinations.clear()
     var configured_destinations := Sc.utils.get_all_nodes_in_group(
-            App.group_name_squirrel_destinations)
+            SquirrelAway.group_name_squirrel_destinations)
     if !configured_destinations.empty():
         assert(configured_destinations.size() == 1)
         var squirrel_player: SquirrelPlayer = \

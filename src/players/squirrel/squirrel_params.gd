@@ -4,7 +4,7 @@ extends MovementParams
 
 func _init_params() -> void:
     name = "squirrel"
-    player_resource_path = "res://src/players/squirrel/squirrel_player.tscn"
+    player_resource_path = "res://src/players/squirrel/squirrel.tscn"
     
     can_grab_walls = true
     can_grab_ceilings = false
