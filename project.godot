@@ -147,7 +147,7 @@ _global_script_classes=[ {
 "base": "SurfacerPlayer",
 "class": "CatPlayer",
 "language": "GDScript",
-"path": "res://src/players/cat/cat_player.gd"
+"path": "res://src/players/cat/cat.gd"
 }, {
 "base": "Reference",
 "class": "CeilingsItemController",
@@ -929,11 +929,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/settings_items/log_surfacer_events_settings_labeled_control_item.gd"
 }, {
-"base": "SurfacerBootstrap",
-"class": "Main",
-"language": "GDScript",
-"path": "res://src/config/main.gd"
-}, {
 "base": "Screen",
 "class": "MainMenuScreen",
 "language": "GDScript",
@@ -1424,7 +1419,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_items/score_labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "VBoxContainer",
 "class": "Screen",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screen.gd"
@@ -1504,7 +1499,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/config/squirrel_away_level_config.gd"
 }, {
-"base": "Reference",
+"base": "Node",
+"class": "SquirrelAwayMain",
+"language": "GDScript",
+"path": "res://src/config/main.gd"
+}, {
+"base": "Node",
 "class": "SquirrelAwayThirdPartyLicenses",
 "language": "GDScript",
 "path": "res://src/config/squirrel_away_third_party_licenses.gd"
@@ -1522,7 +1522,7 @@ _global_script_classes=[ {
 "base": "SurfacerPlayer",
 "class": "SquirrelPlayer",
 "language": "GDScript",
-"path": "res://src/players/squirrel/squirrel_player.gd"
+"path": "res://src/players/squirrel/squirrel.gd"
 }, {
 "base": "Reference",
 "class": "StaticTextLabeledControlItem",
@@ -1534,7 +1534,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/time/stopwatch.gd"
 }, {
-"base": "Reference",
+"base": "StyleBoxFlat",
 "class": "StyleBoxFlatScalable",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/style_box_flat_scalable.gd"
@@ -2014,7 +2014,6 @@ _global_script_class_icons={
 "LoadingImage": "",
 "LockAnimation": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "LogSurfacerEventsSettingsLabeledControlItem": "",
-"Main": "",
 "MainMenuScreen": "",
 "MatchExpectedEdgeTrajectoryAction": "",
 "MetronomeSettingsLabeledControlItem": "",
@@ -2113,7 +2112,7 @@ _global_script_class_icons={
 "ScaffolderTween": "",
 "ScaffolderVSeparator": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_v_separator.png",
 "ScoreLabeledControlItem": "",
-"Screen": "",
+"Screen": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_panel_container.png",
 "ScreenContainer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "ScreenMaskTransition": "",
 "ScreenTransition": "",
@@ -2129,6 +2128,7 @@ _global_script_class_icons={
 "SplashScreen": "",
 "SquirrelAwayLevel": "",
 "SquirrelAwayLevelConfig": "",
+"SquirrelAwayMain": "res://addons/scaffolder/assets/images/editor_icons/star.png",
 "SquirrelAwayThirdPartyLicenses": "",
 "SquirrelAwayTileMap": "",
 "SquirrelParams": "",
@@ -2209,7 +2209,7 @@ config/quit_on_go_back=false
 
 Sc="*res://addons/scaffolder/src/config/sc.gd"
 Su="*res://addons/surfacer/src/config/su.gd"
-App="*res://src/config/app.gd"
+SquirrelAway="*res://src/config/squirrel_away.gd"
 
 [display]
 

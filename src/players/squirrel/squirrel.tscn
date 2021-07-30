@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/players/squirrel/squirrel_player.gd" type="Script" id=1]
+[ext_resource path="res://src/players/squirrel/squirrel.gd" type="Script" id=1]
 [ext_resource path="res://addons/surfacer/src/platform_graph/edge/models/movement_params.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/players/squirrel/squirrel_animator.tscn" type="PackedScene" id=3]
 
