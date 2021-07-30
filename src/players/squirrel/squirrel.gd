@@ -14,10 +14,6 @@ var previous_destination := PositionAlongSurfaceFactory \
         .create_position_without_surface(Vector2.INF)
 
 
-func _init().("squirrel") -> void:
-    pass
-
-
 func _ready() -> void:
     if is_fake:
         # Fake players are only used for testing potential collisions under the

@@ -29,11 +29,9 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _metadata.are_button_controls_enabled_by_default = is_debug
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
-#        "1",
-#        "2",
-#        "3",
-#        "4",
-#        "5",
+        "3",
+        "6",
+        "7",
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
@@ -102,7 +100,7 @@ var _images_overrides := {
     developer_splash = preload( \
             "res://addons/scaffolder/assets/images/logos/snoring_cat_logo_splash.png"),
     
-    go_normal = preload("res://assets/images/go_icon.png"),
+    go_normal = preload("res://assets/images/gui/go_icon.png"),
     go_scale = 1.5,
 }
 
@@ -110,6 +108,16 @@ var _sounds_manifest := [
     {
         name = "fall",
         volume_db = 18.0,
+        path_prefix = "res://addons/scaffolder/assets/sounds/",
+    },
+    {
+        name = "cadence_win",
+        volume_db = 10.0,
+        path_prefix = "res://addons/scaffolder/assets/sounds/",
+    },
+    {
+        name = "cadence_lose",
+        volume_db = 10.0,
         path_prefix = "res://addons/scaffolder/assets/sounds/",
     },
     {
@@ -202,15 +210,15 @@ var _audio_manifest := {
     default_music_file_suffix = ".ogg",
     default_music_bus_index = 2,
     
-    godot_splash_sound = "quack_peep",
+    godot_splash_sound = "achievement",
     developer_splash_sound = "single_cat_snore",
-    level_end_sound_win = "momma_cadence",
+    level_end_sound_win = "cadence_win",
     level_end_sound_lose = "cadence_lose",
     
-    main_menu_music = "momma_pause_music",
-    game_over_music = "momma_pause_music",
-    pause_menu_music = "momma_pause_music",
-    default_level_music = "momma_music",
+    main_menu_music = "on_a_quest",
+    game_over_music = "pause_menu",
+    pause_menu_music = "pause_menu",
+    default_level_music = "on_a_quest",
     
     pauses_level_music_on_pause = true,
     
@@ -327,13 +335,13 @@ var _styles_manifest_pixel := {
     focus_border_expand_margin_bottom = 3.0,
     
     button_pressed_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/button_pressed.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/button_pressed.png"),
     button_disabled_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/button_hover.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/button_hover.png"),
     button_hover_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/button_hover.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/button_hover.png"),
     button_normal_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/button_normal.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/button_normal.png"),
     button_nine_patch_margin_left = 3.5,
     button_nine_patch_margin_top = 3.5,
     button_nine_patch_margin_right = 3.5,
@@ -341,13 +349,13 @@ var _styles_manifest_pixel := {
     button_nine_patch_scale = 3.0,
     
     dropdown_pressed_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/dropdown_pressed.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/dropdown_pressed.png"),
     dropdown_disabled_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/dropdown_hover.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/dropdown_hover.png"),
     dropdown_hover_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/dropdown_hover.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/dropdown_hover.png"),
     dropdown_normal_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/dropdown_normal.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/dropdown_normal.png"),
     dropdown_nine_patch_margin_left = 3.5,
     dropdown_nine_patch_margin_top = 3.5,
     dropdown_nine_patch_margin_right = 3.5,
@@ -355,7 +363,7 @@ var _styles_manifest_pixel := {
     dropdown_nine_patch_scale = 3.0,
     
     scroll_track_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/scroll_track.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/scroll_track.png"),
     scroll_track_nine_patch_margin_left = 3.5,
     scroll_track_nine_patch_margin_top = 3.5,
     scroll_track_nine_patch_margin_right = 3.5,
@@ -363,11 +371,11 @@ var _styles_manifest_pixel := {
     scroll_track_nine_patch_scale = 3.0,
     
     scroll_grabber_pressed_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/scroll_grabber_pressed.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/scroll_grabber_pressed.png"),
     scroll_grabber_hover_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/scroll_grabber_hover.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/scroll_grabber_hover.png"),
     scroll_grabber_normal_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/scroll_grabber_normal.png"),
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/scroll_grabber_normal.png"),
     scroll_grabber_nine_patch_margin_left = 3.5,
     scroll_grabber_nine_patch_margin_top = 3.5,
     scroll_grabber_nine_patch_margin_right = 3.5,
@@ -615,7 +623,7 @@ var _slow_motion_manifest := {
 
 var _input_map = ScaffolderProjectSettings.DEFAULT_INPUT_MAP
 
-var _metric_keys := [
+var _additional_metric_keys := [
     "start_new_squirrel_navigation",
 ]
 
@@ -719,8 +727,8 @@ var _surfacer_manifest := {
     are_loaded_surfaces_deeply_validated = true,
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     
-    default_player_name = 'momma',
-    default_tile_set = preload("res://src/levels/surfaces_tile_set.tres"),
+    default_player_name = 'cat',
+    default_tile_set = preload("res://addons/surfacer/src/level/placeholder_surfaces_tile_set.tres"),
     path_drag_update_throttle_interval = 0.2,
     path_beat_update_throttle_interval = 0.2,
     
@@ -749,7 +757,7 @@ var app_manifest := {
     audio_manifest = _audio_manifest,
     colors_manifest = _colors_manifest,
     styles_manifest = _default_styles_manifest_normal,
-    icons_manifest = _default_icons_manifest_normal,
+    images_manifest = _default_images_manifest_normal,
     gui_manifest = _gui_manifest,
     slow_motion_manifest = _slow_motion_manifest,
     input_map = _input_map,
@@ -761,10 +769,6 @@ var _overrides := {
 }
 
 # ---
-
-
-func _init().(_is_using_pixel_style) -> void:
-    pass
 
 
 func _ready() -> void:

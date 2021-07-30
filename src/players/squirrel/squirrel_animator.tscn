@@ -45,7 +45,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "JumpFall"
 length = 0.07
 loop = true
@@ -63,7 +63,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "JumpRise"
 length = 0.07
 step = 0.07
@@ -80,7 +80,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "Rest"
 length = 1.12
 loop = true
@@ -98,8 +98,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "RestOnWall"
+[sub_resource type="Animation" id=6]
 length = 1.12
 loop = true
 step = 0.07
@@ -116,8 +115,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Walk"
+[sub_resource type="Animation" id=7]
 length = 0.56
 loop = true
 step = 0.07
@@ -139,6 +137,43 @@ z_index = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
+}
+animations = {
+"ClimbDown": {
+"name": "ClimbDown",
+"speed": 2.5,
+"sprite_name": "ClimbDown"
+},
+"ClimbUp": {
+"name": "ClimbUp",
+"speed": 2.5,
+"sprite_name": "ClimbUp"
+},
+"JumpFall": {
+"name": "JumpFall",
+"speed": 1.0,
+"sprite_name": "JumpFall"
+},
+"JumpRise": {
+"name": "JumpRise",
+"speed": 1.0,
+"sprite_name": "JumpRise"
+},
+"Rest": {
+"name": "Rest",
+"speed": 1.0,
+"sprite_name": "Rest"
+},
+"RestOnWall": {
+"name": "RestOnWall",
+"speed": 1.0,
+"sprite_name": "RestOnWall"
+},
+"Walk": {
+"name": "Walk",
+"speed": 2.5,
+"sprite_name": "Walk"
+}
 }
 
 [node name="Walk" type="Sprite" parent="."]
@@ -162,6 +197,7 @@ position = Vector2( -0.403453, -13.0153 )
 texture = ExtResource( 4 )
 hframes = 4
 vframes = 2
+frame = 7
 
 [node name="Rest" type="Sprite" parent="."]
 position = Vector2( -10.6186, -5.00692 )
@@ -189,8 +225,8 @@ texture = ExtResource( 7 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ClimbDown = SubResource( 1 )
 anims/ClimbUp = SubResource( 2 )
-anims/JumpFall = SubResource( 4 )
-anims/JumpRise = SubResource( 5 )
-anims/Rest = SubResource( 7 )
-anims/RestOnWall = SubResource( 3 )
-anims/Walk = SubResource( 6 )
+anims/JumpFall = SubResource( 3 )
+anims/JumpRise = SubResource( 4 )
+anims/Rest = SubResource( 5 )
+anims/RestOnWall = SubResource( 6 )
+anims/Walk = SubResource( 7 )

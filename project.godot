@@ -139,11 +139,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/players/cat/cat_animator.gd"
 }, {
-"base": "MovementParams",
-"class": "CatParams",
-"language": "GDScript",
-"path": "res://src/players/cat/cat_params.gd"
-}, {
 "base": "SurfacerPlayer",
 "class": "CatPlayer",
 "language": "GDScript",
@@ -323,11 +318,6 @@ _global_script_classes=[ {
 "class": "DiscreteEdgeTrajectoryLegendItem",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/legend_items/discrete_edge_trajectory_legend_item.gd"
-}, {
-"base": "Reference",
-"class": "DrawUtils",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/draw_utils.gd"
 }, {
 "base": "LabeledControlItem",
 "class": "DropdownLabeledControlItem",
@@ -914,7 +904,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screens/level_select_screen.gd"
 }, {
-"base": "Reference",
+"base": "ScaffolderConfiguredImage",
 "class": "LoadingImage",
 "language": "GDScript",
 "path": "res://src/gui/loading_image.gd"
@@ -1294,6 +1284,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/scaffolder_configured_image.gd"
 }, {
+"base": "Node",
+"class": "ScaffolderDrawUtils",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/utils/scaffolder_draw_utils.gd"
+}, {
 "base": "Reference",
 "class": "ScaffolderGeometry",
 "language": "GDScript",
@@ -1504,6 +1499,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/config/squirrel_away_level_config.gd"
 }, {
+"base": "SurfacerLevelSession",
+"class": "SquirrelAwayLevelSession",
+"language": "GDScript",
+"path": "res://src/config/squirrel_away_level_session.gd"
+}, {
 "base": "Node",
 "class": "SquirrelAwayMain",
 "language": "GDScript",
@@ -1514,15 +1514,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/config/squirrel_away_third_party_licenses.gd"
 }, {
-"base": "Reference",
+"base": "SurfacesTileMap",
 "class": "SquirrelAwayTileMap",
 "language": "GDScript",
 "path": "res://src/levels/squirrel_away_tile_map.gd"
-}, {
-"base": "MovementParams",
-"class": "SquirrelParams",
-"language": "GDScript",
-"path": "res://src/players/squirrel/squirrel_params.gd"
 }, {
 "base": "SurfacerPlayer",
 "class": "SquirrelPlayer",
@@ -1861,7 +1856,6 @@ _global_script_class_icons={
 "CanvasLayers": "",
 "CapVelocityAction": "",
 "CatAnimator": "",
-"CatParams": "",
 "CatPlayer": "",
 "CeilingsItemController": "",
 "CenteredPanel": "",
@@ -1898,7 +1892,6 @@ _global_script_class_icons={
 "DeveloperSplashScreen": "",
 "DeviceUtils": "",
 "DiscreteEdgeTrajectoryLegendItem": "",
-"DrawUtils": "",
 "DropdownLabeledControlItem": "",
 "DummyItemController": "",
 "Edge": "",
@@ -2092,6 +2085,7 @@ _global_script_class_icons={
 "ScaffolderCheckBox": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_check_box.png",
 "ScaffolderColors": "",
 "ScaffolderConfiguredImage": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
+"ScaffolderDrawUtils": "",
 "ScaffolderGeometry": "",
 "ScaffolderGuiConfig": "",
 "ScaffolderHSeparator": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_h_separator.png",
@@ -2134,10 +2128,10 @@ _global_script_class_icons={
 "SplashScreen": "",
 "SquirrelAwayLevel": "",
 "SquirrelAwayLevelConfig": "",
+"SquirrelAwayLevelSession": "",
 "SquirrelAwayMain": "res://addons/scaffolder/assets/images/editor_icons/star.png",
 "SquirrelAwayThirdPartyLicenses": "",
 "SquirrelAwayTileMap": "",
-"SquirrelParams": "",
 "SquirrelPlayer": "",
 "StaticTextLabeledControlItem": "",
 "Stopwatch": "",
@@ -2206,9 +2200,10 @@ _global_script_class_icons={
 
 config/name="Squirrel Away"
 run/main_scene="res://src/config/main.tscn"
-boot_splash/image="res://addons/scaffolder/assets/images/gui/godot_logo_splash.png"
+boot_splash/image="res://addons/scaffolder/assets/images/logos/godot_logo_splash.png"
 boot_splash/bg_color=Color( 0.12549, 0.145098, 0.192157, 1 )
 config/icon="res://assets/images/icon.png"
+config/auto_accept_quit=false
 config/quit_on_go_back=false
 
 [autoload]
@@ -2361,7 +2356,8 @@ pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 
-2d_physics/layer_1="walls_and_floors"
+2d_physics/layer_1="surfaces_tilemaps"
+2d_render/layer_2="player"
 2d_physics/layer_2="fall_through_floors"
 2d_physics/layer_3="walk_through_walls"
 2d_physics/layer_4="squirrels"
@@ -2370,6 +2366,10 @@ pointing/emulate_touch_from_mouse=true
 [logging]
 
 file_logging/enable_file_logging=true
+
+[physics]
+
+common/physics_fps=60.0
 
 [rendering]
 

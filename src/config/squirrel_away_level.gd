@@ -9,17 +9,16 @@ var _does_level_have_squirrels := false
 var squirrel_destinations := []
 
 
-func _enter_tree() -> void:
-    _does_level_have_squirrels = \
-            Sc.level_config.get_level_config(_id).player_names.has("squirrel")
-
-
 #func _load() -> void:
 #    ._load()
 
 
 func _start() -> void:
     ._start()
+    
+    _does_level_have_squirrels = \
+            Sc.level_config.get_level_config(Sc.level_session.id) \
+            .platform_graph_player_names.has("squirrel")
     
     if _does_level_have_squirrels:
         _parse_squirrel_destinations()
@@ -50,6 +49,14 @@ func _destroy() -> void:
 
 #func _on_intro_choreography_finished() -> void:
 #    ._on_intro_choreography_finished()
+
+
+#func pause() -> void:
+#    .pause()
+
+
+#func on_unpause() -> void:
+#    .on_unpause()
 
 
 func get_music_name() -> String:
@@ -85,11 +92,11 @@ func _parse_squirrel_destinations() -> void:
 
 
 func _create_random_squirrel_spawn_position() -> PositionAlongSurface:
-    var bounds := graph_parser.surface_parser.combined_tile_map_rect.grow(
+    var bounds := Su.graph_parser.surface_parser.combined_tile_map_rect.grow(
             -SquirrelPlayer.SQUIRREL_SPAWN_LEVEL_OUTER_MARGIN)
     var x := randf() * bounds.size.x + bounds.position.x
     var y := randf() * bounds.size.y + bounds.position.y
     var point := Vector2(x, y)
     return SurfaceParser.find_closest_position_on_a_surface(
             point,
-            graph_parser.fake_players["squirrel"])
+            Su.graph_parser.fake_players["squirrel"])
