@@ -45,17 +45,20 @@ animations = [ {
 } ]
 
 [node name="LoadingImage" type="Control"]
-margin_right = 70.0
-margin_bottom = 44.0
-rect_min_size = Vector2( 70, 44 )
+margin_right = 280.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 280, 176 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+original_offset = Vector2( -32, 0 )
 
 [node name="AnimatedTextureRect" parent="." instance=ExtResource( 3 )]
-margin_right = 210.0
-margin_bottom = 132.0
+margin_left = -32.0
+margin_right = -32.0
 rect_min_size = Vector2( 280, 176 )
 frames = SubResource( 9 )
 original_frame_size = Vector2( 70, 44 )
