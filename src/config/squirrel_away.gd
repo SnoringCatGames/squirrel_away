@@ -86,22 +86,24 @@ var _metadata := {
             "https://storage.googleapis.com/upload/storage/v1/b/squirrel-away-logs/o",
     app_id_query_param = "squirrel-away",
     
-    app_logo = preload("res://assets/images/gui/logo.png"),
-    app_logo_scale = 2.0,
-    
-    go_icon = preload("res://assets/images/gui/go_icon.png"),
-    go_icon_scale = 1.5,
-    
     developer_name = "Snoring Cat LLC",
     developer_url = "https://snoringcat.games",
+    
+    godot_splash_screen_duration = 0.8,
+    developer_splash_screen_duration = 1.0,
+}
+
+var _images_overrides := {
+    app_logo = preload("res://assets/images/logo.png"),
+    app_logo_scale = 1.0,
     
     developer_logo = preload( \
             "res://addons/scaffolder/assets/images/logos/snoring_cat_logo_about.png"),
     developer_splash = preload( \
             "res://addons/scaffolder/assets/images/logos/snoring_cat_logo_splash.png"),
     
-    godot_splash_screen_duration = 0.8,
-    developer_splash_screen_duration = 1.0,
+    go_normal = preload("res://assets/images/go_icon.png"),
+    go_scale = 1.5,
 }
 
 var _sounds_manifest := [
@@ -324,8 +326,8 @@ var _styles_manifest_pixel := {
     focus_border_expand_margin_right = 3.0,
     focus_border_expand_margin_bottom = 3.0,
     
-    button_active_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/button_active.png"),
+    button_pressed_nine_patch = \
+            preload("res://assets/images/gui/nine_patch/button_pressed.png"),
     button_disabled_nine_patch = \
             preload("res://assets/images/gui/nine_patch/button_hover.png"),
     button_hover_nine_patch = \
@@ -338,8 +340,8 @@ var _styles_manifest_pixel := {
     button_nine_patch_margin_bottom = 3.5,
     button_nine_patch_scale = 3.0,
     
-    dropdown_active_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/dropdown_active.png"),
+    dropdown_pressed_nine_patch = \
+            preload("res://assets/images/gui/nine_patch/dropdown_pressed.png"),
     dropdown_disabled_nine_patch = \
             preload("res://assets/images/gui/nine_patch/dropdown_hover.png"),
     dropdown_hover_nine_patch = \
@@ -360,8 +362,8 @@ var _styles_manifest_pixel := {
     scroll_track_nine_patch_margin_bottom = 3.5,
     scroll_track_nine_patch_scale = 3.0,
     
-    scroll_grabber_active_nine_patch = \
-            preload("res://assets/images/gui/nine_patch/scroll_grabber_active.png"),
+    scroll_grabber_pressed_nine_patch = \
+            preload("res://assets/images/gui/nine_patch/scroll_grabber_pressed.png"),
     scroll_grabber_hover_nine_patch = \
             preload("res://assets/images/gui/nine_patch/scroll_grabber_hover.png"),
     scroll_grabber_normal_nine_patch = \
@@ -754,6 +756,10 @@ var app_manifest := {
     surfacer_manifest = _surfacer_manifest,
 }
 
+var _overrides := {
+    images_manifest = _images_overrides,
+}
+
 # ---
 
 
@@ -765,15 +771,19 @@ func _ready() -> void:
     Sc.call_deferred("run", app_manifest)
 
 
-func _override_configs_for_is_using_pixel_style(manifest: Dictionary) -> void:
+func _override_configs_for_app(manifest: Dictionary) -> void:
+    ._override_configs_for_app(manifest)
+    
     if _is_using_pixel_style:
         manifest.gui_manifest.fonts_manifest = _default_fonts_manifest_pixel
         manifest.styles_manifest = _styles_manifest_pixel
-        manifest.icons_manifest = _default_icons_manifest_pixel
+        manifest.images_manifest = _default_images_manifest_pixel
     else:
         manifest.gui_manifest.fonts_manifest = _default_fonts_manifest_normal
         manifest.styles_manifest = _default_styles_manifest_normal
-        manifest.icons_manifest = _default_icons_manifest_normal
+        manifest.images_manifest = _default_images_manifest_normal
+    
+    _override_manifest(manifest, _overrides)
 
 
 func _set_up() -> void:
