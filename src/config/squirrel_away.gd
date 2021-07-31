@@ -248,7 +248,7 @@ var COLOR_BUTTON_DARKER := Color("734905")
 var COLOR_SHADOW := Color("88000000")
 
 var HUD_KEY_VALUE_BOX_MODULATE_COLOR := Color(0.1, 0.7, 1.2, 1.0)
-var BUTTON_PULSE_MODULATE_COLOR := Color(2.0, 2.0, 2.0, 1.0)
+var BUTTON_PULSE_MODULATE_COLOR := Color(1.5, 1.5, 3.0, 1.0)
 
 var _colors_manifest := {
     # Scaffolder colors.
@@ -600,7 +600,7 @@ var _gui_manifest := {
     debug_panel_scene = \
             preload("res://addons/scaffolder/src/gui/debug_panel.tscn"),
     
-    theme = preload("res://src/config/default_theme.tres"),
+    theme = preload("res://addons/scaffolder/src/config/scaffolder_default_theme.tres"),
     
     fonts_manifest = _default_fonts_manifest_normal,
     settings_item_manifest = _settings_item_manifest,
