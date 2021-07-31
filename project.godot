@@ -1119,7 +1119,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/settings_items/player_position_annotator_settings_labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "PlayerPrediction",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/player_prediction.gd"
@@ -1199,7 +1199,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/time/profiler.gd"
 }, {
-"base": "Reference",
+"base": "InspectorItemController",
 "class": "ProfilerCountItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/profiler_group/profiler_count_item_controller.gd"
