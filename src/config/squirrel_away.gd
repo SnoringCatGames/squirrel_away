@@ -12,8 +12,8 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     var is_debug := true and OS.is_debug_build()
     var is_playtest := false
     
-#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
-    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
+    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
+#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
     _metadata.app_version = "0.0.1"
@@ -29,9 +29,9 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _metadata.are_button_controls_enabled_by_default = is_debug
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
-        "3",
-        "6",
-        "7",
+#        "3",
+#        "6",
+#        "7",
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
@@ -233,17 +233,17 @@ var _audio_manifest := {
     is_slow_motion_start_stop_sound_effect_played = false,
 }
 
-var COLOR_BACKGROUND := Color("473d2d")
-var COLOR_BACKGROUND_LIGHTER := Color("473d2d")
-var COLOR_BACKGROUND_DARKER := Color("473d2d")
+var COLOR_BACKGROUND := Color("453d30")
+var COLOR_BACKGROUND_LIGHTER := Color("574d3d")
+var COLOR_BACKGROUND_DARKER := Color("362f25")
 
 var COLOR_TEXT := Color("eeeeee")
-var COLOR_HEADER := Color("fff12e")
-var COLOR_FOCUS := Color("72d113")
+var COLOR_HEADER := Color("faca7d")
+var COLOR_FOCUS := Color("faca7d")
 
-var COLOR_BUTTON := Color("3e7025")
-var COLOR_BUTTON_LIGHTER := Color("3e7025")
-var COLOR_BUTTON_DARKER := Color("3e7025")
+var COLOR_BUTTON := Color("c27e10")
+var COLOR_BUTTON_LIGHTER := Color("eba534")
+var COLOR_BUTTON_DARKER := Color("734905")
 
 var COLOR_SHADOW := Color("88000000")
 

@@ -1674,7 +1674,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/surfaces_of_side_item_controller.gd"
 }, {
-"base": "Reference",
+"base": "TileMap",
 "class": "SurfacesTileMap",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/surfaces_tile_map.gd"
@@ -2163,7 +2163,7 @@ _global_script_class_icons={
 "SurfacesAnnotatorSettingsLabeledControlItem": "",
 "SurfacesGroupItemController": "",
 "SurfacesOfSideGroupItemController": "",
-"SurfacesTileMap": "",
+"SurfacesTileMap": "res://addons/surfacer/assets/images/editor_icons/surfaces_tile_map.png",
 "TextLabeledControlItem": "",
 "ThirdPartyLicensesScreen": "",
 "Time": "",
@@ -2376,6 +2376,6 @@ common/physics_fps=60.0
 quality/intended_usage/framebuffer_allocation=1
 quality/intended_usage/framebuffer_allocation.mobile=1
 2d/snapping/use_gpu_pixel_snap=true
-environment/default_clear_color=Color( 0.278431, 0.239216, 0.176471, 1 )
+environment/default_clear_color=Color( 0.270588, 0.239216, 0.188235, 1 )
 environment/default_environment="res://src/config/default_env.tres"
 quality/2d/use_pixel_snap=true
