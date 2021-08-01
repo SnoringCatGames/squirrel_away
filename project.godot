@@ -144,7 +144,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/players/cat/cat.gd"
 }, {
-"base": "Reference",
+"base": "SurfacesOfSideGroupItemController",
 "class": "CeilingsItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/ceilings_item_controller.gd"
@@ -159,7 +159,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/labeled_control_list/checkbox_labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "Choreographer",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/choreographer.gd"
@@ -474,7 +474,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/edges_group/edges_filtered_by_result_type_group_item_controller.gd"
 }, {
-"base": "Reference",
+"base": "InspectorItemController",
 "class": "EdgesGroupItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/edges_group/edges_group_item_controller.gd"
@@ -609,7 +609,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/floor_walk_action.gd"
 }, {
-"base": "Reference",
+"base": "SurfacesOfSideGroupItemController",
 "class": "FloorsItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/floors_item_controller.gd"
@@ -659,7 +659,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/data/gesture_reporter.gd"
 }, {
-"base": "Reference",
+"base": "InspectorItemController",
 "class": "GlobalCountsGroupItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/profiler_group/global_counts_group_item_controller.gd"
@@ -1204,12 +1204,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/profiler_group/profiler_count_item_controller.gd"
 }, {
-"base": "Reference",
+"base": "InspectorItemController",
 "class": "ProfilerGroupItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/profiler_group/profiler_group_item_controller.gd"
 }, {
-"base": "Reference",
+"base": "InspectorItemController",
 "class": "ProfilerTimingItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/profiler_group/profiler_timing_item_controller.gd"
@@ -1664,7 +1664,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/settings_items/surfaces_annotator_settings_labeled_control_item.gd"
 }, {
-"base": "Reference",
+"base": "InspectorItemController",
 "class": "SurfacesGroupItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/surfaces_group_item_controller.gd"

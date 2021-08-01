@@ -28,8 +28,7 @@ func _start() -> void:
         ]
         for squirrel_position in starting_squirrel_positions:
             add_player(
-                    Su.player_params["squirrel"].movement_params \
-                            .player_resource_path,
+                    Su.player_scenes["squirrel"],
                     squirrel_position,
                     false)
 

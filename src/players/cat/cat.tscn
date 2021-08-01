@@ -38,38 +38,38 @@ scale = Vector2( -1, 1 )
 animations = {
 "Climb": {
 "name": "Climb",
-"speed": 1.0,
-"sprite_name": "Climb"
+"speed": 9.4,
+"sprite_name": ""
 },
 "JumpFall": {
 "name": "JumpFall",
 "speed": 1.0,
-"sprite_name": "JumpFall"
+"sprite_name": ""
 },
 "JumpRise": {
 "name": "JumpRise",
 "speed": 1.0,
-"sprite_name": "JumpRise"
+"sprite_name": ""
 },
 "Rest": {
 "name": "Rest",
-"speed": 1.0,
-"sprite_name": "Rest"
+"speed": 0.8,
+"sprite_name": ""
 },
 "RestOnWall": {
 "name": "RestOnWall",
-"speed": 1.0,
-"sprite_name": "RestOnWall"
+"speed": 0.8,
+"sprite_name": ""
 },
 "Stand": {
 "name": "Stand",
 "speed": 1.0,
-"sprite_name": "Stand"
+"sprite_name": ""
 },
 "Walk": {
 "name": "Walk",
-"speed": 1.0,
-"sprite_name": "Walk"
+"speed": 10.0,
+"sprite_name": ""
 }
 }
 
