@@ -69,7 +69,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/annotation_elements/annotation_element.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "AnnotationElementDefaults",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/annotation_elements/annotation_element_defaults.gd"
@@ -974,11 +974,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/navigation_pulse_annotator.gd"
 }, {
-"base": "Reference",
-"class": "Navigator",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/platform_graph/navigator.gd"
-}, {
 "base": "Node2D",
 "class": "NavigatorAnnotator",
 "language": "GDScript",
@@ -1359,11 +1354,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/data/scaffolder_log.gd"
 }, {
-"base": "Node",
-"class": "ScaffolderNavigation",
-"language": "GDScript",
-"path": "res://addons/scaffolder/src/utils/navigation.gd"
-}, {
 "base": "OptionButton",
 "class": "ScaffolderOptionButton",
 "language": "GDScript",
@@ -1443,6 +1433,11 @@ _global_script_classes=[ {
 "class": "ScreenMaskTransition",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screen_mask_transition.gd"
+}, {
+"base": "Node",
+"class": "ScreenNavigator",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/utils/screen_navigator.gd"
 }, {
 "base": "Reference",
 "class": "ScreenTransition",
@@ -1573,6 +1568,11 @@ _global_script_classes=[ {
 "class": "SurfaceLegendItem",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/legend/legend_items/surface_legend_item.gd"
+}, {
+"base": "Reference",
+"class": "SurfaceNavigator",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/platform_graph/surface_navigator.gd"
 }, {
 "base": "Reference",
 "class": "SurfaceParser",
@@ -2033,7 +2033,6 @@ _global_script_class_icons={
 "NavBar": "res://addons/scaffolder/assets/images/editor_icons/nav_bar.png",
 "NavigationDestinationAnnotatorSettingsLabeledControlItem": "",
 "NavigationPulseAnnotator": "",
-"Navigator": "",
 "NavigatorAnnotator": "",
 "NotificationScreen": "",
 "OnBeatHashAnnotator": "",
@@ -2110,7 +2109,6 @@ _global_script_class_icons={
 "ScaffolderLevelSession": "",
 "ScaffolderLoadingScreen": "",
 "ScaffolderLog": "",
-"ScaffolderNavigation": "",
 "ScaffolderOptionButton": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_option_button.png",
 "ScaffolderPanelContainer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_panel_container.png",
 "ScaffolderProgressBar": "res://addons/scaffolder/assets/images/editor_icons/progress_bar.png",
@@ -2127,6 +2125,7 @@ _global_script_class_icons={
 "Screen": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_panel_container.png",
 "ScreenContainer": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
 "ScreenMaskTransition": "",
+"ScreenNavigator": "",
 "ScreenTransition": "",
 "ScreenTransitionHandler": "",
 "SelectionDescription": "",
@@ -2153,6 +2152,7 @@ _global_script_class_icons={
 "SurfaceAnnotationElement": "",
 "SurfaceCollision": "",
 "SurfaceLegendItem": "",
+"SurfaceNavigator": "",
 "SurfaceParser": "",
 "SurfaceParserGroupItemController": "",
 "SurfaceSide": "",

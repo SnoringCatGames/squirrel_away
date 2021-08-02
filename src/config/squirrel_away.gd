@@ -29,9 +29,9 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _metadata.are_button_controls_enabled_by_default = is_debug
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
-        "3",
-        "6",
-        "7",
+#        "3",
+#        "6",
+#        "7",
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
