@@ -235,9 +235,14 @@ _global_script_classes=[ {
 "path": "res://addons/surfacer/src/annotators/color_params/color_params_type.gd"
 }, {
 "base": "Screen",
-"class": "ConfirmDataDeletionScreen",
+"class": "ConfirmDataDeletionScreenLocal",
 "language": "GDScript",
-"path": "res://addons/scaffolder/src/gui/screens/confirm_data_deletion_screen.gd"
+"path": "res://addons/scaffolder/src/gui/screens/confirm_data_deletion_screen_local.gd"
+}, {
+"base": "Screen",
+"class": "ConfirmDataDeletionScreenWithAnalytics",
+"language": "GDScript",
+"path": "res://addons/scaffolder/src/gui/screens/confirm_data_deletion_screen_with_analytics.gd"
 }, {
 "base": "Reference",
 "class": "ContinuousEdgeTrajectoryLegendItem",
@@ -1875,7 +1880,8 @@ _global_script_class_icons={
 "ColorParams": "",
 "ColorParamsFactory": "",
 "ColorParamsType": "",
-"ConfirmDataDeletionScreen": "",
+"ConfirmDataDeletionScreenLocal": "",
+"ConfirmDataDeletionScreenWithAnalytics": "",
 "ContinuousEdgeTrajectoryLegendItem": "",
 "CrashReporter": "",
 "DataAgreementScreen": "",
