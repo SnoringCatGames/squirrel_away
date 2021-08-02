@@ -15,11 +15,6 @@ var previous_destination := PositionAlongSurfaceFactory \
 
 
 func _ready() -> void:
-    if is_fake:
-        # Fake players are only used for testing potential collisions under the
-        # hood.
-        return
-    
     Sc.time.set_timeout(
             funcref(self, "_trigger_new_navigation_recurring"),
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL,
