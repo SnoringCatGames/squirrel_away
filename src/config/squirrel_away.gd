@@ -38,6 +38,34 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _gui_manifest.debug_window_size = debug_window_size
     _gui_manifest.hud_manifest.is_inspector_enabled_default = \
             false or is_debug or is_playtest
+    
+    # FIXME: ---------------------------------------------------
+#    _surfacer_debug_params.limit_parsing = {
+#        player_name = "cat",
+#
+#        edge_type = EdgeType.JUMP_FROM_SURFACE_EDGE,
+##        edge_type = EdgeType.CLIMB_OVER_WALL_TO_FLOOR_EDGE,
+##        edge_type = EdgeType.FALL_FROM_WALL_EDGE,
+##        edge_type = EdgeType.FALL_FROM_FLOOR_EDGE,
+##        edge_type = EdgeType.CLIMB_DOWN_WALL_TO_FLOOR_EDGE,
+##        edge_type = EdgeType.WALK_TO_ASCEND_WALL_FROM_FLOOR_EDGE,
+#
+#        edge = {
+#            origin = {
+#                surface_side = SurfaceSide.FLOOR,
+##                surface_start_vertex = Vector2(-64, 64),
+#                position = Vector2(-71.599, 896),
+#                epsilon = 10,
+#            },
+#            destination = {
+#                surface_side = SurfaceSide.RIGHT_WALL,
+##                surface_start_vertex = Vector2(128, -128),
+#                position = Vector2(64, 756),
+#                epsilon = 10,
+#            },
+##            velocity_start = Vector2(0, -1000),
+#        },
+#    }
 
 # ---
 
@@ -643,35 +671,7 @@ var _additional_metric_keys := [
     "start_new_squirrel_navigation",
 ]
 
-var _surfacer_debug_params := {
-#    limit_parsing = {
-#        player_name = "cat",
-#
-#        edge_type = EdgeType.JUMP_INTER_SURFACE_EDGE,
-##        edge_type = EdgeType.CLIMB_OVER_WALL_TO_FLOOR_EDGE,
-##        edge_type = EdgeType.FALL_FROM_WALL_EDGE,
-##        edge_type = EdgeType.FALL_FROM_FLOOR_EDGE,
-##        edge_type = EdgeType.CLIMB_DOWN_WALL_TO_FLOOR_EDGE,
-##        edge_type = EdgeType.WALK_TO_ASCEND_WALL_FROM_FLOOR_EDGE,
-#
-#        edge = {
-#            origin = {
-#                surface_side = SurfaceSide.FLOOR,
-#                surface_start_vertex = Vector2(-64, 64),
-#                position = Vector2(64, 64),
-#                epsilon = 10,
-#            },
-#            destination = {
-#                surface_side = SurfaceSide.FLOOR,
-#                surface_start_vertex = Vector2(128, -128),
-#                position = Vector2(128, -128),
-#                epsilon = 10,
-#            },
-#            #velocity_start = Vector2(0, -1000),
-#        },
-#    },
-    extra_annotations = {},
-}
+var _surfacer_debug_params := {}
 
 var _annotations_manifest := {
     is_human_current_nav_trajectory_shown_with_slow_mo = false,
