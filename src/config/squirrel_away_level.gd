@@ -20,7 +20,8 @@ func _start() -> void:
             Sc.level_config.get_level_config(Sc.level_session.id) \
             .platform_graph_player_names.has("squirrel")
     
-    if _does_level_have_squirrels:
+    if _does_level_have_squirrels and \
+            !SquirrelAway.omit_squirrels:
         _parse_squirrel_destinations()
         var starting_squirrel_positions := [
             Vector2(192.0, -192.0),

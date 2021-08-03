@@ -26,6 +26,8 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _metadata.is_splash_skipped = true
     _metadata.are_button_controls_enabled_by_default = false
     
+    omit_squirrels = true
+    
     _surfacer_manifest.precompute_platform_graph_for_levels = [
 #        "3",
 #        "6",
@@ -64,6 +66,13 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
 #    }
     
     _derive_overrides_according_to_debug_or_playtest(manifest)
+
+
+func _derive_overrides_according_to_debug_or_playtest(
+        manifest: Dictionary) -> void:
+    ._derive_overrides_according_to_debug_or_playtest(manifest)
+    
+    omit_squirrels = omit_squirrels and _metadata.debug
 
 # ---
 
@@ -782,6 +791,8 @@ var app_manifest := {
 var _overrides := {
     images_manifest = _images_overrides,
 }
+
+var omit_squirrels := false
 
 # ---
 
