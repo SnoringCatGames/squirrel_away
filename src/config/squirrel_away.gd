@@ -39,7 +39,6 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _gui_manifest.hud_manifest.is_inspector_enabled_default = \
             false or is_debug or is_playtest
     
-    # FIXME: ---------------------------------------------------
 #    _surfacer_debug_params.limit_parsing = {
 #        player_name = "cat",
 #
