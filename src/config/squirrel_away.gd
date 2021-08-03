@@ -65,8 +65,8 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     
     _derive_overrides_according_to_debug_or_playtest(manifest)
 
-
 # ---
+
 
 var _is_using_pixel_style := true
 
