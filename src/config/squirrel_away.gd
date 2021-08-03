@@ -9,24 +9,22 @@ extends DefaultAppManifest
 func _override_configs_for_current_run(manifest: Dictionary) -> void:
     # TODO: Remember to reset these when creating releases.
     
-    var is_debug := true and OS.is_debug_build()
-    var is_playtest := false
-    
     var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
     _metadata.app_version = "0.0.1"
     
-    _metadata.debug = is_debug
-    _metadata.playtest = is_playtest
-    _metadata.pauses_on_focus_out = !is_debug
+    _metadata.debug = true and OS.is_debug_build()
+    _metadata.playtest = false
+    _metadata.pauses_on_focus_out = false
     _metadata.also_prints_to_stdout = true
-    _metadata.are_all_levels_unlocked = false and is_debug
+    _metadata.are_all_levels_unlocked = false
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
-    _metadata.is_splash_skipped = true and is_debug
-    _metadata.are_button_controls_enabled_by_default = is_debug
+    _metadata.opens_directly_to_level_id = "6"
+    _metadata.is_splash_skipped = true
+    _metadata.are_button_controls_enabled_by_default = false
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
 #        "3",
@@ -36,8 +34,7 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
     _gui_manifest.debug_window_size = debug_window_size
-    _gui_manifest.hud_manifest.is_inspector_enabled_default = \
-            false or is_debug or is_playtest
+    _gui_manifest.hud_manifest.is_inspector_enabled_default = false
     
 #    _surfacer_debug_params.limit_parsing = {
 #        player_name = "cat",
@@ -65,6 +62,9 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
 ##            velocity_start = Vector2(0, -1000),
 #        },
 #    }
+    
+    _derive_overrides(manifest)
+
 
 # ---
 
