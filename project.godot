@@ -39,7 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/air_dash_action.gd"
 }, {
-"base": "Reference",
+"base": "PlayerActionHandler",
 "class": "AirDefaultAction",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/air_default_action.gd"
@@ -49,7 +49,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/air_jump_action.gd"
 }, {
-"base": "Reference",
+"base": "PlayerActionHandler",
 "class": "AllDefaultAction",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/all_default_action.gd"
@@ -594,7 +594,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/floor_dash_action.gd"
 }, {
-"base": "Reference",
+"base": "PlayerActionHandler",
 "class": "FloorDefaultAction",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/floor_default_action.gd"
@@ -604,7 +604,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/fall_through_floor_action.gd"
 }, {
-"base": "Reference",
+"base": "PlayerActionHandler",
 "class": "FloorFrictionAction",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/floor_friction_action.gd"
@@ -1114,7 +1114,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/player_pointer_listener.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "PlayerPositionAnnotator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/player_position_annotator.gd"
@@ -1139,12 +1139,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/player_surface_annotator.gd"
 }, {
-"base": "Reference",
-"class": "PlayerSurfaceState",
-"language": "GDScript",
-"path": "res://addons/surfacer/src/player/player_surface_state.gd"
-}, {
-"base": "Reference",
+"base": "Node2D",
 "class": "PlayerTileAnnotator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/player_tile_annotator.gd"
@@ -1588,6 +1583,11 @@ _global_script_classes=[ {
 "class": "SurfaceSide",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/surface/surface_side.gd"
+}, {
+"base": "Reference",
+"class": "SurfaceTouch",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/surface_touch.gd"
 }, {
 "base": "Reference",
 "class": "SurfaceType",
@@ -2066,7 +2066,6 @@ _global_script_class_icons={
 "PlayerPrediction": "",
 "PlayerRecentMovementAnnotator": "",
 "PlayerSurfaceAnnotator": "",
-"PlayerSurfaceState": "",
 "PlayerTileAnnotator": "",
 "PlayerType": "",
 "PointerSelectionPosition": "",
@@ -2156,6 +2155,7 @@ _global_script_class_icons={
 "SurfaceParser": "",
 "SurfaceParserGroupItemController": "",
 "SurfaceSide": "",
+"SurfaceTouch": "",
 "SurfaceType": "",
 "SurfacerAnnotationsManifest": "",
 "SurfacerBootstrap": "",
@@ -2163,7 +2163,7 @@ _global_script_class_icons={
 "SurfacerDrawUtils": "",
 "SurfacerGeometry": "",
 "SurfacerHud": "",
-"SurfacerLevel": "",
+"SurfacerLevel": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_level.png",
 "SurfacerLevelConfig": "",
 "SurfacerLevelSession": "",
 "SurfacerLoadingScreen": "",
