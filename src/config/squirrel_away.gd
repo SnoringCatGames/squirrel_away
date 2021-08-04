@@ -22,7 +22,7 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _metadata.are_all_levels_unlocked = false
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
-    _metadata.opens_directly_to_level_id = ""
+    _metadata.opens_directly_to_level_id = "6"
     _metadata.is_splash_skipped = true
     _metadata.are_button_controls_enabled_by_default = false
     
@@ -585,12 +585,12 @@ var _screen_manifest := {
 #        preload("res://addons/scaffolder/src/gui/screens/confirm_data_deletion_screen_with_analytics.tscn"),
 #        preload("res://addons/scaffolder/src/gui/screens/rate_app_screen.tscn"),
     ],
-    overlay_mask_transition_fade_in_texture = \
-            preload("res://addons/scaffolder/assets/images/transition_masks/radial_mask_transition_in.png"),
-    overlay_mask_transition_fade_out_texture = \
-            preload("res://addons/scaffolder/assets/images/transition_masks/radial_mask_transition_in.png"),
-    screen_mask_transition_fade_texture = \
-            preload("res://addons/scaffolder/assets/images/transition_masks/checkers_mask_transition.png"),
+    overlay_mask_transition_fade_in_texture = preload( \
+            "res://addons/scaffolder/assets/images/transition_masks/radial_mask_transition_in.png"),
+    overlay_mask_transition_fade_out_texture = preload( \
+            "res://addons/scaffolder/assets/images/transition_masks/radial_mask_transition_in.png"),
+    screen_mask_transition_fade_texture = preload( \
+            "res://addons/scaffolder/assets/images/transition_masks/checkers_mask_transition.png"),
     overlay_mask_transition_class = OverlayMaskTransition,
     screen_mask_transition_class = ScreenMaskTransition,
     slide_transition_duration = 0.3,
@@ -752,7 +752,8 @@ var _surfacer_manifest := {
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     
     default_player_name = 'cat',
-    default_tile_set = preload("res://addons/surfacer/src/level/placeholder_surfaces_tile_set.tres"),
+    default_tile_set = preload( \
+            "res://addons/surfacer/src/level/placeholder_surfaces_tile_set.tres"),
     path_drag_update_throttle_interval = 0.2,
     path_beat_update_throttle_interval = 0.2,
     
@@ -762,7 +763,7 @@ var _surfacer_manifest := {
     max_pan_distance_from_pointer = 512.0,
     duration_to_max_pan_from_pointer_at_max_control = 0.67,
     duration_to_max_zoom_from_pointer_at_max_control = 3.0,
-    screen_size_ratio_distance_from_edge_to_start_pan_from_pointer = 0.3,
+    screen_size_ratio_distance_from_edge_to_start_pan_from_pointer = 0.16,
     
     skip_choreography_framerate_multiplier = 4.0,
     
