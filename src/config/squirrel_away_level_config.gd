@@ -35,10 +35,10 @@ var level_manifest := {
         intro_choreography = [
             {
                 is_user_interaction_enabled = false,
-                zoom = 0.5,
+                zoom_multiplier = 0.5,
             },
             {
-                duration = 0.3,
+                duration = 1.0,
             },
             {
                 destination = SurfacerLevelConfig \
@@ -46,7 +46,7 @@ var level_manifest := {
             },
             {
                 duration = 0.4,
-                zoom = 1.0,
+                zoom_multiplier = 1.0,
             },
             {
                 is_user_interaction_enabled = true,
@@ -79,6 +79,26 @@ var level_manifest := {
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level6.tscn",
         platform_graph_player_names = ["cat", "squirrel"],
+        intro_choreography = [
+            {
+                is_user_interaction_enabled = false,
+                zoom_multiplier = 0.5,
+            },
+            {
+                duration = 1.0,
+            },
+            {
+                destination = SurfacerLevelConfig \
+                        .INTRO_CHOREOGRAPHY_DESTINATION_GROUP_NAME,
+            },
+            {
+                duration = 0.4,
+                zoom_multiplier = 1.0,
+            },
+            {
+                is_user_interaction_enabled = true,
+            },
+        ],
     },
     "7": {
         name = "Dev level 7",
