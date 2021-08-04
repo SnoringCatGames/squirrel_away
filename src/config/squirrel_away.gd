@@ -26,7 +26,7 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _metadata.is_splash_skipped = true
     _metadata.are_button_controls_enabled_by_default = false
     
-    omit_squirrels = true
+    omit_squirrels = false
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
 #        "3",

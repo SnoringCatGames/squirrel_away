@@ -789,7 +789,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/models/inter_surface_edges_result.gd"
 }, {
-"base": "Reference",
+"base": "Edge",
 "class": "IntraSurfaceEdge",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/intra_surface_edge.gd"
@@ -1138,6 +1138,11 @@ _global_script_classes=[ {
 "class": "PlayerSurfaceAnnotator",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/annotators/player_surface_annotator.gd"
+}, {
+"base": "Reference",
+"class": "PlayerSurfaceState",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/player_surface_state.gd"
 }, {
 "base": "Node2D",
 "class": "PlayerTileAnnotator",
@@ -2066,6 +2071,7 @@ _global_script_class_icons={
 "PlayerPrediction": "",
 "PlayerRecentMovementAnnotator": "",
 "PlayerSurfaceAnnotator": "",
+"PlayerSurfaceState": "",
 "PlayerTileAnnotator": "",
 "PlayerType": "",
 "PointerSelectionPosition": "",
