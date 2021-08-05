@@ -468,66 +468,66 @@ var _settings_item_manifest := {
             label = "",
             is_collapsible = false,
             item_classes = [
-                MusicSettingsLabeledControlItem,
-                SoundEffectsSettingsLabeledControlItem,
-                HapticFeedbackSettingsLabeledControlItem,
+                MusicControlRow,
+                SoundEffectsControlRow,
+                HapticFeedbackControlRow,
             ],
         },
         annotations = {
             label = "Rendering",
             is_collapsible = true,
             item_classes = [
-                RulerAnnotatorSettingsLabeledControlItem,
-                PreselectionTrajectoryAnnotatorSettingsLabeledControlItem,
-                ActiveTrajectoryAnnotatorSettingsLabeledControlItem,
-                PreviousTrajectoryAnnotatorSettingsLabeledControlItem,
-                NavigationDestinationAnnotatorSettingsLabeledControlItem,
-                RecentMovementAnnotatorSettingsLabeledControlItem,
-                SurfacesAnnotatorSettingsLabeledControlItem,
-                PlayerPositionAnnotatorSettingsLabeledControlItem,
-                PlayerAnnotatorSettingsLabeledControlItem,
-                LevelAnnotatorSettingsLabeledControlItem,
+                RulerAnnotatorControlRow,
+                PreselectionTrajectoryAnnotatorControlRow,
+                ActiveTrajectoryAnnotatorControlRow,
+                PreviousTrajectoryAnnotatorControlRow,
+                NavigationDestinationAnnotatorControlRow,
+                RecentMovementAnnotatorControlRow,
+                SurfacesAnnotatorControlRow,
+                PlayerPositionAnnotatorControlRow,
+                PlayerAnnotatorControlRow,
+                LevelAnnotatorControlRow,
             ],
         },
         hud = {
             label = "HUD",
             is_collapsible = true,
             item_classes = [
-                InspectorEnabledSettingsLabeledControlItem,
-                DebugPanelSettingsLabeledControlItem,
+                InspectorEnabledControlRow,
+                DebugPanelControlRow,
             ],
         },
         miscellaneous = {
             label = "Miscellaneous",
             is_collapsible = true,
             item_classes = [
-                ButtonControlsSettingsLabeledControlItem,
-                WelcomePanelSettingsLabeledControlItem,
-                IntroChoreographySettingsLabeledControlItem,
-                CameraZoomSettingsLabeledControlItem,
-                TimeScaleSettingsLabeledControlItem,
-                MetronomeSettingsLabeledControlItem,
-                LogSurfacerEventsSettingsLabeledControlItem,
+                ButtonControlsControlRow,
+                WelcomePanelControlRow,
+                IntroChoreographyControlRow,
+                CameraZoomControlRow,
+                TimeScaleControlRow,
+                MetronomeControlRow,
+                IsLoggingLowLevelPlayerFrameworkEventsControlRow,
             ],
         },
     },
 }
 
 var _pause_item_manifest := [
-    LevelLabeledControlItem,
-    TimeLabeledControlItem,
-    FastestTimeLabeledControlItem,
+    LevelControlRow,
+    TimeControlRow,
+    FastestTimeControlRow,
 ]
 
 var _game_over_item_manifest := [
-    LevelLabeledControlItem,
-    TimeLabeledControlItem,
-    FastestTimeLabeledControlItem,
+    LevelControlRow,
+    TimeControlRow,
+    FastestTimeControlRow,
 ]
 
 var _level_select_item_manifest := [
-    TotalPlaysLabeledControlItem,
-    FastestTimeLabeledControlItem,
+    TotalPlaysControlRow,
+    FastestTimeControlRow,
 ]
 
 var _hud_manifest := {
@@ -540,7 +540,7 @@ var _hud_manifest := {
             preload("res://addons/scaffolder/src/gui/hud/hud_key_value_list.tscn"),
     hud_key_value_list_item_manifest = [
         {
-            item_class = TimeLabeledControlItem,
+            item_class = TimeControlRow,
             settings_enablement_label = "Time",
             enabled_by_default = true,
             settings_group_key = "hud",
