@@ -675,6 +675,16 @@ var _slow_motion_manifest := {
 
 var _input_map = ScaffolderProjectSettings.DEFAULT_INPUT_MAP
 
+var _player_scenes := [
+    preload("res://src/players/cat/cat.tscn"),
+    preload("res://src/players/squirrel/squirrel.tscn"),
+]
+
+var _player_manifest := {
+    default_player_name = "cat",
+    player_scenes = _player_scenes,
+}
+
 var _additional_metric_keys := [
     "start_new_squirrel_navigation",
 ]
@@ -738,11 +748,6 @@ var _movement_manifest := {
             SurfacerMovementManifest.DEFAULT_EDGE_CALCULATOR_CLASSES,
 }
 
-var _player_scenes := [
-    preload("res://src/players/cat/cat.tscn"),
-    preload("res://src/players/squirrel/squirrel.tscn"),
-]
-
 var _surfacer_manifest := {
     precompute_platform_graph_for_levels = [],
     ignores_platform_graph_save_files = false,
@@ -751,7 +756,6 @@ var _surfacer_manifest := {
     are_loaded_surfaces_deeply_validated = true,
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     
-    default_player_name = 'cat',
     default_tile_set = preload( \
             "res://addons/surfacer/src/level/placeholder_surfaces_tile_set.tres"),
     path_drag_update_throttle_interval = 0.2,
@@ -768,16 +772,12 @@ var _surfacer_manifest := {
     skip_choreography_framerate_multiplier = 4.0,
     
     debug_params = _surfacer_debug_params,
-    player_scenes = _player_scenes,
     
     movement_manifest = _movement_manifest,
     annotations_manifest = _annotations_manifest,
 }
 
 var app_manifest := {
-    level_config_class = SquirrelAwayLevelConfig,
-    level_session_class = SquirrelAwayLevelSession,
-    
     metadata = _metadata,
     audio_manifest = _audio_manifest,
     colors_manifest = _colors_manifest,
@@ -786,7 +786,12 @@ var app_manifest := {
     gui_manifest = _gui_manifest,
     slow_motion_manifest = _slow_motion_manifest,
     input_map = _input_map,
+    player_manifest = _player_manifest,
     surfacer_manifest = _surfacer_manifest,
+
+    level_config_class = SquirrelAwayLevelConfig,
+    level_session_class = SquirrelAwayLevelSession,
+    annotators_class = SurfacerAnnotators,
 }
 
 var _overrides := {

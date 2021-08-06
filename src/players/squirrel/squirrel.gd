@@ -1,5 +1,5 @@
 tool
-class_name SquirrelPlayer
+class_name Squirrel
 extends SurfacerPlayer
 
 
@@ -47,7 +47,7 @@ func _update_navigator(delta_scaled: float) -> void:
     if is_human_player:
         return
     
-    var cat_position: Vector2 = Su.human_player.position
+    var cat_position: Vector2 = Sc.level.cat.position
     var is_cat_close := \
             self.position.distance_squared_to(cat_position) <= \
             CAT_IS_CLOSE_DISTANCE_SQUARED_THRESHOLD
