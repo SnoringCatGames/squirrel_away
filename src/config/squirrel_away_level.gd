@@ -8,6 +8,8 @@ var _does_level_have_squirrels := false
 # Array<PositionAlongSurface>
 var squirrel_destinations := []
 
+var cat: Cat
+
 
 #func _load() -> void:
 #    ._load()
@@ -16,6 +18,8 @@ var squirrel_destinations := []
 func _start() -> void:
     ._start()
     
+    cat = human_player
+
     _does_level_have_squirrels = \
             Sc.level_config.get_level_config(Sc.level_session.id) \
             .platform_graph_player_names.has("squirrel")
@@ -29,7 +33,7 @@ func _start() -> void:
         ]
         for squirrel_position in starting_squirrel_positions:
             add_player(
-                    Su.player_scenes["squirrel"],
+                    Sc.players.player_scenes["squirrel"],
                     squirrel_position,
                     false)
 
@@ -92,7 +96,7 @@ func _parse_squirrel_destinations() -> void:
 
 func _create_random_squirrel_spawn_position() -> PositionAlongSurface:
     var bounds := Su.graph_parser.surface_parser.combined_tile_map_rect.grow(
-            -SquirrelPlayer.SQUIRREL_SPAWN_LEVEL_OUTER_MARGIN)
+            -Squirrel.SQUIRREL_SPAWN_LEVEL_OUTER_MARGIN)
     var x := randf() * bounds.size.x + bounds.position.x
     var y := randf() * bounds.size.y + bounds.position.y
     var point := Vector2(x, y)

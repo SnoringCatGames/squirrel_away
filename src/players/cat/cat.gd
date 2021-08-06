@@ -1,5 +1,5 @@
 tool
-class_name CatPlayer
+class_name Cat
 extends SurfacerPlayer
 
 
@@ -40,7 +40,7 @@ func _check_for_squirrel_collision() -> void:
     # Calculate current computer-player collisions.
     var colliding_computer_players := []
     for computer_player in Sc.utils.get_all_nodes_in_group(
-            Su.group_name_computer_players):
+            Sc.players.GROUP_NAME_COMPUTER_PLAYERS):
         collider_half_width_height = \
                 computer_player.movement_params.collider_half_width_height
         
