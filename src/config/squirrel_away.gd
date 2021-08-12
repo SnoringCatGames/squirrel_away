@@ -714,6 +714,9 @@ var _annotations_manifest := {
 }
 
 var _movement_manifest := {
+    uses_point_and_click_navigation = true,
+    cancels_point_and_click_nav_on_key_press = true,
+    
     gravity_default = 5000.0,
     gravity_slow_rise_multiplier_default = 0.38,
     gravity_double_jump_slow_rise_multiplier_default = 0.68,
