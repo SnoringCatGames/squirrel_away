@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cat_land.wav-656153468685a9a1a65e31b9143417ce.sample"
+
+[deps]
+
+source_file="res://addons/squirrel_away/assets/sounds/cat_land.wav"
+dest_files=[ "res://.import/cat_land.wav-656153468685a9a1a65e31b9143417ce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/squirrel_jump.wav-482abf2091346a7ed44437757f61c4e2.sample"
+
+[deps]
+
+source_file="res://addons/squirrel_away/assets/sounds/squirrel_jump.wav"
+dest_files=[ "res://.import/squirrel_jump.wav-482abf2091346a7ed44437757f61c4e2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -94,6 +94,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/time/beat_tracker.gd"
 }, {
+"base": "Node2D",
+"class": "Behavior",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behaviors/behavior.gd"
+}, {
 "base": "Reference",
 "class": "ButtonControlsControlRow",
 "language": "GDScript",
@@ -129,15 +134,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/cap_velocity_action.gd"
 }, {
-"base": "SurfacerPlayer",
+"base": "Reference",
 "class": "Cat",
 "language": "GDScript",
-"path": "res://src/players/cat/cat.gd"
+"path": "res://addons/squirrel_away/src/players/cat/cat.gd"
 }, {
-"base": "ScaffolderPlayerAnimator",
+"base": "Reference",
 "class": "CatAnimator",
 "language": "GDScript",
-"path": "res://src/players/cat/cat_animator.gd"
+"path": "res://addons/squirrel_away/src/players/cat/cat_animator.gd"
 }, {
 "base": "SurfacesOfSideGroupItemController",
 "class": "CeilingsItemController",
@@ -159,15 +164,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/choreographer.gd"
 }, {
+"base": "Behavior",
+"class": "ChoreographyBehavior",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behaviors/choreography_behavior.gd"
+}, {
 "base": "Reference",
 "class": "CircularBuffer",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/structures/CircularBuffer.gd"
 }, {
-"base": "SurfacerPlayer",
-"class": "ClimbAdjacentSurfacesPlayer",
+"base": "Behavior",
+"class": "ClimbAdjacentSurfacesBehavior",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/climb_adjacent_surfaces_player.gd"
+"path": "res://addons/surfacer/src/player/behaviors/climb_adjacent_surfaces_behavior.gd"
 }, {
 "base": "Reference",
 "class": "ClimbDownWallToFloorCalculator",
@@ -188,6 +198,11 @@ _global_script_classes=[ {
 "class": "ClimbOverWallToFloorEdge",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/edges/climb_over_wall_to_floor_edge.gd"
+}, {
+"base": "Behavior",
+"class": "CollideBehavior",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behaviors/collide_behavior.gd"
 }, {
 "base": "Reference",
 "class": "CollisionCalcParams",
@@ -349,7 +364,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/platform_graph/edge/models/edge_attempt.gd"
 }, {
-"base": "Reference",
+"base": "InspectorItemController",
 "class": "EdgeAttemptItemController",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/edge_attempt_item_controller.gd"
@@ -619,6 +634,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/platform_graph_inspector/inspector_item_controllers/surfaces_group/floors_item_controller.gd"
 }, {
+"base": "Behavior",
+"class": "FollowBehavior",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behaviors/follow_behavior.gd"
+}, {
 "base": "Reference",
 "class": "FontSize",
 "language": "GDScript",
@@ -814,10 +834,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/utils/json_utils.gd"
 }, {
-"base": "SurfacerPlayer",
-"class": "JumpBackAndForthPlayer",
+"base": "Behavior",
+"class": "JumpBackAndForthBehavior",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/jump_back_and_forth_player.gd"
+"path": "res://addons/surfacer/src/player/behaviors/jump_back_and_forth_behavior.gd"
 }, {
 "base": "EdgeCalculator",
 "class": "JumpFromSurfaceCalculator",
@@ -909,15 +929,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screens/level_select_screen.gd"
 }, {
-"base": "ScaffolderConfiguredImage",
+"base": "Reference",
 "class": "LoadingImage",
 "language": "GDScript",
-"path": "res://src/gui/loading_image.gd"
+"path": "res://addons/squirrel_away/src/gui/loading_image.gd"
 }, {
 "base": "Control",
 "class": "LockAnimation",
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/level_select/lock_animation.gd"
+}, {
+"base": "Reference",
+"class": "Main",
+"language": "GDScript",
+"path": "res://addons/squirrel_away/src/config/main.gd"
 }, {
 "base": "Screen",
 "class": "MainMenuScreen",
@@ -934,10 +959,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/control_rows/settings/metronome_control_row.gd"
 }, {
-"base": "SurfacerPlayer",
-"class": "MoveBackAndForthPlayer",
+"base": "Behavior",
+"class": "MoveBackAndForthBehavior",
 "language": "GDScript",
-"path": "res://addons/surfacer/src/player/move_back_and_forth_player.gd"
+"path": "res://addons/surfacer/src/player/behaviors/move_back_and_forth_behavior.gd"
 }, {
 "base": "Node2D",
 "class": "MovementParams",
@@ -1214,6 +1239,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/control_rows/recent_movement_annotator_control_row.gd"
 }, {
+"base": "Behavior",
+"class": "RestBehavior",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behaviors/rest_behavior.gd"
+}, {
+"base": "Behavior",
+"class": "ReturnBehavior",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behaviors/return_behavior.gd"
+}, {
 "base": "Reference",
 "class": "RightWallsItemController",
 "language": "GDScript",
@@ -1228,6 +1263,11 @@ _global_script_classes=[ {
 "class": "RulerAnnotatorControlRow",
 "language": "GDScript",
 "path": "res://addons/surfacer/src/gui/control_rows/ruler_annotator_control_row.gd"
+}, {
+"base": "Behavior",
+"class": "RunAwayBehavior",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behaviors/run_away_behavior.gd"
 }, {
 "base": "Node",
 "class": "SaveState",
@@ -1514,40 +1554,35 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scaffolder/src/gui/screens/splash_screen.gd"
 }, {
-"base": "SurfacerPlayer",
+"base": "Reference",
 "class": "Squirrel",
 "language": "GDScript",
-"path": "res://src/players/squirrel/squirrel.gd"
+"path": "res://addons/squirrel_away/src/players/squirrel/squirrel.gd"
 }, {
-"base": "SurfacerLevel",
+"base": "Reference",
 "class": "SquirrelAwayLevel",
 "language": "GDScript",
-"path": "res://src/config/squirrel_away_level.gd"
+"path": "res://addons/squirrel_away/src/config/squirrel_away_level.gd"
 }, {
 "base": "SurfacerLevelConfig",
 "class": "SquirrelAwayLevelConfig",
 "language": "GDScript",
-"path": "res://src/config/squirrel_away_level_config.gd"
+"path": "res://addons/squirrel_away/src/config/squirrel_away_level_config.gd"
 }, {
-"base": "SurfacerLevelSession",
+"base": "Reference",
 "class": "SquirrelAwayLevelSession",
 "language": "GDScript",
-"path": "res://src/config/squirrel_away_level_session.gd"
+"path": "res://addons/squirrel_away/src/config/squirrel_away_level_session.gd"
 }, {
-"base": "Node",
-"class": "SquirrelAwayMain",
-"language": "GDScript",
-"path": "res://src/config/main.gd"
-}, {
-"base": "Node",
+"base": "Reference",
 "class": "SquirrelAwayThirdPartyLicenses",
 "language": "GDScript",
-"path": "res://src/config/squirrel_away_third_party_licenses.gd"
+"path": "res://addons/squirrel_away/src/config/squirrel_away_third_party_licenses.gd"
 }, {
 "base": "SurfacesTileMap",
 "class": "SquirrelAwayTileMap",
 "language": "GDScript",
-"path": "res://src/levels/squirrel_away_tile_map.gd"
+"path": "res://addons/squirrel_away/src/levels/squirrel_away_tile_map.gd"
 }, {
 "base": "Reference",
 "class": "StaticTextControlRow",
@@ -1789,6 +1824,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/user_action_source.gd"
 }, {
+"base": "Behavior",
+"class": "UserNavigationBehavior",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behaviors/user_navigation_behavior.gd"
+}, {
 "base": "Node",
 "class": "Utils",
 "language": "GDScript",
@@ -1854,6 +1894,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/surfacer/src/player/action/action_handlers/wall_walk_action.gd"
 }, {
+"base": "Behavior",
+"class": "WanderBehavior",
+"language": "GDScript",
+"path": "res://addons/surfacer/src/player/behaviors/wander_behavior.gd"
+}, {
 "base": "Reference",
 "class": "Waypoint",
 "language": "GDScript",
@@ -1897,6 +1942,7 @@ _global_script_class_icons={
 "AnnotatorType": "",
 "Audio": "",
 "BeatTracker": "",
+"Behavior": "",
 "ButtonControlsControlRow": "",
 "CameraController": "",
 "CameraPanController": "",
@@ -1910,12 +1956,14 @@ _global_script_class_icons={
 "CenteredPanel": "res://addons/scaffolder/assets/images/editor_icons/centered_panel.png",
 "CheckboxControlRow": "",
 "Choreographer": "",
+"ChoreographyBehavior": "",
 "CircularBuffer": "",
-"ClimbAdjacentSurfacesPlayer": "",
+"ClimbAdjacentSurfacesBehavior": "res://addons/surfacer/assets/images/editor_icons/climb_adjacent_surfaces_behavior.png",
 "ClimbDownWallToFloorCalculator": "",
 "ClimbDownWallToFloorEdge": "",
 "ClimbOverWallToFloorCalculator": "",
 "ClimbOverWallToFloorEdge": "",
+"CollideBehavior": "res://addons/surfacer/assets/images/editor_icons/collide_behavior.png",
 "CollisionCalcParams": "",
 "CollisionCalcResultMetadata": "",
 "CollisionCheckUtils": "",
@@ -2002,6 +2050,7 @@ _global_script_class_icons={
 "FloorJumpAction": "",
 "FloorWalkAction": "",
 "FloorsItemController": "",
+"FollowBehavior": "res://addons/surfacer/assets/images/editor_icons/follow_behavior.png",
 "FontSize": "",
 "FrameworkConfig": "",
 "FromAirCalculator": "",
@@ -2041,7 +2090,7 @@ _global_script_class_icons={
 "IosResolutions": "",
 "IsLoggingLowLevelPlayerFrameworkEventsControlRow": "",
 "JsonUtils": "",
-"JumpBackAndForthPlayer": "",
+"JumpBackAndForthBehavior": "res://addons/surfacer/assets/images/editor_icons/jump_back_and_forth_behavior.png",
 "JumpFromSurfaceCalculator": "",
 "JumpFromSurfaceEdge": "",
 "JumpLandPositions": "",
@@ -2062,10 +2111,11 @@ _global_script_class_icons={
 "LevelSelectScreen": "",
 "LoadingImage": "",
 "LockAnimation": "res://addons/scaffolder/assets/images/editor_icons/scaffolder_placeholder.png",
+"Main": "",
 "MainMenuScreen": "",
 "MatchExpectedEdgeTrajectoryAction": "",
 "MetronomeControlRow": "",
-"MoveBackAndForthPlayer": "",
+"MoveBackAndForthBehavior": "res://addons/surfacer/assets/images/editor_icons/move_back_and_forth_behavior.png",
 "MovementParams": "res://addons/surfacer/assets/images/editor_icons/movement_params.png",
 "MovementUtils": "",
 "MusicControlRow": "",
@@ -2121,9 +2171,12 @@ _global_script_class_icons={
 "ProximityDetector": "res://addons/scaffolder/assets/images/editor_icons/proximity_detector.png",
 "RateAppScreen": "",
 "RecentMovementAnnotatorControlRow": "",
+"RestBehavior": "",
+"ReturnBehavior": "",
 "RightWallsItemController": "",
 "RulerAnnotator": "",
 "RulerAnnotatorControlRow": "",
+"RunAwayBehavior": "res://addons/surfacer/assets/images/editor_icons/run_away_behavior.png",
 "SaveState": "",
 "ScaffolderAnnotators": "",
 "ScaffolderAppMetadata": "",
@@ -2185,7 +2238,6 @@ _global_script_class_icons={
 "SquirrelAwayLevel": "",
 "SquirrelAwayLevelConfig": "",
 "SquirrelAwayLevelSession": "",
-"SquirrelAwayMain": "res://addons/scaffolder/assets/images/editor_icons/star.png",
 "SquirrelAwayThirdPartyLicenses": "",
 "SquirrelAwayTileMap": "",
 "StaticTextControlRow": "",
@@ -2236,6 +2288,7 @@ _global_script_class_icons={
 "TransientAnnotatorRegistry": "",
 "UUID": "",
 "UserActionSource": "",
+"UserNavigationBehavior": "",
 "Utils": "",
 "ValidEdgeItemController": "",
 "ValidEdgeTrajectoryLegendItem": "",
@@ -2249,6 +2302,7 @@ _global_script_class_icons={
 "WallFallAction": "",
 "WallJumpAction": "",
 "WallWalkAction": "",
+"WanderBehavior": "res://addons/surfacer/assets/images/editor_icons/wander_behavior.png",
 "Waypoint": "",
 "WaypointUtils": "",
 "WaypointValidity": "",
@@ -2259,10 +2313,10 @@ _global_script_class_icons={
 [application]
 
 config/name="Squirrel Away"
-run/main_scene="res://src/config/main.tscn"
+run/main_scene="res://addons/squirrel_away/src/config/main.tscn"
 boot_splash/image="res://addons/scaffolder/assets/images/logos/godot_logo_splash.png"
 boot_splash/bg_color=Color( 0.12549, 0.145098, 0.192157, 1 )
-config/icon="res://assets/images/icon.png"
+config/icon="res://addons/squirrel_away/assets/images/icon.png"
 config/auto_accept_quit=false
 config/quit_on_go_back=false
 
@@ -2270,13 +2324,13 @@ config/quit_on_go_back=false
 
 Sc="*res://addons/scaffolder/src/config/sc.gd"
 Su="*res://addons/surfacer/src/config/su.gd"
-SquirrelAway="*res://src/config/squirrel_away.gd"
+SquirrelAway="*res://addons/squirrel_away/src/config/squirrel_away.gd"
 
 [display]
 
 window/size/height=768
 window/handheld/orientation="sensor"
-mouse_cursor/custom_image="res://assets/images/paw_cursor.png"
+mouse_cursor/custom_image="res://addons/squirrel_away/assets/images/paw_cursor.png"
 mouse_cursor/custom_image_hotspot=Vector2( 5, 4 )
 mouse_cursor/tooltip_position_offset=Vector2( 0, 0 )
 window/stretch/aspect="expand"
@@ -2416,8 +2470,8 @@ pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 
-2d_physics/layer_1="surfaces_tilemaps"
 2d_render/layer_2="player"
+2d_physics/layer_1="surfaces_tilemaps"
 2d_physics/layer_2="fall_through_floors"
 2d_physics/layer_3="walk_through_walls"
 2d_physics/layer_4="squirrels"
@@ -2437,5 +2491,4 @@ quality/intended_usage/framebuffer_allocation=1
 quality/intended_usage/framebuffer_allocation.mobile=1
 2d/snapping/use_gpu_pixel_snap=true
 environment/default_clear_color=Color( 0.270588, 0.239216, 0.188235, 1 )
-environment/default_environment="res://src/config/default_env.tres"
 quality/2d/use_pixel_snap=true

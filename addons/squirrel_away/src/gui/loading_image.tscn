@@ -1,0 +1,65 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://addons/squirrel_away/assets/images/players/squirrel_running_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://addons/squirrel_away/src/gui/loading_image.gd" type="Script" id=2]
+[ext_resource path="res://addons/scaffolder/src/gui/widgets/animated_texture_rect.tscn" type="PackedScene" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 70, 44 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 70, 0, 70, 44 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 44, 70, 44 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 70, 44, 70, 44 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 88, 70, 44 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 70, 88, 70, 44 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 132, 70, 44 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 70, 132, 70, 44 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 18.0
+} ]
+
+[node name="LoadingImage" type="Control"]
+margin_right = 280.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 280, 176 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+original_offset = Vector2( -32, 0 )
+
+[node name="AnimatedTextureRect" parent="." instance=ExtResource( 3 )]
+margin_left = -32.0
+margin_right = -32.0
+rect_min_size = Vector2( 280, 176 )
+frames = SubResource( 9 )
+original_frame_size = Vector2( 70, 44 )
+texture_scale = 4.0
