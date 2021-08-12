@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/squirrel_away/src/players/squirrel/squirrel.gd" type="Script" id=1]
+[ext_resource path="res://addons/surfacer/src/platform_graph/edge/models/movement_params.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/squirrel_away/src/players/squirrel/squirrel_animator.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 17.0
+height = 9.0
+
+[node name="Squirrel" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource( 1 )
+player_name = "squirrel"
+
+[node name="MovementParams" parent="." instance=ExtResource( 2 )]
+collider_shape = SubResource( 1 )
+collider_rotation = 1.5708
+player_name = "squirrel"
+can_grab_walls = true
+walk_acceleration_multiplier = 1.69
+in_air_horizontal_acceleration_multiplier = 1.28
+climb_up_speed_multiplier = 1.96
+climb_down_speed_multiplier = 3.75
+jump_boost_multiplier = 0.88
+wall_jump_horizontal_boost_multiplier = 2.0
+max_horizontal_speed_default_multiplier = 1.25
+max_vertical_speed_multiplier = 1.43
+dash_speed_multiplier_multiplier = 1.33
+dash_vertical_boost_multiplier = 1.33
+additional_edge_weight_offset_override = 64.0
+walking_edge_weight_multiplier_override = 1.0
+climbing_edge_weight_multiplier_override = 1.0
+air_edge_weight_multiplier_override = 1.2
+
+[node name="SquirrelAnimator" parent="." instance=ExtResource( 3 )]
+animations = {
+"ClimbDown": {
+"name": "ClimbDown",
+"speed": 1.0,
+"sprite_name": "ClimbDown"
+},
+"ClimbUp": {
+"name": "ClimbUp",
+"speed": 1.0,
+"sprite_name": "ClimbUp"
+},
+"JumpFall": {
+"name": "JumpFall",
+"speed": 1.0,
+"sprite_name": "JumpFall"
+},
+"JumpRise": {
+"name": "JumpRise",
+"speed": 1.0,
+"sprite_name": "JumpRise"
+},
+"Rest": {
+"name": "Rest",
+"speed": 1.0,
+"sprite_name": "Rest"
+},
+"RestOnWall": {
+"name": "RestOnWall",
+"speed": 1.0,
+"sprite_name": "RestOnWall"
+},
+"Walk": {
+"name": "Walk",
+"speed": 1.0,
+"sprite_name": "Walk"
+}
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
