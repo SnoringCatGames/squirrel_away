@@ -34,7 +34,7 @@ func _trigger_new_navigation_recurring() -> void:
     if is_human_player:
         return
     
-    if !navigator.is_currently_navigating:
+    if !navigation_state.is_currently_navigating:
         _start_new_navigation()
     Sc.time.set_timeout(
             funcref(self, "_trigger_new_navigation_recurring"),
@@ -54,7 +54,7 @@ func _update_navigator(delta_scaled: float) -> void:
     
     if is_cat_close and \
             (!was_cat_close_last_frame or \
-            navigator.has_reached_destination):
+            navigation_state.has_reached_destination):
         _start_new_navigation()
     
     was_cat_close_last_frame = is_cat_close
