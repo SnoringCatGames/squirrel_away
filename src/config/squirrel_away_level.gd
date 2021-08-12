@@ -10,6 +10,10 @@ var squirrel_destinations := []
 
 var cat: Cat
 
+# NOTE: This is a hack so that we don't see errors about SquirrelAway not being
+#       declared when we aren't in the squirrel_away project.
+onready var SquirrelAway: Node = get_node("/root/SquirrelAway")
+
 
 #func _load() -> void:
 #    ._load()
@@ -33,7 +37,7 @@ func _start() -> void:
         ]
         for squirrel_position in starting_squirrel_positions:
             add_player(
-                    Sc.players.player_scenes["squirrel"],
+                    "squirrel",
                     squirrel_position,
                     false)
 

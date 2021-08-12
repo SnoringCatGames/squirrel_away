@@ -15,6 +15,8 @@ var previous_destination := PositionAlongSurfaceFactory \
 
 
 func _ready() -> void:
+    if Engine.editor_hint:
+        return
     Sc.time.set_timeout(
             funcref(self, "_trigger_new_navigation_recurring"),
             SQUIRREL_TRIGGER_NEW_NAVIGATION_INTERVAL,
