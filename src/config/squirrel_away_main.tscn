@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/squirrel_away/src/config/squirrel_away_main.gd" type="Script" id=1]
+
+[node name="SquirrelAwayMain" type="Node2D"]
+script = ExtResource( 1 )
