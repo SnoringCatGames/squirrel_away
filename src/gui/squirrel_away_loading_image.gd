@@ -1,3 +1,3 @@
 tool
-class_name LoadingImage
+class_name SquirrelAwayLoadingImage
 extends ScaffolderConfiguredImage

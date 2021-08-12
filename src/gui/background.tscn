@@ -5,7 +5,7 @@
 [ext_resource path="res://addons/squirrel_away/assets/images/background/near-trees.png" type="Texture" id=4]
 [ext_resource path="res://addons/squirrel_away/assets/images/background/near-bushes.png" type="Texture" id=5]
 
-[node name="Background" type="ParallaxBackground"]
+[node name="SquirrelAwayBackground" type="ParallaxBackground"]
 
 [node name="FarLeaves" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0.1, 0.1 )

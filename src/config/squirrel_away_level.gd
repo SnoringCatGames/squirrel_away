@@ -12,7 +12,12 @@ var cat: Cat
 
 # NOTE: This is a hack so that we don't see errors about SquirrelAway not being
 #       declared when we aren't in the squirrel_away project.
-onready var SquirrelAway: Node = get_node("/root/SquirrelAway")
+var SquirrelAway: Node
+
+
+func _ready() -> void:
+    if has_node("/root/SquirrelAway"):
+        SquirrelAway = get_node("/root/SquirrelAway")
 
 
 #func _load() -> void:
