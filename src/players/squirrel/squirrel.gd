@@ -82,10 +82,9 @@ func _start_new_navigation() -> void:
     previous_destination = next_destination
     
     var duration: float = Sc.profiler.stop("start_new_squirrel_navigation")
-    _log_player_event(
-            "SQUIRREL NEW NAV    ;%8.3fs; calc duration=%sms", 
-            [
+    _log(
+            "SQUIRREL NEW NAV    ;%8.3fs; calc duration=%sms" % [
                 Sc.time.get_play_time(),
                 duration,
             ],
-            true)
+            PlayerLogType.NAVIGATOR)
