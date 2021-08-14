@@ -6,7 +6,7 @@ extends DefaultAppManifest
 
 # This method is useful for defining parameters that are likely to change
 # between builds or between development and production environments.
-func _override_configs_for_current_run(manifest: Dictionary) -> void:
+func _override_configs_for_current_run() -> void:
     # TODO: Remember to reset these when creating releases.
     
     var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
@@ -20,6 +20,9 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _metadata.pauses_on_focus_out = false
     _metadata.also_prints_to_stdout = true
     _metadata.logs_player_events = true
+    _metadata.logs_analytics_events = false
+    _metadata.logs_bootstrap_events = false
+    _metadata.logs_device_settings = false
     _metadata.are_all_levels_unlocked = false
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
@@ -66,13 +69,12 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
 #        },
 #    }
     
-    _derive_overrides_according_to_debug_or_playtest(manifest)
+    _derive_overrides_according_to_debug_or_playtest(app_manifest)
 
 
 func _derive_overrides_according_to_debug_or_playtest(
         manifest: Dictionary) -> void:
     ._derive_overrides_according_to_debug_or_playtest(manifest)
-    
     omit_squirrels = omit_squirrels and _metadata.debug
 
 # ---
@@ -90,6 +92,9 @@ var _metadata := {
     pauses_on_focus_out = true,
     also_prints_to_stdout = true,
     logs_player_events = true,
+    logs_analytics_events = true,
+    logs_bootstrap_events = true,
+    logs_device_settings = true,
     is_profiler_enabled = true,
     are_all_levels_unlocked = true,
     is_splash_skipped = false,
@@ -818,19 +823,21 @@ func _ready() -> void:
     Sc.call_deferred("run", app_manifest)
 
 
-func _override_configs_for_app(manifest: Dictionary) -> void:
-    ._override_configs_for_app(manifest)
+func _override_configs_for_app() -> void:
+    ._override_configs_for_app()
     
     if _is_using_pixel_style:
-        manifest.gui_manifest.fonts_manifest = _default_fonts_manifest_pixel
-        manifest.styles_manifest = _styles_manifest_pixel
-        manifest.images_manifest = _default_images_manifest_pixel
+        app_manifest.gui_manifest.fonts_manifest = \
+                _default_fonts_manifest_pixel
+        app_manifest.styles_manifest = _styles_manifest_pixel
+        app_manifest.images_manifest = _default_images_manifest_pixel
     else:
-        manifest.gui_manifest.fonts_manifest = _default_fonts_manifest_normal
-        manifest.styles_manifest = _default_styles_manifest_normal
-        manifest.images_manifest = _default_images_manifest_normal
+        app_manifest.gui_manifest.fonts_manifest = \
+                _default_fonts_manifest_normal
+        app_manifest.styles_manifest = _default_styles_manifest_normal
+        app_manifest.images_manifest = _default_images_manifest_normal
     
-    _override_manifest(manifest, _overrides)
+    _override_manifest(app_manifest, _overrides)
 
 
 func _set_up() -> void:

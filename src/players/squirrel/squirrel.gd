@@ -83,7 +83,7 @@ func _start_new_navigation() -> void:
     
     var duration: float = Sc.profiler.stop("start_new_squirrel_navigation")
     _log(
-            "SQUIRREL NEW NAV    ;%8.3fs; calc duration=%sms" % [
+            "Squirrel new nav    ;%8.3fs; calc duration=%sms" % [
                 Sc.time.get_play_time(),
                 duration,
             ],
