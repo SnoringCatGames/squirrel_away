@@ -19,6 +19,7 @@ func _override_configs_for_current_run(manifest: Dictionary) -> void:
     _metadata.playtest = false
     _metadata.pauses_on_focus_out = false
     _metadata.also_prints_to_stdout = true
+    _metadata.logs_player_events = true
     _metadata.are_all_levels_unlocked = false
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
@@ -88,6 +89,7 @@ var _metadata := {
     playtest = false,
     pauses_on_focus_out = true,
     also_prints_to_stdout = true,
+    logs_player_events = true,
     is_profiler_enabled = true,
     are_all_levels_unlocked = true,
     is_splash_skipped = false,
@@ -508,7 +510,6 @@ var _settings_item_manifest := {
                 CameraZoomControlRow,
                 TimeScaleControlRow,
                 MetronomeControlRow,
-                IsLoggingLowLevelPlayerFrameworkEventsControlRow,
             ],
         },
     },
