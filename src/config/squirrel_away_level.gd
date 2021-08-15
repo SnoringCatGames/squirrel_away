@@ -27,7 +27,7 @@ func _ready() -> void:
 func _start() -> void:
     ._start()
     
-    cat = human_character
+    cat = player_character
 
     _does_level_have_squirrels = \
             Sc.level_config.get_level_config(Sc.level_session.id) \

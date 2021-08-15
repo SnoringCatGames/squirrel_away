@@ -33,7 +33,7 @@ func _process_sounds() -> void:
 
 
 func _trigger_new_navigation_recurring() -> void:
-    if is_human_character:
+    if is_player_character:
         return
     
     if !navigation_state.is_currently_navigating:
@@ -46,7 +46,7 @@ func _trigger_new_navigation_recurring() -> void:
 
 
 func _update_navigator(delta_scaled: float) -> void:
-    if is_human_character:
+    if is_player_character:
         return
     
     var cat_position: Vector2 = Sc.level.cat.position
