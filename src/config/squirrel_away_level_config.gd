@@ -34,7 +34,7 @@ var level_manifest := {
         platform_graph_character_names = ["cat"],
         intro_choreography = [
             {
-                is_user_interaction_enabled = false,
+                is_player_interaction_enabled = false,
                 zoom_multiplier = 0.5,
             },
             {
@@ -49,7 +49,7 @@ var level_manifest := {
                 zoom_multiplier = 1.0,
             },
             {
-                is_user_interaction_enabled = true,
+                is_player_interaction_enabled = true,
             },
         ],
     },
@@ -81,7 +81,7 @@ var level_manifest := {
         platform_graph_character_names = ["cat", "squirrel"],
         intro_choreography = [
             {
-                is_user_interaction_enabled = false,
+                is_player_interaction_enabled = false,
                 zoom_multiplier = 0.5,
             },
             {
@@ -96,7 +96,7 @@ var level_manifest := {
                 zoom_multiplier = 1.0,
             },
             {
-                is_user_interaction_enabled = true,
+                is_player_interaction_enabled = true,
             },
         ],
     },
