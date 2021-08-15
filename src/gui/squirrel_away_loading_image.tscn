@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://addons/squirrel_away/assets/images/players/squirrel_running_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_running_spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://addons/squirrel_away/src/gui/squirrel_away_loading_image.gd" type="Script" id=2]
 [ext_resource path="res://addons/scaffolder/src/gui/widgets/animated_texture_rect.tscn" type="PackedScene" id=3]
 

@@ -19,10 +19,11 @@ func _override_configs_for_current_run() -> void:
     _metadata.playtest = false
     _metadata.pauses_on_focus_out = false
     _metadata.also_prints_to_stdout = true
-    _metadata.logs_player_events = true
+    _metadata.logs_character_events = true
     _metadata.logs_analytics_events = false
     _metadata.logs_bootstrap_events = false
     _metadata.logs_device_settings = false
+    _metadata.logs_in_editor_events = true
     _metadata.are_all_levels_unlocked = false
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
@@ -43,7 +44,7 @@ func _override_configs_for_current_run() -> void:
     _gui_manifest.hud_manifest.is_inspector_enabled_default = false
     
 #    _surfacer_debug_params.limit_parsing = {
-#        player_name = "cat",
+#        character_name = "cat",
 #
 #        edge_type = EdgeType.JUMP_FROM_SURFACE_EDGE,
 ##        edge_type = EdgeType.CLIMB_OVER_WALL_TO_FLOOR_EDGE,
@@ -91,10 +92,11 @@ var _metadata := {
     playtest = false,
     pauses_on_focus_out = true,
     also_prints_to_stdout = true,
-    logs_player_events = true,
+    logs_character_events = true,
     logs_analytics_events = true,
     logs_bootstrap_events = true,
     logs_device_settings = true,
+    logs_in_editor_events = true,
     is_profiler_enabled = true,
     are_all_levels_unlocked = true,
     is_splash_skipped = false,
@@ -349,7 +351,7 @@ var _colors_manifest := {
     invalid = SurfacerColors.RED,
     human_navigation = Color("40ff00"),
     computer_navigation = Color("ff8000"),
-    player_position = Color("00db0b"),
+    character_position = Color("00db0b"),
     recent_movement = Color("ffda85"),
     inspector_origin = ScaffolderColors.static_opacify(
             SurfacerColors.ORANGE, ScaffolderColors.ALPHA_FAINT),
@@ -487,14 +489,14 @@ var _settings_item_manifest := {
             item_classes = [
                 RulerAnnotatorControlRow,
                 PreselectionTrajectoryAnnotatorControlRow,
-                NpcPlayerTrajectoryAnnotatorControlRow,
+                NpcCharacterTrajectoryAnnotatorControlRow,
                 ActiveTrajectoryAnnotatorControlRow,
                 PreviousTrajectoryAnnotatorControlRow,
                 NavigationDestinationAnnotatorControlRow,
                 RecentMovementAnnotatorControlRow,
                 SurfacesAnnotatorControlRow,
-                PlayerPositionAnnotatorControlRow,
-                PlayerAnnotatorControlRow,
+                CharacterPositionAnnotatorControlRow,
+                CharacterAnnotatorControlRow,
                 LevelAnnotatorControlRow,
             ],
         },
@@ -650,11 +652,11 @@ var _gui_manifest := {
     loading_image_scale = 0.5,
     
     main_menu_image_scene = \
-            preload("res://addons/squirrel_away/src/gui/loading_image.tscn"),
+            preload("res://addons/squirrel_away/src/gui/squirrel_away_loading_image.tscn"),
     game_over_image_scene = \
-            preload("res://addons/squirrel_away/src/gui/loading_image.tscn"),
+            preload("res://addons/squirrel_away/src/gui/squirrel_away_loading_image.tscn"),
     loading_image_scene = \
-            preload("res://addons/squirrel_away/src/gui/loading_image.tscn"),
+            preload("res://addons/squirrel_away/src/gui/squirrel_away_loading_image.tscn"),
     welcome_panel_scene = \
             preload("res://addons/scaffolder/src/gui/welcome_panel.tscn"),
     debug_panel_scene = \
@@ -683,14 +685,14 @@ var _slow_motion_manifest := {
 
 var _input_map = ScaffolderProjectSettings.DEFAULT_INPUT_MAP
 
-var _player_scenes := [
-    preload("res://addons/squirrel_away/src/players/cat/cat.tscn"),
-    preload("res://addons/squirrel_away/src/players/squirrel/squirrel.tscn"),
+var _character_scenes := [
+    preload("res://addons/squirrel_away/src/characters/cat/cat.tscn"),
+    preload("res://addons/squirrel_away/src/characters/squirrel/squirrel.tscn"),
 ]
 
-var _player_manifest := {
-    default_player_name = "cat",
-    player_scenes = _player_scenes,
+var _character_manifest := {
+    default_character_name = "cat",
+    character_scenes = _character_scenes,
 }
 
 var _additional_metric_keys := [
@@ -773,7 +775,7 @@ var _surfacer_manifest := {
     path_beat_update_throttle_interval = 0.2,
     
     # Params for CameraPanController.
-    snaps_camera_back_to_player = true,
+    snaps_camera_back_to_character = true,
     max_zoom_multiplier_from_pointer = 1.5,
     max_pan_distance_from_pointer = 512.0,
     duration_to_max_pan_from_pointer_at_max_control = 0.67,
@@ -797,7 +799,7 @@ var app_manifest := {
     gui_manifest = _gui_manifest,
     slow_motion_manifest = _slow_motion_manifest,
     input_map = _input_map,
-    player_manifest = _player_manifest,
+    character_manifest = _character_manifest,
     surfacer_manifest = _surfacer_manifest,
 
     level_config_class = SquirrelAwayLevelConfig,

@@ -1,11 +1,11 @@
 tool
 class_name Cat
-extends SurfacerPlayer
+extends SurfacerCharacter
 
 
-# Dictionary<Player, boolean>
-var current_colliding_computer_players := {}
-var just_collided_with_new_computer_player := false
+# Dictionary<SurfacerCharacter, boolean>
+var current_colliding_computer_characters := {}
+var just_collided_with_new_computer_character := false
 
 
 func _process_sounds() -> void:
@@ -15,7 +15,7 @@ func _process_sounds() -> void:
     if surface_state.just_left_air:
         Sc.audio.play_sound("cat_land")
     
-    if just_collided_with_new_computer_player:
+    if just_collided_with_new_computer_character:
         Sc.audio.play_sound("contact")
 
 
@@ -37,12 +37,12 @@ func _check_for_squirrel_collision() -> void:
         cat_max_half_dimension = collider_half_width_height.y
         cat_min_half_dimension = collider_half_width_height.x
     
-    # Calculate current computer-player collisions.
-    var colliding_computer_players := []
-    for computer_player in Sc.utils.get_all_nodes_in_group(
-            Sc.players.GROUP_NAME_COMPUTER_PLAYERS):
+    # Calculate current computer-character collisions.
+    var colliding_computer_characters := []
+    for computer_character in Sc.utils.get_all_nodes_in_group(
+            Sc.characters.GROUP_NAME_COMPUTER_CHARACTERS):
         collider_half_width_height = \
-                computer_player.movement_params.collider_half_width_height
+                computer_character.movement_params.collider_half_width_height
         
         var cp_min_half_dimension: float
         var cp_max_half_dimension: float
@@ -61,17 +61,17 @@ func _check_for_squirrel_collision() -> void:
             distance_squared_collision_threshold = \
                     cp_min_half_dimension * cp_min_half_dimension
         
-        if position.distance_squared_to(computer_player.position) < \
+        if position.distance_squared_to(computer_character.position) < \
                 distance_squared_collision_threshold:
-            colliding_computer_players.push_back(computer_player)
+            colliding_computer_characters.push_back(computer_character)
     
     # Record whether there were any new collisions this frame.
-    just_collided_with_new_computer_player = false
-    for computer_player in colliding_computer_players:
-        if !current_colliding_computer_players.has(computer_player):
-            just_collided_with_new_computer_player = true
+    just_collided_with_new_computer_character = false
+    for computer_character in colliding_computer_characters:
+        if !current_colliding_computer_characters.has(computer_character):
+            just_collided_with_new_computer_character = true
     
     # Update the current collision set.
-    current_colliding_computer_players.clear()
-    for computer_player in colliding_computer_players:
-        current_colliding_computer_players[computer_player] = true
+    current_colliding_computer_characters.clear()
+    for computer_character in colliding_computer_characters:
+        current_colliding_computer_characters[computer_character] = true

@@ -21,7 +21,7 @@ id = "1"
 ]]
 position = Vector2( 352, 384 )
 
-[node name="PlayerStartPosition" type="Position2D" parent="." groups=[
-"player_start_position",
+[node name="CharacterStartPosition" type="Position2D" parent="." groups=[
+"character_start_position",
 ]]
 position = Vector2( 64, 1088 )

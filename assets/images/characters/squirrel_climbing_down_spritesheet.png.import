@@ -9,7 +9,7 @@ metadata={
 
 [deps]
 
-source_file="res://addons/squirrel_away/assets/images/players/squirrel_climbing_down_spritesheet.png"
+source_file="res://addons/squirrel_away/assets/images/characters/squirrel_climbing_down_spritesheet.png"
 dest_files=[ "res://.import/squirrel_climbing_down_spritesheet.png-47a66795cf7ff265637ec9dae37faf75.stex" ]
 
 [params]

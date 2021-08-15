@@ -1,13 +1,13 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://addons/scaffolder/src/player/scaffolder_player_animator.gd" type="Script" id=1]
-[ext_resource path="res://addons/squirrel_away/assets/images/players/squirrel_running_spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://addons/squirrel_away/assets/images/players/squirrel_climbing_up_spritesheet.png" type="Texture" id=3]
-[ext_resource path="res://addons/squirrel_away/assets/images/players/squirrel_climbing_down_spritesheet.png" type="Texture" id=4]
-[ext_resource path="res://addons/squirrel_away/assets/images/players/squirrel_standing_spritesheet.png" type="Texture" id=5]
-[ext_resource path="res://addons/squirrel_away/assets/images/players/squirrel_jump_fall_spritesheet.png" type="Texture" id=6]
-[ext_resource path="res://addons/squirrel_away/assets/images/players/squirrel_jump_rise_spritesheet.png" type="Texture" id=7]
-[ext_resource path="res://addons/squirrel_away/assets/images/players/squirrel_resting_on_wall_spritesheet.png" type="Texture" id=8]
+[ext_resource path="res://addons/scaffolder/src/character/scaffolder_character_animator.gd" type="Script" id=1]
+[ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_running_spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_climbing_up_spritesheet.png" type="Texture" id=3]
+[ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_climbing_down_spritesheet.png" type="Texture" id=4]
+[ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_standing_spritesheet.png" type="Texture" id=5]
+[ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_jump_fall_spritesheet.png" type="Texture" id=6]
+[ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_jump_rise_spritesheet.png" type="Texture" id=7]
+[ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_resting_on_wall_spritesheet.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "ClimbDown"
