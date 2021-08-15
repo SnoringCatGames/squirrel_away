@@ -487,6 +487,7 @@ var _settings_item_manifest := {
             item_classes = [
                 RulerAnnotatorControlRow,
                 PreselectionTrajectoryAnnotatorControlRow,
+                NpcPlayerTrajectoryAnnotatorControlRow,
                 ActiveTrajectoryAnnotatorControlRow,
                 PreviousTrajectoryAnnotatorControlRow,
                 NavigationDestinationAnnotatorControlRow,
