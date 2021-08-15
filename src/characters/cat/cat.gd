@@ -4,8 +4,8 @@ extends SurfacerCharacter
 
 
 # Dictionary<SurfacerCharacter, boolean>
-var current_colliding_computer_characters := {}
-var just_collided_with_new_computer_character := false
+var current_colliding_npcs := {}
+var just_collided_with_new_npc := false
 
 
 func _process_sounds() -> void:
@@ -15,7 +15,7 @@ func _process_sounds() -> void:
     if surface_state.just_left_air:
         Sc.audio.play_sound("cat_land")
     
-    if just_collided_with_new_computer_character:
+    if just_collided_with_new_npc:
         Sc.audio.play_sound("contact")
 
 
@@ -37,12 +37,12 @@ func _check_for_squirrel_collision() -> void:
         cat_max_half_dimension = collider_half_width_height.y
         cat_min_half_dimension = collider_half_width_height.x
     
-    # Calculate current computer-character collisions.
-    var colliding_computer_characters := []
-    for computer_character in Sc.utils.get_all_nodes_in_group(
-            Sc.characters.GROUP_NAME_COMPUTER_CHARACTERS):
+    # Calculate current npc collisions.
+    var colliding_npcs := []
+    for npc in Sc.utils.get_all_nodes_in_group(
+            Sc.characters.GROUP_NAME_NPCS):
         collider_half_width_height = \
-                computer_character.movement_params.collider_half_width_height
+                npc.movement_params.collider_half_width_height
         
         var cp_min_half_dimension: float
         var cp_max_half_dimension: float
@@ -61,17 +61,17 @@ func _check_for_squirrel_collision() -> void:
             distance_squared_collision_threshold = \
                     cp_min_half_dimension * cp_min_half_dimension
         
-        if position.distance_squared_to(computer_character.position) < \
+        if position.distance_squared_to(npc.position) < \
                 distance_squared_collision_threshold:
-            colliding_computer_characters.push_back(computer_character)
+            colliding_npcs.push_back(npc)
     
     # Record whether there were any new collisions this frame.
-    just_collided_with_new_computer_character = false
-    for computer_character in colliding_computer_characters:
-        if !current_colliding_computer_characters.has(computer_character):
-            just_collided_with_new_computer_character = true
+    just_collided_with_new_npc = false
+    for npc in colliding_npcs:
+        if !current_colliding_npcs.has(npc):
+            just_collided_with_new_npc = true
     
     # Update the current collision set.
-    current_colliding_computer_characters.clear()
-    for computer_character in colliding_computer_characters:
-        current_colliding_computer_characters[computer_character] = true
+    current_colliding_npcs.clear()
+    for npc in colliding_npcs:
+        current_colliding_npcs[npc] = true
