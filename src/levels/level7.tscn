@@ -17,6 +17,6 @@ tile_data = PoolIntArray( -1507352, 0, 131073, -1507351, 0, 131073, -1507350, 0,
 ]]
 position = Vector2( 224, -192 )
 
-[node name="PlayerStartPosition" type="Position2D" parent="." groups=[
-"player_start_position",
+[node name="CharacterStartPosition" type="Position2D" parent="." groups=[
+"character_start_position",
 ]]

@@ -14,7 +14,7 @@ var level_manifest := {
 #        sort_priority = -1000,
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level1.tscn",
-#        platform_graph_player_names = ["cat"],
+#        platform_graph_character_names = ["cat"],
 #    },
 #    "2": {
 #        name = "Dev level 2",
@@ -22,7 +22,7 @@ var level_manifest := {
 #        sort_priority = -900,
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level2.tscn",
-#        platform_graph_player_names = ["cat"],
+#        platform_graph_character_names = ["cat"],
 #    },
     "3": {
         name = "Dev level 3",
@@ -31,7 +31,7 @@ var level_manifest := {
         sort_priority = -800,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level3.tscn",
-        platform_graph_player_names = ["cat"],
+        platform_graph_character_names = ["cat"],
         intro_choreography = [
             {
                 is_user_interaction_enabled = false,
@@ -60,7 +60,7 @@ var level_manifest := {
 #        sort_priority = -700,
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level4.tscn",
-#        platform_graph_player_names = ["cat"],
+#        platform_graph_character_names = ["cat"],
 #    },
 #    "5": {
 #        name = "Dev level 5",
@@ -69,7 +69,7 @@ var level_manifest := {
 #        sort_priority = -600,
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level5.tscn",
-#        platform_graph_player_names = ["cat"],
+#        platform_graph_character_names = ["cat"],
 #    },
     "6": {
         name = "Dev level 6",
@@ -78,7 +78,7 @@ var level_manifest := {
         sort_priority = -500,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level6.tscn",
-        platform_graph_player_names = ["cat", "squirrel"],
+        platform_graph_character_names = ["cat", "squirrel"],
         intro_choreography = [
             {
                 is_user_interaction_enabled = false,
@@ -107,7 +107,7 @@ var level_manifest := {
         sort_priority = -400,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level7.tscn",
-        platform_graph_player_names = ["cat", "squirrel"],
+        platform_graph_character_names = ["cat", "squirrel"],
     },
 }
 

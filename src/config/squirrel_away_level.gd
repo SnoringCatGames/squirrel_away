@@ -27,11 +27,11 @@ func _ready() -> void:
 func _start() -> void:
     ._start()
     
-    cat = human_player
+    cat = human_character
 
     _does_level_have_squirrels = \
             Sc.level_config.get_level_config(Sc.level_session.id) \
-            .platform_graph_player_names.has("squirrel")
+            .platform_graph_character_names.has("squirrel")
     
     if _does_level_have_squirrels and \
             !SquirrelAway.omit_squirrels:
@@ -41,7 +41,7 @@ func _start() -> void:
     #        Vector2(-192.0, 192.0),
         ]
         for squirrel_position in starting_squirrel_positions:
-            add_player(
+            add_character(
                     "squirrel",
                     squirrel_position,
                     false)

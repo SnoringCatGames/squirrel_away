@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://addons/squirrel_away/src/players/squirrel/squirrel.gd" type="Script" id=1]
+[ext_resource path="res://addons/squirrel_away/src/characters/squirrel/squirrel.gd" type="Script" id=1]
 [ext_resource path="res://addons/surfacer/src/platform_graph/edge/models/movement_params.tscn" type="PackedScene" id=2]
-[ext_resource path="res://addons/squirrel_away/src/players/squirrel/squirrel_animator.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/squirrel_away/src/characters/squirrel/squirrel_animator.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 17.0
@@ -12,12 +12,12 @@ height = 9.0
 collision_layer = 8
 collision_mask = 3
 script = ExtResource( 1 )
-player_name = "squirrel"
+character_name = "squirrel"
 
 [node name="MovementParameters" parent="." instance=ExtResource( 2 )]
 collider_shape = SubResource( 1 )
 collider_rotation = 1.5708
-player_name = "squirrel"
+character_name = "squirrel"
 can_grab_walls = true
 walk_acceleration_multiplier = 1.69
 in_air_horizontal_acceleration_multiplier = 1.28

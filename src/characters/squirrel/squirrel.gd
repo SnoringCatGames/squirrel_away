@@ -1,6 +1,6 @@
 tool
 class_name Squirrel
-extends SurfacerPlayer
+extends SurfacerCharacter
 
 
 const TILE_MAP_COLLISION_LAYER := 7
@@ -33,7 +33,7 @@ func _process_sounds() -> void:
 
 
 func _trigger_new_navigation_recurring() -> void:
-    if is_human_player:
+    if is_human_character:
         return
     
     if !navigation_state.is_currently_navigating:
@@ -46,7 +46,7 @@ func _trigger_new_navigation_recurring() -> void:
 
 
 func _update_navigator(delta_scaled: float) -> void:
-    if is_human_player:
+    if is_human_character:
         return
     
     var cat_position: Vector2 = Sc.level.cat.position
@@ -86,4 +86,4 @@ func _start_new_navigation() -> void:
                 Sc.time.get_play_time(),
                 duration,
             ],
-            PlayerLogType.NAVIGATOR)
+            CharacterLogType.NAVIGATOR)
