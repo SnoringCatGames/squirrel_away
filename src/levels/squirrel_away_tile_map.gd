@@ -3,8 +3,8 @@ class_name SquirrelAwayTileMap
 extends SurfacesTileMap
 
 
-const DEFAULT_TILE_SET := \
-        preload("res://addons/squirrel_away/src/levels/squirrel_away_surfaces_tile_set.tres")
+const DEFAULT_TILE_SET := preload( \
+        "res://addons/squirrel_away/src/levels/squirrel_away_surfaces_tile_set.tres")
 
 
 func _ready() -> void:

@@ -146,7 +146,8 @@ var _images_overrides := {
     developer_splash = preload( \
             "res://addons/scaffolder/assets/images/logos/snoring_cat_logo_splash.png"),
     
-    go_normal = preload("res://addons/squirrel_away/assets/images/gui/go_icon.png"),
+    go_normal = preload( \
+            "res://addons/squirrel_away/assets/images/gui/go_icon.png"),
     go_scale = 1.5,
 }
 
