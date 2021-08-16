@@ -26,7 +26,8 @@ func _update_surface_state(preserves_just_changed_state := false) -> void:
 
 # TODO: Replace with a more accurate/standard collision/mask-layer setup.
 func _check_for_squirrel_collision() -> void:
-    var collider_half_width_height := movement_params.collider_half_width_height
+    var collider_half_width_height := \
+            movement_params.collider_half_width_height
 
     var cat_min_half_dimension: float
     var cat_max_half_dimension: float
