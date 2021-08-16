@@ -89,7 +89,7 @@ func _parse_squirrel_destinations() -> void:
     if !configured_destinations.empty():
         assert(configured_destinations.size() == 1)
         var crash_test_dummy: CrashTestDummy = \
-                Su.graph_parser.crash_test_dummies["squirrel"]
+                graph_parser.crash_test_dummies["squirrel"]
         for configured_point in configured_destinations[0].get_children():
             assert(configured_point is Position2D)
             var destination := \
@@ -104,11 +104,11 @@ func _parse_squirrel_destinations() -> void:
 
 
 func _create_random_squirrel_spawn_position() -> PositionAlongSurface:
-    var bounds := Su.graph_parser.surface_parser.combined_tile_map_rect.grow(
+    var bounds := surface_parser.combined_tile_map_rect.grow(
             -Squirrel.SQUIRREL_SPAWN_LEVEL_OUTER_MARGIN)
     var x := randf() * bounds.size.x + bounds.position.x
     var y := randf() * bounds.size.y + bounds.position.y
     var point := Vector2(x, y)
     return SurfaceParser.find_closest_position_on_a_surface(
             point,
-            Su.graph_parser.crash_test_dummies["squirrel"])
+            graph_parser.crash_test_dummies["squirrel"])
