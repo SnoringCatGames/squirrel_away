@@ -350,8 +350,6 @@ var _colors_manifest := {
             SurfacerColors.WHITE, ScaffolderColors.ALPHA_FAINT),
     ruler = SurfacerColors.WHITE,
     invalid = SurfacerColors.RED,
-    player_navigation = Color("40ff00"),
-    npc_navigation = Color("ff8000"),
     character_position = Color("00db0b"),
     recent_movement = Color("ffda85"),
     inspector_origin = ScaffolderColors.static_opacify(
