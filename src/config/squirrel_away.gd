@@ -763,6 +763,7 @@ var _surfacer_manifest := {
     ignores_platform_graph_save_files = false,
     ignores_platform_graph_save_file_trajectory_state = false,
     is_debug_only_platform_graph_state_included = false,
+    are_reachable_surfaces_per_player_tracked = true,
     are_loaded_surfaces_deeply_validated = true,
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     

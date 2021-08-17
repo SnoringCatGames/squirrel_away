@@ -95,7 +95,8 @@ func _parse_squirrel_destinations() -> void:
             var destination := \
                     SurfaceParser.find_closest_position_on_a_surface(
                             configured_point.position,
-                            crash_test_dummy)
+                            crash_test_dummy,
+                            SurfaceReachability.REVERSIBLY_REACHABLE)
             squirrel_destinations.push_back(destination)
     else:
         for i in 6:
@@ -111,4 +112,5 @@ func _create_random_squirrel_spawn_position() -> PositionAlongSurface:
     var point := Vector2(x, y)
     return SurfaceParser.find_closest_position_on_a_surface(
             point,
-            graph_parser.crash_test_dummies["squirrel"])
+            graph_parser.crash_test_dummies["squirrel"],
+            SurfaceReachability.ANY)
