@@ -6,7 +6,7 @@ This point-and-click platformer game showcases procedural pathfinding using the 
 
 In this game, the player can click anywhere in the level, and the cat character will then jump, walk, and climb across platforms in order to reach that target destination.
 
-> **NOTE:** The Squirrel Away example game is set up as an "**addon**." This means that it cannot run by itself, and must be run within the `addons/` directory of a [separate project](https://github.com/SnoringCatGames/exampler). This makes Squirrel Away a little more convoluted to run and understand on its own. But this makes it easy to also update Squirrel Away source code when making framework changes from another project. This is important for keeping Squirrel Away up-to-date!
+> **NOTE:** The Squirrel Away example game is set up as an "**addon**". This means that it cannot run by itself, and must be run within the `addons/` directory of a [separate project](https://github.com/SnoringCatGames/exampler). This makes Squirrel Away a little more convoluted to run and understand on its own. But this makes it easy to also update Squirrel Away source code when making framework changes from another project. This is important for keeping Squirrel Away up-to-date!
 
 ## Getting set up
 
