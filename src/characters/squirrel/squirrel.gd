@@ -78,7 +78,7 @@ func _start_new_navigation() -> void:
         var index: int = \
                 floor(randf() * possible_destinations.size() - 0.00001)
         next_destination = possible_destinations[index]
-    navigator.navigate_to_position(next_destination)
+    navigator.navigate_to_position(next_destination, false)
     previous_destination = next_destination
     
     var duration: float = Sc.profiler.stop("start_new_squirrel_navigation")
