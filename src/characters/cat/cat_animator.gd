@@ -64,7 +64,11 @@ func _standand_animation_name_to_specific_animation_name(
             return "Rest"
         "RestOnWall":
             return "RestOnWall"
+        "RestOnCeiling":
+            return "RestOnWall"
         "Walk":
+            return "Walk"
+        "CrawlOnCeiling":
             return "Walk"
         _:
             Sc.logger.error()
