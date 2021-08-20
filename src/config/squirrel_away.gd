@@ -731,6 +731,7 @@ var _movement_manifest := {
     in_air_horizontal_acceleration_default = 2500.0,
     climb_up_speed_default = -230.0,
     climb_down_speed_default = 120.0,
+    ceiling_crawl_speed_default = 230.0,
     friction_coefficient_default = 1.25,
     jump_boost_default = -900.0,
     wall_jump_horizontal_boost_default = 200.0,
