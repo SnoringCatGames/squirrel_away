@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/squirrel_away/src/gui/background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/scaffolder/src/character/spawn_position.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/squirrel_away/src/config/squirrel_away_level.gd" type="Script" id=3]
 [ext_resource path="res://addons/squirrel_away/src/levels/squirrel_away_tile_map.tscn" type="PackedScene" id=4]
 
@@ -17,6 +18,9 @@ tile_data = PoolIntArray( -1507352, 0, 131073, -1507351, 0, 131073, -1507350, 0,
 ]]
 position = Vector2( 224, -192 )
 
-[node name="CharacterStartPosition" type="Position2D" parent="." groups=[
-"character_start_position",
-]]
+[node name="CatSpawn" parent="." instance=ExtResource( 2 )]
+character_name = "cat"
+
+[node name="SquirrelSpawn" parent="." instance=ExtResource( 2 )]
+position = Vector2( 576, -192 )
+character_name = "squirrel"

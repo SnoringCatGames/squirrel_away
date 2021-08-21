@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/squirrel_jump_fall_spritesheet.png-a8473f2d825f476d2694eb5827f065f6.stex"
+path="res://.import/squirrel_jump_fall_spritesheet.png-895abd63bfff2fc8317edaf540b1f56f.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://addons/squirrel_away/assets/images/characters/squirrel_jump_fall_spritesheet.png"
-dest_files=[ "res://.import/squirrel_jump_fall_spritesheet.png-a8473f2d825f476d2694eb5827f065f6.stex" ]
+dest_files=[ "res://.import/squirrel_jump_fall_spritesheet.png-895abd63bfff2fc8317edaf540b1f56f.stex" ]
 
 [params]
 
