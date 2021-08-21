@@ -85,8 +85,6 @@ var _is_using_pixel_style := true
 
 var _uses_threads := false and OS.can_use_threads()
 
-var group_name_squirrel_destinations := "squirrel_destinations"
-
 var _metadata := {
     debug = false,
     playtest = false,

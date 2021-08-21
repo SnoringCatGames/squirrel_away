@@ -9,13 +9,35 @@ radius = 30.0
 height = 54.0
 
 [node name="Cat" type="KinematicBody2D"]
-collision_layer = 0
+collision_layer = 32
 collision_mask = 19
 script = ExtResource( 1 )
 character_name = "cat"
+collision_detection_layers = 8
+primary_annotation_color = Color( 0.133333, 0.12549, 0.203922, 1 )
+secondary_annotation_color = Color( 1, 1, 1, 1 )
+navigation_annotation_color_override = Color( 0, 0, 0, 1 )
+exclamation_mark_width_start = 4.0
+exclamation_mark_length_start = 24.0
+exclamation_mark_stroke_width_start = 1.2
+exclamation_mark_duration = 1.8
+exclamation_mark_throttle_interval = 1.0
+logs_common_debugging_events = false
+logs_custom_events = true
+logs_behavior_events = false
+logs_navigator_events = false
+logs_collision_events = false
+logs_surface_events = false
+logs_action_events = false
+logs_low_level_framework_events = false
+logs_low_level_navigator_events = false
 
 [node name="MovementParameters" parent="." instance=ExtResource( 3 )]
+collider_shape = SubResource( 1 )
+collider_rotation = 1.5708
+character_name = "cat"
 __movement_params_identifier__ = "_"
+can_grab_walls = true
 ceiling_crawl_speed_multiplier = 1.0
 ceiling_fall_velocity_boost = 100.0
 collision_margin_for_edge_calculations = 1.0
