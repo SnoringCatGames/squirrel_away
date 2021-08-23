@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://addons/scaffolder/src/character/scaffolder_character_animator.gd" type="Script" id=1]
 [ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_running_spritesheet.png" type="Texture" id=2]
@@ -45,6 +45,24 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
+[sub_resource type="Animation" id=8]
+resource_name = "CrawlOnCeiling"
+length = 0.56
+loop = true
+step = 0.07
+tracks/0/type = "value"
+tracks/0/path = NodePath("CrawlOnCeiling:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42, 0.49 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
 [sub_resource type="Animation" id=3]
 resource_name = "JumpFall"
 length = 0.07
@@ -80,6 +98,33 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("RestOnCeiling:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CrawlOnCeiling:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
 [sub_resource type="Animation" id=5]
 resource_name = "Rest"
 length = 1.12
@@ -87,6 +132,24 @@ loop = true
 step = 0.07
 tracks/0/type = "value"
 tracks/0/path = NodePath("Rest:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42, 0.49 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "RestOnCeiling"
+length = 1.12
+loop = true
+step = 0.07
+tracks/0/type = "value"
+tracks/0/path = NodePath("RestOnCeiling:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -199,11 +262,20 @@ hframes = 4
 vframes = 2
 frame = 7
 
+[node name="CrawlOnCeiling" type="Sprite" parent="."]
+visible = false
+position = Vector2( -0.403453, 4.9847 )
+rotation = -1.5708
+texture = ExtResource( 4 )
+hframes = 4
+vframes = 2
+
 [node name="Rest" type="Sprite" parent="."]
 position = Vector2( -10.6186, -5.00692 )
 texture = ExtResource( 5 )
 hframes = 2
 vframes = 4
+frame = 7
 
 [node name="RestOnWall" type="Sprite" parent="."]
 visible = false
@@ -211,6 +283,15 @@ position = Vector2( -0.420696, 13.2978 )
 texture = ExtResource( 8 )
 hframes = 4
 vframes = 2
+
+[node name="RestOnCeiling" type="Sprite" parent="."]
+visible = false
+position = Vector2( -10.6186, 4.99308 )
+rotation = 3.14159
+scale = Vector2( -1, 1 )
+texture = ExtResource( 5 )
+hframes = 2
+vframes = 4
 
 [node name="JumpFall" type="Sprite" parent="."]
 visible = false
@@ -225,8 +306,11 @@ texture = ExtResource( 7 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ClimbDown = SubResource( 1 )
 anims/ClimbUp = SubResource( 2 )
+anims/CrawlOnCeiling = SubResource( 8 )
 anims/JumpFall = SubResource( 3 )
 anims/JumpRise = SubResource( 4 )
+anims/RESET = SubResource( 9 )
 anims/Rest = SubResource( 5 )
+anims/RestOnCeiling = SubResource( 10 )
 anims/RestOnWall = SubResource( 6 )
 anims/Walk = SubResource( 7 )
