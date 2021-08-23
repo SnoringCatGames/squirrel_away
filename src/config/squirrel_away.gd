@@ -748,6 +748,7 @@ var _movement_manifest := {
     
     additional_edge_weight_offset_default = 128.0,
     walking_edge_weight_multiplier_default = 1.2,
+    ceiling_crawling_edge_weight_multiplier_default = 2.0,
     climbing_edge_weight_multiplier_default = 1.8,
     air_edge_weight_multiplier_default = 1.0,
     
