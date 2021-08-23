@@ -919,6 +919,18 @@ tracks/75/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/76/type = "value"
+tracks/76/path = NodePath("Hip:scale")
+tracks/76/interp = 1
+tracks/76/loop_wrap = true
+tracks/76/imported = false
+tracks/76/enabled = true
+tracks/76/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "CrawlOnCeiling"
@@ -2778,6 +2790,18 @@ tracks/76/keys = {
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
+tracks/77/type = "value"
+tracks/77/path = NodePath("Hip:scale")
+tracks/77/interp = 1
+tracks/77/loop_wrap = true
+tracks/77/imported = false
+tracks/77/enabled = true
+tracks/77/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "JumpRise"
@@ -3694,6 +3718,18 @@ tracks/75/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
+}
+tracks/76/type = "value"
+tracks/76/path = NodePath("Hip:scale")
+tracks/76/interp = 1
+tracks/76/loop_wrap = true
+tracks/76/imported = false
+tracks/76/enabled = true
+tracks/76/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -4642,6 +4678,18 @@ tracks/77/keys = {
 "args": [  ],
 "method": "unblink"
 } ]
+}
+tracks/78/type = "value"
+tracks/78/path = NodePath("Hip:scale")
+tracks/78/interp = 1
+tracks/78/loop_wrap = true
+tracks/78/imported = false
+tracks/78/enabled = true
+tracks/78/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -6490,6 +6538,18 @@ tracks/75/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/76/type = "value"
+tracks/76/path = NodePath("Hip:scale")
+tracks/76/interp = 1
+tracks/76/loop_wrap = true
+tracks/76/imported = false
+tracks/76/enabled = true
+tracks/76/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "Stand"
@@ -7430,6 +7490,18 @@ tracks/77/keys = {
 "update": 0,
 "values": [  ]
 }
+tracks/78/type = "value"
+tracks/78/path = NodePath("Hip:scale")
+tracks/78/interp = 1
+tracks/78/loop_wrap = true
+tracks/78/imported = false
+tracks/78/enabled = true
+tracks/78/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 length = 2.4
@@ -8369,6 +8441,18 @@ tracks/77/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/78/type = "value"
+tracks/78/path = NodePath("Hip:scale")
+tracks/78/interp = 1
+tracks/78/loop_wrap = true
+tracks/78/imported = false
+tracks/78/enabled = true
+tracks/78/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 
 [node name="CatAnimator" type="Node2D"]

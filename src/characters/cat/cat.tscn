@@ -57,6 +57,11 @@ animations = {
 "speed": 9.4,
 "sprite_name": ""
 },
+"CrawlOnCeiling": {
+"name": "CrawlOnCeiling",
+"speed": 1.0,
+"sprite_name": ""
+},
 "JumpFall": {
 "name": "JumpFall",
 "speed": 1.0,
@@ -70,6 +75,11 @@ animations = {
 "Rest": {
 "name": "Rest",
 "speed": 0.8,
+"sprite_name": ""
+},
+"RestOnCeiling": {
+"name": "RestOnCeiling",
+"speed": 1.0,
 "sprite_name": ""
 },
 "RestOnWall": {
