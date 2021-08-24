@@ -485,11 +485,15 @@ var _settings_item_manifest := {
             is_collapsible = true,
             item_classes = [
                 RulerAnnotatorControlRow,
-                PreselectionTrajectoryAnnotatorControlRow,
-                NpcCharacterTrajectoryAnnotatorControlRow,
-                ActiveTrajectoryAnnotatorControlRow,
-                PreviousTrajectoryAnnotatorControlRow,
-                NavigationDestinationAnnotatorControlRow,
+                PlayerPreselectionTrajectoryAnnotatorControlRow,
+                PlayerSlowMoTrajectoryAnnotatorControlRow,
+                PlayerNonSlowMoTrajectoryAnnotatorControlRow,
+                PlayerPreviousTrajectoryAnnotatorControlRow,
+                PlayerNavigationDestinationAnnotatorControlRow,
+                NpcSlowMoTrajectoryAnnotatorControlRow,
+                NpcNonSlowMoTrajectoryAnnotatorControlRow,
+                NpcPreviousTrajectoryAnnotatorControlRow,
+                NpcNavigationDestinationAnnotatorControlRow,
                 RecentMovementAnnotatorControlRow,
                 SurfacesAnnotatorControlRow,
                 CharacterPositionAnnotatorControlRow,
@@ -699,17 +703,24 @@ var _additional_metric_keys := [
 var _surfacer_debug_params := {}
 
 var _annotations_manifest := {
-    is_player_current_nav_trajectory_shown_with_slow_mo = false,
-    is_npc_current_nav_trajectory_shown_with_slow_mo = true,
-    is_player_current_nav_trajectory_shown_without_slow_mo = true,
-    is_npc_current_nav_trajectory_shown_without_slow_mo = false,
-    is_player_nav_pulse_shown_with_slow_mo = false,
-    is_npc_nav_pulse_shown_with_slow_mo = true,
-    is_player_nav_pulse_shown_without_slow_mo = true,
-    is_npc_nav_pulse_shown_without_slow_mo = false,
+    is_player_preselection_trajectory_shown = true,
+    
+    is_player_slow_mo_trajectory_shown = false,
+    is_player_non_slow_mo_trajectory_shown = true,
+    is_player_previous_trajectory_shown = false,
+    is_player_navigation_destination_shown = true,
+    is_player_nav_pulse_shown = false,
+    
+    is_npc_slow_mo_trajectory_shown = true,
+    is_npc_non_slow_mo_trajectory_shown = false,
+    is_npc_previous_trajectory_shown = false,
+    is_npc_navigation_destination_shown = false,
+    is_npc_nav_pulse_shown = true,
+    
     does_player_nav_pulse_grow = false,
-    does_npc_nav_pulse_grow = true,
     is_player_prediction_shown = true,
+    
+    does_npc_nav_pulse_grow = true,
     is_npc_prediction_shown = true,
     
     nav_selection_prediction_opacity = 0.5,
