@@ -44,6 +44,7 @@ func _override_configs_for_current_run() -> void:
     
     _gui_manifest.debug_window_size = debug_window_size
     _gui_manifest.hud_manifest.is_inspector_enabled_default = false
+    _gui_manifest.hud_manifest.is_hud_visible_by_default = true
     
 #    _surfacer_debug_params.limit_parsing = {
 #        character_name = "cat",
@@ -561,6 +562,7 @@ var _hud_manifest := {
     ],
     is_inspector_enabled_default = false,
     inspector_panel_starts_open = false,
+    is_hud_visible_by_default = true,
 }
 
 var _welcome_panel_manifest := {
