@@ -213,6 +213,10 @@ var _sounds_manifest := [
         volume_db = 0.0,
     },
     {
+        name = "cat_hit_surface",
+        volume_db = 0.0,
+    },
+    {
         name = "contact",
         volume_db = 0.0,
     },

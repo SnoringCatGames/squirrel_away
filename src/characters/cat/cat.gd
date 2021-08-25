@@ -23,3 +23,5 @@ func _process_sounds() -> void:
     
     if surface_state.just_left_air:
         Sc.audio.play_sound("cat_land")
+    elif surface_state.just_touched_surface:
+        Sc.audio.play_sound("cat_hit_surface")

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cat_hit_surface.wav-b19b4ee052d4857d8e2f07f34fd597bc.sample"
+
+[deps]
+
+source_file="res://addons/squirrel_away/assets/sounds/cat_hit_surface.wav"
+dest_files=[ "res://.import/cat_hit_surface.wav-b19b4ee052d4857d8e2f07f34fd597bc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0
