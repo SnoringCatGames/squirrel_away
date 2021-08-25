@@ -25,12 +25,12 @@ exclamation_mark_throttle_interval = 1.0
 logs_common_debugging_events = false
 logs_custom_events = true
 logs_behavior_events = false
-logs_navigator_events = true
+logs_navigator_events = false
 logs_collision_events = false
-logs_surface_events = true
-logs_action_events = true
-logs_low_level_framework_events = true
-logs_low_level_navigator_events = true
+logs_surface_events = false
+logs_action_events = false
+logs_low_level_framework_events = false
+logs_low_level_navigator_events = false
 
 [node name="MovementParameters" parent="." instance=ExtResource( 3 )]
 collider_shape = SubResource( 1 )
@@ -60,7 +60,7 @@ animations = {
 },
 "CrawlOnCeiling": {
 "name": "CrawlOnCeiling",
-"speed": 1.0,
+"speed": 7.0,
 "sprite_name": ""
 },
 "JumpFall": {
