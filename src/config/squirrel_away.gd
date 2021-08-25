@@ -40,6 +40,8 @@ func _override_configs_for_current_run() -> void:
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
+    _colors_manifest.background = Color("20222A")
+    
     _gui_manifest.debug_window_size = debug_window_size
     _gui_manifest.hud_manifest.is_inspector_enabled_default = false
     
