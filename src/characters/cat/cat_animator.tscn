@@ -8471,7 +8471,7 @@ animations = {
 },
 "CrawlOnCeiling": {
 "name": "CrawlOnCeiling",
-"speed": 1.0,
+"speed": 7.0,
 "sprite_name": ""
 },
 "JumpFall": {
