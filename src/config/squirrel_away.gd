@@ -50,11 +50,9 @@ func _override_configs_for_current_run() -> void:
 #        character_name = "cat",
 #
 #        edge_type = EdgeType.JUMP_FROM_SURFACE_EDGE,
-##        edge_type = EdgeType.CLIMB_OVER_WALL_TO_FLOOR_EDGE,
+##        edge_type = EdgeType.CLIMB_TO_NEIGHBOR_SURFACE_EDGE,
 ##        edge_type = EdgeType.FALL_FROM_WALL_EDGE,
 ##        edge_type = EdgeType.FALL_FROM_FLOOR_EDGE,
-##        edge_type = EdgeType.CLIMB_DOWN_WALL_TO_FLOOR_EDGE,
-##        edge_type = EdgeType.WALK_TO_ASCEND_WALL_FROM_FLOOR_EDGE,
 #
 #        edge = {
 #            origin = {
