@@ -569,10 +569,14 @@ var _hud_manifest := {
 
 var _welcome_panel_manifest := {
     items = [
-        ["Lead your ducklings to the pond"],
         ["*Auto nav*", "click"],
+        ["Inspect graph", "ctrl + click (x2)"],
         ["Walk/Climb", "arrow key / wasd"],
         ["Jump", "space / x"],
+        ["Grab surface", "c"],
+        ["Dash", "z"],
+        ["Zoom in/out", "ctrl + =/-"],
+        ["Pan", "ctrl + arrow key"],
     ],
     header_color = [
     ],
