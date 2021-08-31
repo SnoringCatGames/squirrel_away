@@ -34,8 +34,8 @@ logs_navigator_events = false
 logs_collision_events = false
 logs_surface_events = false
 logs_action_events = false
-logs_low_level_framework_events = false
-logs_low_level_navigator_events = false
+logs_verbose_events = false
+logs_verbose_navigator_events = false
 
 [node name="MovementParameters" parent="." instance=ExtResource( 2 )]
 collider_shape = SubResource( 1 )
