@@ -14,7 +14,7 @@ func _on_entered_proximity(
 
 
 func _run_away(cat: Cat) -> void:
-    $RunAwayBehavior.target_to_run_from = cat
+    $RunAwayBehavior.move_target = cat
     $RunAwayBehavior.trigger(true)
 
 
