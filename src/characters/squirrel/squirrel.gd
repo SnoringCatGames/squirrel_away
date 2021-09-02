@@ -3,6 +3,13 @@ class_name Squirrel
 extends SurfacerCharacter
 
 
+var run_away_behavior: RunAwayBehavior
+
+
+func _ready() -> void:
+    run_away_behavior = get_behavior(RunAwayBehavior)
+
+
 func _on_entered_proximity(
         target: Node2D,
         layer_names: Array) -> void:
@@ -14,9 +21,9 @@ func _on_entered_proximity(
 
 
 func _run_away(cat: Cat) -> void:
-    if $RunAwayBehavior.is_enabled:
-        $RunAwayBehavior.move_target = cat
-        $RunAwayBehavior.trigger(true)
+    if is_instance_valid(run_away_behavior):
+        run_away_behavior.move_target = cat
+        run_away_behavior.trigger(true)
 
 
 func _process_sounds() -> void:
