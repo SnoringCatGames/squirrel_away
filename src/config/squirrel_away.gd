@@ -273,15 +273,15 @@ var _audio_manifest := {
     
     pauses_level_music_on_pause = true,
     
-    are_beats_tracked_by_default = false,
+    are_beats_tracked_by_default = true,
     
-    is_arbitrary_music_speed_change_supported = false,
-    is_music_speed_scaled_with_time_scale = false,
-    is_music_speed_scaled_with_additional_debug_time_scale = false,
+    is_arbitrary_music_speed_change_supported = true,
+    is_music_speed_scaled_with_time_scale = true,
+    is_music_speed_scaled_with_additional_debug_time_scale = true,
     
-    is_music_paused_in_slow_motion = false,
-    is_tick_tock_played_in_slow_motion = false,
-    is_slow_motion_start_stop_sound_effect_played = false,
+    is_music_paused_in_slow_motion = true,
+    is_tick_tock_played_in_slow_motion = true,
+    is_slow_motion_start_stop_sound_effect_played = true,
 }
 
 var COLOR_BACKGROUND := Color("453d30")
@@ -688,9 +688,9 @@ var _gui_manifest := {
 }
 
 var _slow_motion_manifest := {
-    time_scale = 1.0,
-    tick_tock_tempo_multiplier = 1,
-    saturation = 0.5,
+    time_scale = 0.02,
+    tick_tock_tempo_multiplier = 25,
+    saturation = 0.2,
 }
 
 var _input_map = ScaffolderProjectSettings.DEFAULT_INPUT_MAP
