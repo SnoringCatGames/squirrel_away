@@ -14,8 +14,9 @@ func _on_entered_proximity(
 
 
 func _run_away(cat: Cat) -> void:
-    $RunAwayBehavior.move_target = cat
-    $RunAwayBehavior.trigger(true)
+    if $RunAwayBehavior.is_enabled:
+        $RunAwayBehavior.move_target = cat
+        $RunAwayBehavior.trigger(true)
 
 
 func _process_sounds() -> void:
