@@ -14,7 +14,6 @@ collision_mask = 19
 script = ExtResource( 1 )
 character_name = "cat"
 collision_detection_layers = 8
-is_bouncy = true
 primary_annotation_color = Color( 0.133333, 0.12549, 0.203922, 1 )
 secondary_annotation_color = Color( 1, 1, 1, 1 )
 navigation_annotation_color_override = Color( 0.407843, 0.721569, 0.294118, 1 )
