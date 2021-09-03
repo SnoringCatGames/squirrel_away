@@ -19,6 +19,7 @@ collision_layer = 8
 collision_mask = 3
 script = ExtResource( 1 )
 character_name = "squirrel"
+is_bouncy = true
 primary_annotation_color = Color( 0.87451, 0.443137, 0.14902, 1 )
 secondary_annotation_color = Color( 1, 1, 1, 1 )
 navigation_annotation_color_override = Color( 0, 0, 0, 1 )
