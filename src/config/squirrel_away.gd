@@ -773,10 +773,11 @@ var _movement_manifest := {
     dash_fade_duration_default = 0.1,
     dash_cooldown_default = 1.0,
     
-    additional_edge_weight_offset_default = 128.0,
+    additional_edge_weight_offset_default = 0.0,
     walking_edge_weight_multiplier_default = 1.2,
     ceiling_crawling_edge_weight_multiplier_default = 2.0,
     climbing_edge_weight_multiplier_default = 1.8,
+    climb_to_adjacent_surface_edge_weight_multiplier_default = 1.0,
     air_edge_weight_multiplier_default = 1.0,
     
     action_handler_classes = \
