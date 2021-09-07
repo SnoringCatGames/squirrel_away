@@ -13,6 +13,8 @@ func _override_configs_for_current_run() -> void:
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
+    var are_annotations_emphasized := true
+    
     _metadata.app_version = "0.0.1"
     
     _metadata.debug = true and OS.is_debug_build()
@@ -40,8 +42,6 @@ func _override_configs_for_current_run() -> void:
 #        "8",
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
-    
-    _colors_manifest.background = Color("20222A")
     
     _gui_manifest.debug_window_size = debug_window_size
     _gui_manifest.hud_manifest.is_inspector_enabled_default = false
@@ -71,6 +71,9 @@ func _override_configs_for_current_run() -> void:
 ##            velocity_start = Vector2(0, -1000),
 #        },
 #    }
+    
+    if are_annotations_emphasized:
+        _update_to_emphasize_annotations(app_manifest)
     
     _derive_overrides_according_to_debug_or_playtest(app_manifest)
 
@@ -705,6 +708,9 @@ var _character_manifest := {
     character_scenes = _character_scenes,
 }
 
+var _annotation_parameters_manifest := {
+}
+
 var _additional_metric_keys := [
     "start_new_squirrel_navigation",
 ]
@@ -818,6 +824,7 @@ var app_manifest := {
     slow_motion_manifest = _slow_motion_manifest,
     input_map = _input_map,
     character_manifest = _character_manifest,
+    annotation_parameters_manifest = _annotation_parameters_manifest,
     surfacer_manifest = _surfacer_manifest,
 
     level_config_class = SquirrelAwayLevelConfig,
