@@ -39,7 +39,6 @@ collider_rotation = 1.5708
 character_name = "cat"
 __movement_params_identifier__ = "_"
 can_grab_walls = true
-can_grab_ceilings = true
 can_dash = true
 can_double_jump = true
 ceiling_crawl_speed_multiplier = 1.0
