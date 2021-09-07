@@ -21,7 +21,7 @@ tile_data = PoolIntArray( -1703984, 0, 2, -1703983, 0, 2, -1703982, 0, 2, -17039
 ]]
 
 [node name="CatSpawn" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1504, -1464 )
+position = Vector2( -608, -408 )
 character_name = "cat"
 
 [node name="SquirrelSpawn" parent="." instance=ExtResource( 4 )]
