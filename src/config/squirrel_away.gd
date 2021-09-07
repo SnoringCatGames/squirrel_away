@@ -19,6 +19,7 @@ func _override_configs_for_current_run() -> void:
     
     _metadata.debug = true and OS.is_debug_build()
     _metadata.playtest = false
+    _metadata.rng_seed = 723
     _metadata.pauses_on_focus_out = false
     _metadata.also_prints_to_stdout = true
     _metadata.logs_character_events = true
@@ -29,7 +30,7 @@ func _override_configs_for_current_run() -> void:
     _metadata.are_all_levels_unlocked = false
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
-    _metadata.opens_directly_to_level_id = "9"
+    _metadata.opens_directly_to_level_id = "8"
     _metadata.is_splash_skipped = true
     _metadata.are_button_controls_enabled_by_default = false
     
@@ -106,6 +107,7 @@ var _metadata := {
     is_splash_skipped = false,
     uses_threads = _uses_threads,
     thread_count = OS.get_processor_count() if _uses_threads else 1,
+    rng_seed = 176,
     is_mobile_supported = true,
     uses_level_scores = false,
     must_restart_level_to_change_settings = true,
