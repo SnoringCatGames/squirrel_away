@@ -9,8 +9,8 @@ extends DefaultAppManifest
 func _override_configs_for_current_run() -> void:
     # TODO: Remember to reset these when creating releases.
     
-    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
-#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
+#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
+    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
     var are_annotations_emphasized := true
@@ -37,11 +37,11 @@ func _override_configs_for_current_run() -> void:
     omit_squirrels = false
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
-        "3",
-        "6",
-        "7",
-        "8",
-        "9",
+#        "3",
+#        "6",
+#        "7",
+#        "8",
+#        "9",
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
