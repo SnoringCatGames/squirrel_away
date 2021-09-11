@@ -127,6 +127,15 @@ var level_manifest := {
         scene_path = LEVELS_PATH_PREFIX + "level9.tscn",
         platform_graph_character_names = ["cat"],
     },
+    "10": {
+        name = "Dev level 10",
+        version = "0.0.1",
+        is_test_level = true,
+        sort_priority = -100,
+        unlock_conditions = "unlocked",
+        scene_path = LEVELS_PATH_PREFIX + "level10.tscn",
+        platform_graph_character_names = ["cat"],
+    },
 }
 
 
