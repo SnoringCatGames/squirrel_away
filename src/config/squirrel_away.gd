@@ -30,7 +30,7 @@ func _override_configs_for_current_run() -> void:
     _metadata.are_all_levels_unlocked = false
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
-    _metadata.opens_directly_to_level_id = "6"
+    _metadata.opens_directly_to_level_id = "10"
     _metadata.is_splash_skipped = true
     _metadata.are_button_controls_enabled_by_default = false
     
@@ -42,7 +42,7 @@ func _override_configs_for_current_run() -> void:
 #        "7",
 #        "8",
 #        "9",
-        "10",
+#        "10",
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
