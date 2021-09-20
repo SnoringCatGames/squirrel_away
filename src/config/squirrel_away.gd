@@ -9,8 +9,8 @@ extends DefaultAppManifest
 func _override_configs_for_current_run() -> void:
     # TODO: Remember to reset these when creating releases.
     
-#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
-    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
+    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
+#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
     var are_annotations_emphasized := true
@@ -30,7 +30,7 @@ func _override_configs_for_current_run() -> void:
     _metadata.are_all_levels_unlocked = false
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
-    _metadata.opens_directly_to_level_id = "6"
+    _metadata.opens_directly_to_level_id = "10"
     _metadata.is_splash_skipped = true
     _metadata.are_button_controls_enabled_by_default = false
     
