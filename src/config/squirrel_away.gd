@@ -30,18 +30,18 @@ func _override_configs_for_current_run() -> void:
     _metadata.are_all_levels_unlocked = false
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
-    _metadata.opens_directly_to_level_id = "10"
+    _metadata.opens_directly_to_level_id = "6"
     _metadata.is_splash_skipped = true
     _metadata.are_button_controls_enabled_by_default = false
     
-    omit_squirrels = false
+    _character_manifest.omits_npcs = true
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
-        "3",
+#        "3",
         "6",
-        "7",
-        "8",
-        "9",
+#        "7",
+#        "8",
+#        "9",
         "10",
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
@@ -84,7 +84,8 @@ func _override_configs_for_current_run() -> void:
 func _derive_overrides_according_to_debug_or_playtest(
         manifest: Dictionary) -> void:
     ._derive_overrides_according_to_debug_or_playtest(manifest)
-    omit_squirrels = omit_squirrels and _metadata.debug
+    _character_manifest.omits_npcs = \
+            _character_manifest.omits_npcs and _metadata.debug
 
 # ---
 
@@ -710,6 +711,7 @@ var _character_scenes := [
 var _character_manifest := {
     default_character_name = "cat",
     character_scenes = _character_scenes,
+    omits_npcs = false,
 }
 
 var _annotation_parameters_manifest := {
@@ -840,8 +842,6 @@ var app_manifest := {
 var _overrides := {
     images_manifest = _images_overrides,
 }
-
-var omit_squirrels := false
 
 # ---
 
