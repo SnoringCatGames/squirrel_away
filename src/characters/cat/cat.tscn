@@ -29,8 +29,8 @@ logs_behavior_events = true
 logs_navigator_events = true
 logs_collision_events = true
 logs_surface_events = true
-logs_action_events = false
-logs_verbose_events = false
+logs_action_events = true
+logs_verbose_events = true
 logs_verbose_navigator_events = false
 
 [node name="MovementParameters" parent="." instance=ExtResource( 3 )]
