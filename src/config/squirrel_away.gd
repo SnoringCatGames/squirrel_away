@@ -34,7 +34,7 @@ func _override_configs_for_current_run() -> void:
     _metadata.is_splash_skipped = true
     _metadata.are_button_controls_enabled_by_default = false
     
-    _character_manifest.omits_npcs = true
+    _character_manifest.omits_npcs = false
     
     _surfacer_manifest.precompute_platform_graph_for_levels = [
 #        "3",
