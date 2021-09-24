@@ -17,5 +17,4 @@ tile_data = PoolIntArray( -1310753, 24, 0, -1310752, 24, 0, -1310751, 24, 0, -13
 [node name="IntroChoreographyDestination" type="Position2D" parent="." groups=["intro_choreography_destination"]]
 
 [node name="CatSpawn" parent="." instance=ExtResource( 4 )]
-position = Vector2( 378.553, 288.048 )
 character_name = "cat"
