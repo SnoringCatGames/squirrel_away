@@ -18,5 +18,5 @@ draws_tile_indices = true
 [node name="IntroChoreographyDestination" type="Position2D" parent="." groups=["intro_choreography_destination"]]
 
 [node name="CatSpawn" parent="." instance=ExtResource( 4 )]
-position = Vector2( 96, -208 )
+position = Vector2( 76.4866, -198.103 )
 character_name = "cat"
