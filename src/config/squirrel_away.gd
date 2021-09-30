@@ -18,10 +18,10 @@ func _override_configs_for_current_run() -> void:
     _metadata.app_version = "0.0.1"
     
     _metadata.debug = false and OS.is_debug_build()
-    _metadata.playtest = false
+    _metadata.playtest = true
     _metadata.rng_seed = 723
-    _metadata.pauses_on_focus_out = false
-    _metadata.also_prints_to_stdout = true
+    _metadata.pauses_on_focus_out = true
+    _metadata.also_prints_to_stdout = false
     _metadata.logs_character_events = true
     _metadata.logs_analytics_events = false
     _metadata.logs_bootstrap_events = false
