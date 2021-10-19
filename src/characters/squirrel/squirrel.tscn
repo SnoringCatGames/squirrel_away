@@ -19,7 +19,6 @@ collision_layer = 8
 collision_mask = 3
 script = ExtResource( 1 )
 character_name = "squirrel"
-is_bouncy = true
 primary_annotation_color = Color( 0.87451, 0.443137, 0.14902, 1 )
 secondary_annotation_color = Color( 1, 1, 1, 1 )
 navigation_annotation_color_override = Color( 0, 0, 0, 1 )
@@ -54,16 +53,9 @@ climb_up_speed_multiplier = 1.5
 climb_down_speed_multiplier = 1.5
 ceiling_crawl_speed_multiplier = 1.5
 jump_boost_multiplier = 1.2
-ceiling_fall_velocity_boost = 100.0
 max_horizontal_speed_default_multiplier = 1.4
-stops_on_slope = true
-ceiling_crawling_edge_weight_multiplier_override = -1.0
-climb_to_adjacent_surface_edge_weight_multiplier_override = -1.0
-default_nav_interrupt_resolution_mode = 4
 collision_margin_for_edge_calculations = 1.0
 collision_margin_for_waypoint_positions = 4.0
-always_tries_to_face_direction_of_motion = true
-max_distance_for_reachable_surface_tracking = 1024.0
 
 [node name="SquirrelAnimator" parent="." instance=ExtResource( 3 )]
 animations = {
