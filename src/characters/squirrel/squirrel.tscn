@@ -37,6 +37,7 @@ logs_surface_events = false
 logs_action_events = false
 logs_verbose_events = false
 logs_verbose_navigator_events = false
+stores_logs_on_character_instances = false
 
 [node name="MovementParameters" parent="." instance=ExtResource( 2 )]
 collider_shape = SubResource( 1 )

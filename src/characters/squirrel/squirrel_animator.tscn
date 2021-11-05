@@ -212,6 +212,11 @@ animations = {
 "speed": 2.5,
 "sprite_name": "ClimbUp"
 },
+"CrawlOnCeiling": {
+"name": "CrawlOnCeiling",
+"speed": 1.0,
+"sprite_name": "CrawlOnCeiling"
+},
 "JumpFall": {
 "name": "JumpFall",
 "speed": 1.0,
@@ -222,10 +227,20 @@ animations = {
 "speed": 1.0,
 "sprite_name": "JumpRise"
 },
+"RESET": {
+"name": "RESET",
+"speed": 1.0,
+"sprite_name": "RESET"
+},
 "Rest": {
 "name": "Rest",
 "speed": 1.0,
 "sprite_name": "Rest"
+},
+"RestOnCeiling": {
+"name": "RestOnCeiling",
+"speed": 1.0,
+"sprite_name": "RestOnCeiling"
 },
 "RestOnWall": {
 "name": "RestOnWall",
@@ -241,14 +256,14 @@ animations = {
 
 [node name="Walk" type="Sprite" parent="."]
 visible = false
-position = Vector2( -9.68032, -3.99701 )
+position = Vector2( -9.68, -20.997 )
 texture = ExtResource( 2 )
 hframes = 2
 vframes = 4
 
 [node name="ClimbUp" type="Sprite" parent="."]
 visible = false
-position = Vector2( -0.401004, 12.5892 )
+position = Vector2( -21.901, 12.589 )
 texture = ExtResource( 3 )
 hframes = 4
 vframes = 2
@@ -256,22 +271,21 @@ frame = 5
 
 [node name="ClimbDown" type="Sprite" parent="."]
 visible = false
-position = Vector2( -0.403453, -13.0153 )
+position = Vector2( -21.903, -13.015 )
 texture = ExtResource( 4 )
 hframes = 4
 vframes = 2
-frame = 7
 
 [node name="CrawlOnCeiling" type="Sprite" parent="."]
 visible = false
-position = Vector2( -0.403453, 4.9847 )
+position = Vector2( -0.403, 21.985 )
 rotation = -1.5708
 texture = ExtResource( 4 )
 hframes = 4
 vframes = 2
 
 [node name="Rest" type="Sprite" parent="."]
-position = Vector2( -10.6186, -5.00692 )
+position = Vector2( -10.619, -22.007 )
 texture = ExtResource( 5 )
 hframes = 2
 vframes = 4
@@ -279,14 +293,14 @@ frame = 7
 
 [node name="RestOnWall" type="Sprite" parent="."]
 visible = false
-position = Vector2( -0.420696, 13.2978 )
+position = Vector2( -21.921, 13.298 )
 texture = ExtResource( 8 )
 hframes = 4
 vframes = 2
 
 [node name="RestOnCeiling" type="Sprite" parent="."]
 visible = false
-position = Vector2( -10.6186, 4.99308 )
+position = Vector2( -10.619, 21.993 )
 rotation = 3.14159
 scale = Vector2( -1, 1 )
 texture = ExtResource( 5 )
