@@ -32,6 +32,7 @@ logs_surface_events = false
 logs_action_events = false
 logs_verbose_events = false
 logs_verbose_navigator_events = false
+stores_logs_on_character_instances = false
 
 [node name="MovementParameters" parent="." instance=ExtResource( 3 )]
 collider_shape = SubResource( 1 )
@@ -49,17 +50,10 @@ climb_down_speed_multiplier = 1.2
 ceiling_crawl_speed_multiplier = 1.2
 friction_coefficient_multiplier = 1.1
 jump_boost_multiplier = 1.3
-ceiling_fall_velocity_boost = 100.0
 max_horizontal_speed_default_multiplier = 1.5
-stops_on_slope = true
 max_jump_chain = 2
-ceiling_crawling_edge_weight_multiplier_override = -1.0
-climb_to_adjacent_surface_edge_weight_multiplier_override = -1.0
-default_nav_interrupt_resolution_mode = 4
 collision_margin_for_edge_calculations = 1.0
 collision_margin_for_waypoint_positions = 4.0
-always_tries_to_face_direction_of_motion = true
-max_distance_for_reachable_surface_tracking = 1024.0
 
 [node name="CatAnimator" parent="." instance=ExtResource( 2 )]
 scale = Vector2( -1, 1 )
