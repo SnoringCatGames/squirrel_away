@@ -1,6 +1,6 @@
 tool
 class_name CatAnimator
-extends ScaffolderCharacterAnimator
+extends SurfacerCharacterAnimator
 
 
 const HEAD_UNBLINK_REGION := Rect2(26, 39, 22, 18)
