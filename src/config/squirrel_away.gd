@@ -13,6 +13,7 @@ func _override_configs_for_current_run() -> void:
     var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
+#    var are_annotations_emphasized := false
     var are_annotations_emphasized := true
     
     _metadata.app_version = "0.0.1"
