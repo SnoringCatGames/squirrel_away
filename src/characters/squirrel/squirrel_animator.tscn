@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://addons/scaffolder/src/character/scaffolder_character_animator.gd" type="Script" id=1]
+[ext_resource path="res://addons/surfacer/src/character/surfacer_character_animator.gd" type="Script" id=1]
 [ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_running_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_climbing_up_spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://addons/squirrel_away/assets/images/characters/squirrel_climbing_down_spritesheet.png" type="Texture" id=4]
