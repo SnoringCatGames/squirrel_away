@@ -351,6 +351,8 @@ var _colors_manifest := {
     zebra_stripe_even_row = COLOR_BACKGROUND_LIGHTER,
     overlay_panel_background = COLOR_BACKGROUND_DARKER,
     overlay_panel_border = COLOR_TEXT,
+    notification_panel_background = COLOR_BACKGROUND_DARKER,
+    notification_panel_border = COLOR_TEXT,
     header_panel_background = COLOR_BACKGROUND,
     screen_border = COLOR_TEXT,
     shadow = COLOR_SHADOW,
@@ -461,6 +463,20 @@ var _styles_manifest_pixel := {
     overlay_panel_content_margin_top = 3.0,
     overlay_panel_content_margin_right = 3.0,
     overlay_panel_content_margin_bottom = 3.0,
+    
+    notification_panel_border_width = 2,
+    
+    notification_panel_nine_patch = \
+            preload("res://addons/scaffolder/assets/images/gui/nine_patch/overlay_panel.png"),
+    notification_panel_nine_patch_margin_left = 3.5,
+    notification_panel_nine_patch_margin_top = 3.5,
+    notification_panel_nine_patch_margin_right = 3.5,
+    notification_panel_nine_patch_margin_bottom = 3.5,
+    notification_panel_nine_patch_scale = 3.0,
+    notification_panel_content_margin_left = 3.0,
+    notification_panel_content_margin_top = 3.0,
+    notification_panel_content_margin_right = 3.0,
+    notification_panel_content_margin_bottom = 3.0,
     
     header_panel_content_margin_left = 0.0,
     header_panel_content_margin_top = 0.0,
@@ -698,6 +714,25 @@ var _gui_manifest := {
     splash_scale_mobile = 0.77,
 }
 
+var _notifications_manifest := {
+    duration_short_sec = 2.0,
+    duration_long_sec = 8.0,
+    
+    fade_in_duration = 0.15,
+    fade_out_duration = 0.3,
+    
+    size_small = Vector2(200.0, 67.0),
+    size_medium = Vector2(400.0, 133.0),
+    size_large = Vector2(600.0, 200.0),
+    
+    margin_bottom = 16.0,
+    margin_sides = 16.0,
+    
+    opacity = 0.9,
+    
+    slide_in_displacement = Vector2(0.0, -67.0),
+}
+
 var _slow_motion_manifest := {
     time_scale = 0.02,
     tick_tock_tempo_multiplier = 25,
@@ -833,6 +868,7 @@ var app_manifest := {
     styles_manifest = _default_styles_manifest_normal,
     images_manifest = _default_images_manifest_normal,
     gui_manifest = _gui_manifest,
+    notifications_manifest = _notifications_manifest,
     slow_motion_manifest = _slow_motion_manifest,
     input_map = _input_map,
     character_manifest = _character_manifest,
