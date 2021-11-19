@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://addons/squirrel_away/src/levels/test_odd_shapes_tile_map.gd" type="Script" id=1]
-[ext_resource path="res://addons/squirrel_away/src/levels/test_odd_shapes_tile_set.tres" type="TileSet" id=2]
+[ext_resource path="res://addons/squirrel_away/src/tiles/test_odd_shapes_tile_map.gd" type="Script" id=1]
+[ext_resource path="res://addons/squirrel_away/src/tiles/test_odd_shapes_tile_set.tres" type="TileSet" id=2]
 
 [node name="TestOddShapesTileMap" type="TileMap" groups=[
 "desaturatables",

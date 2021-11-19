@@ -1,10 +1,10 @@
 tool
-class_name SquirrelAwayTileMap
+class_name TestOddShapesTileMap
 extends SurfacesTileMap
 
 
 const DEFAULT_TILE_SET := preload( \
-        "res://addons/squirrel_away/src/levels/squirrel_away_surfaces_tile_set.tres")
+        "res://addons/squirrel_away/src/tiles/test_odd_shapes_tile_set.tres")
 
 
 func _ready() -> void:

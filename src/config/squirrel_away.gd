@@ -31,7 +31,7 @@ func _override_configs_for_current_run() -> void:
     _metadata.are_all_levels_unlocked = true
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
-    _metadata.opens_directly_to_level_id = "10"
+    _metadata.opens_directly_to_level_id = "11"
     _metadata.is_splash_skipped = true
     _metadata.are_button_controls_enabled_by_default = true
     
@@ -46,6 +46,7 @@ func _override_configs_for_current_run() -> void:
 #        "8",
 #        "9",
 #        "10",
+        "11",
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
@@ -841,7 +842,7 @@ var _surfacer_manifest := {
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     
     default_tile_set = preload( \
-            "res://addons/surfacer/src/level/placeholder_surfaces_tile_set.tres"),
+            "res://addons/surfacer/src/tiles/tile_set_with_many_angles.tres"),
     path_drag_update_throttle_interval = 0.2,
     path_beat_update_throttle_interval = 0.2,
     
