@@ -662,7 +662,6 @@ var _screen_manifest := {
 var _gui_manifest := {
     debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen,
     
-    cell_size = Vector2(64.0, 64.0),
     default_pc_game_area_size = Vector2(1024, 768),
     default_mobile_game_area_size = Vector2(500, 600),
     aspect_ratio_max = 2.0 / 1.0,
@@ -789,6 +788,20 @@ var _annotations_manifest := {
     new_path_pulse_time_length = 1.0,
 }
 
+# FIXME: LEFT OFF HERE: --------------------
+# - Add a max-speed modifier.
+# - Add some way of checking fall-through/walk-through state.
+#   - And add a way to validate that this matches the normal TileSet encoding.
+var _surface_properties_manifest := {
+    "default": {
+        can_grab = true,
+        friction_multiplier = 1.0,
+    },
+    "disabled": {
+        can_grab = false,
+    },
+}
+
 var _movement_manifest := {
     uses_point_and_click_navigation = true,
     cancels_point_and_click_nav_on_key_press = true,
@@ -858,6 +871,7 @@ var _surfacer_manifest := {
     
     debug_params = _surfacer_debug_params,
     
+    surface_properties_manifest = _surface_properties_manifest,
     movement_manifest = _movement_manifest,
     annotations_manifest = _annotations_manifest,
 }
