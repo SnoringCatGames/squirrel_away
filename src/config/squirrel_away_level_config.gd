@@ -15,6 +15,7 @@ var level_manifest := {
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level1.tscn",
 #        platform_graph_character_names = ["cat"],
+#        cell_size = Vector2(64, 64),
 #    },
 #    "2": {
 #        name = "Dev level 2",
@@ -23,6 +24,7 @@ var level_manifest := {
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level2.tscn",
 #        platform_graph_character_names = ["cat"],
+#        cell_size = Vector2(64, 64),
 #    },
     "3": {
         name = "Dev level 3",
@@ -32,6 +34,7 @@ var level_manifest := {
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level3.tscn",
         platform_graph_character_names = ["cat"],
+        cell_size = Vector2(64, 64),
         intro_choreography = [
             {
                 is_player_interaction_enabled = false,
@@ -61,6 +64,7 @@ var level_manifest := {
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level4.tscn",
 #        platform_graph_character_names = ["cat"],
+#        cell_size = Vector2(64, 64),
 #    },
 #    "5": {
 #        name = "Dev level 5",
@@ -70,6 +74,7 @@ var level_manifest := {
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level5.tscn",
 #        platform_graph_character_names = ["cat"],
+#        cell_size = Vector2(64, 64),
 #    },
     "6": {
         name = "Dev level 6",
@@ -79,6 +84,7 @@ var level_manifest := {
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level6.tscn",
         platform_graph_character_names = ["cat", "squirrel"],
+        cell_size = Vector2(64, 64),
         # FIXME: --------------- Add back in.
 #        intro_choreography = [
 #            {
@@ -109,6 +115,7 @@ var level_manifest := {
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level7.tscn",
         platform_graph_character_names = ["cat", "squirrel"],
+        cell_size = Vector2(64, 64),
     },
     "8": {
         name = "Dev level 8",
@@ -118,6 +125,7 @@ var level_manifest := {
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level8.tscn",
         platform_graph_character_names = ["cat", "squirrel"],
+        cell_size = Vector2(64, 64),
     },
     "9": {
         name = "Dev level 9",
@@ -127,6 +135,7 @@ var level_manifest := {
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level9.tscn",
         platform_graph_character_names = ["cat"],
+        cell_size = Vector2(64, 64),
     },
     "10": {
         name = "Dev level 10",
@@ -136,6 +145,7 @@ var level_manifest := {
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level10.tscn",
         platform_graph_character_names = ["cat"],
+        cell_size = Vector2(32, 32),
     },
     "11": {
         name = "Dev level 11",
@@ -145,6 +155,7 @@ var level_manifest := {
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level11.tscn",
         platform_graph_character_names = ["cat"],
+        cell_size = Vector2(32, 32),
     },
 }
 
