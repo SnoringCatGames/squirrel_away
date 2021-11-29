@@ -1,5 +1,5 @@
 tool
-class_name TileSetWithManyAngles
+class_name SquirrelAwayTileSetWithManyAngles
 extends SurfacesTileSet
 
 

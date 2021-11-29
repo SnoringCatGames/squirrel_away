@@ -1,10 +1,10 @@
 tool
-class_name TileMapWithManyAngles
+class_name SquirrelAwayTileMapWithManyAngles
 extends SurfacesTileMap
 
 
 const DEFAULT_TILE_SET := preload( \
-        "res://addons/surfacer/src/tiles/tile_set_with_many_angles.tres")
+        "res://addons/squirrel_away/src/tiles/squirrel_away_tile_set_with_many_angles.tres")
 
 
 func _ready() -> void:
