@@ -47,7 +47,7 @@ func _override_configs_for_current_run() -> void:
 #        "9",
 #        "10",
 #        "11",
-        "12",
+#        "12",
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
@@ -789,10 +789,6 @@ var _annotations_manifest := {
     new_path_pulse_time_length = 1.0,
 }
 
-# FIXME: LEFT OFF HERE: ---------------------
-# - Add a max-speed modifier.
-# - Add some way of checking fall-through/walk-through state.
-#   - And add a way to validate that this matches the normal TileSet encoding.
 var _surface_properties_manifest := {
     "default": {
         can_grab = true,
@@ -800,6 +796,12 @@ var _surface_properties_manifest := {
     },
     "disabled": {
         can_grab = false,
+    },
+    "slippery": {
+        friction_multiplier = 0.2,
+    },
+    "sticky": {
+        friction_multiplier = 2.0,
     },
 }
 
