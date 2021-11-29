@@ -788,7 +788,7 @@ var _annotations_manifest := {
     new_path_pulse_time_length = 1.0,
 }
 
-# FIXME: LEFT OFF HERE: --------------------
+# FIXME: LEFT OFF HERE: ---------------------
 # - Add a max-speed modifier.
 # - Add some way of checking fall-through/walk-through state.
 #   - And add a way to validate that this matches the normal TileSet encoding.
