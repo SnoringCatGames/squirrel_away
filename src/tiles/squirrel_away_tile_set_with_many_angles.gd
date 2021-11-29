@@ -13,6 +13,8 @@ const _TILE_IDS := [
     "7_tile_with_halves",
     "8_tile_with_odd_joins",
     "9_tile_with_corner_caps",
+    "slippery",
+    "sticky",
 ]
 
 const _DISABLED_SURFACES_TILE_ID_SET := {

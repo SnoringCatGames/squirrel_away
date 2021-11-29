@@ -157,6 +157,16 @@ var level_manifest := {
         platform_graph_character_names = ["cat"],
         cell_size = Vector2(32, 32),
     },
+    "12": {
+        name = "Dev level 12",
+        version = "0.0.1",
+        is_test_level = true,
+        sort_priority = -80,
+        unlock_conditions = "unlocked",
+        scene_path = LEVELS_PATH_PREFIX + "level12.tscn",
+        platform_graph_character_names = ["cat"],
+        cell_size = Vector2(32, 32),
+    },
 }
 
 
