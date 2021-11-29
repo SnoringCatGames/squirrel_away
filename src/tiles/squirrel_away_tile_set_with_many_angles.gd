@@ -32,13 +32,17 @@ func _get_tile_manifest() -> Dictionary:
     for tile_id in _TILE_IDS:
         var tile_config := {}
         if _DISABLED_SURFACES_TILE_ID_SET.has(tile_id):
-            tile_config.surface_properties = Su.surface_properties["disabled"]
+            tile_config.surface_properties = \
+                    Su.surface_properties.properties["disabled"]
         if _SLIPPERY_SURFACES_TILE_ID_SET.has(tile_id):
-            tile_config.surface_properties = Su.surface_properties["slippery"]
+            tile_config.surface_properties = \
+                    Su.surface_properties.properties["slippery"]
         if _STICKY_SURFACES_TILE_ID_SET.has(tile_id):
-            tile_config.surface_properties = Su.surface_properties["sticky"]
+            tile_config.surface_properties = \
+                    Su.surface_properties.properties["sticky"]
         else:
-            tile_config.surface_properties = Su.surface_properties["default"]
+            tile_config.surface_properties = \
+                    Su.surface_properties.properties["default"]
         manifest[tile_id] = tile_config
     return manifest
 
