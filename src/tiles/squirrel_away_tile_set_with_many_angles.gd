@@ -21,9 +21,11 @@ const _DISABLED_SURFACES_TILE_ID_SET := {
 }
 
 const _SLIPPERY_SURFACES_TILE_ID_SET := {
+    "slippery": true,
 }
 
 const _STICKY_SURFACES_TILE_ID_SET := {
+    "sticky": true,
 }
 
 
@@ -34,10 +36,10 @@ func _get_tile_manifest() -> Dictionary:
         if _DISABLED_SURFACES_TILE_ID_SET.has(tile_id):
             tile_config.surface_properties = \
                     Su.surface_properties.properties["disabled"]
-        if _SLIPPERY_SURFACES_TILE_ID_SET.has(tile_id):
+        elif _SLIPPERY_SURFACES_TILE_ID_SET.has(tile_id):
             tile_config.surface_properties = \
                     Su.surface_properties.properties["slippery"]
-        if _STICKY_SURFACES_TILE_ID_SET.has(tile_id):
+        elif _STICKY_SURFACES_TILE_ID_SET.has(tile_id):
             tile_config.surface_properties = \
                     Su.surface_properties.properties["sticky"]
         else:
