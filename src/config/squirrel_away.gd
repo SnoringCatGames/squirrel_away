@@ -9,8 +9,8 @@ extends DefaultAppManifest
 func _override_configs_for_current_run() -> void:
     # TODO: Remember to reset these when creating releases.
     
-    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
-#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
+#    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
+    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
 #    var are_annotations_emphasized := false
@@ -792,16 +792,16 @@ var _annotations_manifest := {
 var _surface_properties_manifest := {
     "default": {
         can_grab = true,
-        friction_multiplier = 1.0,
+        friction_multiplier = 0.7,
     },
     "disabled": {
         can_grab = false,
     },
     "slippery": {
-        friction_multiplier = 0.2,
+        friction_multiplier = 0.05,
     },
     "sticky": {
-        friction_multiplier = 2.0,
+        friction_multiplier = 4.0,
     },
 }
 
@@ -817,7 +817,8 @@ var _movement_manifest := {
     climb_up_speed_default = -230.0,
     climb_down_speed_default = 120.0,
     ceiling_crawl_speed_default = 230.0,
-    friction_coefficient_default = 1.25,
+    friction_coeff_with_sideways_input_default = 1.0,
+    friction_coeff_without_sideways_input_default = 1.25,
     jump_boost_default = -900.0,
     wall_jump_horizontal_boost_default = 200.0,
     wall_fall_horizontal_boost_default = 20.0,

@@ -3,50 +3,15 @@ class_name SquirrelAwayTileSetWithManyAngles
 extends SurfacesTileSet
 
 
-const _TILE_IDS := [
-    "1_tile_with_90s",
-    "2_tile_with_45s",
-    "3_tile_with_27s_floors_pos",
-    "4_tile_with_27s_floors_neg",
-    "5_tile_with_27s_ceilings_pos",
-    "6_tile_with_27s_ceilings_neg",
-    "7_tile_with_halves",
-    "8_tile_with_odd_joins",
-    "9_tile_with_corner_caps",
-    "slippery",
-    "sticky",
+const _PROPERTIES_MANIFEST := [
+    ["disabled", []],
+    ["slippery", ["slippery_tile"]],
+    ["sticky", ["sticky_tile",]],
 ]
 
-const _DISABLED_SURFACES_TILE_ID_SET := {
-}
 
-const _SLIPPERY_SURFACES_TILE_ID_SET := {
-    "slippery": true,
-}
-
-const _STICKY_SURFACES_TILE_ID_SET := {
-    "sticky": true,
-}
-
-
-func _get_tile_manifest() -> Dictionary:
-    var manifest := {}
-    for tile_id in _TILE_IDS:
-        var tile_config := {}
-        if _DISABLED_SURFACES_TILE_ID_SET.has(tile_id):
-            tile_config.surface_properties = \
-                    Su.surface_properties.properties["disabled"]
-        elif _SLIPPERY_SURFACES_TILE_ID_SET.has(tile_id):
-            tile_config.surface_properties = \
-                    Su.surface_properties.properties["slippery"]
-        elif _STICKY_SURFACES_TILE_ID_SET.has(tile_id):
-            tile_config.surface_properties = \
-                    Su.surface_properties.properties["sticky"]
-        else:
-            tile_config.surface_properties = \
-                    Su.surface_properties.properties["default"]
-        manifest[tile_id] = tile_config
-    return manifest
+func _init().(_PROPERTIES_MANIFEST) -> void:
+    pass
 
 
 func _is_tile_bound( \
