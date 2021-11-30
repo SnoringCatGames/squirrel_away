@@ -30,7 +30,6 @@ position = Vector2( -8, -8 )
 tile_set = ExtResource( 6 )
 collision_layer = 0
 collision_mask = 0
-tile_data = PoolIntArray( 2, 0, 0 )
 characters = 1
 include_exclusively = false
 exclude = true
