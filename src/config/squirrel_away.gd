@@ -13,8 +13,8 @@ func _override_configs_for_current_run() -> void:
     var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
-#    var are_annotations_emphasized := false
-    var are_annotations_emphasized := true
+    var are_annotations_emphasized := false
+#    var are_annotations_emphasized := true
     
     _metadata.app_version = "0.0.1"
     
@@ -145,6 +145,7 @@ var _metadata := {
     
     developer_name = "Snoring Cat LLC",
     developer_url = "https://snoringcat.games",
+    github_url = "https://github.com/SnoringCatGames/squirrel_away",
     
     godot_splash_screen_duration = 0.8,
     developer_splash_screen_duration = 1.0,
@@ -793,6 +794,7 @@ var _surface_properties_manifest := {
     "default": {
         can_grab = true,
         friction_multiplier = 0.7,
+        speed_multiplier = 1.0,
     },
     "disabled": {
         can_grab = false,
@@ -802,6 +804,12 @@ var _surface_properties_manifest := {
     },
     "sticky": {
         friction_multiplier = 4.0,
+    },
+    "fast": {
+        speed_multiplier = 4.0,
+    },
+    "slow": {
+        speed_multiplier = 0.2,
     },
 }
 
