@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=762 format=2]
+[gd_resource type="TileSet" load_steps=759 format=2]
 
 [ext_resource path="res://addons/squirrel_away/src/tiles/squirrel_away_tile_set_with_many_angles.gd" type="Script" id=1]
 [ext_resource path="res://addons/surfacer/assets/images/tile_template_with_many_angles.png" type="Texture" id=2]
@@ -779,9 +779,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [sub_resource type="ConvexPolygonShape2D" id=633]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=634]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
 [sub_resource type="ConvexPolygonShape2D" id=635]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
@@ -923,9 +920,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [sub_resource type="ConvexPolygonShape2D" id=681]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=682]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
 [sub_resource type="ConvexPolygonShape2D" id=683]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
@@ -1059,9 +1053,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=727]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=728]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=729]
@@ -4647,7 +4638,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 10/z_index = 0
-11/name = "fast_tiles.png 11"
+11/name = "fast_tile"
 11/texture = ExtResource( 5 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
@@ -4802,12 +4793,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape": SubResource( 633 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 10, 1 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 634 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
 "autotile_coord": Vector2( 11, 1 ),
 "one_way": false,
 "one_way_margin": 1.0,
@@ -4959,7 +4944,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 11/z_index = 0
-12/name = "slow_tiles.png 12"
+12/name = "slow_tile"
 12/texture = ExtResource( 7 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
@@ -5114,12 +5099,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape": SubResource( 681 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 10, 1 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 682 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
 "autotile_coord": Vector2( 11, 1 ),
 "one_way": false,
 "one_way_margin": 1.0,
@@ -5271,7 +5250,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 12/z_index = 0
-13/name = "ungrabbable_tiles.png 13"
+13/name = "ungrabbable_tile"
 13/texture = ExtResource( 6 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
@@ -5412,12 +5391,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 727 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 10, 1 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 728 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 11, 1 ),

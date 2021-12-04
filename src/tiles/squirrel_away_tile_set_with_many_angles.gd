@@ -4,9 +4,11 @@ extends SurfacesTileSet
 
 
 const _PROPERTIES_MANIFEST := [
-    ["disabled", []],
+    ["disabled", ["ungrabbable_tile"]],
     ["slippery", ["slippery_tile"]],
     ["sticky", ["sticky_tile",]],
+    ["fast", ["fast_tile",]],
+    ["slow", ["slow_tile",]],
 ]
 
 
