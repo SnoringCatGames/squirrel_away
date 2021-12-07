@@ -37,7 +37,7 @@ stores_logs_on_character_instances = false
 [node name="MovementParameters" parent="." instance=ExtResource( 3 )]
 collider_shape = SubResource( 1 )
 collider_rotation = 1.5708
-character_name = "cat"
+character_category_name = "cat"
 __movement_params_identifier__ = "_"
 can_grab_walls = true
 can_grab_ceilings = true

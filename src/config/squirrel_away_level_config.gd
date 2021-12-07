@@ -14,7 +14,7 @@ var level_manifest := {
 #        sort_priority = -1000,
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level1.tscn",
-#        platform_graph_character_names = ["cat"],
+#        platform_graph_character_category_names = ["cat"],
 #        cell_size = Vector2(64, 64),
 #    },
 #    "2": {
@@ -23,7 +23,7 @@ var level_manifest := {
 #        sort_priority = -900,
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level2.tscn",
-#        platform_graph_character_names = ["cat"],
+#        platform_graph_character_category_names = ["cat"],
 #        cell_size = Vector2(64, 64),
 #    },
     "3": {
@@ -33,7 +33,7 @@ var level_manifest := {
         sort_priority = -800,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level3.tscn",
-        platform_graph_character_names = ["cat"],
+        platform_graph_character_category_names = ["cat"],
         cell_size = Vector2(64, 64),
         intro_choreography = [
             {
@@ -63,7 +63,7 @@ var level_manifest := {
 #        sort_priority = -700,
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level4.tscn",
-#        platform_graph_character_names = ["cat"],
+#        platform_graph_character_category_names = ["cat"],
 #        cell_size = Vector2(64, 64),
 #    },
 #    "5": {
@@ -73,7 +73,7 @@ var level_manifest := {
 #        sort_priority = -600,
 #        unlock_conditions = "unlocked",
 #        scene_path = LEVELS_PATH_PREFIX + "level5.tscn",
-#        platform_graph_character_names = ["cat"],
+#        platform_graph_character_category_names = ["cat"],
 #        cell_size = Vector2(64, 64),
 #    },
     "6": {
@@ -83,7 +83,7 @@ var level_manifest := {
         sort_priority = -500,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level6.tscn",
-        platform_graph_character_names = ["cat", "squirrel"],
+        platform_graph_character_category_names = ["cat", "squirrel"],
         cell_size = Vector2(64, 64),
         # FIXME: --------------- Add back in.
 #        intro_choreography = [
@@ -114,7 +114,7 @@ var level_manifest := {
         sort_priority = -400,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level7.tscn",
-        platform_graph_character_names = ["cat", "squirrel"],
+        platform_graph_character_category_names = ["cat", "squirrel"],
         cell_size = Vector2(64, 64),
     },
     "8": {
@@ -124,7 +124,7 @@ var level_manifest := {
         sort_priority = -300,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level8.tscn",
-        platform_graph_character_names = ["cat", "squirrel"],
+        platform_graph_character_category_names = ["cat", "squirrel"],
         cell_size = Vector2(64, 64),
     },
     "9": {
@@ -134,7 +134,7 @@ var level_manifest := {
         sort_priority = -200,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level9.tscn",
-        platform_graph_character_names = ["cat"],
+        platform_graph_character_category_names = ["cat"],
         cell_size = Vector2(64, 64),
     },
     "10": {
@@ -144,7 +144,7 @@ var level_manifest := {
         sort_priority = -100,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level10.tscn",
-        platform_graph_character_names = ["cat"],
+        platform_graph_character_category_names = ["cat"],
         cell_size = Vector2(32, 32),
     },
     "11": {
@@ -154,7 +154,7 @@ var level_manifest := {
         sort_priority = -90,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level11.tscn",
-        platform_graph_character_names = ["cat"],
+        platform_graph_character_category_names = ["cat"],
         cell_size = Vector2(32, 32),
     },
     "12": {
@@ -164,7 +164,7 @@ var level_manifest := {
         sort_priority = -80,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level12.tscn",
-        platform_graph_character_names = ["cat", "squirrel"],
+        platform_graph_character_category_names = ["cat", "squirrel"],
         cell_size = Vector2(32, 32),
     },
 }
