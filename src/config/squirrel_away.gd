@@ -47,7 +47,7 @@ func _override_configs_for_current_run() -> void:
 #        "9",
 #        "10",
 #        "11",
-#        "12",
+        "12",
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
     
@@ -748,9 +748,101 @@ var _character_scenes := [
     preload("res://addons/squirrel_away/src/characters/squirrel/squirrel.tscn"),
 ]
 
+
+func _get_squirrel_collider_shape() -> Shape2D:
+    var shape := CapsuleShape2D.new()
+    shape.radius = 17.0
+    shape.height = 9.0
+    return shape
+
+
+var _character_categories := [
+    {
+        name = "squirrels",
+        characters = [
+            "squirrel",
+        ],
+        # For a complete list of properties, see MovementParameters.
+        movement_params = {
+            collider_shape = _get_squirrel_collider_shape(),
+            collider_rotation = PI / 2.0,
+            
+            can_grab_walls = true,
+            can_grab_ceilings = true,
+            can_jump = true,
+            can_dash = false,
+            can_double_jump = false,
+            
+            surface_speed_multiplier = 1.0,
+            air_horizontal_speed_multiplier = 1.0,
+            gravity_multiplier = 1.0,
+            gravity_slow_rise_multiplier_multiplier = 1.0,
+            gravity_double_jump_slow_rise_multiplier_multiplier = 1.0,
+            walk_acceleration_multiplier = 1.4,
+            in_air_horizontal_acceleration_multiplier = 1.4,
+            climb_up_speed_multiplier = 1.5,
+            climb_down_speed_multiplier = 1.5,
+            ceiling_crawl_speed_multiplier = 1.5,
+            friction_coefficient_multiplier = 1.0,
+            jump_boost_multiplier = 1.2,
+            wall_jump_horizontal_boost_multiplier = 1.0,
+            wall_fall_horizontal_boost_multiplier = 1.0,
+            max_horizontal_speed_default_multiplier = 1.4,
+            max_vertical_speed_multiplier = 1.0,
+            
+            uses_duration_instead_of_distance_for_edge_weight = true,
+            additional_edge_weight_offset_override = -1.0,
+            walking_edge_weight_multiplier_override = -1.0,
+            ceiling_crawling_edge_weight_multiplier_override = -1.0,
+            climbing_edge_weight_multiplier_override = -1.0,
+            climb_to_adjacent_surface_edge_weight_multiplier_override = -1.0,
+            move_to_collinear_surface_edge_weight_multiplier_override = -1.0,
+            air_edge_weight_multiplier_override = -1.0,
+            
+            minimizes_velocity_change_when_jumping = false,
+            optimizes_edge_jump_positions_at_run_time = true,
+            optimizes_edge_land_positions_at_run_time = true,
+            also_optimizes_preselection_path = true,
+            forces_character_position_to_match_edge_at_start = true,
+            forces_character_velocity_to_match_edge_at_start = true,
+            forces_character_position_to_match_path_at_end = false,
+            forces_character_velocity_to_zero_at_path_end = false,
+            syncs_character_position_to_edge_trajectory = true,
+            syncs_character_velocity_to_edge_trajectory = true,
+            includes_continuous_trajectory_positions = true,
+            includes_continuous_trajectory_velocities = true,
+            includes_discrete_trajectory_state = false,
+            is_trajectory_state_stored_at_build_time = false,
+            bypasses_runtime_physics = false,
+            default_nav_interrupt_resolution_mode = \
+                    NavigationInterruptionResolution.FORCE_EXPECTED_STATE,
+            min_intra_surface_distance_to_optimize_jump_for = 16.0,
+            dist_sq_thres_for_considering_additional_jump_land_points = \
+                    32.0 * 32.0,
+            stops_after_finding_first_valid_edge_for_a_surface_pair = false,
+            calculates_all_valid_edges_for_a_surface_pair = false,
+            always_includes_jump_land_positions_at_surface_ends = false,
+            includes_redundant_j_l_positions_with_zero_start_velocity = true,
+            normal_jump_instruction_duration_increase = 0.08,
+            exceptional_jump_instruction_duration_increase = 0.2,
+            recurses_when_colliding_during_horizontal_step_calculations = true,
+            backtracks_for_higher_jumps_during_hor_step_calculations = true,
+            collision_margin_for_edge_calculations = 1.0,
+            collision_margin_for_waypoint_positions = 4.0,
+            skips_less_likely_jump_land_positions = false,
+            reached_in_air_destination_distance_squared_threshold = \
+                    16.0 * 16.0,
+            max_edges_to_remove_from_path_for_opt_to_in_air_dest = 2,
+            always_tries_to_face_direction_of_motion = true,
+            max_distance_for_reachable_surface_tracking = 1024.0,
+        },
+    },
+]
+
 var _character_manifest := {
     default_character_name = "cat",
     character_scenes = _character_scenes,
+    character_categories = _character_categories,
     omits_npcs = false,
 }
 
