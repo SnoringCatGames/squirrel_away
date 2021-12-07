@@ -164,7 +164,7 @@ var level_manifest := {
         sort_priority = -80,
         unlock_conditions = "unlocked",
         scene_path = LEVELS_PATH_PREFIX + "level12.tscn",
-        platform_graph_character_names = ["cat"],
+        platform_graph_character_names = ["cat", "squirrel"],
         cell_size = Vector2(32, 32),
     },
 }

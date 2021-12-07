@@ -2,7 +2,7 @@
 
 [ext_resource path="res://addons/squirrel_away/src/characters/cat/cat.gd" type="Script" id=1]
 [ext_resource path="res://addons/squirrel_away/src/characters/cat/cat_animator.tscn" type="PackedScene" id=2]
-[ext_resource path="res://addons/surfacer/src/platform_graph/edge/models/movement_params.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/surfacer/src/platform_graph/edge/models/movement_parameters.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 30.0
