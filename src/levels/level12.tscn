@@ -26,9 +26,6 @@ character_name = "cat"
 [node name="SurfaceEnablement" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 0, 0, 0.7 )
 tile_set = ExtResource( 6 )
-characters = 1
-include_exclusively = false
-exclude = true
 
 [node name="SpawnPosition" parent="." instance=ExtResource( 4 )]
 position = Vector2( 224, -224 )

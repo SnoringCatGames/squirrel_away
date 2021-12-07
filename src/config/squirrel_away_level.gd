@@ -28,7 +28,7 @@ func _start() -> void:
 
     _does_level_have_squirrels = \
             Sc.level_config.get_level_config(Sc.level_session.id) \
-            .platform_graph_character_names.has("squirrel")
+            .platform_graph_character_category_names.has("squirrel")
 
 
 #func _destroy() -> void:
