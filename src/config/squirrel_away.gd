@@ -1,5 +1,5 @@
 tool
-extends DefaultAppManifest
+extends SurfacerDefaultAppManifest
 
 
 # ---
@@ -1034,8 +1034,7 @@ func _override_configs_for_app() -> void:
     _override_manifest(app_manifest, _overrides)
 
 
-func _set_up() -> void:
-    ._set_up()
+func _configure_sub_modules() -> void:
     Sc.profiler.preregister_metric_keys(_additional_metric_keys)
 
 
