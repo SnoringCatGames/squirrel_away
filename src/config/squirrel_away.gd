@@ -360,15 +360,16 @@ var _colors_manifest := {
     screen_border = COLOR_TEXT,
     shadow = COLOR_SHADOW,
     
-    # Surfacer colors.
-    
     click = ScaffolderColors.static_opacify(
             SurfacerColors.WHITE, ScaffolderColors.ALPHA_SLIGHTLY_FAINT),
+    ruler = SurfacerColors.WHITE,
+    
+    # Surfacer colors.
+    
     surface_click_selection = ScaffolderColors.static_opacify(
             SurfacerColors.WHITE, ScaffolderColors.ALPHA_SOLID),
     grid_indices = ScaffolderColors.static_opacify(
             SurfacerColors.WHITE, ScaffolderColors.ALPHA_FAINT),
-    ruler = SurfacerColors.WHITE,
     invalid = SurfacerColors.RED,
     inspector_origin = ScaffolderColors.static_opacify(
             SurfacerColors.ORANGE, ScaffolderColors.ALPHA_FAINT),
