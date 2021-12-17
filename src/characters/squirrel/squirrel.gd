@@ -27,6 +27,9 @@ func _run_away(cat: Cat) -> void:
 
 
 func _process_sounds() -> void:
+    # Override parent class.
+    #._process_sounds()
+    
     if just_triggered_jump:
         Sc.audio.play_sound("squirrel_jump")
     

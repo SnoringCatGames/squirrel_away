@@ -18,10 +18,15 @@ func _on_caught_squirrel() -> void:
 
 
 func _process_sounds() -> void:
+    # Override parent class.
+    #._process_sounds()
+    
     if just_triggered_jump:
         Sc.audio.play_sound("cat_jump")
     
     if surface_state.just_left_air:
         Sc.audio.play_sound("cat_land")
-    elif surface_state.just_touched_surface:
+    elif surface_state.just_touched_surface and \
+            !surface_state.get_is_previous_surface_collinear_neighbor() and \
+            !surface_state.get_is_previous_surface_convex_neighbor():
         Sc.audio.play_sound("cat_hit_surface")
