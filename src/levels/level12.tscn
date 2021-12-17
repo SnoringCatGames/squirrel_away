@@ -22,11 +22,16 @@ id = "11"
 [node name="CatSpawn" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -224 )
 character_name = "cat"
+include_exclusively = true
+exclude = false
 
 [node name="SurfaceEnablement" parent="." instance=ExtResource( 5 )]
-modulate = Color( 1, 0, 0, 0.7 )
+modulate = Color( 0, 1, 0.0999999, 0.7 )
 tile_set = ExtResource( 6 )
+character_categories = 0
 
 [node name="SpawnPosition" parent="." instance=ExtResource( 4 )]
 position = Vector2( 224, -224 )
 character_name = "squirrel"
+include_exclusively = false
+exclude = false

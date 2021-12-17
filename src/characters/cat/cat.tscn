@@ -43,6 +43,8 @@ can_grab_walls = true
 can_grab_ceilings = true
 can_dash = true
 can_double_jump = true
+surface_speed_multiplier = 1.0
+air_horizontal_speed_multiplier = 1.0
 walk_acceleration_multiplier = 1.5
 in_air_horizontal_acceleration_multiplier = 1.5
 climb_up_speed_multiplier = 1.2
@@ -53,8 +55,10 @@ jump_boost_multiplier = 1.3
 max_horizontal_speed_default_multiplier = 1.5
 max_jump_chain = 2
 move_to_collinear_surface_edge_weight_multiplier_override = -1.0
+air_edge_weight_multiplier_override = 10.0
 collision_margin_for_edge_calculations = 1.0
 collision_margin_for_waypoint_positions = 4.0
+oblique_collison_normal_aspect_ratio_threshold = 10.0
 
 [node name="CatAnimator" parent="." instance=ExtResource( 2 )]
 scale = Vector2( -1, 1 )
