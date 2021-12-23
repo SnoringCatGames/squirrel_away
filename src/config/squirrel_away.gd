@@ -21,7 +21,7 @@ func _override_configs_for_current_run() -> void:
     _metadata.debug = true and OS.is_debug_build()
     _metadata.playtest = false
     _metadata.rng_seed = 723
-    _metadata.pauses_on_focus_out = true
+    _metadata.pauses_on_focus_out = false
     _metadata.also_prints_to_stdout = true
     _metadata.logs_character_events = true
     _metadata.logs_analytics_events = false
@@ -31,8 +31,8 @@ func _override_configs_for_current_run() -> void:
     _metadata.are_all_levels_unlocked = true
     _metadata.are_test_levels_included = true
     _metadata.is_save_state_cleared_for_debugging = false
-    _metadata.opens_directly_to_level_id = ""
-    _metadata.is_splash_skipped = false
+    _metadata.opens_directly_to_level_id = "12"
+    _metadata.is_splash_skipped = true
     _metadata.are_button_controls_enabled_by_default = true
     
     _surfacer_manifest.are_loaded_surfaces_deeply_validated = false
