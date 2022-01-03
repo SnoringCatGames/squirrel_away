@@ -22,15 +22,12 @@ id = "11"
 [node name="CatSpawn" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -224 )
 character_name = "cat"
+character_name = "cat"
 
-[node name="SurfaceEnablement" parent="." groups=["surface_marks"] instance=ExtResource( 5 )]
+[node name="SurfaceEnablement" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 0, 0, 0.7 )
-light_mask = 0
-position = Vector2( -8, -8 )
 tile_set = ExtResource( 6 )
-collision_layer = 0
-collision_mask = 0
 tile_data = PoolIntArray( 3932160, 0, 0 )
-characters = 1
+character_categories = 0
 include_exclusively = false
 exclude = true
