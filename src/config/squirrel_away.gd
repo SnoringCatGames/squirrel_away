@@ -46,7 +46,7 @@ func _override_configs_for_current_run() -> void:
 #        "8",
 #        "9",
 #        "10",
-#        "11",
+        "11",
 #        "12",
     ]
     _surfacer_manifest.ignores_platform_graph_save_files = false
