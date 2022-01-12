@@ -25,6 +25,7 @@ const FULL_BITMASK_3x3 := \
 
 const TILE_WITH_SEPARATED_DEPTHS_NAME := "tiles_with_separated_depths"
 
+# NOTE: These positions need to be match the corresponding tile-set image.
 const INTERIOR_SUBTILE_POSITIONS := {
     exposed_sides = {
         top_left = Vector2(0, 4),
@@ -60,6 +61,24 @@ const INTERIOR_SUBTILE_POSITIONS := {
         top_left_top_right_bottom_left = Vector2(10, 5),
         top_right_bottom_left = Vector2(9, 6),
         top_left_bottom_right = Vector2(10, 6),
+    },
+    exposed_sides_and_corners = {
+        top_left_sides_bottom_right_corner = Vector2(0, 7),
+        top_right_sides_bottom_left_corner = Vector2(1, 7),
+        bottom_left_sides_top_right_corner = Vector2(0, 8),
+        bottom_right_sides_top_left_corner = Vector2(1, 8),
+        top_side_bottom_right_corner = Vector2(2, 7),
+        top_side_bottom_left_bottom_right_corners = Vector2(3, 7),
+        top_side_bottom_left_corner = Vector2(4, 7),
+        bottom_side_top_right_corner = Vector2(2, 8),
+        bottom_side_top_left_top_right_corners = Vector2(3, 8),
+        bottom_side_top_left_corner = Vector2(4, 8),
+        left_side_bottom_right_corner = Vector2(5, 7),
+        left_side_top_right_corner = Vector2(5, 8),
+        left_side_top_right_bottom_right_corners = Vector2(7, 7),
+        right_side_bottom_left_corner = Vector2(6, 7),
+        right_side_top_left_corner = Vector2(6, 8),
+        right_side_top_left_bottom_left_corners = Vector2(8, 7),
     },
 }
 
@@ -154,28 +173,72 @@ func _forward_subtile_selection(
             if is_right_neighbor_exposed_at_right:
                 return INTERIOR_SUBTILE_POSITIONS.exposed_sides.top_left_right
             else:
-                return INTERIOR_SUBTILE_POSITIONS.exposed_sides.top_left
+                if is_bottom_right_neighbor_exposed_at_bottom_right:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.top_left_sides_bottom_right_corner
+                else:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides.top_left
         elif is_right_neighbor_exposed_at_right:
-            return INTERIOR_SUBTILE_POSITIONS.exposed_sides.top_right
+            if is_bottom_left_neighbor_exposed_at_bottom_left:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.top_right_sides_bottom_left_corner
+            else:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides.top_right
         else:
-            return INTERIOR_SUBTILE_POSITIONS.exposed_sides.top
+            if is_bottom_left_neighbor_exposed_at_bottom_left:
+                if is_bottom_right_neighbor_exposed_at_bottom_right:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.top_side_bottom_left_bottom_right_corners
+                else:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.top_side_bottom_left_corner
+            elif is_bottom_right_neighbor_exposed_at_bottom_right:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.top_side_bottom_right_corner
+            else:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides.top
     elif is_bottom_neighbor_exposed_at_bottom:
         if is_left_neighbor_exposed_at_left:
             if is_right_neighbor_exposed_at_right:
                 return INTERIOR_SUBTILE_POSITIONS.exposed_sides.bottom_left_right
             else:
-                return INTERIOR_SUBTILE_POSITIONS.exposed_sides.bottom_left
+                if is_top_right_neighbor_exposed_at_top_right:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.bottom_left_sides_top_right_corner
+                else:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides.bottom_left
         elif is_right_neighbor_exposed_at_right:
-            return INTERIOR_SUBTILE_POSITIONS.exposed_sides.bottom_right
+            if is_top_left_neighbor_exposed_at_top_left:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.bottom_right_sides_top_left_corner
+            else:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides.bottom_right
         else:
-            return INTERIOR_SUBTILE_POSITIONS.exposed_sides.bottom
+            if is_top_left_neighbor_exposed_at_top_left:
+                if is_top_right_neighbor_exposed_at_top_right:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.bottom_side_top_left_top_right_corners
+                else:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.bottom_side_top_left_corner
+            elif is_top_right_neighbor_exposed_at_top_right:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.bottom_side_top_right_corner
+            else:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides.bottom
     elif is_left_neighbor_exposed_at_left:
         if is_right_neighbor_exposed_at_right:
             return INTERIOR_SUBTILE_POSITIONS.exposed_sides.left_right
         else:
-            return INTERIOR_SUBTILE_POSITIONS.exposed_sides.left
+            if is_top_right_neighbor_exposed_at_top_right:
+                if is_bottom_right_neighbor_exposed_at_bottom_right:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.left_side_top_right_bottom_right_corners
+                else:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.left_side_top_right_corner
+            elif is_bottom_right_neighbor_exposed_at_bottom_right:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.left_side_bottom_right_corner
+            else:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides.left
     elif is_right_neighbor_exposed_at_right:
-            return INTERIOR_SUBTILE_POSITIONS.exposed_sides.right
+            if is_top_left_neighbor_exposed_at_top_left:
+                if is_bottom_left_neighbor_exposed_at_bottom_left:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.right_side_top_left_bottom_left_corners
+                else:
+                    return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.right_side_top_left_corner
+            elif is_bottom_left_neighbor_exposed_at_bottom_left:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.right_side_bottom_left_corner
+            else:
+                return INTERIOR_SUBTILE_POSITIONS.exposed_sides.right
     else:
         if is_top_left_neighbor_exposed_at_top_left:
             if is_top_right_neighbor_exposed_at_top_right:
