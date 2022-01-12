@@ -23,9 +23,6 @@ const FULL_BITMASK_3x3 := \
         TileSet.BIND_BOTTOM | \
         TileSet.BIND_BOTTOMRIGHT
 
-# FIXME: -------- Check this return value.
-const INVALID_SUBTILE_POSITION := Vector2.INF
-
 const TILE_WITH_SEPARATED_DEPTHS_NAME := "tiles_with_separated_depths"
 
 const INTERIOR_SUBTILE_POSITIONS := {
@@ -86,8 +83,10 @@ func _forward_subtile_selection(
         tile_map: Object,
         cell_position: Vector2):
     if bitmask != FULL_BITMASK_3x3:
-        # FIXME: -------- Check this return value.
-#        return INVALID_SUBTILE_POSITION
+        # NOTE:
+        # - Not returning any value here is terrible.
+        # - However, apparently Godot doesn't support returning any actual
+        #   values that would indicate redirecting back to the default behavior.
         return
     
     var top_left_neighbor_bitmask := get_cell_bitmask(
