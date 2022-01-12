@@ -117,17 +117,25 @@ func _forward_subtile_selection(
     var is_top_left_neighbor_exposed_at_top_left := \
             !(top_left_neighbor_bitmask & BIND_TOPLEFT)
     var is_top_neighbor_exposed_at_top := \
-            !(top_neighbor_bitmask & BIND_TOP)
+            !(top_neighbor_bitmask & BIND_TOPLEFT) or \
+            !(top_neighbor_bitmask & BIND_TOP) or \
+            !(top_neighbor_bitmask & BIND_TOPRIGHT)
     var is_top_right_neighbor_exposed_at_top_right := \
             !(top_right_neighbor_bitmask & BIND_TOPRIGHT)
     var is_left_neighbor_exposed_at_left := \
-            !(left_neighbor_bitmask & BIND_LEFT)
+            !(left_neighbor_bitmask & BIND_TOPLEFT) or \
+            !(left_neighbor_bitmask & BIND_LEFT) or \
+            !(left_neighbor_bitmask & BIND_BOTTOMLEFT)
     var is_right_neighbor_exposed_at_right := \
-            !(right_neighbor_bitmask & BIND_RIGHT)
+            !(right_neighbor_bitmask & BIND_TOPRIGHT) or \
+            !(right_neighbor_bitmask & BIND_RIGHT) or \
+            !(right_neighbor_bitmask & BIND_BOTTOMRIGHT)
     var is_bottom_left_neighbor_exposed_at_bottom_left := \
             !(bottom_left_neighbor_bitmask & BIND_BOTTOMLEFT)
     var is_bottom_neighbor_exposed_at_bottom := \
-            !(bottom_neighbor_bitmask & BIND_BOTTOM)
+            !(bottom_neighbor_bitmask & BIND_BOTTOMLEFT) or \
+            !(bottom_neighbor_bitmask & BIND_BOTTOM) or \
+            !(bottom_neighbor_bitmask & BIND_BOTTOMRIGHT)
     var is_bottom_right_neighbor_exposed_at_bottom_right := \
             !(bottom_right_neighbor_bitmask & BIND_BOTTOMRIGHT)
     
@@ -188,7 +196,7 @@ func _forward_subtile_selection(
             elif is_bottom_right_neighbor_exposed_at_bottom_right:
                 return INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_right
             else:
-                return INTERIOR_SUBTILE_POSITIONS.exposed_sides.top_left
+                return INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left
         elif is_top_right_neighbor_exposed_at_top_right:
             if is_bottom_left_neighbor_exposed_at_bottom_left:
                 if is_bottom_right_neighbor_exposed_at_bottom_right:
