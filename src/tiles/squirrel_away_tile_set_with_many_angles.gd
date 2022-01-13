@@ -96,6 +96,23 @@ func _is_tile_bound( \
     return true
 
 
+# FIXME: LEFT OFF HERE: -----------------------------------------------
+# ### Add automatic subtile selection according to neighbor slopes.
+# - Only have three tiles:
+#   - 90s
+#   - 45s
+#   - 27s
+# - Each tile then redundantly includes many/all of the needed join and
+#   interior-transition subtiles.
+# - Never auto-change tile_id.
+#   - Instead, rely on level author choosing the tile_id.
+#   - We then use tile_ids to determine correct joins and interior-transition
+#     subtiles.
+# - PROBLEM: Will involve a lot of redundant art, shape configuration, and
+#   subtile-selection-join-encoding for all of the join and interior-transition
+#   subtiles.
+
+
 func _forward_subtile_selection(
         autotile_id: int,
         bitmask: int,
