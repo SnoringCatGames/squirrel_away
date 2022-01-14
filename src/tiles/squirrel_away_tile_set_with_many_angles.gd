@@ -484,13 +484,46 @@ func _choose_45_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
             # Left wall: Fallback to default autotiling.
             pass
         else:
-            # FIXME: LEFT OFF HERE: -----------------------------------
-            # - Check for cut-out corners.
             if proximity.is_exposed_at_top_left:
                 if proximity.is_exposed_at_top_right:
                     if proximity.is_exposed_at_bottom_left:
                         if proximity.is_exposed_at_bottom_right:
-                            pass
+                            return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.all
+                        else:
+                            return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_top_right_bottom_left
+                    elif proximity.is_exposed_at_bottom_right:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_top_right_bottom_right
+                    else:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_top_right
+                elif proximity.is_exposed_at_bottom_left:
+                    if proximity.is_exposed_at_bottom_right:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_bottom_left_bottom_right
+                    else:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_bottom_left
+                elif proximity.is_exposed_at_bottom_right:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_bottom_right
+                else:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left
+            elif proximity.is_exposed_at_top_right:
+                if proximity.is_exposed_at_bottom_left:
+                    if proximity.is_exposed_at_bottom_right:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right_bottom_left_bottom_right
+                    else:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right_bottom_left
+                elif proximity.is_exposed_at_bottom_right:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right_bottom_right
+                else:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right
+            elif proximity.is_exposed_at_bottom_left:
+                if proximity.is_exposed_at_bottom_right:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left_bottom_right
+                else:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left
+            elif proximity.is_exposed_at_bottom_right:
+                return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right
+            else:
+                # Interior subtile?
+                Sc.logger.error()
         
     elif !proximity.is_top_neighbor_same_angle_type:
         # FIXME: LEFT OFF HERE: -----------------------------------
@@ -521,7 +554,7 @@ func _choose_45_degree_interior_subtile(proximity: CellProximity) -> Vector2:
     # FIXME: LEFT OFF HERE: -----------------------------------
     # - Check whether we need a custom transition tile for a non-45 neighbor.
     
-    # FIXME: LEFT OFF HERE: -----------------------------------
+    # FIXME: LEFT OFF HERE: ------------------------------------
     return Vector2.INF
 
 
