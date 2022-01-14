@@ -136,11 +136,11 @@ const A45_INTERIOR_SUBTILE_POSITIONS := {
         top_left_top_right = Vector2(2,14),
         top_right_bottom_right = Vector2(3,14),
         top_left_bottom_right = Vector2(4,14),
-        top_right_bottom_left_bottom_right = Vector2(3,13),
-        top_left_bottom_left_bottom_right = Vector2(4,13),
-        top_left_top_right_bottom_right = Vector2(3,14),
-        top_left_top_right_bottom_left = Vector2(4,14),
-        all = Vector2(5,13),
+        top_right_bottom_left_bottom_right = Vector2(5,13),
+        top_left_bottom_left_bottom_right = Vector2(6,13),
+        top_left_top_right_bottom_right = Vector2(5,14),
+        top_left_top_right_bottom_left = Vector2(6,14),
+        all = Vector2(7,13),
         none = FULLY_INTERIOR_SUBTILE_POSITION,
     },
 }
@@ -611,7 +611,7 @@ func _choose_45_degree_interior_subtile(proximity: CellProximity) -> Vector2:
         elif proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
             return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_right
         else:
-            return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.all
+            return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.none
         
     elif !proximity.is_top_neighbor_same_angle_type:
         # FIXME: LEFT OFF HERE: -----------------------------------
