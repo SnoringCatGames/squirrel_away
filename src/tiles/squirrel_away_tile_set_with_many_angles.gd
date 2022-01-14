@@ -117,7 +117,7 @@ func _forward_subtile_selection(
             tile_map,
             cell_position)
     
-    var subtile_position
+    var subtile_position :=  Vector2.INF
     match proximity.angle_type:
         CellAngleType.A90:
             subtile_position = _choose_90_degree_subtile(proximity)
@@ -143,15 +143,15 @@ func get_cell_proximity(
         tile_id: int,
         bitmask: int,
         tile_map: TileMap,
-        cell_position: Vector2) -> CellProximity:
-    var top_left_neighbor_position := cell_position + Vector2(-1, -1)
-    var top_neighbor_position := cell_position + Vector2(0, -1)
-    var top_right_neighbor_position := cell_position + Vector2(1, -1)
-    var left_neighbor_position := cell_position + Vector2(-1, 0)
-    var right_neighbor_position := cell_position + Vector2(1, 0)
-    var bottom_left_neighbor_position := cell_position + Vector2(-1, 1)
-    var bottom_neighbor_position := cell_position + Vector2(0, 1)
-    var bottom_right_neighbor_position := cell_position + Vector2(1, 1)
+        position: Vector2) -> CellProximity:
+    var top_left_neighbor_position := position + Vector2(-1, -1)
+    var top_neighbor_position := position + Vector2(0, -1)
+    var top_right_neighbor_position := position + Vector2(1, -1)
+    var left_neighbor_position := position + Vector2(-1, 0)
+    var right_neighbor_position := position + Vector2(1, 0)
+    var bottom_left_neighbor_position := position + Vector2(-1, 1)
+    var bottom_neighbor_position := position + Vector2(0, 1)
+    var bottom_right_neighbor_position := position + Vector2(1, 1)
     
     var top_left_neighbor_bitmask := get_cell_bitmask(
             top_left_neighbor_position,
@@ -219,7 +219,7 @@ func get_cell_proximity(
             get_angle_type_from_tile_id(right_neighbor_tile_id)
     
     var proximity := CellProximity.new()
-    proximity.position = cell_position
+    proximity.position = position
     proximity.bitmask = bitmask
     proximity.is_top_left_neighbor_exposed_at_top_left = \
             is_top_left_neighbor_exposed_at_top_left
@@ -400,9 +400,9 @@ func _choose_27_degree_subtile(proximity: CellProximity) -> Vector2:
 
 # FIXME: -------- How are bitmask optional bits handled?
 func get_cell_bitmask(
-        cell_position: Vector2,
+        position: Vector2,
         tile_map: TileMap) -> int:
-    var tile_id := tile_map.get_cellv(cell_position)
+    var tile_id := tile_map.get_cellv(position)
     if tile_id == TileMap.INVALID_CELL:
         return INVALID_BITMASK
     
@@ -410,8 +410,8 @@ func get_cell_bitmask(
     if tile_mode != AUTO_TILE:
         return INVALID_BITMASK
     
-    var subtile_position := tile_map.get_cell_autotile_coord(
-            cell_position.x, cell_position.y)
+    var subtile_position := \
+            tile_map.get_cell_autotile_coord(position.x, position.y)
     
     return autotile_get_bitmask(tile_id, subtile_position)
 
