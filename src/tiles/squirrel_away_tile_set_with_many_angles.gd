@@ -246,7 +246,28 @@ func get_cell_proximity(
     return proximity
 
 
-# FIXME: LEFT OFF HERE: -----------------------------------------------
+func _choose_90_degree_subtile(proximity: CellProximity) -> Vector2:
+    if proximity.bitmask == FULL_BITMASK_3x3:
+        return _choose_90_degree_interior_subtile(proximity)
+    else:
+        return _choose_90_degree_exterior_subtile(proximity)
+
+
+func _choose_45_degree_subtile(proximity: CellProximity) -> Vector2:
+    if proximity.bitmask == FULL_BITMASK_3x3:
+        return _choose_45_degree_interior_subtile(proximity)
+    else:
+        return _choose_45_degree_exterior_subtile(proximity)
+
+
+func _choose_27_degree_subtile(proximity: CellProximity) -> Vector2:
+    if proximity.bitmask == FULL_BITMASK_3x3:
+        return _choose_27_degree_interior_subtile(proximity)
+    else:
+        return _choose_27_degree_exterior_subtile(proximity)
+
+
+# FIXME: LEFT OFF HERE: ------------------------------------------------
 # ### Add automatic subtile selection according to neighbor slopes.
 # - Only have three tiles:
 #   - 90s
@@ -258,12 +279,25 @@ func get_cell_proximity(
 #   - Instead, rely on level author choosing the tile_id.
 #   - We then use tile_ids to determine correct joins and interior-transition
 #     subtiles.
-# - PROBLEM: Will involve a lot of redundant art, shape configuration, and
-#   subtile-selection-join-encoding for all of the join and interior-transition
-#   subtiles.
-func _choose_90_degree_subtile(proximity: CellProximity) -> Vector2:
-    if proximity.bitmask != FULL_BITMASK_3x3:
-        return Vector2.INF
+# - PROBLEM:
+#   - Will involve a lot of redundant art, shape configuration, and
+#     subtile-selection-join-encoding for all of the join and
+#     interior-transition subtiles.
+# - SOLUTION:
+#   - Only include art, shape-configuration, and join-encoding for common cases.
+#   - For uncommon cases, rely on one-off additions and manual tile-placement,
+#     as needed.
+
+
+func _choose_90_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
+    # FIXME: LEFT OFF HERE: ---------------------
+    # - Check whether we need a custom transition tile for a non-90 neighbor.
+    return Vector2.INF
+
+
+func _choose_90_degree_interior_subtile(proximity: CellProximity) -> Vector2:
+    # FIXME: LEFT OFF HERE: ---------------------
+    # - Check whether we need a custom transition tile for a non-90 neighbor.
     
     if proximity.is_top_neighbor_exposed_at_top:
         if proximity.is_bottom_neighbor_exposed_at_bottom:
@@ -388,12 +422,22 @@ func _choose_90_degree_subtile(proximity: CellProximity) -> Vector2:
             return INTERIOR_SUBTILE_POSITIONS.exposed_sides.none
 
 
-func _choose_45_degree_subtile(proximity: CellProximity) -> Vector2:
+func _choose_45_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
     # FIXME: LEFT OFF HERE: -----------------------------------
     return Vector2.INF
 
 
-func _choose_27_degree_subtile(proximity: CellProximity) -> Vector2:
+func _choose_45_degree_interior_subtile(proximity: CellProximity) -> Vector2:
+    # FIXME: LEFT OFF HERE: -----------------------------------
+    return Vector2.INF
+
+
+func _choose_27_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
+    # FIXME: LEFT OFF HERE: -----------------------------------
+    return Vector2.INF
+
+
+func _choose_27_degree_interior_subtile(proximity: CellProximity) -> Vector2:
     # FIXME: LEFT OFF HERE: -----------------------------------
     return Vector2.INF
 
