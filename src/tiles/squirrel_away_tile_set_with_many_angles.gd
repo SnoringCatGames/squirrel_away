@@ -19,14 +19,16 @@ const TILE_WITH_SEPARATED_DEPTHS_NAME := "tiles_with_separated_depths"
 
 const FULLY_INTERIOR_SUBTILE_POSITION := Vector2(1, 5)
 
-# NOTE: These positions need to be kept in-sync with the corresponding tile-set image.
+# NOTE: These positions need to be kept in-sync with the corresponding tile-set
+#       image.
 const A90_EXTERIOR_SUBTILE_POSITIONS := {
-    # FIXME: LEFT OFF HERE: --------------------------------------------------
+    # FIXME: LEFT OFF HERE: ---------------------------------------------------
     single_wide = {
     },
 }
 
-# NOTE: These positions need to be kept in-sync with the corresponding tile-set image.
+# NOTE: These positions need to be kept in-sync with the corresponding tile-set
+#       image.
 const A90_INTERIOR_SUBTILE_POSITIONS := {
     exposed_sides = {
         top_left = Vector2(0, 4),
@@ -83,44 +85,49 @@ const A90_INTERIOR_SUBTILE_POSITIONS := {
     },
 }
 
-# NOTE: These positions need to be kept in-sync with the corresponding tile-set image.
+# NOTE: These positions need to be kept in-sync with the corresponding tile-set
+#       image.
 const A45_EXTERIOR_SUBTILE_POSITIONS := {
-    floor_pos = {
-        outer = Vector2(0,9),
-        inner = Vector2(1,9),
-        outer_with_cutout_corner = Vector2(0,11),
+    floors = {
+        pos = Vector2(0,9),
+        pos_with_cutout_corner = Vector2(0,11),
+        neg = Vector2(3,9),
+        floor_neg_with_cutout_corner = Vector2(1,11),
+        pos_to_right_neg = Vector2(5,11),
+        neg_to_left_pos = Vector2(6,11),
+        pos_to_bottom_ceiling = Vector2(7,11),
+        neg_to_bottom_ceiling = Vector2(8,11),
+        pos_to_right_neg_and_bottom_ceiling = Vector2(9,11),
+        neg_to_left_pos_and_bottom_ceiling = Vector2(10,11),
     },
-    floor_neg = {
-        outer = Vector2(3,9),
-        inner = Vector2(2,9),
-        outer_with_cutout_corner = Vector2(1,11),
-    },
-    ceiling_pos = {
-        outer = Vector2(3,10),
-        inner = Vector2(2,10),
-        outer_with_cutout_corner = Vector2(1,12),
-    },
-    ceiling_neg = {
-        outer = Vector2(0,10),
-        inner = Vector2(1,10),
-        outer_with_cutout_corner = Vector2(0,12),
+    ceilings = {
+        pos = Vector2(3,10),
+        pos_with_cutout_corner = Vector2(1,12),
+        neg = Vector2(0,10),
+        neg_with_cutout_corner = Vector2(0,12),
+        neg_to_right_pos = Vector2(5,12),
+        pos_to_left_neg = Vector2(6,12),
+        neg_to_top_floor = Vector2(7,12),
+        pos_to_top_floor = Vector2(8,12),
+        neg_to_right_pos_and_top_floor = Vector2(9,12),
+        pos_to_left_neg_and_top_floor = Vector2(10,12),
     },
     cutout_corners = {
-        bottom_right = Vector2(4,9),
-        bottom_left = Vector2(5,9),
-        top_right = Vector2(4,10),
-        top_left = Vector2(5,10),
-        top_left_top_right = Vector2(6,9),
-        bottom_left_bottom_right = Vector2(6,10),
-        top_right_bottom_right = Vector2(7,9),
-        top_left_bottom_left = Vector2(8,9),
-        top_left_bottom_right = Vector2(7,10),
-        top_right_bottom_left = Vector2(8,10),
-        top_right_bottom_left_bottom_right = Vector2(9,9),
-        top_left_bottom_left_bottom_right = Vector2(10,9),
-        top_left_top_right_bottom_right = Vector2(9,10),
-        top_left_top_right_bottom_left = Vector2(10,10),
-        all = Vector2(11,9),
+        bottom_right = Vector2(2,10),
+        bottom_left = Vector2(1,10),
+        top_right = Vector2(2,9),
+        top_left = Vector2(1,9),
+        top_left_top_right = Vector2(4,9),
+        bottom_left_bottom_right = Vector2(4,10),
+        top_right_bottom_right = Vector2(5,9),
+        top_left_bottom_left = Vector2(6,9),
+        top_left_bottom_right = Vector2(5,10),
+        top_right_bottom_left = Vector2(6,10),
+        top_right_bottom_left_bottom_right = Vector2(7,9),
+        top_left_bottom_left_bottom_right = Vector2(8,9),
+        top_left_top_right_bottom_right = Vector2(7,10),
+        top_left_top_right_bottom_left = Vector2(8,10),
+        all = Vector2(9,9),
     },
     caps = {
         top = Vector2(2,11),
@@ -130,7 +137,8 @@ const A45_EXTERIOR_SUBTILE_POSITIONS := {
     },
 }
 
-# NOTE: These positions need to be kept in-sync with the corresponding tile-set image.
+# NOTE: These positions need to be kept in-sync with the corresponding tile-set
+#       image.
 const A45_INTERIOR_SUBTILE_POSITIONS := {
     exposed_corners = {
         bottom_right = Vector2(0,13),
@@ -152,7 +160,9 @@ const A45_INTERIOR_SUBTILE_POSITIONS := {
     },
 }
 
-const A90_A45_JOINS := {
+# NOTE: These positions need to be kept in-sync with the corresponding tile-set
+#       image.
+const A90_A45_INTERIOR_JOINS := {
     floors = {
         left_45_convex = {
             a90 = Vector2(3,15),
@@ -346,6 +356,20 @@ const A90_A45_JOINS := {
                 both = Vector2(7,25),
             },
         },
+    },
+}
+
+# NOTE: These positions need to be kept in-sync with the corresponding tile-set
+#       image.
+const A90_A45_EXTERIOR_JOINS := {
+    # FIXME: LEFT OFF HERE: ----------------------------------------
+    floors = {
+    },
+    ceilings = {
+    },
+    left_walls = {
+    },
+    right_walls = {
     },
 }
 
