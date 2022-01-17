@@ -19,7 +19,14 @@ const TILE_WITH_SEPARATED_DEPTHS_NAME := "tiles_with_separated_depths"
 
 const FULLY_INTERIOR_SUBTILE_POSITION := Vector2(1, 5)
 
-# NOTE: These positions need to be match the corresponding tile-set image.
+# NOTE: These positions need to be kept in-sync with the corresponding tile-set image.
+const A90_EXTERIOR_SUBTILE_POSITIONS := {
+    # FIXME: LEFT OFF HERE: --------------------------------------------------
+    single_wide = {
+    },
+}
+
+# NOTE: These positions need to be kept in-sync with the corresponding tile-set image.
 const A90_INTERIOR_SUBTILE_POSITIONS := {
     exposed_sides = {
         top_left = Vector2(0, 4),
@@ -76,7 +83,7 @@ const A90_INTERIOR_SUBTILE_POSITIONS := {
     },
 }
 
-# NOTE: These positions need to be match the corresponding tile-set image.
+# NOTE: These positions need to be kept in-sync with the corresponding tile-set image.
 const A45_EXTERIOR_SUBTILE_POSITIONS := {
     floor_pos = {
         outer = Vector2(0,9),
@@ -123,7 +130,7 @@ const A45_EXTERIOR_SUBTILE_POSITIONS := {
     },
 }
 
-# NOTE: These positions need to be match the corresponding tile-set image.
+# NOTE: These positions need to be kept in-sync with the corresponding tile-set image.
 const A45_INTERIOR_SUBTILE_POSITIONS := {
     exposed_corners = {
         bottom_right = Vector2(0,13),
