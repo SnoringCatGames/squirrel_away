@@ -145,6 +145,203 @@ const A45_INTERIOR_SUBTILE_POSITIONS := {
     },
 }
 
+const A90_A45_JOINS := {
+    floors = {
+        left_45_convex = {
+            a90 = Vector2(3,15),
+            a45 = Vector2(2,15),
+        },
+        right_45_convex = {
+            a90 = Vector2(4,15),
+            a45 = Vector2(5,15),
+        },
+        left_45_right_45_convex = Vector2(7,15),
+        left_45_convex_to_wall = Vector2(6,15),
+        right_45_convex_to_wall = Vector2(8,15),
+        left_45_concave = Vector2(4,18),
+        right_45_concave = Vector2(5,18),
+        left_45_convex_acute = Vector2(2,19),
+        right_45_convex_acute = Vector2(3,19),
+        left_45_concave_acute = Vector2(9,16),
+        right_45_concave_acute = Vector2(10,16),
+    },
+    ceilings = {
+        left_45_convex = {
+            a90 = Vector2(3,16),
+            a45 = Vector2(2,16),
+        },
+        right_45_convex = {
+            a90 = Vector2(4,16),
+            a45 = Vector2(5,16),
+        },
+        left_45_right_45_convex = Vector2(7,17),
+        left_45_convex_to_wall = Vector2(6,17),
+        right_45_convex_to_wall = Vector2(8,17),
+        left_45_concave = Vector2(4,17),
+        right_45_concave = Vector2(5,17),
+        left_45_convex_acute = Vector2(2,20),
+        right_45_convex_acute = Vector2(3,20),
+        left_45_concave_acute = Vector2(9,15),
+        right_45_concave_acute = Vector2(10,15),
+    },
+    left_walls = {
+        top_45_convex = {
+            a90 = Vector2(1,16),
+            a45 = Vector2(1,15),
+        },
+        bottom_45_convex = {
+            a90 = Vector2(1,17),
+            a45 = Vector2(1,18),
+        },
+        top_45_bottom_45_convex = Vector2(8,16),
+        top_45_concave = Vector2(3,17),
+        bottom_45_concave = Vector2(3,18),
+        top_45_convex_acute = Vector2(0,19),
+        bottom_45_convex_acute = Vector2(0,20),
+        top_45_concave_acute = Vector2(10,15),
+        bottom_45_concave_acute = Vector2(10,16),
+    },
+    right_walls = {
+        top_45_convex = {
+            a90 = Vector2(0,16),
+            a45 = Vector2(0,15),
+        },
+        bottom_45_convex = {
+            a90 = Vector2(0,17),
+            a45 = Vector2(0,18),
+        },
+        top_45_bottom_45_convex = Vector2(6,16),
+        top_45_concave = Vector2(2,17),
+        bottom_45_concave = Vector2(2,18),
+        top_45_convex_acute = Vector2(1,19),
+        bottom_45_convex_acute = Vector2(1,20),
+        top_45_concave_acute = Vector2(9,15),
+        bottom_45_concave_acute = Vector2(9,16),
+    },
+    outer_a45s_with_cutout_corners = {
+        a90 = {
+            floor_pos = Vector2(4,19),
+            floor_neg = Vector2(5,19),
+            ceiling_pos = Vector2(4,20),
+            ceiling_neg = Vector2(5,20),
+        },
+        a90_vertical_to_a45 = {
+            floor_pos = Vector2(6,19),
+            floor_neg = Vector2(7,19),
+            ceiling_pos = Vector2(6,20),
+            ceiling_neg = Vector2(7,20),
+        },
+        a90_horizontal_to_a45 = {
+            floor_pos = Vector2(8,19),
+            floor_neg = Vector2(9,19),
+            ceiling_pos = Vector2(8,20),
+            ceiling_neg = Vector2(9,20),
+        },
+    },
+    a90_sides_with_cutout_corners = {
+        floor_and_left_wall = {
+            a45 = Vector2(0,21),
+            a90_vertical_to_a45 = Vector2(2,21),
+            a90_horizontal_to_a45 = Vector2(4,21),
+        },
+        floor_and_right_wall = {
+            a45 = Vector2(1,21),
+            a90_vertical_to_a45 = Vector2(3,21),
+            a90_horizontal_to_a45 = Vector2(5,21),
+        },
+        ceiling_and_left_wall = {
+            a45 = Vector2(0,22),
+            a90_vertical_to_a45 = Vector2(2,22),
+            a90_horizontal_to_a45 = Vector2(4,22),
+        },
+        ceiling_and_right_wall = {
+            a45 = Vector2(1,22),
+            a90_vertical_to_a45 = Vector2(3,22),
+            a90_horizontal_to_a45 = Vector2(5,22),
+        },
+        floors = {
+            bottom_left = Vector2(3,23),
+            bottom_right = Vector2(2,23),
+            both = Vector2(7,21),
+            to_left_a45 = {
+                bottom_left = Vector2(10,23),
+                bottom_right = Vector2(8,23),
+                both = Vector2(10,21),
+            },
+            to_right_a45 = {
+                bottom_left = Vector2(9,23),
+                bottom_right = Vector2(11,23),
+                both = Vector2(11,21),
+            },
+            to_left_and_right_a45 = {
+                bottom_left = Vector2(2,25),
+                bottom_right = Vector2(0,25),
+                both = Vector2(1,25),
+            },
+        },
+        ceilings = {
+            top_left = Vector2(3,24),
+            top_right = Vector2(2,24),
+            both = Vector2(6,22),
+            to_left_a45 = {
+                top_left = Vector2(10,24),
+                top_right = Vector2(8,24),
+                both = Vector2(10,22),
+            },
+            to_right_a45 = {
+                top_left = Vector2(9,24),
+                top_right = Vector2(11,24),
+                both = Vector2(11,22),
+            },
+            to_left_and_right_a45 = {
+                top_left = Vector2(5,25),
+                top_right = Vector2(3,25),
+                both = Vector2(4,25),
+            },
+        },
+        left_walls = {
+            top_left = Vector2(1,24),
+            bottom_left = Vector2(1,23),
+            both = Vector2(7,22),
+            to_top_a45 = {
+                top_left = Vector2(7,23),
+                bottom_left = Vector2(5,23),
+                both = Vector2(9,21),
+            },
+            to_bottom_a45 = {
+                top_left = Vector2(5,24),
+                bottom_left = Vector2(7,24),
+                both = Vector2(9,22),
+            },
+            to_top_and_bottom_a45 = {
+                top_left = Vector2(11,25),
+                bottom_left = Vector2(9,25),
+                both = Vector2(10,25),
+            },
+        },
+        right_walls = {
+            top_right = Vector2(0,24),
+            bottom_right = Vector2(0,23),
+            both = Vector2(6,21),
+            to_top_a45 = {
+                top_right = Vector2(6,23),
+                bottom_right = Vector2(4,23),
+                both = Vector2(8,21),
+            },
+            to_bottom_a45 = {
+                top_right = Vector2(4,24),
+                bottom_right = Vector2(6,24),
+                both = Vector2(8,22),
+            },
+            to_top_and_bottom_a45 = {
+                top_right = Vector2(6,25),
+                bottom_right = Vector2(8,25),
+                both = Vector2(7,25),
+            },
+        },
+    },
+}
+
 var tile_id_for_angle_a90: int
 var tile_id_for_angle_a45: int
 var tile_id_for_angle_a27: int
