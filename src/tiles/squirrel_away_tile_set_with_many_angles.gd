@@ -22,9 +22,53 @@ const FULLY_INTERIOR_SUBTILE_POSITION := Vector2(1, 5)
 # NOTE: These positions need to be kept in-sync with the corresponding tile-set
 #       image.
 const A90_EXTERIOR_SUBTILE_POSITIONS := {
-    # FIXME: LEFT OFF HERE: ---------------------------------------------------
-    single_wide = {
-    },
+    floor_left_wall_right_wall = Vector2(0,0),
+    left_wall_right_wall = Vector2(0,1),
+    left_wall_right_wall_ceiling = Vector2(0,2),
+    all = Vector2(0,3),
+    floor_right_wall_ceiling = Vector2(1,3),
+    floor_ceiling = Vector2(2,3),
+    floor_left_wall_ceiling = Vector2(3,3),
+    floor_right_wall_sides_bottom_right_corner = Vector2(1,0),
+    floor_side_bottom_left_bottom_right_corners = Vector2(2,0),
+    floor_left_wall_sides_bottom_left_corner = Vector2(3,0),
+    right_wall_side_top_right_bottom_right_corners = Vector2(1,1),
+    all_corners = Vector2(2,1),
+    left_wall_side_top_left_bottom_left_corners = Vector2(3,1),
+    right_wall_ceiling_sides_top_right_corner = Vector2(1,2),
+    ceiling_side_top_left_top_right_corners = Vector2(2,2),
+    left_wall_ceiling_sides_top_left_corner = Vector2(3,2),
+    top_right_bottom_left_bottom_right_corners = Vector2(4,0),
+    floor_side_bottom_left_corner = Vector2(5,0),
+    floor_side_bottom_right_corner = Vector2(6,0),
+    top_left_bottom_left_bottom_right_corners = Vector2(7,0),
+    right_wall_side_top_right_corner = Vector2(4,1),
+    top_left_corner = Vector2(5,1),
+    top_right_corner = Vector2(6,1),
+    left_wall_side_top_left_corner = Vector2(7,1),
+    right_wall_side_bottom_right_corner = Vector2(4,2),
+    bottom_left_corner = Vector2(5,2),
+    bottom_right_corner = Vector2(6,2),
+    left_wall_side_bottom_left_corner = Vector2(7,2),
+    top_left_top_right_bottom_right_corners = Vector2(4,3),
+    ceiling_side_top_left_corner = Vector2(5,3),
+    ceiling_side_top_right_corner = Vector2(6,3),
+    top_left_top_right_bottom_left_corners = Vector2(7,3),
+    floor_right_wall_sides = Vector2(8,0),
+    top_left_top_right_corners = Vector2(9,0),
+    floor = Vector2(10,0),
+    floor_left_wall = Vector2(11,0),
+    right_wall = Vector2(8,1),
+    top_left_bottom_right_corners = Vector2(9,1),
+    top_right_bottom_right_corners = Vector2(11,1),
+    top_left_bottom_left_corners = Vector2(8,2),
+    none = Vector2(9,2),
+    top_right_bottom_left_corners = Vector2(10,2),
+    left_wall = Vector2(11,2),
+    right_wall_ceiling = Vector2(8,3),
+    ceiling = Vector2(9,3),
+    bottom_left_bottom_right_corners = Vector2(10,3),
+    left_wall_ceiling = Vector2(11,3),
 }
 
 # NOTE: These positions need to be kept in-sync with the corresponding tile-set
@@ -362,6 +406,36 @@ const A90_A45_INTERIOR_JOINS := {
 # NOTE: These positions need to be kept in-sync with the corresponding tile-set
 #       image.
 const A90_A45_EXTERIOR_JOINS := {
+    cutout_corners = {
+        top_left = {
+            exposed_a90_bottom_right_corner = Vector2(0,32),
+            exposed_a90_right_side = Vector2(2,32),
+            exposed_a90_bottom_side = Vector2(4,32),
+            exposed_a90_bottom_right_sides = Vector2(6,32),
+            exposed_a45_bottom_right = Vector2(8,32),
+        },
+        top_right = {
+            exposed_a90_bottom_left_corner = Vector2(1,32),
+            exposed_a90_left_side = Vector2(3,32),
+            exposed_a90_bottom_side = Vector2(5,32),
+            exposed_a90_bottom_left_sides = Vector2(7,32),
+            exposed_a45_bottom_left = Vector2(9,32),
+        },
+        bottom_left = {
+            exposed_a90_top_right_corner = Vector2(0,33),
+            exposed_a90_right_side = Vector2(2,33),
+            exposed_a90_top_side = Vector2(4,33),
+            exposed_a90_top_right_sides = Vector2(6,33),
+            exposed_a45_top_right = Vector2(8,33),
+        },
+        bottom_right = {
+            exposed_a90_top_left_corner = Vector2(1,33),
+            exposed_a90_left_side = Vector2(3,33),
+            exposed_a90_top_side = Vector2(5,33),
+            exposed_a90_top_left_sides = Vector2(7,33),
+            exposed_a45_top_left = Vector2(9,33),
+        },
+    },
     # FIXME: LEFT OFF HERE: ----------------------------------------
     floors = {
     },
