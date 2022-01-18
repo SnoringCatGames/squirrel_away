@@ -157,10 +157,6 @@ const A45_EXTERIOR_SUBTILE_POSITIONS := {
         pos_to_left_neg_and_top_floor = Vector2(10,12),
     },
     cutout_corners = {
-        bottom_right = Vector2(2,10),
-        bottom_left = Vector2(1,10),
-        top_right = Vector2(2,9),
-        top_left = Vector2(1,9),
         top_left_top_right = Vector2(4,9),
         bottom_left_bottom_right = Vector2(4,10),
         top_right_bottom_right = Vector2(5,9),
@@ -172,6 +168,38 @@ const A45_EXTERIOR_SUBTILE_POSITIONS := {
         top_left_top_right_bottom_right = Vector2(7,10),
         top_left_top_right_bottom_left = Vector2(8,10),
         all = Vector2(9,9),
+        top_left = {
+            not_exposed = Vector2(1,9),
+            exposed_a90_bottom_right_corner = Vector2(0,32),
+            exposed_a90_right_side = Vector2(2,32),
+            exposed_a90_bottom_side = Vector2(4,32),
+            exposed_a90_bottom_right_sides = Vector2(6,32),
+            exposed_a45_bottom_right = Vector2(8,32),
+        },
+        top_right = {
+            not_exposed = Vector2(2,9),
+            exposed_a90_bottom_left_corner = Vector2(1,32),
+            exposed_a90_left_side = Vector2(3,32),
+            exposed_a90_bottom_side = Vector2(5,32),
+            exposed_a90_bottom_left_sides = Vector2(7,32),
+            exposed_a45_bottom_left = Vector2(9,32),
+        },
+        bottom_left = {
+            not_exposed = Vector2(1,10),
+            exposed_a90_top_right_corner = Vector2(0,33),
+            exposed_a90_right_side = Vector2(2,33),
+            exposed_a90_top_side = Vector2(4,33),
+            exposed_a90_top_right_sides = Vector2(6,33),
+            exposed_a45_top_right = Vector2(8,33),
+        },
+        bottom_right = {
+            not_exposed = Vector2(2,10),
+            exposed_a90_top_left_corner = Vector2(1,33),
+            exposed_a90_left_side = Vector2(3,33),
+            exposed_a90_top_side = Vector2(5,33),
+            exposed_a90_top_left_sides = Vector2(7,33),
+            exposed_a45_top_left = Vector2(9,33),
+        },
     },
     caps = {
         top = Vector2(2,11),
@@ -406,36 +434,6 @@ const A90_A45_INTERIOR_JOINS := {
 # NOTE: These positions need to be kept in-sync with the corresponding tile-set
 #       image.
 const A90_A45_EXTERIOR_JOINS := {
-    cutout_corners = {
-        top_left = {
-            exposed_a90_bottom_right_corner = Vector2(0,32),
-            exposed_a90_right_side = Vector2(2,32),
-            exposed_a90_bottom_side = Vector2(4,32),
-            exposed_a90_bottom_right_sides = Vector2(6,32),
-            exposed_a45_bottom_right = Vector2(8,32),
-        },
-        top_right = {
-            exposed_a90_bottom_left_corner = Vector2(1,32),
-            exposed_a90_left_side = Vector2(3,32),
-            exposed_a90_bottom_side = Vector2(5,32),
-            exposed_a90_bottom_left_sides = Vector2(7,32),
-            exposed_a45_bottom_left = Vector2(9,32),
-        },
-        bottom_left = {
-            exposed_a90_top_right_corner = Vector2(0,33),
-            exposed_a90_right_side = Vector2(2,33),
-            exposed_a90_top_side = Vector2(4,33),
-            exposed_a90_top_right_sides = Vector2(6,33),
-            exposed_a45_top_right = Vector2(8,33),
-        },
-        bottom_right = {
-            exposed_a90_top_left_corner = Vector2(1,33),
-            exposed_a90_left_side = Vector2(3,33),
-            exposed_a90_top_side = Vector2(5,33),
-            exposed_a90_top_left_sides = Vector2(7,33),
-            exposed_a45_top_left = Vector2(9,33),
-        },
-    },
     # FIXME: LEFT OFF HERE: ----------------------------------------
     floors = {
     },
@@ -653,22 +651,22 @@ func _choose_90_degree_interior_subtile(proximity: CellProximity) -> Vector2:
             if proximity.is_right_neighbor_exposed_at_right:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.top_left_right
             else:
-                if proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+                if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.top_left_sides_bottom_right_corner
                 else:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.top_left
         elif proximity.is_right_neighbor_exposed_at_right:
-            if proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
+            if proximity.is_bottom_left_neighbor_exposed_at_bottom_or_left:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.top_right_sides_bottom_left_corner
             else:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.top_right
         else:
-            if proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
-                if proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+            if proximity.is_bottom_left_neighbor_exposed_at_bottom_or_left:
+                if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.top_side_bottom_left_bottom_right_corners
                 else:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.top_side_bottom_left_corner
-            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.top_side_bottom_right_corner
             else:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.top
@@ -677,22 +675,22 @@ func _choose_90_degree_interior_subtile(proximity: CellProximity) -> Vector2:
             if proximity.is_right_neighbor_exposed_at_right:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.bottom_left_right
             else:
-                if proximity.is_top_right_neighbor_exposed_at_top_right:
+                if proximity.is_top_right_neighbor_exposed_at_top_or_right:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.bottom_left_sides_top_right_corner
                 else:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.bottom_left
         elif proximity.is_right_neighbor_exposed_at_right:
-            if proximity.is_top_left_neighbor_exposed_at_top_left:
+            if proximity.is_top_left_neighbor_exposed_at_top_or_left:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.bottom_right_sides_top_left_corner
             else:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.bottom_right
         else:
-            if proximity.is_top_left_neighbor_exposed_at_top_left:
-                if proximity.is_top_right_neighbor_exposed_at_top_right:
+            if proximity.is_top_left_neighbor_exposed_at_top_or_left:
+                if proximity.is_top_right_neighbor_exposed_at_top_or_right:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.bottom_side_top_left_top_right_corners
                 else:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.bottom_side_top_left_corner
-            elif proximity.is_top_right_neighbor_exposed_at_top_right:
+            elif proximity.is_top_right_neighbor_exposed_at_top_or_right:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.bottom_side_top_right_corner
             else:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.bottom
@@ -700,62 +698,62 @@ func _choose_90_degree_interior_subtile(proximity: CellProximity) -> Vector2:
         if proximity.is_right_neighbor_exposed_at_right:
             return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.left_right
         else:
-            if proximity.is_top_right_neighbor_exposed_at_top_right:
-                if proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+            if proximity.is_top_right_neighbor_exposed_at_top_or_right:
+                if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.left_side_top_right_bottom_right_corners
                 else:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.left_side_top_right_corner
-            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.left_side_bottom_right_corner
             else:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.left
     elif proximity.is_right_neighbor_exposed_at_right:
-            if proximity.is_top_left_neighbor_exposed_at_top_left:
-                if proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
+            if proximity.is_top_left_neighbor_exposed_at_top_or_left:
+                if proximity.is_bottom_left_neighbor_exposed_at_botto_or_left:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.right_side_top_left_bottom_left_corners
                 else:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.right_side_top_left_corner
-            elif proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
+            elif proximity.is_bottom_left_neighbor_exposed_at_bottom_or_left:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides_and_corners.right_side_bottom_left_corner
             else:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.right
     else:
-        if proximity.is_top_left_neighbor_exposed_at_top_left:
-            if proximity.is_top_right_neighbor_exposed_at_top_right:
-                if proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
-                    if proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+        if proximity.is_top_left_neighbor_exposed_at_top_or_left:
+            if proximity.is_top_right_neighbor_exposed_at_top_or_right:
+                if proximity.is_bottom_left_neighbor_exposed_at_bottom_or_left:
+                    if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                         return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.all
                     else:
                         return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right_bottom_left
-                elif proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+                elif proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right_bottom_right
                 else:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right
-            elif proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
-                if proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+            elif proximity.is_bottom_left_neighbor_exposed_at_bottom_or_left:
+                if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_left_bottom_right
                 else:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_left
-            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_right
             else:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left
-        elif proximity.is_top_right_neighbor_exposed_at_top_right:
-            if proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
-                if proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+        elif proximity.is_top_right_neighbor_exposed_at_top_or_right:
+            if proximity.is_bottom_left_neighbor_exposed_at_bottom_or_left:
+                if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_left_bottom_right
                 else:
                     return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_left
-            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_right
             else:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right
-        elif proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
-            if proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+        elif proximity.is_bottom_left_neighbor_exposed_at_bottom_or_left:
+            if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_left_bottom_right
             else:
                 return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_left
-        elif proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+        elif proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
             return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_right
         else:
             return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.none
@@ -832,7 +830,24 @@ func _choose_45_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
                 elif proximity.is_exposed_at_bottom_right:
                     return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_bottom_right
                 else:
-                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left
+                    if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
+                        match proximity.bottom_right_neighbor_angle_type:
+                            CellAngleType.A90:
+                                return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left.exposed_a90_bottom_right_corner
+                            CellAngleType.A45:
+                                return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left.exposed_a45_bottom_right
+                            _:
+                                Sc.logger.error()
+                                return Vector2.INF
+                    elif proximity.is_right_neighbor_exposed_at_right:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left.exposed_a90_right_side
+                    elif proximity.is_bottom_neighbor_exposed_at_bottom:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left.exposed_a90_bottom_side
+                    elif proximity.is_right_neighbor_exposed_at_right and \
+                            proximity.is_bottom_neighbor_exposed_at_bottom:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left.exposed_a90_bottom_right_sides
+                    else:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left.not_exposed
             elif proximity.is_exposed_at_top_right:
                 if proximity.is_exposed_at_bottom_left:
                     if proximity.is_exposed_at_bottom_right:
@@ -842,14 +857,65 @@ func _choose_45_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
                 elif proximity.is_exposed_at_bottom_right:
                     return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right_bottom_right
                 else:
-                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right
+                    if proximity.is_bottom_left_neighbor_exposed_at_bottom_or_left:
+                        match proximity.bottom_left_neighbor_angle_type:
+                            CellAngleType.A90:
+                                return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right.exposed_a90_bottom_left_corner
+                            CellAngleType.A45:
+                                return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right.exposed_a45_bottom_left
+                            _:
+                                Sc.logger.error()
+                                return Vector2.INF
+                    elif proximity.is_left_neighbor_exposed_at_left:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right.exposed_a90_left_side
+                    elif proximity.is_bottom_neighbor_exposed_at_bottom:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right.exposed_a90_bottom_side
+                    elif proximity.is_left_neighbor_exposed_at_left and \
+                            proximity.is_bottom_neighbor_exposed_at_bottom:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right.exposed_a90_bottom_left_sides
+                    else:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right.not_exposed
             elif proximity.is_exposed_at_bottom_left:
                 if proximity.is_exposed_at_bottom_right:
                     return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left_bottom_right
                 else:
-                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left
+                    if proximity.is_top_right_neighbor_exposed_at_top_or_right:
+                        match proximity.top_right_neighbor_angle_type:
+                            CellAngleType.A90:
+                                return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left.exposed_a90_top_right_corner
+                            CellAngleType.A45:
+                                return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left.exposed_a45_top_right
+                            _:
+                                Sc.logger.error()
+                                return Vector2.INF
+                    elif proximity.is_right_neighbor_exposed_at_right:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left.exposed_a90_right_side
+                    elif proximity.is_top_neighbor_exposed_at_top:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left.exposed_a90_top_side
+                    elif proximity.is_right_neighbor_exposed_at_right and \
+                            proximity.is_top_neighbor_exposed_at_top:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left.exposed_a90_top_right_sides
+                    else:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left.not_exposed
             elif proximity.is_exposed_at_bottom_right:
-                return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right
+                if proximity.is_top_left_neighbor_exposed_at_top_or_left:
+                    match proximity.top_left_neighbor_angle_type:
+                        CellAngleType.A90:
+                            return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right.exposed_a90_top_left_corner
+                        CellAngleType.A45:
+                            return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right.exposed_a45_top_left
+                        _:
+                            Sc.logger.error()
+                            return Vector2.INF
+                elif proximity.is_left_neighbor_exposed_at_left:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right.exposed_a90_left_side
+                elif proximity.is_top_neighbor_exposed_at_top:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right.exposed_a90_top_side
+                elif proximity.is_left_neighbor_exposed_at_left and \
+                        proximity.is_top_neighbor_exposed_at_top:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right.exposed_a90_top_left_sides
+                else:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right.not_exposed
             else:
                 Sc.logger.error("This seems to be an interior subtile.")
         
@@ -865,7 +931,7 @@ func _choose_45_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
     elif !proximity.is_right_neighbor_same_angle_type:
         # FIXME: LEFT OFF HERE: -----------------------------------
         pass
-
+        
     elif !proximity.is_top_left_neighbor_same_angle_type:
         # FIXME: LEFT OFF HERE: -----------------------------------
         pass
@@ -878,7 +944,7 @@ func _choose_45_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
     elif !proximity.is_bottom_right_neighbor_same_angle_type:
         # FIXME: LEFT OFF HERE: -----------------------------------
         pass
-
+        
     else:
         Sc.logger.error("All neighbors seem to be the same angle type.")
     
@@ -887,42 +953,42 @@ func _choose_45_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
 
 func _choose_45_degree_interior_subtile(proximity: CellProximity) -> Vector2:
     if proximity.are_all_neighbors_same_angle_type:
-        if proximity.is_top_left_neighbor_exposed_at_top_left:
-            if proximity.is_top_right_neighbor_exposed_at_top_right:
-                if proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
-                    if proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+        if proximity.is_top_left_neighbor_exposed_at_top_or_left:
+            if proximity.is_top_right_neighbor_exposed_at_top_or_right:
+                if proximity.is_bottom_left_neighbor_exposed_at_bottom_or_left:
+                    if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                         return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.all
                     else:
                         return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right_bottom_left
-                elif proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+                elif proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                     return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right_bottom_right
                 else:
                     return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right
-            elif proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
-                if proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+            elif proximity.is_bottom_left_neighbor_exposed_at_bottom_or_left:
+                if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                     return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_left_bottom_right
                 else:
                     return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_left
-            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                 return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_right
             else:
                 return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left
-        elif proximity.is_top_right_neighbor_exposed_at_top_right:
+        elif proximity.is_top_right_neighbor_exposed_at_top_or_right:
             if proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
-                if proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+                if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                     return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_left_bottom_right
                 else:
                     return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_left
-            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+            elif proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                 return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_right
             else:
                 return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right
         elif proximity.is_bottom_left_neighbor_exposed_at_bottom_left:
-            if proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+            if proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
                 return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_left_bottom_right
             else:
                 return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_left
-        elif proximity.is_bottom_right_neighbor_exposed_at_bottom_right:
+        elif proximity.is_bottom_right_neighbor_exposed_at_bottom_or_right:
             return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_right
         else:
             return A45_INTERIOR_SUBTILE_POSITIONS.exposed_corners.none
