@@ -136,7 +136,7 @@ const A45_EXTERIOR_SUBTILE_POSITIONS := {
         pos = Vector2(0,9),
         pos_with_cutout_corner = Vector2(0,11),
         neg = Vector2(3,9),
-        floor_neg_with_cutout_corner = Vector2(1,11),
+        neg_with_cutout_corner = Vector2(1,11),
         pos_to_right_neg = Vector2(5,11),
         neg_to_left_pos = Vector2(6,11),
         pos_to_bottom_ceiling = Vector2(7,11),
@@ -454,8 +454,11 @@ var tile_id_for_angle_a27: int
 
 func _init().(_PROPERTIES_MANIFEST) -> void:
     tile_id_for_angle_a90 = find_tile_by_name(TILE_NAME_FOR_ANGLE_A90)
+    assert(tile_id_for_angle_a90 != TileMap.INVALID_CELL)
     tile_id_for_angle_a45 = find_tile_by_name(TILE_NAME_FOR_ANGLE_A45)
+    assert(tile_id_for_angle_a45 != TileMap.INVALID_CELL)
     tile_id_for_angle_a27 = find_tile_by_name(TILE_NAME_FOR_ANGLE_A27)
+    assert(tile_id_for_angle_a27 != TileMap.INVALID_CELL)
 
 
 func _is_tile_bound( \
@@ -550,28 +553,31 @@ func get_cell_proximity(
     var bottom_right_neighbor_angle_type := \
             get_angle_type_from_tile_id(bottom_right_neighbor_tile_id)
     
-    var top_left_neighbor_bitmask := get_cell_bitmask(
+    bitmask = get_cell_actual_bitmask(
+            position,
+            tile_map)
+    var top_left_neighbor_bitmask := get_cell_actual_bitmask(
             top_left_neighbor_position,
             tile_map)
-    var top_neighbor_bitmask := get_cell_bitmask(
+    var top_neighbor_bitmask := get_cell_actual_bitmask(
             top_neighbor_position,
             tile_map)
-    var top_right_neighbor_bitmask := get_cell_bitmask(
+    var top_right_neighbor_bitmask := get_cell_actual_bitmask(
             top_right_neighbor_position,
             tile_map)
-    var left_neighbor_bitmask := get_cell_bitmask(
+    var left_neighbor_bitmask := get_cell_actual_bitmask(
             left_neighbor_position,
             tile_map)
-    var right_neighbor_bitmask := get_cell_bitmask(
+    var right_neighbor_bitmask := get_cell_actual_bitmask(
             right_neighbor_position,
             tile_map)
-    var bottom_left_neighbor_bitmask := get_cell_bitmask(
+    var bottom_left_neighbor_bitmask := get_cell_actual_bitmask(
             bottom_left_neighbor_position,
             tile_map)
-    var bottom_neighbor_bitmask := get_cell_bitmask(
+    var bottom_neighbor_bitmask := get_cell_actual_bitmask(
             bottom_neighbor_position,
             tile_map)
-    var bottom_right_neighbor_bitmask := get_cell_bitmask(
+    var bottom_right_neighbor_bitmask := get_cell_actual_bitmask(
             bottom_right_neighbor_position,
             tile_map)
     
@@ -761,58 +767,51 @@ func _choose_45_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
             if proximity.is_exposed_at_bottom:
                 if proximity.is_exposed_at_left:
                     if proximity.is_exposed_at_right:
-                        # Lonely block: Fallback to default autotiling.
-                        pass
+                        return A90_EXTERIOR_SUBTILE_POSITIONS.all
                     else:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.caps.left
                 elif proximity.is_exposed_at_right:
                     return A45_EXTERIOR_SUBTILE_POSITIONS.caps.right
                 else:
-                    # Thin floor/ceiling: Fallback to default autotiling.
-                    pass
+                    return A90_EXTERIOR_SUBTILE_POSITIONS.floor_ceiling
             elif proximity.is_exposed_at_left:
                 if proximity.is_exposed_at_right:
                     return A45_EXTERIOR_SUBTILE_POSITIONS.caps.top
                 else:
                     if proximity.is_exposed_at_bottom_right:
-                        return A45_EXTERIOR_SUBTILE_POSITIONS.floor_pos.outer_with_cutout_corner
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.floors.pos_with_cutout_corner
                     else:
-                        return A45_EXTERIOR_SUBTILE_POSITIONS.floor_pos.outer
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.floors.pos
             elif proximity.is_exposed_at_right:
                 if proximity.is_exposed_at_bottom_left:
-                    return A45_EXTERIOR_SUBTILE_POSITIONS.floor_neg.outer_with_cutout_corner
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.floors.neg_with_cutout_corner
                 else:
-                    return A45_EXTERIOR_SUBTILE_POSITIONS.floor_neg.outer
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.floors.neg
             else:
-                # Floor: Fallback to default autotiling.
-                pass
+                return A90_EXTERIOR_SUBTILE_POSITIONS.floor
         elif proximity.is_exposed_at_bottom:
             if proximity.is_exposed_at_left:
                 if proximity.is_exposed_at_right:
                     return A45_EXTERIOR_SUBTILE_POSITIONS.caps.bottom
                 else:
                     if proximity.is_exposed_at_top_right:
-                        return A45_EXTERIOR_SUBTILE_POSITIONS.ceiling_neg.outer_with_cutout_corner
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.ceilings.neg_with_cutout_corner
                     else:
-                        return A45_EXTERIOR_SUBTILE_POSITIONS.ceiling_neg.outer
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.ceilings.neg
             elif proximity.is_exposed_at_right:
                 if proximity.is_exposed_at_top_left:
-                    return A45_EXTERIOR_SUBTILE_POSITIONS.ceiling_pos.outer_with_cutout_corner
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.ceilings.pos_with_cutout_corner
                 else:
-                    return A45_EXTERIOR_SUBTILE_POSITIONS.ceiling_pos.outer
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.ceilings.pos
             else:
-                # Ceiling: Fallback to default autotiling.
-                pass
+                return A90_EXTERIOR_SUBTILE_POSITIONS.ceiling
         elif proximity.is_exposed_at_left:
             if proximity.is_exposed_at_right:
-                # Thin wall: Fallback to default autotiling.
-                pass
+                return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall_right_wall
             else:
-                # Right wall: Fallback to default autotiling.
-                pass
+                return A90_EXTERIOR_SUBTILE_POSITIONS.right_wall
         elif proximity.is_exposed_at_right:
-            # Left wall: Fallback to default autotiling.
-            pass
+            return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall
         else:
             if proximity.is_exposed_at_top_left:
                 if proximity.is_exposed_at_top_right:
@@ -866,7 +865,20 @@ func _choose_45_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
     elif !proximity.is_right_neighbor_same_angle_type:
         # FIXME: LEFT OFF HERE: -----------------------------------
         pass
-        
+
+    elif !proximity.is_top_left_neighbor_same_angle_type:
+        # FIXME: LEFT OFF HERE: -----------------------------------
+        pass
+    elif !proximity.is_top_right_neighbor_same_angle_type:
+        # FIXME: LEFT OFF HERE: -----------------------------------
+        pass
+    elif !proximity.is_bottom_left_neighbor_same_angle_type:
+        # FIXME: LEFT OFF HERE: -----------------------------------
+        pass
+    elif !proximity.is_bottom_right_neighbor_same_angle_type:
+        # FIXME: LEFT OFF HERE: -----------------------------------
+        pass
+
     else:
         Sc.logger.error("All neighbors seem to be the same angle type.")
     
@@ -928,6 +940,19 @@ func _choose_45_degree_interior_subtile(proximity: CellProximity) -> Vector2:
         # FIXME: LEFT OFF HERE: -----------------------------------
         pass
         
+    elif !proximity.is_top_left_neighbor_same_angle_type:
+        # FIXME: LEFT OFF HERE: -----------------------------------
+        pass
+    elif !proximity.is_top_right_neighbor_same_angle_type:
+        # FIXME: LEFT OFF HERE: -----------------------------------
+        pass
+    elif !proximity.is_bottom_left_neighbor_same_angle_type:
+        # FIXME: LEFT OFF HERE: -----------------------------------
+        pass
+    elif !proximity.is_bottom_right_neighbor_same_angle_type:
+        # FIXME: LEFT OFF HERE: -----------------------------------
+        pass
+        
     else:
         # FIXME: LEFT OFF HERE: -------------------------------------
         pass
@@ -947,8 +972,7 @@ func _choose_27_degree_interior_subtile(proximity: CellProximity) -> Vector2:
     return Vector2.INF
 
 
-# FIXME: -------- How are bitmask optional bits handled?
-func get_cell_bitmask(
+func get_cell_autotile_bitmask(
         position: Vector2,
         tile_map: TileMap) -> int:
     var tile_id := tile_map.get_cellv(position)
@@ -965,15 +989,43 @@ func get_cell_bitmask(
     return autotile_get_bitmask(tile_id, subtile_position)
 
 
+func get_cell_actual_bitmask(
+        position: Vector2,
+        tile_map: TileMap) -> int:
+    var bitmask := 0
+    if tile_map.get_cellv(position + Vector2(-1, -1)) != TileMap.INVALID_CELL:
+        bitmask |= TileSet.BIND_TOPLEFT
+    if tile_map.get_cellv(position + Vector2(0, -1)) != TileMap.INVALID_CELL:
+        bitmask |= TileSet.BIND_TOP
+    if tile_map.get_cellv(position + Vector2(1, -1)) != TileMap.INVALID_CELL:
+        bitmask |= TileSet.BIND_TOPRIGHT
+    if tile_map.get_cellv(position + Vector2(-1, 0)) != TileMap.INVALID_CELL:
+        bitmask |= TileSet.BIND_LEFT
+    if tile_map.get_cellv(position) != TileMap.INVALID_CELL:
+        bitmask |= TileSet.BIND_CENTER
+    if tile_map.get_cellv(position + Vector2(1, 0)) != TileMap.INVALID_CELL:
+        bitmask |= TileSet.BIND_RIGHT
+    if tile_map.get_cellv(position + Vector2(-1, 1)) != TileMap.INVALID_CELL:
+        bitmask |= TileSet.BIND_BOTTOMLEFT
+    if tile_map.get_cellv(position + Vector2(0, 1)) != TileMap.INVALID_CELL:
+        bitmask |= TileSet.BIND_BOTTOM
+    if tile_map.get_cellv(position + Vector2(1, 1)) != TileMap.INVALID_CELL:
+        bitmask |= TileSet.BIND_BOTTOMRIGHT
+    return bitmask
+
+
 func get_angle_type_from_tile_id(tile_id: int) -> int:
     match tile_id:
+        TileMap.INVALID_CELL:
+            return CellAngleType.EMPTY
         tile_id_for_angle_a90:
             return CellAngleType.A90
         tile_id_for_angle_a45:
             return CellAngleType.A45
         tile_id_for_angle_a27:
             return CellAngleType.A27
-        TileMap.INVALID_CELL:
-            return CellAngleType.EMPTY
         _:
+            Sc.logger.error(
+                    "Unrecognized tile ID: %s (%s)" % \
+                    [tile_id, tile_get_name(tile_id)])
             return CellAngleType.UNKNOWN
