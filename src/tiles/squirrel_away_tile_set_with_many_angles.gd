@@ -137,24 +137,24 @@ const A45_EXTERIOR_SUBTILE_POSITIONS := {
         pos_with_cutout_corner = Vector2(0,11),
         neg = Vector2(3,9),
         neg_with_cutout_corner = Vector2(1,11),
-        pos_to_right_neg = Vector2(5,11),
-        neg_to_left_pos = Vector2(6,11),
-        pos_to_bottom_ceiling = Vector2(7,11),
-        neg_to_bottom_ceiling = Vector2(8,11),
-        pos_to_right_neg_and_bottom_ceiling = Vector2(9,11),
-        neg_to_left_pos_and_bottom_ceiling = Vector2(10,11),
+        pos_to_right_neg = Vector2(2,11),
+        neg_to_left_pos = Vector2(3,11),
+        pos_to_bottom_ceiling = Vector2(4,11),
+        neg_to_bottom_ceiling = Vector2(5,11),
+        pos_to_right_neg_and_bottom_ceiling = Vector2(6,11),
+        neg_to_left_pos_and_bottom_ceiling = Vector2(7,11),
     },
     ceilings = {
         pos = Vector2(3,10),
         pos_with_cutout_corner = Vector2(1,12),
         neg = Vector2(0,10),
         neg_with_cutout_corner = Vector2(0,12),
-        neg_to_right_pos = Vector2(5,12),
-        pos_to_left_neg = Vector2(6,12),
-        neg_to_top_floor = Vector2(7,12),
-        pos_to_top_floor = Vector2(8,12),
-        neg_to_right_pos_and_top_floor = Vector2(9,12),
-        pos_to_left_neg_and_top_floor = Vector2(10,12),
+        neg_to_right_pos = Vector2(2,12),
+        pos_to_left_neg = Vector2(3,12),
+        neg_to_top_floor = Vector2(4,12),
+        pos_to_top_floor = Vector2(5,12),
+        neg_to_right_pos_and_top_floor = Vector2(6,12),
+        pos_to_left_neg_and_top_floor = Vector2(7,12),
     },
     cutout_corners = {
         top_left_top_right = Vector2(4,9),
@@ -202,10 +202,20 @@ const A45_EXTERIOR_SUBTILE_POSITIONS := {
         },
     },
     caps = {
-        top = Vector2(2,11),
-        bottom = Vector2(2,12),
-        left = Vector2(3,11),
-        right = Vector2(4,11),
+        top = {
+            with_bottom_cap = Vector2(8,11),
+            with_bottom_a45_ceiling_pos = Vector2(9,11),
+            with_bottom_a45_ceiling_neg = Vector2(10,11),
+            with_bottom_floors = Vector2(11,11),
+        },
+        bottom = {
+            with_top_cap = Vector2(8,12),
+            with_top_a45_floor_pos = Vector2(9,12),
+            with_top_a45_floor_neg = Vector2(10,12),
+            with_top_ceilings = Vector2(11,12),
+        },
+        left = Vector2(10,10),
+        right = Vector2(11,10),
     },
 }
 
@@ -842,14 +852,47 @@ func _choose_45_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
                 if proximity.is_exposed_at_right:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.all
                 else:
-                    return A45_EXTERIOR_SUBTILE_POSITIONS.caps.left
+                    # Left cap.
+                    if proximity.is_right_neighbor_exposed_at_right:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.caps.left
+                    elif proximity.is_exposed_at_top_right:
+                        return A90_A45_EXTERIOR_JOINS.ceilings.left_45_convex_acute
+                    elif proximity.is_exposed_at_bottom_right:
+                        return A90_A45_EXTERIOR_JOINS.floors.left_45_convex_acute
+                    else:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.caps.left
             elif proximity.is_exposed_at_right:
-                return A45_EXTERIOR_SUBTILE_POSITIONS.caps.right
+                # Right cap.
+                if proximity.is_left_neighbor_exposed_at_left:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.caps.right
+                elif proximity.is_exposed_at_top_left:
+                    return A90_A45_EXTERIOR_JOINS.ceilings.right_45_convex_acute
+                elif proximity.is_exposed_at_bottom_left:
+                    return A90_A45_EXTERIOR_JOINS.floors.right_45_convex_acute
+                else:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.caps.right
             else:
                 return A90_EXTERIOR_SUBTILE_POSITIONS.floor_ceiling
         elif proximity.is_exposed_at_left:
             if proximity.is_exposed_at_right:
-                return A45_EXTERIOR_SUBTILE_POSITIONS.caps.top
+                # Top cap.
+                if proximity.is_exposed_at_bottom_left:
+                    if proximity.is_exposed_at_bottom_right:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.caps.top.with_bottom_cap
+                    else:
+                        if proximity.bottom_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_bottom_neighbor_exposed_at_bottom:
+                            return A45_EXTERIOR_SUBTILE_POSITIONS.caps.top.with_bottom_a45_ceiling_neg
+                        else:
+                            return A90_A45_EXTERIOR_JOINS.right_walls.top_45_convex_acute
+                elif proximity.is_exposed_at_bottom_right:
+                    if proximity.bottom_neighbor_angle_type == CellAngleType.A45 and \
+                            proximity.is_bottom_neighbor_exposed_at_bottom:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.caps.top.with_bottom_a45_ceiling_pos
+                    else:
+                        return A90_A45_EXTERIOR_JOINS.left_walls.top_45_convex_acute
+                else:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.caps.top.with_bottom_floors
             else:
                 if proximity.is_exposed_at_bottom_right:
                     if proximity.bottom_neighbor_angle_type == CellAngleType.A90:
@@ -917,7 +960,24 @@ func _choose_45_degree_exterior_subtile(proximity: CellProximity) -> Vector2:
     elif proximity.is_exposed_at_bottom:
         if proximity.is_exposed_at_left:
             if proximity.is_exposed_at_right:
-                return A45_EXTERIOR_SUBTILE_POSITIONS.caps.bottom
+                # Bottom cap.
+                if proximity.is_exposed_at_top_left:
+                    if proximity.is_exposed_at_top_right:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.caps.bottom.with_top_cap
+                    else:
+                        if proximity.top_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_top_neighbor_exposed_at_top:
+                            return A45_EXTERIOR_SUBTILE_POSITIONS.caps.bottom.with_top_a45_floor_pos
+                        else:
+                            return A90_A45_EXTERIOR_JOINS.right_walls.bottom_45_convex_acute
+                elif proximity.is_exposed_at_top_right:
+                    if proximity.top_neighbor_angle_type == CellAngleType.A45 and \
+                            proximity.is_top_neighbor_exposed_at_top:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.caps.bottom.with_top_a45_floor_neg
+                    else:
+                        return A90_A45_EXTERIOR_JOINS.left_walls.bottom_45_convex_acute
+                else:
+                    return A45_EXTERIOR_SUBTILE_POSITIONS.caps.bottom.with_top_ceilings
             else:
                 if proximity.is_exposed_at_top_right:
                     if proximity.top_neighbor_angle_type == CellAngleType.A90:
