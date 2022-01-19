@@ -764,15 +764,60 @@ func _choose_exterior_subtile(proximity: CellProximity) -> Vector2:
                     else:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.floors.neg
         else:
-            if proximity.angle_type == CellAngleType.A90:
-                return A90_EXTERIOR_SUBTILE_POSITIONS.floor
+            # Floor.
+            if proximity.is_exposed_at_bottom_left:
+                if proximity.is_exposed_at_bottom_right:
+                    if proximity.is_floor_with_45_curve_in_at_left:
+                        if proximity.is_floor_with_45_curve_in_at_right:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_left_and_right_a45.both
+                        else:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_left_a45.both
+                    elif proximity.is_floor_with_45_curve_in_at_right:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_right_a45.both
+                    elif proximity.is_left_neighbor_45_neg or \
+                            proximity.is_right_neighbor_45_pos or \
+                            proximity.left_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_left_neighbor_cap or \
+                            proximity.right_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_right_neighbor_cap:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.both
+                    else:
+                        return A90_EXTERIOR_SUBTILE_POSITIONS.floor_side_bottom_left_bottom_right_corners
+                else:
+                    if proximity.is_floor_with_45_curve_in_at_left:
+                        if proximity.is_floor_with_45_curve_in_at_right:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_left_and_right_a45.bottom_left
+                        else:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_left_a45.bottom_left
+                    elif proximity.is_floor_with_45_curve_in_at_right:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_right_a45.bottom_left
+                    elif proximity.is_left_neighbor_45_neg or \
+                            proximity.left_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_left_neighbor_cap:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.bottom_left
+                    else:
+                        return A90_EXTERIOR_SUBTILE_POSITIONS.floor_side_bottom_left_corner
+            elif proximity.is_exposed_at_bottom_right:
+                if proximity.is_floor_with_45_curve_in_at_left:
+                    if proximity.is_floor_with_45_curve_in_at_right:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_left_and_right_a45.bottom_right
+                    else:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_left_a45.bottom_right
+                elif proximity.is_floor_with_45_curve_in_at_right:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_right_a45.bottom_right
+                elif proximity.is_right_neighbor_45_pos or \
+                        proximity.right_neighbor_angle_type == CellAngleType.A45 and \
+                            proximity.is_right_neighbor_cap:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.bottom_right
+                else:
+                    return A90_EXTERIOR_SUBTILE_POSITIONS.floor_side_bottom_right_corner
             else:
-                if proximity.is_left_neighbor_45_pos:
-                    if proximity.is_right_neighbor_45_neg:
+                if proximity.is_floor_with_45_curve_in_at_left:
+                    if proximity.is_floor_with_45_curve_in_at_right:
                         return A90_A45_EXTERIOR_JOINS.floors.left_45_right_45_convex
                     else:
                         return A90_A45_EXTERIOR_JOINS.floors.left_45_convex.a90
-                elif proximity.is_right_neighbor_45_neg:
+                elif proximity.is_floor_with_45_curve_in_at_right:
                     return A90_A45_EXTERIOR_JOINS.floors.right_45_convex.a90
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.floor
@@ -876,15 +921,60 @@ func _choose_exterior_subtile(proximity: CellProximity) -> Vector2:
                     else:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.ceilings.pos
         else:
-            if proximity.angle_type == CellAngleType.A90:
-                return A90_EXTERIOR_SUBTILE_POSITIONS.ceiling
+            # Ceiling.
+            if proximity.is_exposed_at_top_left:
+                if proximity.is_exposed_at_top_right:
+                    if proximity.is_ceiling_with_45_curve_in_at_left:
+                        if proximity.is_ceiling_with_45_curve_in_at_right:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_left_and_right_a45.both
+                        else:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_left_a45.both
+                    elif proximity.is_ceiling_with_45_curve_in_at_right:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_right_a45.both
+                    elif proximity.is_left_neighbor_45_neg or \
+                            proximity.is_right_neighbor_45_pos or \
+                            proximity.left_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_left_neighbor_cap or \
+                            proximity.right_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_right_neighbor_cap:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.both
+                    else:
+                        return A90_EXTERIOR_SUBTILE_POSITIONS.ceiling_side_top_left_top_right_corners
+                else:
+                    if proximity.is_ceiling_with_45_curve_in_at_left:
+                        if proximity.is_ceiling_with_45_curve_in_at_right:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_left_and_right_a45.top_left
+                        else:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_left_a45.top_left
+                    elif proximity.is_ceiling_with_45_curve_in_at_right:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_right_a45.top_left
+                    elif proximity.is_left_neighbor_45_neg or \
+                            proximity.left_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_left_neighbor_cap:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.top_left
+                    else:
+                        return A90_EXTERIOR_SUBTILE_POSITIONS.ceiling_side_top_left_corner
+            elif proximity.is_exposed_at_top_right:
+                if proximity.is_ceiling_with_45_curve_in_at_left:
+                    if proximity.is_ceiling_with_45_curve_in_at_right:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_left_and_right_a45.top_right
+                    else:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_left_a45.top_right
+                elif proximity.is_ceiling_with_45_curve_in_at_right:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_right_a45.top_right
+                elif proximity.is_right_neighbor_45_pos or \
+                        proximity.right_neighbor_angle_type == CellAngleType.A45 and \
+                            proximity.is_right_neighbor_cap:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.top_right
+                else:
+                    return A90_EXTERIOR_SUBTILE_POSITIONS.ceiling_side_top_right_corner
             else:
-                if proximity.is_left_neighbor_45_neg:
-                    if proximity.is_right_neighbor_45_pos:
+                if proximity.is_ceiling_with_45_curve_in_at_left:
+                    if proximity.is_ceiling_with_45_curve_in_at_right:
                         return A90_A45_EXTERIOR_JOINS.ceilings.left_45_right_45_convex
                     else:
                         return A90_A45_EXTERIOR_JOINS.ceilings.left_45_convex.a90
-                elif proximity.is_right_neighbor_45_pos:
+                elif proximity.is_ceiling_with_45_curve_in_at_right:
                     return A90_A45_EXTERIOR_JOINS.ceilings.right_45_convex.a90
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.ceiling
@@ -894,29 +984,119 @@ func _choose_exterior_subtile(proximity: CellProximity) -> Vector2:
             # FIXME: LEFT OFF HERE: ---------------------------------------
             return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall_right_wall
         else:
-            if proximity.angle_type == CellAngleType.A90:
-                return A90_EXTERIOR_SUBTILE_POSITIONS.right_wall
+            # Right wall.
+            if proximity.is_exposed_at_top_right:
+                if proximity.is_exposed_at_bottom_right:
+                    if proximity.is_right_wall_with_45_curve_in_at_top:
+                        if proximity.is_right_wall_with_45_curve_in_at_bottom:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_top_and_bottom_a45.both
+                        else:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_top_a45.both
+                    elif proximity.is_right_wall_with_45_curve_in_at_bottom:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_bottom_a45.both
+                    elif proximity.is_top_neighbor_45_neg or \
+                            proximity.is_bottom_neighbor_45_pos or \
+                            proximity.top_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_top_neighbor_cap or \
+                            proximity.bottom_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_bottom_neighbor_cap:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.both
+                    else:
+                        return A90_EXTERIOR_SUBTILE_POSITIONS.right_wall_side_top_right_bottom_right_corners
+                else:
+                    if proximity.is_right_wall_with_45_curve_in_at_top:
+                        if proximity.is_right_wall_with_45_curve_in_at_bottom:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_top_and_bottom_a45.top_right
+                        else:
+                            return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_top_a45.top_right
+                    elif proximity.is_right_wall_with_45_curve_in_at_bottom:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_bottom_a45.top_right
+                    elif proximity.is_top_neighbor_45_neg or \
+                            proximity.top_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_top_neighbor_cap:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.top_right
+                    else:
+                        return A90_EXTERIOR_SUBTILE_POSITIONS.right_wall_side_top_right_corner
+            elif proximity.is_exposed_at_bottom_right:
+                if proximity.is_right_wall_with_45_curve_in_at_top:
+                    if proximity.is_right_wall_with_45_curve_in_at_bottom:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_top_and_bottom_a45.bottom_right
+                    else:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_top_a45.bottom_right
+                elif proximity.is_right_wall_with_45_curve_in_at_bottom:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_bottom_a45.bottom_right
+                elif proximity.is_bottom_neighbor_45_pos or \
+                        proximity.bottom_neighbor_angle_type == CellAngleType.A45 and \
+                            proximity.is_bottom_neighbor_cap:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.bottom_right
+                else:
+                    return A90_EXTERIOR_SUBTILE_POSITIONS.right_wall_side_bottom_right_corner
             else:
-                if proximity.is_top_neighbor_45_pos:
-                    if proximity.is_bottom_neighbor_45_neg:
+                if proximity.is_right_wall_with_45_curve_in_at_top:
+                    if proximity.is_right_wall_with_45_curve_in_at_bottom:
                         return A90_A45_EXTERIOR_JOINS.right_walls.top_45_bottom_45_convex
                     else:
                         return A90_A45_EXTERIOR_JOINS.right_walls.top_45_convex.a90
-                elif proximity.is_bottom_neighbor_45_neg:
+                elif proximity.is_right_wall_with_45_curve_in_at_bottom:
                     return A90_A45_EXTERIOR_JOINS.right_walls.bottom_45_convex.a90
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.right_wall
     elif proximity.is_exposed_at_right:
+        # Left wall.
         # Only the right-side is exposed.
-        if proximity.angle_type == CellAngleType.A90:
-            return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall
+        if proximity.is_exposed_at_top_left:
+            if proximity.is_exposed_at_bottom_left:
+                if proximity.is_left_wall_with_45_curve_in_at_top:
+                    if proximity.is_left_wall_with_45_curve_in_at_bottom:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_top_and_bottom_a45.both
+                    else:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_top_a45.both
+                elif proximity.is_left_wall_with_45_curve_in_at_bottom:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_bottom_a45.both
+                elif proximity.is_top_neighbor_45_neg or \
+                        proximity.is_bottom_neighbor_45_pos or \
+                        proximity.top_neighbor_angle_type == CellAngleType.A45 and \
+                            proximity.is_top_neighbor_cap or \
+                        proximity.bottom_neighbor_angle_type == CellAngleType.A45 and \
+                            proximity.is_bottom_neighbor_cap:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.both
+                else:
+                    return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall_side_top_left_bottom_left_corners
+            else:
+                if proximity.is_left_wall_with_45_curve_in_at_top:
+                    if proximity.is_left_wall_with_45_curve_in_at_bottom:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_top_and_bottom_a45.top_left
+                    else:
+                        return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_top_a45.top_left
+                elif proximity.is_left_wall_with_45_curve_in_at_bottom:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_bottom_a45.top_left
+                elif proximity.is_top_neighbor_45_neg or \
+                        proximity.top_neighbor_angle_type == CellAngleType.A45 and \
+                            proximity.is_top_neighbor_cap:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.top_left
+                else:
+                    return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall_side_top_left_corner
+        elif proximity.is_exposed_at_bottom_left:
+            if proximity.is_left_wall_with_45_curve_in_at_top:
+                if proximity.is_left_wall_with_45_curve_in_at_bottom:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_top_and_bottom_a45.bottom_left
+                else:
+                    return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_top_a45.bottom_left
+            elif proximity.is_left_wall_with_45_curve_in_at_bottom:
+                return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_bottom_a45.bottom_left
+            elif proximity.is_bottom_neighbor_45_pos or \
+                    proximity.bottom_neighbor_angle_type == CellAngleType.A45 and \
+                        proximity.is_bottom_neighbor_cap:
+                return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.bottom_left
+            else:
+                return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall_side_bottom_left_corner
         else:
-            if proximity.is_top_neighbor_45_neg:
-                if proximity.is_bottom_neighbor_45_pos:
+            if proximity.is_left_wall_with_45_curve_in_at_top:
+                if proximity.is_left_wall_with_45_curve_in_at_bottom:
                     return A90_A45_EXTERIOR_JOINS.left_walls.top_45_bottom_45_convex
                 else:
                     return A90_A45_EXTERIOR_JOINS.left_walls.top_45_convex.a90
-            elif proximity.is_bottom_neighbor_45_pos:
+            elif proximity.is_left_wall_with_45_curve_in_at_bottom:
                 return A90_A45_EXTERIOR_JOINS.left_walls.bottom_45_convex.a90
             else:
                 return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall
