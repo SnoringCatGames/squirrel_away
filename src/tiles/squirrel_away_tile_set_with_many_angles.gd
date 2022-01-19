@@ -779,7 +779,9 @@ func _choose_exterior_subtile(proximity: CellProximity) -> Vector2:
                             proximity.left_neighbor_angle_type == CellAngleType.A45 and \
                                 proximity.is_left_neighbor_cap or \
                             proximity.right_neighbor_angle_type == CellAngleType.A45 and \
-                                proximity.is_right_neighbor_cap:
+                                proximity.is_right_neighbor_cap or \
+                            proximity.bottom_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_bottom_neighbor_cap:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.both
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.floor_side_bottom_left_bottom_right_corners
@@ -936,7 +938,9 @@ func _choose_exterior_subtile(proximity: CellProximity) -> Vector2:
                             proximity.left_neighbor_angle_type == CellAngleType.A45 and \
                                 proximity.is_left_neighbor_cap or \
                             proximity.right_neighbor_angle_type == CellAngleType.A45 and \
-                                proximity.is_right_neighbor_cap:
+                                proximity.is_right_neighbor_cap or \
+                            proximity.top_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_top_neighbor_cap:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.both
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.ceiling_side_top_left_top_right_corners
@@ -999,7 +1003,9 @@ func _choose_exterior_subtile(proximity: CellProximity) -> Vector2:
                             proximity.top_neighbor_angle_type == CellAngleType.A45 and \
                                 proximity.is_top_neighbor_cap or \
                             proximity.bottom_neighbor_angle_type == CellAngleType.A45 and \
-                                proximity.is_bottom_neighbor_cap:
+                                proximity.is_bottom_neighbor_cap or \
+                            proximity.right_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_right_neighbor_cap:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.both
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.right_wall_side_top_right_bottom_right_corners
@@ -1058,7 +1064,9 @@ func _choose_exterior_subtile(proximity: CellProximity) -> Vector2:
                         proximity.top_neighbor_angle_type == CellAngleType.A45 and \
                             proximity.is_top_neighbor_cap or \
                         proximity.bottom_neighbor_angle_type == CellAngleType.A45 and \
-                            proximity.is_bottom_neighbor_cap:
+                            proximity.is_bottom_neighbor_cap or \
+                            proximity.left_neighbor_angle_type == CellAngleType.A45 and \
+                                proximity.is_left_neighbor_cap:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.both
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall_side_top_left_bottom_left_corners
