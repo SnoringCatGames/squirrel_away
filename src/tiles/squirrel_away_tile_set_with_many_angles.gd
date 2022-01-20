@@ -1334,39 +1334,39 @@ func _choose_interior_subtile(proximity: CellProximity) -> Vector2:
             if proximity.is_top_right_exposed_around_top_right:
                 if proximity.is_bottom_left_exposed_around_bottom_left:
                     if proximity.is_bottom_right_exposed_around_bottom_right:
-                        return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.all
+                        return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.all
                     else:
-                        return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right_bottom_left
+                        return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right_bottom_left
                 elif proximity.is_bottom_right_exposed_around_bottom_right:
-                    return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right_bottom_right
+                    return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right_bottom_right
                 else:
-                    return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right
+                    return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_top_right
             elif proximity.is_bottom_left_exposed_around_bottom_left:
                 if proximity.is_bottom_right_exposed_around_bottom_right:
-                    return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_left_bottom_right
+                    return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_left_bottom_right
                 else:
-                    return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_left
+                    return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_left
             elif proximity.is_bottom_right_exposed_around_bottom_right:
-                return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_right
+                return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left_bottom_right
             else:
-                return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left
+                return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_left
         elif proximity.is_top_right_exposed_around_top_right:
             if proximity.is_bottom_left_exposed_at_bottom_left:
                 if proximity.is_bottom_right_exposed_around_bottom_right:
-                    return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_left_bottom_right
+                    return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_left_bottom_right
                 else:
-                    return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_left
+                    return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_left
             elif proximity.is_bottom_right_exposed_around_bottom_right:
-                return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_right
+                return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right_bottom_right
             else:
-                return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right
+                return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.top_right
         elif proximity.is_bottom_left_exposed_at_bottom_left:
             if proximity.is_bottom_right_exposed_around_bottom_right:
-                return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_left_bottom_right
+                return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_left_bottom_right
             else:
-                return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_left
+                return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_left
         elif proximity.is_bottom_right_exposed_around_bottom_right:
-            return A90_EXTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_right
+            return A90_INTERIOR_SUBTILE_POSITIONS.exposed_corners.bottom_right
         else:
             return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.none
     
