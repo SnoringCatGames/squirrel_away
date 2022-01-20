@@ -8,41 +8,49 @@ const _TILES_MANIFEST := [
         name = "0_tile_with_90s",
         angle = CellAngleType.A90,
         properties = "",
+        is_collidable = true,
     },
     {
         name = "1_tile_with_45s",
         angle = CellAngleType.A45,
         properties = "",
+        is_collidable = true,
     },
     {
         name = "2_tile_with_27s",
         angle = CellAngleType.A27,
         properties = "",
+        is_collidable = true,
     },
     {
         name = "ungrabbable_tile",
         angle = CellAngleType.A90,
         properties = "disabled",
+        is_collidable = true,
     },
     {
         name = "slippery_tile",
         angle = CellAngleType.A90,
         properties = "slippery",
+        is_collidable = true,
     },
     {
         name = "sticky_tile",
         angle = CellAngleType.A90,
         properties = "sticky",
+        is_collidable = true,
     },
     {
         name = "fast_tile",
         angle = CellAngleType.A90,
         properties = "fast",
+        is_collidable = true,
     },
     {
         name = "slow_tile",
         angle = CellAngleType.A90,
         properties = "slow",
+        is_collidable = true,
     },
 ]
 
@@ -524,15 +532,6 @@ const A90_A45_INTERIOR_JOINS := {
 
 func _init().(_TILES_MANIFEST) -> void:
     pass
-
-
-func _is_tile_bound(
-        drawn_id: int,
-        neighbor_id: int) -> bool:
-    if neighbor_id == TileMap.INVALID_CELL:
-        return false
-    
-    return true
 
 
 func _forward_subtile_selection(
