@@ -3,16 +3,47 @@ class_name SquirrelAwayTileSetWithManyAngles
 extends SurfacesTileSet
 
 
-const TILE_NAME_FOR_ANGLE_A90 := "0_tile_with_90s"
-const TILE_NAME_FOR_ANGLE_A45 := "1_tile_with_45s"
-const TILE_NAME_FOR_ANGLE_A27 := "2_tile_with_27s"
-
-const _PROPERTIES_MANIFEST := [
-    ["disabled", ["ungrabbable_tile"]],
-    ["slippery", ["slippery_tile"]],
-    ["sticky", ["sticky_tile",]],
-    ["fast", ["fast_tile",]],
-    ["slow", ["slow_tile",]],
+const _TILES_MANIFEST := [
+    {
+        name = "0_tile_with_90s",
+        angle = CellAngleType.A90,
+        properties = "",
+    },
+    {
+        name = "1_tile_with_45s",
+        angle = CellAngleType.A45,
+        properties = "",
+    },
+    {
+        name = "2_tile_with_27s",
+        angle = CellAngleType.A27,
+        properties = "",
+    },
+    {
+        name = "ungrabbable_tile",
+        angle = CellAngleType.A90,
+        properties = "disabled",
+    },
+    {
+        name = "slippery_tile",
+        angle = CellAngleType.A90,
+        properties = "slippery",
+    },
+    {
+        name = "sticky_tile",
+        angle = CellAngleType.A90,
+        properties = "sticky",
+    },
+    {
+        name = "fast_tile",
+        angle = CellAngleType.A90,
+        properties = "fast",
+    },
+    {
+        name = "slow_tile",
+        angle = CellAngleType.A90,
+        properties = "slow",
+    },
 ]
 
 const TILE_WITH_SEPARATED_DEPTHS_NAME := "tiles_with_separated_depths"
@@ -132,6 +163,7 @@ const A90_INTERIOR_SUBTILE_POSITIONS := {
 # NOTE: These positions need to be kept in-sync with the corresponding tile-set
 #       image.
 const A45_EXTERIOR_SUBTILE_POSITIONS := {
+    alone = Vector2(11,9),
     floors = {
         pos = Vector2(0,9),
         pos_with_cutout_corner = Vector2(0,11),
@@ -489,22 +521,13 @@ const A90_A45_INTERIOR_JOINS := {
     },
 }
 
-var tile_id_for_angle_a90: int
-var tile_id_for_angle_a45: int
-var tile_id_for_angle_a27: int
+
+func _init().(_TILES_MANIFEST) -> void:
+    pass
 
 
-func _init().(_PROPERTIES_MANIFEST) -> void:
-    tile_id_for_angle_a90 = find_tile_by_name(TILE_NAME_FOR_ANGLE_A90)
-    assert(tile_id_for_angle_a90 != TileMap.INVALID_CELL)
-    tile_id_for_angle_a45 = find_tile_by_name(TILE_NAME_FOR_ANGLE_A45)
-    assert(tile_id_for_angle_a45 != TileMap.INVALID_CELL)
-    tile_id_for_angle_a27 = find_tile_by_name(TILE_NAME_FOR_ANGLE_A27)
-    assert(tile_id_for_angle_a27 != TileMap.INVALID_CELL)
-
-
-func _is_tile_bound( \
-        drawn_id: int, \
+func _is_tile_bound(
+        drawn_id: int,
         neighbor_id: int) -> bool:
     if neighbor_id == TileMap.INVALID_CELL:
         return false
@@ -517,16 +540,13 @@ func _forward_subtile_selection(
         bitmask: int,
         tile_map: Object,
         cell_position: Vector2):
-    var proximity := get_cell_proximity(
-            tile_id,
-            bitmask,
+    var proximity := CellProximity.new(
             tile_map,
-            cell_position)
+            self,
+            cell_position,
+            tile_id)
     
-    var subtile_position = \
-            _choose_interior_subtile(proximity) if \
-            proximity.is_internal else \
-            _choose_exterior_subtile(proximity)
+    var subtile_position = _choose_subtile(proximity)
     
     if subtile_position != Vector2.INF:
         return subtile_position
@@ -538,121 +558,15 @@ func _forward_subtile_selection(
         return
 
 
-func get_cell_proximity(
-        tile_id: int,
-        bitmask: int,
-        tile_map: TileMap,
-        position: Vector2) -> CellProximity:
-    var top_left_neighbor_position := position + Vector2(-1, -1)
-    var top_neighbor_position := position + Vector2(0, -1)
-    var top_right_neighbor_position := position + Vector2(1, -1)
-    var left_neighbor_position := position + Vector2(-1, 0)
-    var right_neighbor_position := position + Vector2(1, 0)
-    var bottom_left_neighbor_position := position + Vector2(-1, 1)
-    var bottom_neighbor_position := position + Vector2(0, 1)
-    var bottom_right_neighbor_position := position + Vector2(1, 1)
-    
-    var top_left_neighbor_tile_id := tile_map.get_cellv(top_left_neighbor_position)
-    var top_neighbor_tile_id := tile_map.get_cellv(top_neighbor_position)
-    var top_right_neighbor_tile_id := tile_map.get_cellv(top_right_neighbor_position)
-    var left_neighbor_tile_id := tile_map.get_cellv(left_neighbor_position)
-    var right_neighbor_tile_id := tile_map.get_cellv(right_neighbor_position)
-    var bottom_left_neighbor_tile_id := tile_map.get_cellv(bottom_left_neighbor_position)
-    var bottom_neighbor_tile_id := tile_map.get_cellv(bottom_neighbor_position)
-    var bottom_right_neighbor_tile_id := tile_map.get_cellv(bottom_right_neighbor_position)
-    
-    var angle_type := get_angle_type_from_tile_id(tile_id)
-    var top_left_neighbor_angle_type := \
-            get_angle_type_from_tile_id(top_left_neighbor_tile_id)
-    var top_neighbor_angle_type := \
-            get_angle_type_from_tile_id(top_neighbor_tile_id)
-    var top_right_neighbor_angle_type := \
-            get_angle_type_from_tile_id(top_right_neighbor_tile_id)
-    var left_neighbor_angle_type := \
-            get_angle_type_from_tile_id(left_neighbor_tile_id)
-    var right_neighbor_angle_type := \
-            get_angle_type_from_tile_id(right_neighbor_tile_id)
-    var bottom_left_neighbor_angle_type := \
-            get_angle_type_from_tile_id(bottom_left_neighbor_tile_id)
-    var bottom_neighbor_angle_type := \
-            get_angle_type_from_tile_id(bottom_neighbor_tile_id)
-    var bottom_right_neighbor_angle_type := \
-            get_angle_type_from_tile_id(bottom_right_neighbor_tile_id)
-    
-    bitmask = get_cell_actual_bitmask(
-            position,
-            tile_map)
-    var top_left_neighbor_bitmask := get_cell_actual_bitmask(
-            top_left_neighbor_position,
-            tile_map) if \
-            top_left_neighbor_angle_type != CellAngleType.EMPTY else \
-            0
-    var top_neighbor_bitmask := get_cell_actual_bitmask(
-            top_neighbor_position,
-            tile_map) if \
-            top_neighbor_angle_type != CellAngleType.EMPTY else \
-            0
-    var top_right_neighbor_bitmask := get_cell_actual_bitmask(
-            top_right_neighbor_position,
-            tile_map) if \
-            top_right_neighbor_angle_type != CellAngleType.EMPTY else \
-            0
-    var left_neighbor_bitmask := get_cell_actual_bitmask(
-            left_neighbor_position,
-            tile_map) if \
-            left_neighbor_angle_type != CellAngleType.EMPTY else \
-            0
-    var right_neighbor_bitmask := get_cell_actual_bitmask(
-            right_neighbor_position,
-            tile_map) if \
-            right_neighbor_angle_type != CellAngleType.EMPTY else \
-            0
-    var bottom_left_neighbor_bitmask := get_cell_actual_bitmask(
-            bottom_left_neighbor_position,
-            tile_map) if \
-            bottom_left_neighbor_angle_type != CellAngleType.EMPTY else \
-            0
-    var bottom_neighbor_bitmask := get_cell_actual_bitmask(
-            bottom_neighbor_position,
-            tile_map) if \
-            bottom_neighbor_angle_type != CellAngleType.EMPTY else \
-            0
-    var bottom_right_neighbor_bitmask := get_cell_actual_bitmask(
-            bottom_right_neighbor_position,
-            tile_map) if \
-            bottom_right_neighbor_angle_type != CellAngleType.EMPTY else \
-            0
-    
-    var proximity := CellProximity.new()
-    proximity.position = position
-    proximity.angle_type = angle_type
-    proximity.bitmask = bitmask
-    proximity.top_left_neighbor_angle_type = top_left_neighbor_angle_type
-    proximity.top_neighbor_angle_type = top_neighbor_angle_type
-    proximity.top_right_neighbor_angle_type = top_right_neighbor_angle_type
-    proximity.left_neighbor_angle_type = left_neighbor_angle_type
-    proximity.right_neighbor_angle_type = right_neighbor_angle_type
-    proximity.bottom_left_neighbor_angle_type = bottom_left_neighbor_angle_type
-    proximity.bottom_neighbor_angle_type = bottom_neighbor_angle_type
-    proximity.bottom_right_neighbor_angle_type = bottom_right_neighbor_angle_type
-    proximity.top_left_neighbor_bitmask = top_left_neighbor_bitmask
-    proximity.top_neighbor_bitmask = top_neighbor_bitmask
-    proximity.top_right_neighbor_bitmask = top_right_neighbor_bitmask
-    proximity.left_neighbor_bitmask = left_neighbor_bitmask
-    proximity.right_neighbor_bitmask = right_neighbor_bitmask
-    proximity.bottom_left_neighbor_bitmask = bottom_left_neighbor_bitmask
-    proximity.bottom_neighbor_bitmask = bottom_neighbor_bitmask
-    proximity.bottom_right_neighbor_bitmask = bottom_right_neighbor_bitmask
-    
-    return proximity
-
-
-func _choose_exterior_subtile(proximity: CellProximity) -> Vector2:
+func _choose_subtile(proximity: CellProximity) -> Vector2:
     if proximity.is_exposed_at_top:
         if proximity.is_exposed_at_bottom:
             if proximity.is_exposed_at_left:
                 if proximity.is_exposed_at_right:
-                    return A90_EXTERIOR_SUBTILE_POSITIONS.all
+                    if proximity.angle_type == CellAngleType.A90:
+                        return A90_EXTERIOR_SUBTILE_POSITIONS.all
+                    else:
+                        return A45_EXTERIOR_SUBTILE_POSITIONS.alone
                 else:
                     # Left cap.
                     if proximity.angle_type == CellAngleType.A90:
@@ -1325,7 +1239,7 @@ func _choose_exterior_subtile(proximity: CellProximity) -> Vector2:
                 else:
                     return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right.not_exposed
         else:
-            Sc.logger.error("This seems to be an interior subtile.")
+            return _choose_interior_subtile(proximity)
     
     return Vector2.INF
 
@@ -1457,62 +1371,3 @@ func _choose_interior_subtile(proximity: CellProximity) -> Vector2:
             return A90_INTERIOR_SUBTILE_POSITIONS.exposed_sides.none
     
     return Vector2.INF
-
-
-func get_cell_autotile_bitmask(
-        position: Vector2,
-        tile_map: TileMap) -> int:
-    var tile_id := tile_map.get_cellv(position)
-    if tile_id == TileMap.INVALID_CELL:
-        return INVALID_BITMASK
-    
-    var tile_mode := tile_get_tile_mode(tile_id)
-    if tile_mode != AUTO_TILE:
-        return INVALID_BITMASK
-    
-    var subtile_position := \
-            tile_map.get_cell_autotile_coord(position.x, position.y)
-    
-    return autotile_get_bitmask(tile_id, subtile_position)
-
-
-func get_cell_actual_bitmask(
-        position: Vector2,
-        tile_map: TileMap) -> int:
-    var bitmask := 0
-    if tile_map.get_cellv(position + Vector2(-1, -1)) != TileMap.INVALID_CELL:
-        bitmask |= TileSet.BIND_TOPLEFT
-    if tile_map.get_cellv(position + Vector2(0, -1)) != TileMap.INVALID_CELL:
-        bitmask |= TileSet.BIND_TOP
-    if tile_map.get_cellv(position + Vector2(1, -1)) != TileMap.INVALID_CELL:
-        bitmask |= TileSet.BIND_TOPRIGHT
-    if tile_map.get_cellv(position + Vector2(-1, 0)) != TileMap.INVALID_CELL:
-        bitmask |= TileSet.BIND_LEFT
-    if tile_map.get_cellv(position) != TileMap.INVALID_CELL:
-        bitmask |= TileSet.BIND_CENTER
-    if tile_map.get_cellv(position + Vector2(1, 0)) != TileMap.INVALID_CELL:
-        bitmask |= TileSet.BIND_RIGHT
-    if tile_map.get_cellv(position + Vector2(-1, 1)) != TileMap.INVALID_CELL:
-        bitmask |= TileSet.BIND_BOTTOMLEFT
-    if tile_map.get_cellv(position + Vector2(0, 1)) != TileMap.INVALID_CELL:
-        bitmask |= TileSet.BIND_BOTTOM
-    if tile_map.get_cellv(position + Vector2(1, 1)) != TileMap.INVALID_CELL:
-        bitmask |= TileSet.BIND_BOTTOMRIGHT
-    return bitmask
-
-
-func get_angle_type_from_tile_id(tile_id: int) -> int:
-    match tile_id:
-        TileMap.INVALID_CELL:
-            return CellAngleType.EMPTY
-        tile_id_for_angle_a90:
-            return CellAngleType.A90
-        tile_id_for_angle_a45:
-            return CellAngleType.A45
-        tile_id_for_angle_a27:
-            return CellAngleType.A27
-        _:
-            Sc.logger.error(
-                    "Unrecognized tile ID: %s (%s)" % \
-                    [tile_id, tile_get_name(tile_id)])
-            return CellAngleType.UNKNOWN
