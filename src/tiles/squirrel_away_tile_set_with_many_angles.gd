@@ -1139,7 +1139,7 @@ func _choose_subtile(proximity: CellProximity) -> Vector2:
                     if proximity.is_bottom_right_exposed_at_bottom_or_right:
                         # FIXME: LEFT OFF HERE: ------------
                         # - Replace with a non-tile-type-specific check; instead, check for a 90-90 cutout.
-                        if proximity.is_bottom_right_angle_type_90:
+                        if proximity.bottom_right_angle_type == CellAngleType.A90:
                             return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left.exposed_a90_bottom_right_corner
                         else:
                             return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left.exposed_a45_bottom_right
@@ -1177,7 +1177,7 @@ func _choose_subtile(proximity: CellProximity) -> Vector2:
                     if proximity.is_bottom_left_exposed_at_bottom_or_left:
                         # FIXME: LEFT OFF HERE: ------------
                         # - Replace with a non-tile-type-specific check; instead, check for a 90-90 cutout.
-                        if proximity.is_bottom_left_angle_type_90:
+                        if proximity.bottom_left_angle_type == CellAngleType.A90:
                             return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right.exposed_a90_bottom_left_corner
                         else:
                             return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right.exposed_a45_bottom_left
@@ -1204,7 +1204,7 @@ func _choose_subtile(proximity: CellProximity) -> Vector2:
                     if proximity.is_top_right_exposed_at_top_or_right:
                         # FIXME: LEFT OFF HERE: ------------
                         # - Replace with a non-tile-type-specific check; instead, check for a 90-90 cutout.
-                        if proximity.is_top_right_angle_type_90:
+                        if proximity.top_right_angle_type == CellAngleType.A90:
                             return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left.exposed_a90_top_right_corner
                         else:
                             return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left.exposed_a45_top_right
@@ -1225,7 +1225,7 @@ func _choose_subtile(proximity: CellProximity) -> Vector2:
                 if proximity.is_top_left_exposed_at_top_or_left:
                         # FIXME: LEFT OFF HERE: ------------
                         # - Replace with a non-tile-type-specific check; instead, check for a 90-90 cutout.
-                    if proximity.is_top_left_angle_type_90:
+                    if proximity.top_left_angle_type == CellAngleType.A90:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right.exposed_a90_top_left_corner
                     else:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right.exposed_a45_top_left
