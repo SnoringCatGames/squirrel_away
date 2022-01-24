@@ -1,6 +1,6 @@
 tool
 class_name SquirrelAwayTileSetWithManyAngles
-extends SurfacesTileSet
+extends CornerMatchAutotilingTileSet
 
 
 const _TILES_MANIFEST := [
@@ -97,6 +97,8 @@ const _SUBTILES_MANIFEST := {
 #    TileSet.BIND_BOTTOMLEFT
 #    TileSet.BIND_BOTTOM
 #    TileSet.BIND_BOTTOMRIGHT
+    
+    error_indicator_subtile_position = Vector2(10,1),
     subtiles = [
         {
             position = Vector2(),
@@ -110,55 +112,24 @@ const _SUBTILES_MANIFEST := {
 # Subtile configuration specification:
 # {
 #     # Required.
-#     position: Vector2,
-#     angles: Array<90|45|27>,
-#     top_left: SubtileBinding,
-#     top_right: SubtileBinding,
-#     bottom_left: SubtileBinding,
-#     bottom_right: SubtileBinding,
-#     left_top: SubtileBinding,
-#     left_bottom: SubtileBinding,
-#     right_top: SubtileBinding,
-#     right_bottom: SubtileBinding,
+#     p: Vector2,
+#     a: Array<90|45|27>,
+#     tl: SubtileBinding,
+#     tr: SubtileBinding,
+#     bl: SubtileBinding,
+#     br: SubtileBinding,
 #     
 #     # Optional.
-#     ,
-#     ,
-#     ,
-#     ,
-#     ,
-#     ,
+#     in_bound_t_bl: SubtileBinding,
+#     in_bound_t_br: SubtileBinding,
+#     in_bound_b_tl: SubtileBinding,
+#     in_bound_b_tr: SubtileBinding,
 # }
 
-func _init().(_TILES_MANIFEST) -> void:
+const _ALLOWS_PARTIAL_MATCHES := true
+
+func _init().(
+        _TILES_MANIFEST,
+        _SUBTILES_MANIFEST,
+        _ALLOWS_PARTIAL_MATCHES) -> void:
     pass
-
-
-func _forward_subtile_selection(
-        tile_id: int,
-        bitmask: int,
-        tile_map: Object,
-        cell_position: Vector2):
-    var proximity := CellProximity.new(
-            tile_map,
-            self,
-            cell_position,
-            tile_id)
-    var subtile_position := _choose_subtile(proximity)
-    if subtile_position != Vector2.INF:
-        return subtile_position
-    else:
-        # NOTE:
-        # -   Not returning any value here is terrible.
-        # -   However, apparently the underlying API doesn't support returning
-        #     any actual values that would indicate redirecting back to the
-        #     default behavior.
-        return
-
-
-static func _choose_subtile(proximity: CellProximity) -> Vector2:
-    # FIXME: LEFT OFF HERE: -----------------------------------------------
-    
-    return SquirrelAwayTileSetWithManyAnglesOld._choose_subtile(proximity)
-    
-    return Vector2.INF
