@@ -557,7 +557,7 @@ func _forward_subtile_selection(
         return
 
 
-func _choose_subtile(proximity: CellProximity) -> Vector2:
+static func _choose_subtile(proximity: CellProximity) -> Vector2:
     if proximity.is_top_empty:
         if proximity.is_bottom_empty:
             if proximity.is_left_empty:
@@ -1276,7 +1276,7 @@ func _choose_subtile(proximity: CellProximity) -> Vector2:
     return Vector2.INF
 
 
-func _choose_interior_subtile(proximity: CellProximity) -> Vector2:
+static func _choose_interior_subtile(proximity: CellProximity) -> Vector2:
     # FIXME: LEFT OFF HERE: ------------ Distinguish between 90 and 45 degrees according to neighbors.
     
     if proximity.is_top_empty_around_top:
