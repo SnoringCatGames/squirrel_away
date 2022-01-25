@@ -127,9 +127,11 @@ const _SUBTILES_MANIFEST := {
 # }
 
 const _ALLOWS_PARTIAL_MATCHES := true
+const _SUPPORTS_RUNTIME_AUTOTILING := false
 
 func _init().(
         _TILES_MANIFEST,
         _SUBTILES_MANIFEST,
-        _ALLOWS_PARTIAL_MATCHES) -> void:
+        _ALLOWS_PARTIAL_MATCHES,
+        _SUPPORTS_RUNTIME_AUTOTILING) -> void:
     pass
