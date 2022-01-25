@@ -652,11 +652,11 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
             else:
                 if proximity.is_bottom_right_empty:
                     if proximity.is_angle_type_90:
-                        if proximity.is_bottom_right_corner_cutout_90:
+                        if proximity.is_bottom_right_corner_concave_90:
                             return A90_EXTERIOR_SUBTILE_POSITIONS.floor_right_wall_sides_bottom_right_corner
-                        elif proximity.is_bottom_right_corner_cutout_90_vertical_to_45:
+                        elif proximity.is_bottom_right_corner_concave_90_vertical_to_45:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floor_and_right_wall.a90_vertical_to_a45
-                        elif proximity.is_bottom_right_corner_cutout_90_horizontal_to_45:
+                        elif proximity.is_bottom_right_corner_concave_90_horizontal_to_45:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floor_and_right_wall.a90_horizontal_to_a45
                         else:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floor_and_right_wall.a45
@@ -696,11 +696,11 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
         elif proximity.is_right_empty:
             if proximity.is_bottom_left_empty:
                 if proximity.is_angle_type_90:
-                    if proximity.is_bottom_left_corner_cutout_90:
+                    if proximity.is_bottom_left_corner_concave_90:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.floor_left_wall_sides_bottom_left_corner
-                    elif proximity.is_bottom_left_corner_cutout_90_vertical_to_45:
+                    elif proximity.is_bottom_left_corner_concave_90_vertical_to_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floor_and_left_wall.a90_vertical_to_a45
-                    elif proximity.is_bottom_left_corner_cutout_90_horizontal_to_45:
+                    elif proximity.is_bottom_left_corner_concave_90_horizontal_to_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floor_and_left_wall.a90_horizontal_to_a45
                     else:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floor_and_left_wall.a45
@@ -748,8 +748,8 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_left_a45.both
                     elif proximity.is_floor_with_45_curve_in_at_right:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_right_a45.both
-                    elif proximity.is_bottom_left_corner_cutout_partial_45 or \
-                            proximity.is_bottom_right_corner_cutout_partial_45:
+                    elif proximity.is_bottom_left_corner_concave_partial_45 or \
+                            proximity.is_bottom_right_corner_concave_partial_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.both
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.floor_side_bottom_left_bottom_right_corners
@@ -761,11 +761,11 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_left_a45.bottom_left
                     elif proximity.is_floor_with_45_curve_in_at_right:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_right_a45.bottom_left
-                    elif proximity.is_bottom_left_corner_cutout_45:
+                    elif proximity.is_bottom_left_corner_concave_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.bottom_left
-                    elif proximity.is_bottom_left_corner_cutout_90_vertical_to_45:
+                    elif proximity.is_bottom_left_corner_concave_90_vertical_to_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.bottom_left
-                    elif proximity.is_bottom_left_corner_cutout_90_horizontal_to_45:
+                    elif proximity.is_bottom_left_corner_concave_90_horizontal_to_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.bottom_left
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.floor_side_bottom_left_corner
@@ -777,7 +777,7 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_left_a45.bottom_right
                 elif proximity.is_floor_with_45_curve_in_at_right:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.to_right_a45.bottom_right
-                elif proximity.is_bottom_right_corner_cutout_partial_45:
+                elif proximity.is_bottom_right_corner_concave_partial_45:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.floors.bottom_right
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.floor_side_bottom_right_corner
@@ -821,11 +821,11 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
             else:
                 if proximity.is_top_right_empty:
                     if proximity.is_angle_type_90:
-                        if proximity.is_top_right_corner_cutout_90:
+                        if proximity.is_top_right_corner_concave_90:
                             return A90_EXTERIOR_SUBTILE_POSITIONS.right_wall_ceiling_sides_top_right_corner
-                        elif proximity.is_top_right_corner_cutout_90_vertical_to_45:
+                        elif proximity.is_top_right_corner_concave_90_vertical_to_45:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceiling_and_right_wall.a90_vertical_to_a45
-                        elif proximity.is_top_right_corner_cutout_90_horizontal_to_45:
+                        elif proximity.is_top_right_corner_concave_90_horizontal_to_45:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceiling_and_right_wall.a90_horizontal_to_a45
                         else:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceiling_and_right_wall.a45
@@ -865,11 +865,11 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
         elif proximity.is_right_empty:
             if proximity.is_top_left_empty:
                 if proximity.is_angle_type_90:
-                    if proximity.is_top_left_corner_cutout_90:
+                    if proximity.is_top_left_corner_concave_90:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall_ceiling_sides_top_left_corner
-                    elif proximity.is_top_left_corner_cutout_90_vertical_to_45:
+                    elif proximity.is_top_left_corner_concave_90_vertical_to_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceiling_and_left_wall.a90_vertical_to_a45
-                    elif proximity.is_top_left_corner_cutout_90_horizontal_to_45:
+                    elif proximity.is_top_left_corner_concave_90_horizontal_to_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceiling_and_left_wall.a90_horizontal_to_a45
                     else:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceiling_and_left_wall.a45
@@ -917,8 +917,8 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_left_a45.both
                     elif proximity.is_ceiling_with_45_curve_in_at_right:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_right_a45.both
-                    elif proximity.is_top_left_corner_cutout_partial_45 or \
-                            proximity.is_top_right_corner_cutout_partial_45:
+                    elif proximity.is_top_left_corner_concave_partial_45 or \
+                            proximity.is_top_right_corner_concave_partial_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.both
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.ceiling_side_top_left_top_right_corners
@@ -930,7 +930,7 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_left_a45.top_left
                     elif proximity.is_ceiling_with_45_curve_in_at_right:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_right_a45.top_left
-                    elif proximity.is_top_left_corner_cutout_partial_45:
+                    elif proximity.is_top_left_corner_concave_partial_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.top_left
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.ceiling_side_top_left_corner
@@ -942,7 +942,7 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_left_a45.top_right
                 elif proximity.is_ceiling_with_45_curve_in_at_right:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.to_right_a45.top_right
-                elif proximity.is_top_right_corner_cutout_partial_45:
+                elif proximity.is_top_right_corner_concave_partial_45:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.ceilings.top_right
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.ceiling_side_top_right_corner
@@ -1009,8 +1009,8 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_top_a45.both
                     elif proximity.is_right_wall_with_45_curve_in_at_bottom:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_bottom_a45.both
-                    elif proximity.is_top_right_corner_cutout_partial_45 or \
-                            proximity.is_bottom_right_corner_cutout_partial_45:
+                    elif proximity.is_top_right_corner_concave_partial_45 or \
+                            proximity.is_bottom_right_corner_concave_partial_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.both
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.right_wall_side_top_right_bottom_right_corners
@@ -1022,7 +1022,7 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                             return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_top_a45.top_right
                     elif proximity.is_right_wall_with_45_curve_in_at_bottom:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_bottom_a45.top_right
-                    elif proximity.is_top_right_corner_cutout_partial_45:
+                    elif proximity.is_top_right_corner_concave_partial_45:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.top_right
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.right_wall_side_top_right_corner
@@ -1034,7 +1034,7 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_top_a45.bottom_right
                 elif proximity.is_right_wall_with_45_curve_in_at_bottom:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.to_bottom_a45.bottom_right
-                elif proximity.is_bottom_right_corner_cutout_partial_45:
+                elif proximity.is_bottom_right_corner_concave_partial_45:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.right_walls.bottom_right
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.right_wall_side_bottom_right_corner
@@ -1060,8 +1060,8 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_top_a45.both
                 elif proximity.is_left_wall_with_45_curve_in_at_bottom:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_bottom_a45.both
-                elif proximity.is_top_left_corner_cutout_partial_45 or \
-                        proximity.is_bottom_left_corner_cutout_partial_45:
+                elif proximity.is_top_left_corner_concave_partial_45 or \
+                        proximity.is_bottom_left_corner_concave_partial_45:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.both
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall_side_top_left_bottom_left_corners
@@ -1073,7 +1073,7 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                         return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_top_a45.top_left
                 elif proximity.is_left_wall_with_45_curve_in_at_bottom:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_bottom_a45.top_left
-                elif proximity.is_top_left_corner_cutout_partial_45:
+                elif proximity.is_top_left_corner_concave_partial_45:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.top_left
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall_side_top_left_corner
@@ -1085,7 +1085,7 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                     return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_top_a45.bottom_left
             elif proximity.is_left_wall_with_45_curve_in_at_bottom:
                 return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.to_bottom_a45.bottom_left
-            elif proximity.is_bottom_left_corner_cutout_partial_45:
+            elif proximity.is_bottom_left_corner_concave_partial_45:
                 return A90_A45_EXTERIOR_JOINS.a90_sides_with_cutout_corners.left_walls.bottom_left
             else:
                 return A90_EXTERIOR_SUBTILE_POSITIONS.left_wall_side_bottom_left_corner
@@ -1106,44 +1106,44 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
             if proximity.is_top_right_empty:
                 if proximity.is_bottom_left_empty:
                     if proximity.is_bottom_right_empty:
-                        if proximity.is_any_corner_cutout_partial_45:
+                        if proximity.is_any_corner_concave_partial_45:
                             return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.all
                         else:
                             return A90_EXTERIOR_SUBTILE_POSITIONS.all_corners
                     else:
-                        if proximity.is_any_corner_cutout_partial_45:
+                        if proximity.is_any_corner_concave_partial_45:
                             return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_top_right_bottom_left
                         else:
                             return A90_EXTERIOR_SUBTILE_POSITIONS.top_left_top_right_bottom_left_corners
                 elif proximity.is_bottom_right_empty:
-                    if proximity.is_any_corner_cutout_partial_45:
+                    if proximity.is_any_corner_concave_partial_45:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_top_right_bottom_right
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.top_left_top_right_bottom_right_corners
                 else:
-                    if proximity.is_any_corner_cutout_partial_45:
+                    if proximity.is_any_corner_concave_partial_45:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_top_right
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.top_left_top_right_corners
             elif proximity.is_bottom_left_empty:
                 if proximity.is_bottom_right_empty:
-                    if proximity.is_any_corner_cutout_partial_45:
+                    if proximity.is_any_corner_concave_partial_45:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_bottom_left_bottom_right
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.top_left_bottom_left_bottom_right_corners
                 else:
-                    if proximity.is_any_corner_cutout_partial_45:
+                    if proximity.is_any_corner_concave_partial_45:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_bottom_left
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.top_left_bottom_left_corners
             elif proximity.is_bottom_right_empty:
-                if proximity.is_any_corner_cutout_partial_45:
+                if proximity.is_any_corner_concave_partial_45:
                     return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left_bottom_right
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.top_left_bottom_right_corners
             else:
                 # Only exposed at top-left.
-                if proximity.is_top_left_corner_cutout_partial_45:
+                if proximity.is_top_left_corner_concave_partial_45:
                     if proximity.is_bottom_right_empty_at_bottom_or_right:
                         # FIXME: LEFT OFF HERE: ------------
                         # - Replace with a non-tile-type-specific check; instead, check for a 90-90 cutout IN THE NEIGHBOR.
@@ -1159,9 +1159,9 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                             proximity.is_bottom_empty_at_bottom:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left.exposed_a90_bottom_right_sides
                     else:
-                        if proximity.is_top_left_corner_cutout_90_vertical_to_45:
+                        if proximity.is_top_left_corner_concave_90_vertical_to_45:
                             return A90_A45_EXTERIOR_JOINS.left_walls.bottom_45_concave
-                        elif proximity.is_top_left_corner_cutout_90_horizontal_to_45:
+                        elif proximity.is_top_left_corner_concave_90_horizontal_to_45:
                             return A90_A45_EXTERIOR_JOINS.floors.right_45_concave
                         else:
                             return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_left.not_exposed
@@ -1171,23 +1171,23 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
             # Not exposed at top-left corner.
             if proximity.is_bottom_left_empty:
                 if proximity.is_bottom_right_empty:
-                    if proximity.is_any_corner_cutout_partial_45:
+                    if proximity.is_any_corner_concave_partial_45:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right_bottom_left_bottom_right
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.top_right_bottom_left_bottom_right_corners
                 else:
-                    if proximity.is_any_corner_cutout_partial_45:
+                    if proximity.is_any_corner_concave_partial_45:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right_bottom_left
                     else:
                         return A90_EXTERIOR_SUBTILE_POSITIONS.top_right_bottom_left_corners
             elif proximity.is_bottom_right_empty:
-                if proximity.is_any_corner_cutout_partial_45:
+                if proximity.is_any_corner_concave_partial_45:
                     return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right_bottom_right
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.top_right_bottom_right_corners
             else:
                 # Only exposed at top-right.
-                if proximity.is_top_right_corner_cutout_partial_45:
+                if proximity.is_top_right_corner_concave_partial_45:
                     if proximity.is_bottom_left_empty_at_bottom_or_left:
                         # FIXME: LEFT OFF HERE: ------------
                         # - Replace with a non-tile-type-specific check; instead, check for a 90-90 cutout IN THE NEIGHBOR.
@@ -1203,9 +1203,9 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                             proximity.is_bottom_empty_at_bottom:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right.exposed_a90_bottom_left_sides
                     else:
-                        if proximity.is_top_right_corner_cutout_90_vertical_to_45:
+                        if proximity.is_top_right_corner_concave_90_vertical_to_45:
                             return A90_A45_EXTERIOR_JOINS.right_walls.bottom_45_concave
-                        elif proximity.is_top_right_corner_cutout_90_horizontal_to_45:
+                        elif proximity.is_top_right_corner_concave_90_horizontal_to_45:
                             return A90_A45_EXTERIOR_JOINS.floors.left_45_concave
                         else:
                             return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.top_right.not_exposed
@@ -1214,13 +1214,13 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
         elif proximity.is_bottom_left_empty:
             # Not exposed at top corners.
             if proximity.is_bottom_right_empty:
-                if proximity.is_any_corner_cutout_partial_45:
+                if proximity.is_any_corner_concave_partial_45:
                     return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left_bottom_right
                 else:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.bottom_left_bottom_right_corners
             else:
                 # Only exposed at bottom-left.
-                if proximity.is_bottom_left_corner_cutout_partial_45:
+                if proximity.is_bottom_left_corner_concave_partial_45:
                     if proximity.is_top_right_empty_at_top_or_right:
                         # FIXME: LEFT OFF HERE: ------------
                         # - Replace with a non-tile-type-specific check; instead, check for a 90-90 cutout IN THE NEIGHBOR.
@@ -1236,9 +1236,9 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                             proximity.is_top_empty_at_top:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left.exposed_a90_top_right_sides
                     else:
-                        if proximity.is_bottom_left_corner_cutout_90_vertical_to_45:
+                        if proximity.is_bottom_left_corner_concave_90_vertical_to_45:
                             return A90_A45_EXTERIOR_JOINS.left_walls.top_45_concave
-                        elif proximity.is_bottom_left_corner_cutout_90_horizontal_to_45:
+                        elif proximity.is_bottom_left_corner_concave_90_horizontal_to_45:
                             return A90_A45_EXTERIOR_JOINS.ceilings.right_45_concave
                         else:
                             return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_left.not_exposed
@@ -1246,7 +1246,7 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                     return A90_EXTERIOR_SUBTILE_POSITIONS.bottom_left_corner
         elif proximity.is_bottom_right_empty:
             # Only exposed at bottom-right.
-            if proximity.is_bottom_right_corner_cutout_partial_45:
+            if proximity.is_bottom_right_corner_concave_partial_45:
                 if proximity.is_top_left_empty_at_top_or_left:
                     # FIXME: LEFT OFF HERE: ------------
                     # - Replace with a non-tile-type-specific check; instead, check for a 90-90 cutout IN THE NEIGHBOR.
@@ -1262,9 +1262,9 @@ static func _choose_subtile(proximity: CellProximity) -> Vector2:
                         proximity.is_top_empty_at_top:
                     return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right.exposed_a90_top_left_sides
                 else:
-                    if proximity.is_bottom_right_corner_cutout_90_vertical_to_45:
+                    if proximity.is_bottom_right_corner_concave_90_vertical_to_45:
                         return A90_A45_EXTERIOR_JOINS.right_walls.top_45_concave
-                    elif proximity.is_bottom_right_corner_cutout_90_horizontal_to_45:
+                    elif proximity.is_bottom_right_corner_concave_90_horizontal_to_45:
                         return A90_A45_EXTERIOR_JOINS.ceilings.left_45_concave
                     else:
                         return A45_EXTERIOR_SUBTILE_POSITIONS.cutout_corners.bottom_right.not_exposed
