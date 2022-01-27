@@ -68,11 +68,27 @@ const _TILES_MANIFEST := [
     },
 ]
 
+# Subtile configuration specification:
+# {
+#     # Required.
+#     p: Vector2,
+#     a: Array<90|45|27>,
+#     tl: SubtileBinding,
+#     tr: SubtileBinding,
+#     bl: SubtileBinding,
+#     br: SubtileBinding,
+#     
+#     # Optional.
+#     in_bound_t_bl: SubtileBinding,
+#     in_bound_t_br: SubtileBinding,
+#     in_bound_b_tl: SubtileBinding,
+#     in_bound_b_tr: SubtileBinding,
+# }
+
 # NOTE:
 # -   This must to be kept in-sync with the corresponding tile-set image.
 # -   Autotile bitmasks must also be defined using the normal Godot TileSet
 #     editor.
-# - 
 const _SUBTILES_MANIFEST := {
     # FIXME: LEFT OFF HERE: -----------------------------------------
     # - Don't encode bitmasks here!
@@ -101,30 +117,13 @@ const _SUBTILES_MANIFEST := {
     error_indicator_subtile_position = Vector2(10,1),
     subtiles = [
         {
-            position = Vector2(),
-            angles = [90],
+            p = Vector2(),
+            a = [90],
 #            top_left = 
 #            interior_exposure = ,
         },
     ],
 }
-
-# Subtile configuration specification:
-# {
-#     # Required.
-#     p: Vector2,
-#     a: Array<90|45|27>,
-#     tl: SubtileBinding,
-#     tr: SubtileBinding,
-#     bl: SubtileBinding,
-#     br: SubtileBinding,
-#     
-#     # Optional.
-#     in_bound_t_bl: SubtileBinding,
-#     in_bound_t_br: SubtileBinding,
-#     in_bound_b_tl: SubtileBinding,
-#     in_bound_b_tr: SubtileBinding,
-# }
 
 const _ALLOWS_PARTIAL_MATCHES := true
 const _SUPPORTS_RUNTIME_AUTOTILING := false
