@@ -8,6 +8,8 @@ extends SubtileCorner
 #     editor.
 const SUBTILES := {
     error_indicator_subtile_position = Vector2(10,1),
+    fully_exterior_subtile_position = Vector2(0,3),
+    fully_interior_subtile_position = Vector2(1,5),
     # FIXME: LEFT OFF HERE: ----------------------------------------------
     # - Update this with the current subtiles.
     
