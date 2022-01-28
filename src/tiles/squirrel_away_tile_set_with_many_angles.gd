@@ -79,10 +79,14 @@ const _TILES_MANIFEST := [
 #     br: SubtileBinding,
 #     
 #     # Optional.
-#     in_bound_t_bl: SubtileBinding,
-#     in_bound_t_br: SubtileBinding,
-#     in_bound_b_tl: SubtileBinding,
-#     in_bound_b_tr: SubtileBinding,
+#     inbound_t_bl: SubtileBinding,
+#     inbound_t_br: SubtileBinding,
+#     inbound_b_tl: SubtileBinding,
+#     inbound_b_tr: SubtileBinding,
+#     inbound_l_tr: SubtileBinding,
+#     inbound_l_br: SubtileBinding,
+#     inbound_r_tl: SubtileBinding,
+#     inbound_r_bl: SubtileBinding,
 # }
 
 # NOTE:
