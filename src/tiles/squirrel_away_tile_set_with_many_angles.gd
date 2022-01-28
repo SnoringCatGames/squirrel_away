@@ -68,27 +68,6 @@ const _TILES_MANIFEST := [
     },
 ]
 
-# Subtile configuration specification:
-# {
-#     # Required.
-#     p: Vector2,
-#     a: Array<90|45|27>,
-#     tl: SubtileBinding,
-#     tr: SubtileBinding,
-#     bl: SubtileBinding,
-#     br: SubtileBinding,
-#     
-#     # Optional.
-#     inbound_t_bl?: SubtileBinding,
-#     inbound_t_br?: SubtileBinding,
-#     inbound_b_tl?: SubtileBinding,
-#     inbound_b_tr?: SubtileBinding,
-#     inbound_l_tr?: SubtileBinding,
-#     inbound_l_br?: SubtileBinding,
-#     inbound_r_tl?: SubtileBinding,
-#     inbound_r_bl?: SubtileBinding,
-# }
-
 # NOTE:
 # -   This must to be kept in-sync with the corresponding tile-set image.
 # -   Autotile bitmasks must also be defined using the normal Godot TileSet
