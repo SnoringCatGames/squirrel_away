@@ -539,7 +539,7 @@ func _forward_subtile_selection(
         bitmask: int,
         tile_map: Object,
         cell_position: Vector2):
-    var proximity := CellProximityOld.new(
+    var proximity := CellProximityV1.new(
             tile_map,
             self,
             cell_position,
@@ -558,7 +558,7 @@ func _forward_subtile_selection(
         return
 
 
-static func _choose_subtile(proximity: CellProximityOld) -> Vector2:
+static func _choose_subtile(proximity: CellProximityV1) -> Vector2:
     if proximity.is_top_empty:
         if proximity.is_bottom_empty:
             if proximity.is_left_empty:
@@ -1277,7 +1277,7 @@ static func _choose_subtile(proximity: CellProximityOld) -> Vector2:
     return Vector2.INF
 
 
-static func _choose_interior_subtile(proximity: CellProximityOld) -> Vector2:
+static func _choose_interior_subtile(proximity: CellProximityV1) -> Vector2:
     # FIXME: LEFT OFF HERE: ------------ Distinguish between 90 and 45 degrees according to neighbors.
     
     if proximity.is_top_empty_around_top:
