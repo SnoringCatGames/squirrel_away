@@ -72,9 +72,10 @@ const _ALLOWS_PARTIAL_MATCHES := true
 const _SUPPORTS_RUNTIME_AUTOTILING := false
 
 
+# FIXME: LEFT OFF HERE: --------------------------------
 func _init().(
         _TILES_MANIFEST,
-        SquirrelAwaySubtilesManifest.SUBTILES,
+        {},
         _ALLOWS_PARTIAL_MATCHES,
         _SUPPORTS_RUNTIME_AUTOTILING) -> void:
     pass
