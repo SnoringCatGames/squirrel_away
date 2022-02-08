@@ -1,5 +1,5 @@
 class_name SquirrelAwaySubtilesManifest
-extends SubtileCorner
+extends SubtileCornerV2
 
 
 # NOTE:
@@ -12,14 +12,14 @@ const SUBTILES := {
     # - Update this with the current subtiles.
     
     # FIXME: LEFT OFF HERE: ------------ Add inbound properties.
-#     inbound_t_bl?: SubtileCorner,
-#     inbound_t_br?: SubtileCorner,
-#     inbound_b_tl?: SubtileCorner,
-#     inbound_b_tr?: SubtileCorner,
-#     inbound_l_tr?: SubtileCorner,
-#     inbound_l_br?: SubtileCorner,
-#     inbound_r_tl?: SubtileCorner,
-#     inbound_r_bl?: SubtileCorner,
+#     inbound_t_bl?: SubtileCornerV2,
+#     inbound_t_br?: SubtileCornerV2,
+#     inbound_b_tl?: SubtileCornerV2,
+#     inbound_b_tr?: SubtileCornerV2,
+#     inbound_l_tr?: SubtileCornerV2,
+#     inbound_l_br?: SubtileCornerV2,
+#     inbound_r_tl?: SubtileCornerV2,
+#     inbound_r_bl?: SubtileCornerV2,
     subtiles = [
         {
             p = Vector2(0,0),
