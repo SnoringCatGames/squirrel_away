@@ -923,6 +923,8 @@ var _subtile_manifest := {
     tile_set = preload("res://addons/squirrel_away/src/tiles/squirrel_away_tile_set_with_many_angles.tres"),
     tile_set_image_parser_class = preload("res://addons/surfacer/src/tiles/tile_set_image_parser.gd"),
     subtile_target_corner_calculator_class = preload("res://addons/surfacer/src/tiles/subtile_target_corner_calculator.gd"),
+    initializer_class = preload("res://addons/surfacer/src/tiles/corner_match_autotile_initializer.gd"),
+    shape_calculator_class = preload("res://addons/surfacer/src/tiles/corner_match_autotile_shape_calculator.gd"),
     
     corner_types_to_swap_for_bottom_quadrants = [
         [SubtileCorner.EXT_45_FLOOR, SubtileCorner.EXT_45_CEILING],
