@@ -908,9 +908,13 @@ var _surface_properties_manifest := {
 
 var _subtile_manifest := {
     quadrant_size = 16,
+    subtile_collision_margin = 3.0,
     autotile_name_prefix = "autotile_",
     are_45_degree_subtiles_used = true,
     are_27_degree_subtiles_used = false,
+    forces_convex_collision_shapes = true,
+    allows_partial_matches = true,
+    supports_runtime_autotiling = true,
     
     corner_type_annotation_key_path = "res://addons/squirrel_away/assets/images/foreground/corner_type_annotation_key.png",
     tile_set_quadrants_path = "res://addons/squirrel_away/assets/images/foreground/tileset_quadrants.png",
