@@ -10,7 +10,7 @@ func _on_started_colliding(
         "squirrels":
             _on_caught_squirrel()
         _:
-            Sc.logger.error()
+            Sc.logger.error("Cat._on_started_colliding")
 
 
 func _on_caught_squirrel() -> void:
