@@ -1,6 +1,6 @@
-[gd_resource type="TileSet" load_steps=810 format=2]
+[gd_resource type="TileSet" load_steps=811 format=2]
 
-[ext_resource path="res://addons/squirrel_away/src/tiles/squirrel_away_tile_set_with_many_angles.gd" type="Script" id=1]
+[ext_resource path="res://addons/surfacer/src/tiles/corner_match_tileset.gd" type="Script" id=1]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/tiles_with_many_angles.png" type="Texture" id=2]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/slippery_tiles.png" type="Texture" id=3]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/sticky_tiles.png" type="Texture" id=4]
@@ -8,6 +8,7 @@
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/ungrabbable_tiles.png" type="Texture" id=6]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/slow_tiles.png" type="Texture" id=7]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/tiles_with_separated_depths_v1.png" type="Texture" id=8]
+[ext_resource path="res://addons/squirrel_away/assets/images/foreground/tileset_quadrants.png" type="Texture" id=9]
 
 [sub_resource type="OccluderPolygon2D" id=167]
 polygon = PoolVector2Array( 29, 32, 3, 32, 3, 3, 29, 3 )
@@ -5950,4 +5951,51 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 17/shape_one_way_margin = 0.0
 17/shapes = [  ]
 17/z_index = 0
+18/name = "autotile_90"
+18/texture = ExtResource( 9 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 0, 0, 512, 1408 )
+18/tile_mode = 1
+18/autotile/bitmask_mode = 1
+18/autotile/bitmask_flags = [  ]
+18/autotile/icon_coordinate = Vector2( 0, 0 )
+18/autotile/tile_size = Vector2( 32, 32 )
+18/autotile/spacing = 0
+18/autotile/occluder_map = [  ]
+18/autotile/navpoly_map = [  ]
+18/autotile/priority_map = [  ]
+18/autotile/z_index_map = [  ]
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shape_offset = Vector2( 0, 0 )
+18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+18/shape_one_way = false
+18/shape_one_way_margin = 0.0
+18/shapes = [  ]
+18/z_index = 0
+19/name = "autotile_45"
+19/texture = ExtResource( 9 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 0, 0, 512, 1408 )
+19/tile_mode = 1
+19/autotile/bitmask_mode = 1
+19/autotile/bitmask_flags = [  ]
+19/autotile/icon_coordinate = Vector2( 0, 0 )
+19/autotile/tile_size = Vector2( 32, 32 )
+19/autotile/spacing = 0
+19/autotile/occluder_map = [  ]
+19/autotile/navpoly_map = [  ]
+19/autotile/priority_map = [  ]
+19/autotile/z_index_map = [  ]
+19/occluder_offset = Vector2( 0, 0 )
+19/navigation_offset = Vector2( 0, 0 )
+19/shape_offset = Vector2( 0, 0 )
+19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+19/shape_one_way = false
+19/shape_one_way_margin = 0.0
+19/shapes = [  ]
+19/z_index = 0
 script = ExtResource( 1 )
+tile_set_id = ""

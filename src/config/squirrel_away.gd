@@ -933,6 +933,78 @@ var _subtile_manifest := {
     ],
 }
 
+# FIXME: LEFT OFF HERE: --------------------------------------------
+var _tileset_manifest := {
+    tilesets = [
+        {
+            tiles = [
+                {
+                    name = "0_tile_with_90s",
+                    angle = CellAngleType.A90,
+                    properties = "",
+                    is_collidable = true,
+                },
+                {
+                    name = "1_tile_with_45s",
+                    angle = CellAngleType.A45,
+                    properties = "",
+                    is_collidable = true,
+                },
+                {
+                    name = "2_tile_with_27s",
+                    angle = CellAngleType.A27,
+                    properties = "",
+                    is_collidable = true,
+                },
+                {
+                    name = "ungrabbable_tile",
+                    angle = CellAngleType.A90,
+                    properties = "disabled",
+                    is_collidable = true,
+                },
+                {
+                    name = "slippery_tile",
+                    angle = CellAngleType.A90,
+                    properties = "slippery",
+                    is_collidable = true,
+                },
+                {
+                    name = "sticky_tile",
+                    angle = CellAngleType.A90,
+                    properties = "sticky",
+                    is_collidable = true,
+                },
+                {
+                    name = "fast_tile",
+                    angle = CellAngleType.A90,
+                    properties = "fast",
+                    is_collidable = true,
+                },
+                {
+                    name = "slow_tile",
+                    angle = CellAngleType.A90,
+                    properties = "slow",
+                    is_collidable = true,
+                },
+                
+                # FIXME: ----------------- REMOVE
+                {
+                    name = "0_tile_with_90s_old",
+                    angle = CellAngleType.A90,
+                    properties = "",
+                    is_collidable = true,
+                },
+                {
+                    name = "1_tile_with_45s_old",
+                    angle = CellAngleType.A45,
+                    properties = "",
+                    is_collidable = true,
+                },
+            ],
+        },
+    ],
+}
+
 var _movement_manifest := {
     uses_point_and_click_navigation = true,
     cancels_point_and_click_nav_on_key_press = true,
