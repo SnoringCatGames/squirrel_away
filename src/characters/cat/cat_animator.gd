@@ -71,5 +71,5 @@ func _standand_animation_name_to_specific_animation_name(
         "CrawlOnCeiling":
             return "CrawlOnCeiling"
         _:
-            Sc.logger.error()
+            Sc.logger.error("CatAnimator._standand_animation_name_to_specific_animation_name")
             return ""

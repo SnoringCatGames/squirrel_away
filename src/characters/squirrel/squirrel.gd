@@ -17,7 +17,7 @@ func _on_entered_proximity(
         "cats":
             _run_away(target)
         _:
-            Sc.logger.error()
+            Sc.logger.error("Squirrel._on_entered_proximity")
 
 
 func _run_away(cat: Cat) -> void:
