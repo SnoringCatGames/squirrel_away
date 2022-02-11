@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=1307 format=2]
 
-[ext_resource path="res://addons/surfacer/src/tiles/surface_tiler/corner_match_tileset.gd" type="Script" id=1]
+[ext_resource path="res://addons/surface_tiler/corner_match_tileset.gd" type="Script" id=1]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/tiles_with_many_angles.png" type="Texture" id=2]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/slippery_tiles.png" type="Texture" id=3]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/sticky_tiles.png" type="Texture" id=4]
