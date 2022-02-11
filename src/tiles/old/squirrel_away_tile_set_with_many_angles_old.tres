@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=759 format=2]
 
 [ext_resource path="res://addons/squirrel_away/src/tiles/squirrel_away_tile_set_with_many_angles.gd" type="Script" id=1]
-[ext_resource path="res://addons/surfacer/assets/images/tile_template_with_many_angles.png" type="Texture" id=2]
+[ext_resource path="res://addons/surface_tiler/assets/images/tile_template_with_many_angles.png" type="Texture" id=2]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/slippery_tiles.png" type="Texture" id=3]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/sticky_tiles.png" type="Texture" id=4]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/fast_tiles.png" type="Texture" id=5]
