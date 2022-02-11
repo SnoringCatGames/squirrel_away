@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=1307 format=2]
 
-[ext_resource path="res://addons/surface_tiler/corner_match_tileset.gd" type="Script" id=1]
+[ext_resource path="res://addons/surface_tiler/src/corner_match_tileset.gd" type="Script" id=1]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/tiles_with_many_angles.png" type="Texture" id=2]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/slippery_tiles.png" type="Texture" id=3]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/sticky_tiles.png" type="Texture" id=4]
@@ -9,6 +9,7 @@
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/slow_tiles.png" type="Texture" id=7]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/tiles_with_separated_depths_v1.png" type="Texture" id=8]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/tileset_quadrants.png" type="Texture" id=9]
+
 
 [sub_resource type="OccluderPolygon2D" id=167]
 polygon = PoolVector2Array( 29, 32, 3, 32, 3, 3, 29, 3 )
