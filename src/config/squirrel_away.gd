@@ -907,24 +907,14 @@ var _surface_properties_manifest := {
 }
 
 var _subtile_manifest := {
-    quadrant_size = 16,
-    subtile_collision_margin = 3.0,
     autotile_name_prefix = "autotile_",
-    are_45_degree_subtiles_used = true,
-    are_27_degree_subtiles_used = false,
     forces_convex_collision_shapes = true,
     allows_partial_matches = true,
     supports_runtime_autotiling = true,
     
     corner_type_annotation_key_path = \
             "res://addons/surface_tiler/assets/images/corner_type_annotation_key.png",
-    tile_set_quadrants_path = \
-            "res://addons/surface_tiler/assets/images/tileset_quadrants.png",
-    tile_set_corner_type_annotations_path = \
-            "res://addons/surface_tiler/assets/images/tileset_corner_type_annotations.png",
     
-    tile_set = \
-            preload("res://addons/squirrel_away/src/tiles/squirrel_away_tile_set_with_many_angles.tres"),
     tile_set_image_parser_class = \
             preload("res://addons/surface_tiler/src/tile_set_image_parser.gd"),
     subtile_target_corner_calculator_class = \
@@ -933,6 +923,23 @@ var _subtile_manifest := {
             preload("res://addons/surface_tiler/src/corner_match_tileset_initializer.gd"),
     shape_calculator_class = \
             preload("res://addons/surface_tiler/src/corner_match_tileset_shape_calculator.gd"),
+    
+    # FIXME: LEFT OFF HERE: -------
+    # - Use this new tile-set config structure.
+    tile_sets = [
+        {
+            tile_set_quadrants_path = \
+                    "res://addons/surface_tiler/assets/images/tileset_quadrants.png",
+            tile_set_corner_type_annotations_path = \
+                    "res://addons/surface_tiler/assets/images/tileset_corner_type_annotations.png",
+            tile_set = \
+                    preload("res://addons/squirrel_away/src/tiles/squirrel_away_tile_set_with_many_angles.tres"),
+            quadrant_size = 16,
+            subtile_collision_margin = 3.0,
+            are_45_degree_subtiles_used = true,
+            are_27_degree_subtiles_used = false,
+        },
+    ],
     
     corner_types_to_swap_for_bottom_quadrants = [
         [SubtileCorner.EXT_45_FLOOR, SubtileCorner.EXT_45_CEILING],
