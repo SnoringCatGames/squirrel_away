@@ -907,7 +907,8 @@ var _surface_properties_manifest := {
 }
 
 var _subtile_manifest := {
-    autotile_name_prefix = "autotile_",
+    outer_autotile_name_prefix = "*autotile_",
+    inner_autotile_name = "__INNER_TILE__",
     forces_convex_collision_shapes = true,
     allows_fallback_corner_matches = true,
     allows_non_fallback_corner_matches = false,
@@ -955,19 +956,19 @@ var _tileset_manifest := {
         {
             tiles = [
                 {
-                    name = "0_tile_with_90s",
+                    name = "old_0_tile_with_90s",
                     angle = CellAngleType.A90,
                     properties = "",
                     is_collidable = true,
                 },
                 {
-                    name = "1_tile_with_45s",
+                    name = "old_1_tile_with_45s",
                     angle = CellAngleType.A45,
                     properties = "",
                     is_collidable = true,
                 },
                 {
-                    name = "2_tile_with_27s",
+                    name = "old_2_tile_with_27s",
                     angle = CellAngleType.A27,
                     properties = "",
                     is_collidable = true,
@@ -1005,13 +1006,13 @@ var _tileset_manifest := {
                 
                 # FIXME: ----------------- REMOVE
                 {
-                    name = "0_tile_with_90s_old",
+                    name = "old_0_tile_with_90s_old",
                     angle = CellAngleType.A90,
                     properties = "",
                     is_collidable = true,
                 },
                 {
-                    name = "1_tile_with_45s_old",
+                    name = "old_1_tile_with_45s_old",
                     angle = CellAngleType.A45,
                     properties = "",
                     is_collidable = true,
