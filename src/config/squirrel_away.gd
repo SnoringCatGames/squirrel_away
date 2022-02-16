@@ -908,7 +908,7 @@ var _surface_properties_manifest := {
 
 var _subtile_manifest := {
     outer_autotile_name_prefix = "*autotile_",
-    inner_autotile_name = "__INNER_TILE__",
+    inner_autotile_name = "*__inner_autotile__",
     forces_convex_collision_shapes = true,
     allows_fallback_corner_matches = true,
     allows_non_fallback_corner_matches = false,
