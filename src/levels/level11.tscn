@@ -16,9 +16,10 @@ level_id = "11"
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
 [node name="SquirrelAwayTileMapWithManyAngles" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( -65538, 27, 0, -65537, 27, 0, -131072, 27, 0, -131071, 27, 0 )
 id = "11"
 
-[node name="InnerTileMap_DontEdit" type="TileMap" parent="SquirrelAwayTileMapWithManyAngles"]
+[node name="InnerTileMap" type="TileMap" parent="SquirrelAwayTileMapWithManyAngles"]
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 16, 16 )
 format = 1
