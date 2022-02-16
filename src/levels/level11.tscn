@@ -16,13 +16,14 @@ level_id = "11"
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
 [node name="SquirrelAwayTileMapWithManyAngles" parent="." instance=ExtResource( 2 )]
-tile_data = PoolIntArray( -65538, 27, 0, -65537, 27, 0, -131072, 27, 0, -131071, 27, 0 )
+tile_data = PoolIntArray( -327682, 27, 0, -327681, 27, 0, -393216, 27, 0, -393215, 27, 0, -65538, 27, 0, -65537, 27, 0, -131072, 27, 0, -131071, 27, 0 )
 id = "11"
 
 [node name="InnerTileMap" type="TileMap" parent="SquirrelAwayTileMapWithManyAngles"]
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 16, 16 )
 format = 1
+tile_data = PoolIntArray( -720900, 28, 4063246, -720899, 28, 4063247, -720898, 28, 1966092, -720897, 28, 1966093, -786432, 28, 1966094, -786431, 28, 1966095, -786430, 28, 4063252, -786429, 28, 4063253, -655364, 28, 4128782, -655363, 28, 4128783, -655362, 28, 2162700, -655361, 28, 2162701, -720896, 28, 2162702, -720895, 28, 2162703, -720894, 28, 4128788, -720893, 28, 4128789 )
 script = ExtResource( 8 )
 
 [node name="IntroChoreographyDestination" type="Position2D" parent="." groups=["intro_choreography_destination"]]
