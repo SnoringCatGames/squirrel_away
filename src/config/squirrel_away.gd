@@ -942,27 +942,6 @@ var _subtile_manifest := {
             are_27_degree_subtiles_used = false,
         },
     ],
-    
-    corner_types_to_swap_for_bottom_quadrants = [
-        [SubtileCorner.EXT_45_FLOOR,
-            SubtileCorner.EXT_45_CEILING],
-        [SubtileCorner.EXT_INT_45_FLOOR,
-            SubtileCorner.EXT_INT_45_CEILING],
-        [SubtileCorner.INT_45_FLOOR,
-            SubtileCorner.INT_45_CEILING],
-        [SubtileCorner.INT_90H_INT_45_FLOOR,
-            SubtileCorner.INT_90H_INT_45_CEILING],
-        [SubtileCorner.INT_90V_INT_45_FLOOR,
-            SubtileCorner.INT_90V_INT_45_CEILING],
-        [SubtileCorner.INT_90_90_CONVEX_INT_45_FLOOR,
-            SubtileCorner.INT_90_90_CONVEX_INT_45_CEILING],
-#        [SubtileCorner.INT_INT_90V_45_CONCAVE_INT_45_FLOOR,
-#            SubtileCorner.INT_INT_90H_45_CONCAVE_INT_45_CEILING],
-        [SubtileCorner.INT_90_90_CONCAVE_INT_45_FLOOR,
-            SubtileCorner.INT_90_90_CONCAVE_INT_45_CEILING],
-#        [SubtileCorner.INT_90_90_CONCAVE_INT_INT_90V_45_CONCAVE_INT_45_FLOOR,
-#            SubtileCorner.INT_90_90_CONCAVE_INT_INT_90H_45_CONCAVE_INT_45_CEILING],
-    ],
 }
 
 # FIXME: LEFT OFF HERE: --------------------------------------------
