@@ -911,7 +911,6 @@ var _subtile_manifest := {
     inner_autotile_name = "__inner_autotile__",
     forces_convex_collision_shapes = true,
     allows_fallback_corner_matches = true,
-    allows_non_fallback_corner_matches = false,
     supports_runtime_autotiling = true,
     
     corner_type_annotation_key_path = \
