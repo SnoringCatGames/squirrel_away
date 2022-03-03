@@ -12,14 +12,14 @@ const SUBTILES := {
     # - Update this with the current subtiles.
     
     # FIXME: LEFT OFF HERE: ------------ Add inbound properties.
-#     inbound_t_bl?: SubtileCornerV2,
-#     inbound_t_br?: SubtileCornerV2,
-#     inbound_b_tl?: SubtileCornerV2,
-#     inbound_b_tr?: SubtileCornerV2,
-#     inbound_l_tr?: SubtileCornerV2,
-#     inbound_l_br?: SubtileCornerV2,
-#     inbound_r_tl?: SubtileCornerV2,
-#     inbound_r_bl?: SubtileCornerV2,
+#     external_t_bl?: SubtileCornerV2,
+#     external_t_br?: SubtileCornerV2,
+#     external_b_tl?: SubtileCornerV2,
+#     external_b_tr?: SubtileCornerV2,
+#     external_l_tr?: SubtileCornerV2,
+#     external_l_br?: SubtileCornerV2,
+#     external_r_tl?: SubtileCornerV2,
+#     external_r_bl?: SubtileCornerV2,
     subtiles = [
         {
             p = Vector2(0,0),
