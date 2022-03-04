@@ -8021,13 +8021,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape": SubResource( 1192 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 2, 40 ),
+"autotile_coord": Vector2( 30, 72 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1192 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 30, 72 ),
+"autotile_coord": Vector2( 2, 40 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1192 ),
@@ -10457,13 +10457,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape": SubResource( 1209 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 1, 40 ),
+"autotile_coord": Vector2( 29, 74 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1209 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 29, 74 ),
+"autotile_coord": Vector2( 1, 40 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1209 ),
@@ -12893,13 +12893,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape": SubResource( 1223 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 10, 87 ),
+"autotile_coord": Vector2( 8, 87 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1223 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 8, 87 ),
+"autotile_coord": Vector2( 10, 87 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1223 ),
@@ -12953,13 +12953,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape": SubResource( 1223 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 2, 39 ),
+"autotile_coord": Vector2( 30, 73 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1223 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 30, 73 ),
+"autotile_coord": Vector2( 2, 39 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1223 ),
@@ -15455,13 +15455,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape": SubResource( 1238 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 1, 39 ),
+"autotile_coord": Vector2( 29, 75 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1238 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 29, 75 ),
+"autotile_coord": Vector2( 1, 39 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1238 ),
