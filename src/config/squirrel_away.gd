@@ -919,8 +919,10 @@ var _subtile_manifest := {
     
     tileset_annotations_parser_class = \
             preload("res://addons/surface_tiler/src/tileset_annotations_parser.gd"),
-    subtile_target_corner_calculator_class = \
+    corner_calculator_class = \
             preload("res://addons/surface_tiler/src/subtile_target_corner_calculator.gd"),
+    quadrant_calculator_class = \
+            preload("res://addons/surface_tiler/src/subtile_target_quadrant_calculator.gd"),
     initializer_class = \
             preload("res://addons/surface_tiler/src/corner_match_tileset_initializer.gd"),
     shape_calculator_class = \
@@ -928,14 +930,14 @@ var _subtile_manifest := {
     
     # FIXME: LEFT OFF HERE: -------
     # - Use this new tile-set config structure.
-    tile_sets = [
+    tilesets = [
         {
-            tile_set_quadrants_path = \
+            tileset_quadrants_path = \
                     "res://addons/surface_tiler/assets/images/tileset_quadrants.png",
-            tile_set_corner_type_annotations_path = \
+            tileset_corner_type_annotations_path = \
                     "res://addons/surface_tiler/assets/images/tileset_corner_type_annotations.png",
             tile_set = \
-                    preload("res://addons/squirrel_away/src/tiles/squirrel_away_tile_set_with_many_angles.tres"),
+                    preload("res://addons/squirrel_away/src/tiles/squirrel_away_tileset_with_many_angles.tres"),
             quadrant_size = 16,
             subtile_collision_margin = 3.0,
             are_45_degree_subtiles_used = true,
@@ -1070,8 +1072,8 @@ var _surfacer_manifest := {
     are_loaded_surfaces_deeply_validated = true,
     uses_threads_for_platform_graph_calculation = false and _uses_threads,
     
-    default_tile_set = preload( \
-            "res://addons/surfacer/src/tiles/tile_set_with_many_angles.tres"),
+    default_tileset = preload( \
+            "res://addons/surfacer/src/tiles/tileset_with_many_angles.tres"),
     path_drag_update_throttle_interval = 0.2,
     path_beat_update_throttle_interval = 0.2,
     
