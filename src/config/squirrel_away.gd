@@ -917,7 +917,7 @@ var _subtile_manifest := {
             "res://addons/surface_tiler/assets/images/corner_type_annotation_key.png",
     implicit_quadrant_connection_color = Color("#ff3333"),
     
-    tileset_annotations_parser_class = \
+    annotations_parser_class = \
             preload("res://addons/surface_tiler/src/tileset_annotations_parser.gd"),
     corner_calculator_class = \
             preload("res://addons/surface_tiler/src/subtile_target_corner_calculator.gd"),
