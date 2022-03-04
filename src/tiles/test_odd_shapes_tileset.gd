@@ -1,0 +1,3 @@
+tool
+class_name TestOddShapesTileset
+extends SurfacesTileset

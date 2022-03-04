@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/squirrel_away/src/config/squirrel_away_level.gd" type="Script" id=1]
-[ext_resource path="res://addons/squirrel_away/src/tiles/squirrel_away_tile_map.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/squirrel_away/src/tiles/squirrel_away_tilemap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/squirrel_away/src/gui/background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/surfacer/src/character/surfacer_spawn_position.tscn" type="PackedScene" id=4]
 
@@ -11,7 +11,7 @@ level_id = "9"
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
-[node name="SquirrelAwayTileMap" parent="." groups=["surfaces"] instance=ExtResource( 2 )]
+[node name="SquirrelAwayTilemap" parent="." groups=["surfaces"] instance=ExtResource( 2 )]
 tile_data = PoolIntArray( 9, 0, 131074, 12, 0, 65536, 13, 0, 65536, 14, 0, 65536, 131071, 0, 65536, 65536, 0, 65536, 65545, 0, 131073, 131081, 0, 131073, 262148, 0, 65536, 262149, 0, 65536, 262150, 0, 65536, 262151, 0, 65536, 1048578, 0, 65536, 1048579, 0, 65536, 1048580, 0, 65536, 1048581, 0, 65536, 1441793, 0, 65536, 1441794, 0, 65536, 1441795, 0, 65536, 1441796, 0, 65536, 1441803, 0, 65536, 1441804, 0, 65536, 1441805, 0, 65536, 1441806, 0, 65536, 1441807, 0, 65536, 1441808, 0, 65536, 1441809, 0, 65536, 1441810, 0, 65536, 1441811, 0, 65536, 1441812, 0, 65536, 1441813, 0, 65536, 1441814, 0, 65536, 1441815, 0, 65536, 1441816, 0, 65536, 1441817, 0, 65536, 1441818, 0, 65536, 1441819, 0, 65536, 1441820, 0, 65536, 1441821, 0, 65536, 1441822, 0, 65536, 1441823, 0, 65536, 1441824, 0, 65536, 1441825, 0, 65536, 1441826, 0, 65536, 1441827, 0, 65536, 1441828, 0, 65536, 1441829, 0, 65536, 1441830, 0, 65536, 1441831, 0, 65536, 1441832, 0, 65536 )
 
 [node name="IntroChoreographyDestination" type="Position2D" parent="." groups=["intro_choreography_destination"]]

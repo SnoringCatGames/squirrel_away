@@ -1,6 +1,6 @@
 tool
-class_name SquirrelAwayTileSetWithManyAnglesOld
-extends SurfacesTileSet
+class_name SquirrelAwayTilesetWithManyAnglesOld
+extends SurfacesTileset
 
 
 const _TILES_MANIFEST := [

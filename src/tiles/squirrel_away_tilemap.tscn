@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/squirrel_away/src/tiles/squirrel_away_tilemap.gd" type="Script" id=1]
+[ext_resource path="res://addons/squirrel_away/src/tiles/squirrel_away_surfaces_tileset.tres" type="TileSet" id=2]
+
+[node name="SquirrelAwayTilemap" type="TileMap" groups=[
+"desaturatables",
+]]
+tile_set = ExtResource( 2 )
+format = 1
+script = ExtResource( 1 )

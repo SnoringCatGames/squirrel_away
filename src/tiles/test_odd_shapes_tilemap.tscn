@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/squirrel_away/src/tiles/test_odd_shapes_tilemap.gd" type="Script" id=1]
+[ext_resource path="res://addons/squirrel_away/src/tiles/test_odd_shapes_tileset.tres" type="TileSet" id=2]
+
+[node name="TestOddShapesTilemap" type="TileMap" groups=[
+"desaturatables",
+]]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 8
+cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
+format = 1
+script = ExtResource( 1 )
