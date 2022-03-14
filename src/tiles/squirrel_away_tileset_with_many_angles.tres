@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=916 format=2]
+[gd_resource type="TileSet" load_steps=915 format=2]
 
 [ext_resource path="res://addons/surface_tiler/src/corner_match_tileset.gd" type="Script" id=1]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/tiles_with_many_angles.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/slow_tiles.png" type="Texture" id=7]
 [ext_resource path="res://addons/surface_tiler/assets/images/tiles_with_separated_depths_v1.png" type="Texture" id=8]
 [ext_resource path="res://addons/surface_tiler/assets/images/tileset_quadrants.png" type="Texture" id=9]
-[ext_resource path="res://addons/scaffolder/assets/images/misc/transparent_pixel.png" type="Texture" id=10]
 
 [sub_resource type="OccluderPolygon2D" id=167]
 polygon = PoolVector2Array( 29, 32, 3, 32, 3, 3, 29, 3 )
@@ -16836,21 +16835,11 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 18/z_index = 0
-19/name = "***autotile90"
-19/texture = ExtResource( 10 )
+19/name = ""
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
-19/region = Rect2( 0, 0, 1, 1 )
-19/tile_mode = 1
-19/autotile/bitmask_mode = 1
-19/autotile/bitmask_flags = [  ]
-19/autotile/icon_coordinate = Vector2( 0, 0 )
-19/autotile/tile_size = Vector2( 32, 32 )
-19/autotile/spacing = 0
-19/autotile/occluder_map = [  ]
-19/autotile/navpoly_map = [  ]
-19/autotile/priority_map = [  ]
-19/autotile/z_index_map = [  ]
+19/region = Rect2( 0, 0, 0, 0 )
+19/tile_mode = 0
 19/occluder_offset = Vector2( 0, 0 )
 19/navigation_offset = Vector2( 0, 0 )
 19/shape_offset = Vector2( 0, 0 )
@@ -16859,21 +16848,11 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 19/shape_one_way_margin = 0.0
 19/shapes = [  ]
 19/z_index = 0
-20/name = "**autotile45"
-20/texture = ExtResource( 10 )
+20/name = ""
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
-20/region = Rect2( 0, 0, 1, 1 )
-20/tile_mode = 1
-20/autotile/bitmask_mode = 1
-20/autotile/bitmask_flags = [  ]
-20/autotile/icon_coordinate = Vector2( 0, 0 )
-20/autotile/tile_size = Vector2( 32, 32 )
-20/autotile/spacing = 0
-20/autotile/occluder_map = [  ]
-20/autotile/navpoly_map = [  ]
-20/autotile/priority_map = [  ]
-20/autotile/z_index_map = [  ]
+20/region = Rect2( 0, 0, 0, 0 )
+20/tile_mode = 0
 20/occluder_offset = Vector2( 0, 0 )
 20/navigation_offset = Vector2( 0, 0 )
 20/shape_offset = Vector2( 0, 0 )
