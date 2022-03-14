@@ -8,13 +8,13 @@ In this game, the player can click anywhere in the level, and the cat character 
 
 > **NOTE:** The Squirrel Away example game is set up as an "**addon**". This means that it cannot run by itself, and must be run within the `addons/` directory of a [separate project](https://github.com/SnoringCatGames/exampler). This makes Squirrel Away a little more convoluted to run and understand on its own. But this makes it easy for us to also update Squirrel Away source code when making framework changes from another project, which is important for keeping Squirrel Away up-to-date!
 
-## Getting set up
+## ⚙️ Getting set up
 
 > **NOTE:** This repo uses [Git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to include frameworks.
 
 To learn more about how the code works, checkout the [Surfacer](https://github.com/SnoringCatGames/surfacer/) and [Scaffolder](https://github.com/SnoringCatGames/scaffolder/) READMEs.
 
-## Software used
+## 💿 Software used
 
 -   [Surfacer](https://github.com/SnoringCatGames/surfacer/): A framework that enables procedural path-finding across 2D platforms.
 -   [Scaffolder](https://github.com/SnoringCatGames/scaffolder/): A framework that provides some general app infrastructure.
@@ -24,7 +24,7 @@ To learn more about how the code works, checkout the [Surfacer](https://github.c
 -   [Bfxr](https://www.bfxr.net/): Sound effects editor.
 -   [DefleMask](https://deflemask.com/): Chiptune music tracker.
 
-## Licenses
+## 📃 Licenses
 
 -   All code is published under the [MIT license](LICENSE).
 -   All art assets (files under `assets/images/`, `assets/music/`, and `assets/sounds/`) are published under the [CC0 1.0 Universal license](https://creativecommons.org/publicdomain/zero/1.0/deed.en).
