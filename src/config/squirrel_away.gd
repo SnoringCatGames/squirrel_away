@@ -906,7 +906,7 @@ var _surface_properties_manifest := {
     },
 }
 
-var _subtile_manifest := {
+var _surface_tiler_manifest := {
     outer_autotile_name = "autotile",
     inner_autotile_name = "__inner_autotile__",
     forces_convex_collision_shapes = true,
@@ -918,15 +918,15 @@ var _subtile_manifest := {
     implicit_quadrant_connection_color = Color("#ff3333"),
     
     annotations_parser_class = \
-            preload("res://addons/surface_tiler/src/tileset_annotations_parser.gd"),
+            preload("res://addons/surface_tiler/src/calculators/tileset_annotations_parser.gd"),
     corner_calculator_class = \
-            preload("res://addons/surface_tiler/src/subtile_target_corner_calculator.gd"),
+            preload("res://addons/surface_tiler/src/calculators/subtile_target_corner_calculator.gd"),
     quadrant_calculator_class = \
-            preload("res://addons/surface_tiler/src/subtile_target_quadrant_calculator.gd"),
+            preload("res://addons/surface_tiler/src/calculators/subtile_target_quadrant_calculator.gd"),
     initializer_class = \
-            preload("res://addons/surface_tiler/src/corner_match_tileset_initializer.gd"),
+            preload("res://addons/surface_tiler/src/calculators/corner_match_tileset_initializer.gd"),
     shape_calculator_class = \
-            preload("res://addons/surface_tiler/src/corner_match_tileset_shape_calculator.gd"),
+            preload("res://addons/surface_tiler/src/calculators/corner_match_tileset_shape_calculator.gd"),
     
     # FIXME: LEFT OFF HERE: -------
     # - Use this new tile-set config structure.
@@ -947,6 +947,7 @@ var _subtile_manifest := {
 }
 
 # FIXME: LEFT OFF HERE: --------------------------------------------
+# - Use this in Surfacer.
 var _tileset_manifest := {
     tilesets = [
         {
@@ -1092,7 +1093,7 @@ var _surfacer_manifest := {
     surface_properties_manifest = _surface_properties_manifest,
     movement_manifest = _movement_manifest,
     annotations_manifest = _annotations_manifest,
-    subtile_manifest = _subtile_manifest,
+    tileset_manifest = _tileset_manifest
 }
 
 var app_manifest := {
@@ -1108,6 +1109,7 @@ var app_manifest := {
     character_manifest = _character_manifest,
     annotation_parameters_manifest = _annotation_parameters_manifest,
     surfacer_manifest = _surfacer_manifest,
+    surface_tiler_manifest = _surface_tiler_manifest,
 
     level_config_class = SquirrelAwayLevelConfig,
     level_session_class = SquirrelAwayLevelSession,
