@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=915 format=2]
+[gd_resource type="TileSet" load_steps=916 format=2]
 
 [ext_resource path="res://addons/surface_tiler/src/corner_match_tileset.gd" type="Script" id=1]
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/tiles_with_many_angles.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://addons/squirrel_away/assets/images/foreground/slow_tiles.png" type="Texture" id=7]
 [ext_resource path="res://addons/surface_tiler/assets/images/tiles_with_separated_depths_v1.png" type="Texture" id=8]
 [ext_resource path="res://addons/surface_tiler/assets/images/tileset_quadrants.png" type="Texture" id=9]
+[ext_resource path="res://addons/scaffolder/assets/images/misc/transparent_pixel.png" type="Texture" id=10]
 
 [sub_resource type="OccluderPolygon2D" id=167]
 polygon = PoolVector2Array( 29, 32, 3, 32, 3, 3, 29, 3 )
@@ -16861,4 +16862,50 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 20/shape_one_way_margin = 0.0
 20/shapes = [  ]
 20/z_index = 0
+21/name = "***autotile90"
+21/texture = ExtResource( 10 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 0, 0, 1, 1 )
+21/tile_mode = 1
+21/autotile/bitmask_mode = 1
+21/autotile/bitmask_flags = [  ]
+21/autotile/icon_coordinate = Vector2( 0, 0 )
+21/autotile/tile_size = Vector2( 32, 32 )
+21/autotile/spacing = 0
+21/autotile/occluder_map = [  ]
+21/autotile/navpoly_map = [  ]
+21/autotile/priority_map = [  ]
+21/autotile/z_index_map = [  ]
+21/occluder_offset = Vector2( 0, 0 )
+21/navigation_offset = Vector2( 0, 0 )
+21/shape_offset = Vector2( 0, 0 )
+21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+21/shape_one_way = false
+21/shape_one_way_margin = 0.0
+21/shapes = [  ]
+21/z_index = 0
+22/name = "**autotile45"
+22/texture = ExtResource( 10 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 0, 0, 1, 1 )
+22/tile_mode = 1
+22/autotile/bitmask_mode = 1
+22/autotile/bitmask_flags = [  ]
+22/autotile/icon_coordinate = Vector2( 0, 0 )
+22/autotile/tile_size = Vector2( 32, 32 )
+22/autotile/spacing = 0
+22/autotile/occluder_map = [  ]
+22/autotile/navpoly_map = [  ]
+22/autotile/priority_map = [  ]
+22/autotile/z_index_map = [  ]
+22/occluder_offset = Vector2( 0, 0 )
+22/navigation_offset = Vector2( 0, 0 )
+22/shape_offset = Vector2( 0, 0 )
+22/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+22/shape_one_way = false
+22/shape_one_way_margin = 0.0
+22/shapes = [  ]
+22/z_index = 0
 script = ExtResource( 1 )
