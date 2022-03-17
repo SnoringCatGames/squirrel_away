@@ -95,6 +95,11 @@ func _derive_overrides_according_to_debug_or_playtest(
 # ---
 
 
+const _FRAMEWORK_DISPLAY_NAME := "Squirrel Away"
+const _FRAMEWORK_ADDONS_FOLDER_NAME := "squirrel_away"
+const _AUTO_LOAD_NAME := "SquirrelAway"
+const _AUTO_LOAD_DEPS := []
+
 var _is_using_pixel_style := true
 
 var _uses_threads := false and OS.can_use_threads()
@@ -906,46 +911,6 @@ var _surface_properties_manifest := {
     },
 }
 
-var _surface_tiler_manifest := {
-    outer_autotile_name = "autotile",
-    inner_autotile_name = "__inner_autotile__",
-    forces_convex_collision_shapes = true,
-    allows_fallback_corner_matches = true,
-    supports_runtime_autotiling = true,
-    
-    corner_type_annotation_key_path = \
-            "res://addons/surface_tiler/assets/images/corner_type_annotation_key.png",
-    implicit_quadrant_connection_color = Color("#ff3333"),
-    
-    annotations_parser_class = \
-            preload("res://addons/surface_tiler/src/calculators/tileset_annotations_parser.gd"),
-    corner_calculator_class = \
-            preload("res://addons/surface_tiler/src/calculators/subtile_target_corner_calculator.gd"),
-    quadrant_calculator_class = \
-            preload("res://addons/surface_tiler/src/calculators/subtile_target_quadrant_calculator.gd"),
-    initializer_class = \
-            preload("res://addons/surface_tiler/src/calculators/corner_match_tileset_initializer.gd"),
-    shape_calculator_class = \
-            preload("res://addons/surface_tiler/src/calculators/corner_match_tileset_shape_calculator.gd"),
-    
-    # FIXME: LEFT OFF HERE: -------
-    # - Use this new tile-set config structure.
-    tilesets = [
-        {
-            tileset_quadrants_path = \
-                    "res://addons/surface_tiler/assets/images/tileset_quadrants.png",
-            tileset_corner_type_annotations_path = \
-                    "res://addons/surface_tiler/assets/images/tileset_corner_type_annotations.png",
-            tile_set = \
-                    preload("res://addons/squirrel_away/src/tiles/squirrel_away_tileset_with_many_angles.tres"),
-            quadrant_size = 16,
-            subtile_collision_margin = 3.0,
-            are_45_degree_subtiles_used = true,
-            are_27_degree_subtiles_used = false,
-        },
-    ],
-}
-
 # FIXME: LEFT OFF HERE: --------------------------------------------
 # - Use this in Surfacer.
 var _tileset_manifest := {
@@ -1109,7 +1074,6 @@ var app_manifest := {
     character_manifest = _character_manifest,
     annotation_parameters_manifest = _annotation_parameters_manifest,
     surfacer_manifest = _surfacer_manifest,
-    surface_tiler_manifest = _surface_tiler_manifest,
 
     level_config_class = SquirrelAwayLevelConfig,
     level_session_class = SquirrelAwayLevelSession,
@@ -1123,13 +1087,16 @@ var _overrides := {
 # ---
 
 
-func _init() -> void:
-    assert(self.get_script().resource_path.find("addons/squirrel_away") >= 0,
-            "Squirrel Away must be run as an 'addon' from within a separate " +
-            "project.")
+func _init().(
+        _FRAMEWORK_DISPLAY_NAME,
+        _FRAMEWORK_ADDONS_FOLDER_NAME,
+        _AUTO_LOAD_NAME,
+        _AUTO_LOAD_DEPS) -> void:
+    pass
 
 
-func _ready() -> void:
+func _on_auto_load_deps_ready() -> void:
+    ._on_auto_load_deps_ready()
     Sc.call_deferred("run", app_manifest)
 
 
