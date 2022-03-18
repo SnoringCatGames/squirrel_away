@@ -1095,11 +1095,6 @@ func _init().(
     pass
 
 
-func _on_auto_load_deps_ready() -> void:
-    ._on_auto_load_deps_ready()
-    Sc.call_deferred("run", app_manifest)
-
-
 func _override_configs_for_app() -> void:
     ._override_configs_for_app()
     
