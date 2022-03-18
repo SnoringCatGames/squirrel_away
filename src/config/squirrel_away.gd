@@ -1095,6 +1095,10 @@ func _init().(
     pass
 
 
+func _get_members_to_destroy() -> Array:
+    return []
+
+
 func _override_configs_for_app() -> void:
     ._override_configs_for_app()
     
