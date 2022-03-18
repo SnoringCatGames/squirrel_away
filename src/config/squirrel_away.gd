@@ -1116,6 +1116,16 @@ func _override_configs_for_app() -> void:
     _override_manifest(app_manifest, _overrides)
 
 
+func _register_manifest_TMP(manifest: Dictionary) -> void:
+    # FIXME: LEFT OFF HERE: -------------------------
+    pass
+
+
+func _instantiate_sub_modules_TMP() -> void:
+    # FIXME: LEFT OFF HERE: -------------------------
+    pass
+
+
 func _configure_sub_modules() -> void:
     Sc.profiler.preregister_metric_keys(_additional_metric_keys)
 
