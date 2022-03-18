@@ -1,6 +1,6 @@
 tool
-class_name SquirrelAwayManifestSchema
-extends FrameworkManifestSchema
+class_name SquirrelAwaySchema
+extends FrameworkSchema
 
 
 const _DISPLAY_NAME := "Squirrel Away"
