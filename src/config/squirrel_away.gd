@@ -94,11 +94,7 @@ func _derive_overrides_according_to_debug_or_playtest(
 
 # ---
 
-
-const _FRAMEWORK_DISPLAY_NAME := "Squirrel Away"
-const _FRAMEWORK_ADDONS_FOLDER_NAME := "squirrel_away"
-const _AUTO_LOAD_NAME := "SquirrelAway"
-const _AUTO_LOAD_DEPS := []
+const _SCHEMA_CLASS := SquirrelAwayManifestSchema
 
 var _is_using_pixel_style := true
 
@@ -1087,11 +1083,7 @@ var _overrides := {
 # ---
 
 
-func _init().(
-        _FRAMEWORK_DISPLAY_NAME,
-        _FRAMEWORK_ADDONS_FOLDER_NAME,
-        _AUTO_LOAD_NAME,
-        _AUTO_LOAD_DEPS) -> void:
+func _init().(_SCHEMA_CLASS) -> void:
     pass
 
 
