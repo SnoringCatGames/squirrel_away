@@ -94,7 +94,7 @@ func _derive_overrides_according_to_debug_or_playtest(
 
 # ---
 
-const _SCHEMA_CLASS := SquirrelAwayManifestSchema
+const _SCHEMA_CLASS := SquirrelAwaySchema
 
 var _is_using_pixel_style := true
 
