@@ -81,14 +81,14 @@ func _override_configs_for_current_run() -> void:
 #    }
     
     if are_annotations_emphasized:
-        _update_to_emphasize_annotations(manifest)
+        _update_to_emphasize_annotations(app_manifest)
     
-    _derive_overrides_according_to_debug_or_playtest(manifest)
+    _derive_overrides_according_to_debug_or_playtest(app_manifest)
 
 
 func _derive_overrides_according_to_debug_or_playtest(
-        manifest: Dictionary) -> void:
-    ._derive_overrides_according_to_debug_or_playtest(manifest)
+        app_manifest: Dictionary) -> void:
+    ._derive_overrides_according_to_debug_or_playtest(app_manifest)
     _character_manifest.omits_npcs = \
             _character_manifest.omits_npcs and _metadata.debug
 
@@ -1057,7 +1057,7 @@ var _surfacer_manifest := {
     tileset_manifest = _tileset_manifest
 }
 
-var manifest := {
+var app_manifest := {
     metadata = _metadata,
     audio_manifest = _audio_manifest,
     colors_manifest = _colors_manifest,
@@ -1095,27 +1095,17 @@ func _override_configs_for_app() -> void:
     ._override_configs_for_app()
     
     if _is_using_pixel_style:
-        manifest.gui_manifest.fonts_manifest = \
+        app_manifest.gui_manifest.fonts_manifest = \
                 _default_fonts_manifest_pixel
-        manifest.styles_manifest = _styles_manifest_pixel
-        manifest.images_manifest = _default_images_manifest_pixel
+        app_manifest.styles_manifest = _styles_manifest_pixel
+        app_manifest.images_manifest = _default_images_manifest_pixel
     else:
-        manifest.gui_manifest.fonts_manifest = \
+        app_manifest.gui_manifest.fonts_manifest = \
                 _default_fonts_manifest_normal
-        manifest.styles_manifest = _default_styles_manifest_normal
-        manifest.images_manifest = _default_images_manifest_normal
+        app_manifest.styles_manifest = _default_styles_manifest_normal
+        app_manifest.images_manifest = _default_images_manifest_normal
     
-    _override_manifest(manifest, _overrides)
-
-
-func _register_manifest_TMP(manifest: Dictionary) -> void:
-    # FIXME: LEFT OFF HERE: -------------------------
-    pass
-
-
-func _instantiate_sub_modules_TMP() -> void:
-    # FIXME: LEFT OFF HERE: -------------------------
-    pass
+    _override_manifest(app_manifest, _overrides)
 
 
 func _configure_sub_modules() -> void:
