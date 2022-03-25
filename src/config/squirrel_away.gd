@@ -24,7 +24,7 @@ func _get_members_to_destroy() -> Array:
 func _amend_manifest() -> void:
     ._amend_manifest()
     
-    # FIXME: LEFT OFF HERE: -------------------------------------------
+    # FIXME: LEFT OFF HERE: --------------------------------------------
     # - Update values on `metadata` for the modes.
     # - Update how/where the pixel-vs-anti-aliased style default manifests are
     #   stored.
@@ -36,23 +36,6 @@ func _amend_manifest() -> void:
             Sc.modes.get_is_active("ui_smoothness", "pixelated")
     var are_annotations_emphasized: bool = \
             Sc.modes.get_is_active("annotations", "emphasized")
-    
-    # FIXME: LEFT OFF HERE: --------------------------------------------
-    var schema: ScaffolderSchema = Singletons.instance(ScaffolderSchema)
-    if is_using_pixel_style:
-        Sc.manifest.gui_manifest.fonts_manifest = \
-                schema._default_fonts_manifest_pixel
-        Sc.manifest.styles_manifest = \
-                schema._default_styles_manifest_pixel
-        Sc.manifest.images_manifest = \
-                schema._default_images_manifest_pixel
-    else:
-        Sc.manifest.gui_manifest.fonts_manifest = \
-                schema._default_fonts_manifest_normal
-        Sc.manifest.styles_manifest = \
-                schema._default_styles_manifest_normal
-        Sc.manifest.images_manifest = \
-                schema._default_images_manifest_normal
     
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
     var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
