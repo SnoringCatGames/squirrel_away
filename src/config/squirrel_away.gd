@@ -45,15 +45,17 @@ func _amend_manifest() -> void:
             Sc.modes[FrameworkSchemaMode.ANNOTATIONS] == \
             FrameworkSchemaMode.Annotations.EMPHASIZED
     
-    # FIXME: LEFT OFF HERE: ------------------------------------------
-#    if is_using_pixel_style:
-#        Sc.gui_manifest.fonts_manifest = _default_fonts_manifest_pixel
-#        Sc.styles_manifest = _styles_manifest_pixel
-#        Sc.images_manifest = _default_images_manifest_pixel
-#    else:
-#        Sc.gui_manifest.fonts_manifest = _default_fonts_manifest_normal
-#        Sc.styles_manifest = _default_styles_manifest_normal
-#        Sc.images_manifest = _default_images_manifest_normal
+    # FIXME: LEFT OFF HERE: --------------------------------------------
+    if is_using_pixel_style:
+        Sc.gui_manifest.fonts_manifest = \
+                ScaffolderSchema._default_fonts_manifest_pixel
+        Sc.styles_manifest = ScaffolderSchema._default_styles_manifest_pixel
+        Sc.images_manifest = ScaffolderSchema._default_images_manifest_pixel
+    else:
+        Sc.gui_manifest.fonts_manifest = \
+                ScaffolderSchema._default_fonts_manifest_normal
+        Sc.styles_manifest = ScaffolderSchema._default_styles_manifest_normal
+        Sc.images_manifest = ScaffolderSchema._default_images_manifest_normal
     
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
     var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
