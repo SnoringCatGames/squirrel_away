@@ -24,26 +24,18 @@ func _get_members_to_destroy() -> Array:
 func _amend_manifest() -> void:
     ._amend_manifest()
     
-    # FIXME: LEFT OFF HERE: ------------------------------------------
+    # FIXME: LEFT OFF HERE: -------------------------------------------
     # - Update values on `metadata` for the modes.
     # - Update how/where the pixel-vs-anti-aliased style default manifests are
     #   stored.
     
-    var debug: bool = \
-            Sc.modes[FrameworkSchemaMode.RELEASE] == \
-            FrameworkSchemaMode.Release.LOCAL_DEV
-    var playtest: bool = \
-            Sc.modes[FrameworkSchemaMode.RELEASE] == \
-            FrameworkSchemaMode.Release.PLAYTEST
-    var is_using_threads: bool = \
-            Sc.modes[FrameworkSchemaMode.THREADING] == \
-            FrameworkSchemaMode.Threading.ENABLED
+    var debug: bool = Sc.modes.get_is_active("release", "local_dev")
+    var playtest: bool = Sc.modes.get_is_active("release", "playtest")
+    var is_using_threads: bool = Sc.modes.get_is_active("threading", "enabled")
     var is_using_pixel_style: bool = \
-            Sc.modes[FrameworkSchemaMode.UI_SMOOTHNESS] == \
-            FrameworkSchemaMode.UiSmoothness.PIXELATED
+            Sc.modes.get_is_active("ui_smoothness", "pixelated")
     var are_annotations_emphasized: bool = \
-            Sc.modes[FrameworkSchemaMode.ANNOTATIONS] == \
-            FrameworkSchemaMode.Annotations.EMPHASIZED
+            Sc.modes.get_is_active("annotations", "emphasized")
     
     # FIXME: LEFT OFF HERE: --------------------------------------------
     var schema: ScaffolderSchema = Singletons.instance(ScaffolderSchema)
