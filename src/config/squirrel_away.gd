@@ -24,10 +24,7 @@ func _get_members_to_destroy() -> Array:
 func _amend_manifest() -> void:
     ._amend_manifest()
     
-    # FIXME: LEFT OFF HERE: --------------------------------------------
-    # - Update values on `metadata` for the modes.
-    # - Update how/where the pixel-vs-anti-aliased style default manifests are
-    #   stored.
+    # FIXME: LEFT OFF HERE: ---------------------------------------------
     
     var debug: bool = Sc.modes.get_is_active("release", "local_dev")
     var playtest: bool = Sc.modes.get_is_active("release", "playtest")
