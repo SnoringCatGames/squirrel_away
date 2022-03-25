@@ -46,16 +46,21 @@ func _amend_manifest() -> void:
             FrameworkSchemaMode.Annotations.EMPHASIZED
     
     # FIXME: LEFT OFF HERE: --------------------------------------------
+    var schema: ScaffolderSchema = Singletons.instance(ScaffolderSchema)
     if is_using_pixel_style:
-        Sc.gui_manifest.fonts_manifest = \
-                ScaffolderSchema._default_fonts_manifest_pixel
-        Sc.styles_manifest = ScaffolderSchema._default_styles_manifest_pixel
-        Sc.images_manifest = ScaffolderSchema._default_images_manifest_pixel
+        Sc.manifest.gui_manifest.fonts_manifest = \
+                schema._default_fonts_manifest_pixel
+        Sc.manifest.styles_manifest = \
+                schema._default_styles_manifest_pixel
+        Sc.manifest.images_manifest = \
+                schema._default_images_manifest_pixel
     else:
-        Sc.gui_manifest.fonts_manifest = \
-                ScaffolderSchema._default_fonts_manifest_normal
-        Sc.styles_manifest = ScaffolderSchema._default_styles_manifest_normal
-        Sc.images_manifest = ScaffolderSchema._default_images_manifest_normal
+        Sc.manifest.gui_manifest.fonts_manifest = \
+                schema._default_fonts_manifest_normal
+        Sc.manifest.styles_manifest = \
+                schema._default_styles_manifest_normal
+        Sc.manifest.images_manifest = \
+                schema._default_images_manifest_normal
     
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.default
     var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
@@ -96,7 +101,7 @@ func _amend_manifest() -> void:
     ]
     Su.manifest.ignores_platform_graph_save_files = false
     
-    Sc.metadata.thread_count = \
+    Sc.manifest.metadata.thread_count = \
             OS.get_processor_count() if \
             is_using_threads else \
             1
