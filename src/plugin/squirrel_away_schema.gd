@@ -9,6 +9,10 @@ var _properties := {
 }
 
 var _overrides := {
+    ScaffolderSchema: {
+        colors_manifest = \
+            Utils.get_direct_color_properties(SquirrelAwayDefaultColors.new()),
+    },
 }
 
 
