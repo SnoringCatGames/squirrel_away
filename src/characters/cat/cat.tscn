@@ -14,10 +14,14 @@ collision_mask = 19
 script = ExtResource( 1 )
 character_name = "cat"
 collision_detection_layers = 8
-primary_annotation_color = Color( 0.133333, 0.12549, 0.203922, 1 )
-secondary_annotation_color = Color( 1, 1, 1, 1 )
-navigation_annotation_color_override = Color( 0.407843, 0.721569, 0.294118, 1 )
-position_annotation_color_override = Color( 0.407843, 0.721569, 0.294118, 1 )
+primary_annotation_color = Object(Reference,"script":Resource( "res://addons/scaffolder/src/annotators/color_config/static_color_config.gd" ),"h":0.683333,"s":0.384615,"v":0.203922,"a":1.0,"r":0.133333,"g":0.12549,"b":0.203922,"color":Color( 0.133333, 0.12549, 0.203922, 1 ),"_color":Color( 0.133333, 0.12549, 0.203922, 1 ),"_color":Color( 0.133333, 0.12549, 0.203922, 1 ))
+
+secondary_annotation_color = Object(Reference,"script":Resource( "res://addons/scaffolder/src/annotators/color_config/palette_color_config.gd" ),"h":0.0,"s":0.0,"v":0.0,"a":0.0,"key":"white","_h_override":-1.0,"_s_override":-1.0,"_v_override":-1.0,"_a_override":-1.0,"h_delta":0.0,"s_delta":0.0,"v_delta":0.0,"a_delta":0.0,"override_color":Color( -1, -2, -2, -1 ),"delta_color":Color( 0, 0, 0, 0 ),"key":"white","_h_override":-1.0,"_s_override":-1.0,"_v_override":-1.0,"_a_override":-1.0,"h_delta":0.0,"s_delta":0.0,"v_delta":0.0,"a_delta":0.0)
+
+navigation_annotation_color_override = Object(Reference,"script":Resource( "res://addons/scaffolder/src/annotators/color_config/static_color_config.gd" ),"h":0.288991,"s":0.592391,"v":0.721569,"a":1.0,"r":0.407843,"g":0.721569,"b":0.294118,"color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ))
+
+position_annotation_color_override = Object(Reference,"script":Resource( "res://addons/scaffolder/src/annotators/color_config/static_color_config.gd" ),"h":0.288991,"s":0.592391,"v":0.721569,"a":1.0,"r":0.407843,"g":0.721569,"b":0.294118,"color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ))
+
 exclamation_mark_width_start = 4.0
 exclamation_mark_length_start = 24.0
 exclamation_mark_stroke_width_start = 1.2
@@ -62,53 +66,6 @@ oblique_collison_normal_aspect_ratio_threshold = 10.0
 
 [node name="CatAnimator" parent="." instance=ExtResource( 2 )]
 scale = Vector2( -1, 1 )
-animations = {
-"Climb": {
-"name": "Climb",
-"speed": 9.4,
-"sprite_name": ""
-},
-"CrawlOnCeiling": {
-"name": "CrawlOnCeiling",
-"speed": 7.0,
-"sprite_name": ""
-},
-"JumpFall": {
-"name": "JumpFall",
-"speed": 1.0,
-"sprite_name": ""
-},
-"JumpRise": {
-"name": "JumpRise",
-"speed": 1.0,
-"sprite_name": ""
-},
-"Rest": {
-"name": "Rest",
-"speed": 0.8,
-"sprite_name": ""
-},
-"RestOnCeiling": {
-"name": "RestOnCeiling",
-"speed": 1.0,
-"sprite_name": ""
-},
-"RestOnWall": {
-"name": "RestOnWall",
-"speed": 0.8,
-"sprite_name": ""
-},
-"Stand": {
-"name": "Stand",
-"speed": 1.0,
-"sprite_name": ""
-},
-"Walk": {
-"name": "Walk",
-"speed": 10.0,
-"sprite_name": ""
-}
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
