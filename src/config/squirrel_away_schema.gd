@@ -72,9 +72,66 @@ var _additive_overrides := {
             },
         },
     },
+    SurfaceTilerSchema: {
+        # FIXME: LEFT OFF HERE: --------------------------------
+        # - Customize this.
+        tilesets = [
+            {
+                recalculate_tileset = [TYPE_CUSTOM, RecalculateTilesetCustomProperty],
+                tile_set = preload("res://addons/surfacer/src/tiles/demo_tileset.tres"),
+                quadrant_size = 16,
+                corner_match_tiles = [
+                    {
+                        outer_autotile_name = "autotile",
+                        inner_autotile_name = "__inner_autotile__",
+                        tileset_quadrants_path = \
+                            "res://addons/surface_tiler/assets/images/tileset_quadrants.png",
+                        tile_corner_type_annotations_path = \
+                            "res://addons/surface_tiler/assets/images/tileset_corner_type_annotations.png",
+                        subtile_collision_margin = 3.0,
+                        are_45_degree_subtiles_used = true,
+                        are_27_degree_subtiles_used = false,
+                    },
+                ],
+                non_corner_match_tiles = [
+                    {
+                        name = "ungrabbable_tile",
+                        properties = "disabled",
+                        is_collidable = true,
+                    },
+                    {
+                        name = "slippery_tile",
+                        properties = "slippery",
+                        is_collidable = true,
+                    },
+                    {
+                        name = "sticky_tile",
+                        properties = "sticky",
+                        is_collidable = true,
+                    },
+                    {
+                        name = "fast_tile",
+                        properties = "fast",
+                        is_collidable = true,
+                    },
+                    {
+                        name = "slow_tile",
+                        properties = "slow",
+                        is_collidable = true,
+                    },
+                ],
+            },
+        ],
+    },
 }
 
-var _subtractive_overrides := {}
+var _subtractive_overrides := {
+    SurfaceTilerSchema: {
+        tilesets = [
+            SurfacerSchema.DEFAULT_TILESET_CONFIG,
+        ],
+    },
+}
 
 
 func _init().(
