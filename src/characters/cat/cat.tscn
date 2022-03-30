@@ -14,13 +14,13 @@ collision_mask = 19
 script = ExtResource( 1 )
 character_name = "cat"
 collision_detection_layers = 8
-primary_annotation_color = Object(Reference,"script":Resource( "res://addons/scaffolder/src/annotators/color_config/static_color_config.gd" ),"h":0.683333,"s":0.384615,"v":0.203922,"a":1.0,"r":0.133333,"g":0.12549,"b":0.203922,"color":Color( 0.133333, 0.12549, 0.203922, 1 ),"_color":Color( 0.133333, 0.12549, 0.203922, 1 ),"_color":Color( 0.133333, 0.12549, 0.203922, 1 ))
+primary_annotation_color = Object(Reference,"script":Resource( "res://addons/scaffolder/src/config/color_config/static_color_config.gd" ),"h":0.683333,"s":0.384615,"v":0.203922,"a":1.0,"r":0.133333,"g":0.12549,"b":0.203922,"color":Color( 0.133333, 0.12549, 0.203922, 1 ),"_color":Color( 0.133333, 0.12549, 0.203922, 1 ),"_color":Color( 0.133333, 0.12549, 0.203922, 1 ))
 
-secondary_annotation_color = Object(Reference,"script":Resource( "res://addons/scaffolder/src/annotators/color_config/palette_color_config.gd" ),"h":0.0,"s":0.0,"v":0.0,"a":0.0,"key":"white","_h_override":-1.0,"_s_override":-1.0,"_v_override":-1.0,"_a_override":-1.0,"h_delta":0.0,"s_delta":0.0,"v_delta":0.0,"a_delta":0.0,"override_color":Color( -1, -2, -2, -1 ),"delta_color":Color( 0, 0, 0, 0 ),"key":"white","_h_override":-1.0,"_s_override":-1.0,"_v_override":-1.0,"_a_override":-1.0,"h_delta":0.0,"s_delta":0.0,"v_delta":0.0,"a_delta":0.0)
+secondary_annotation_color = Object(Reference,"script":Resource( "res://addons/scaffolder/src/config/color_config/palette_color_config.gd" ),"h":0.0,"s":0.0,"v":0.0,"a":0.0,"key":"white","_h_override":-1.0,"_s_override":-1.0,"_v_override":-1.0,"_a_override":-1.0,"h_delta":0.0,"s_delta":0.0,"v_delta":0.0,"a_delta":0.0,"override_color":Color( -1, -2, -2, -1 ),"delta_color":Color( 0, 0, 0, 0 ),"key":"white","_h_override":-1.0,"_s_override":-1.0,"_v_override":-1.0,"_a_override":-1.0,"h_delta":0.0,"s_delta":0.0,"v_delta":0.0,"a_delta":0.0)
 
-navigation_annotation_color_override = Object(Reference,"script":Resource( "res://addons/scaffolder/src/annotators/color_config/static_color_config.gd" ),"h":0.288991,"s":0.592391,"v":0.721569,"a":1.0,"r":0.407843,"g":0.721569,"b":0.294118,"color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ))
+navigation_annotation_color_override = Object(Reference,"script":Resource( "res://addons/scaffolder/src/config/color_config/static_color_config.gd" ),"h":0.288991,"s":0.592391,"v":0.721569,"a":1.0,"r":0.407843,"g":0.721569,"b":0.294118,"color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ))
 
-position_annotation_color_override = Object(Reference,"script":Resource( "res://addons/scaffolder/src/annotators/color_config/static_color_config.gd" ),"h":0.288991,"s":0.592391,"v":0.721569,"a":1.0,"r":0.407843,"g":0.721569,"b":0.294118,"color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ))
+position_annotation_color_override = Object(Reference,"script":Resource( "res://addons/scaffolder/src/config/color_config/static_color_config.gd" ),"h":0.288991,"s":0.592391,"v":0.721569,"a":1.0,"r":0.407843,"g":0.721569,"b":0.294118,"color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ),"_color":Color( 0.407843, 0.721569, 0.294118, 1 ))
 
 exclamation_mark_width_start = 4.0
 exclamation_mark_length_start = 24.0

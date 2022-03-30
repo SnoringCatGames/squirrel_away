@@ -4,7 +4,7 @@ extends SurfacerFrameworkGlobal
 
 
 const _SCHEMA_PATH := \
-        "res://addons/squirrel_away/src/plugin/squirrel_away_schema.gd"
+        "res://addons/squirrel_away/src/config/squirrel_away_schema.gd"
 
 var _additional_metric_keys := [
     "start_new_squirrel_navigation",
