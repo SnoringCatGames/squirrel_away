@@ -33,7 +33,6 @@ var _additive_overrides := {
             ],
         },
         gui_manifest = {
-            # FIXME: LEFT OFF HERE: ------------ Include this in all other frameworks too.
             third_party_license_text = \
                     SquirrelAwayThirdPartyLicenses.TEXT + \
                     SurfaceTilerThirdPartyLicenses.TEXT + \
