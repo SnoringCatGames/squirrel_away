@@ -13,6 +13,9 @@ const PLUGIN_ICON_PATH_PREFIX := \
 const SCHEMA_PATH := \
         "res://addons/squirrel_away/src/config/squirrel_away_schema.gd"
 const MANIFEST_PATH_OVERRIDE := "res://addons/squirrel_away/src/config/manifest.json"
+const METRIC_KEYS := [
+    "start_new_squirrel_navigation",
+]
 const MODES := {}
 
 
@@ -25,5 +28,6 @@ func _init().(
         PLUGIN_ICON_PATH_PREFIX,
         SCHEMA_PATH,
         MANIFEST_PATH_OVERRIDE,
+        METRIC_KEYS,
         MODES) -> void:
     pass
