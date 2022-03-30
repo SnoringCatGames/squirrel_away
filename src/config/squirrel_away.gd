@@ -6,10 +6,6 @@ extends SurfacerFrameworkGlobal
 const _SCHEMA_PATH := \
         "res://addons/squirrel_away/src/config/squirrel_away_schema.gd"
 
-var _additional_metric_keys := [
-    "start_new_squirrel_navigation",
-]
-
 
 func _init().(_SCHEMA_PATH) -> void:
     pass
@@ -25,7 +21,7 @@ func _amend_manifest() -> void:
 
 
 func _configure_sub_modules() -> void:
-    Sc.profiler.preregister_metric_keys(_additional_metric_keys)
+    ._configure_sub_modules()
 
 
 func _load_state() -> void:
