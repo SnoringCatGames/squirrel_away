@@ -14,22 +14,24 @@ var _additive_overrides := {
             Utils.get_direct_color_properties(SquirrelAwayDefaultColors.new()),
         annotation_parameters_manifest = Utils.get_direct_non_color_properties(
             SquirrelAwayDefaultAnnotationParameters.new()),
-        music_manifest = [
-            # {
-            #     name = "my_music",
-            #     path_prefix = "res://addons/squirrel_away/assets/music/",
-            #     volume_db = 0.0,
-            #     bpm = 75.0,
-            #     meter = 4,
-            # },
-        ],
-        sounds_manifest = [
-            # {
-            #     name = "my_sound",
-            #     volume_db = 0.0,
-            #     path_prefix = "res://addons/squirrel_away/assets/sounds/",
-            # },
-        ],
+        audio_manifest = {
+            music_manifest = [
+                # {
+                #     name = "my_music",
+                #     path_prefix = "res://addons/squirrel_away/assets/music/",
+                #     volume_db = 0.0,
+                #     bpm = 75.0,
+                #     meter = 4,
+                # },
+            ],
+            sounds_manifest = [
+                # {
+                #     name = "my_sound",
+                #     volume_db = 0.0,
+                #     path_prefix = "res://addons/squirrel_away/assets/sounds/",
+                # },
+            ],
+        },
         gui_manifest = {
             # FIXME: LEFT OFF HERE: ------------ Include this in all other frameworks too.
             third_party_license_text = \
