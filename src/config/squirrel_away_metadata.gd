@@ -1,6 +1,6 @@
 tool
 class_name SquirrelAwayMetadata
-extends PluginMetadata
+extends FrameworkMetadata
 
 
 const DISPLAY_NAME := "Squirrel Away"
