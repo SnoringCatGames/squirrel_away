@@ -12,8 +12,11 @@ var _additive_overrides := {
     ScaffolderSchema: {
         colors_manifest = \
             Utils.get_direct_color_properties(SquirrelAwayDefaultColors.new()),
-        annotation_parameters_manifest = Utils.get_direct_non_color_properties(
-            SquirrelAwayDefaultAnnotationParameters.new()),
+        annotation_parameters_manifest = Sc.utils.merge(
+            Utils.get_direct_non_color_properties(
+                SquirrelAwayDefaultAnnotationParameters.new()),
+            Utils.get_direct_non_color_properties(
+                SquirrelAwayDefaultColors.new())),
         audio_manifest = {
             music_manifest = [
                 # {

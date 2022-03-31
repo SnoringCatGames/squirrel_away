@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/squirrel_away/src/config/squirrel_away_level.gd" type="Script" id=1]
 [ext_resource path="res://addons/squirrel_away/src/tiles/squirrel_away_tilemap_with_many_angles.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/squirrel_away/src/gui/background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/surfacer/src/character/surfacer_spawn_position.tscn" type="PackedScene" id=4]
-[ext_resource path="res://addons/surfacer/src/tiles/surface_enablement.tscn" type="PackedScene" id=5]
-[ext_resource path="res://addons/surfacer/src/tiles/surface_enablement_tileset.tres" type="TileSet" id=6]
 [ext_resource path="res://addons/squirrel_away/src/tiles/squirrel_away_tileset_with_many_angles.tres" type="TileSet" id=7]
 [ext_resource path="res://addons/surface_tiler/src/corner_match_inner_tilemap.gd" type="Script" id=8]
 
@@ -17,6 +15,7 @@ level_id = "14"
 
 [node name="SquirrelAwayTilemapWithManyAngles" parent="." instance=ExtResource( 2 )]
 tile_data = PoolIntArray( 65533, 7, 0, 65534, 7, 0, 65535, 7, 0, 0, 7, 0, 1, 7, 0, 2, 7, 0, 131069, 8, 0, 131070, 8, 0, 131071, 8, 0, 65536, 8, 0, 65537, 8, 0, 65538, 8, 0 )
+id = "14"
 
 [node name="InnerTilemap" type="TileMap" parent="SquirrelAwayTilemapWithManyAngles" groups=["surfaces"]]
 tile_set = ExtResource( 7 )
@@ -32,9 +31,3 @@ id = "_inner"
 position = Vector2( 0, -224 )
 character_name = "cat"
 character_name = "cat"
-
-[node name="SurfaceEnablement" parent="." instance=ExtResource( 5 )]
-modulate = Color( 0, 1, 0.0999999, 0.7 )
-tile_set = ExtResource( 6 )
-tile_data = PoolIntArray( 3932160, 0, 0 )
-character_categories = 0
