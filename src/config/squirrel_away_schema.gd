@@ -88,7 +88,8 @@ var _additive_overrides := {
                             "res://addons/surface_tiler/assets/images/tileset_quadrants.png",
                         tile_corner_type_annotations_path = \
                             "res://addons/surface_tiler/assets/images/tileset_corner_type_annotations.png",
-                        subtile_collision_margin = 3.0,
+                        # FIXME: ------------------- Make this 3.0 after fixing support for it in SurfaceParser.
+                        subtile_collision_margin = 0.0,
                         are_45_degree_subtiles_used = true,
                         are_27_degree_subtiles_used = false,
                         properties = "default",
