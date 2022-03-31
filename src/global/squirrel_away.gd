@@ -64,7 +64,7 @@ func _get_manifest_overrides() -> Array:
         ["Sc.manifest.metadata.are_all_levels_unlocked", true],
         ["Sc.manifest.metadata.are_test_levels_included", true],
         ["Sc.manifest.metadata.is_save_state_cleared_for_debugging", false],
-        ["Sc.manifest.metadata.opens_directly_to_level_id", "11"],
+        ["Sc.manifest.metadata.opens_directly_to_level_id", "14"],
         ["Sc.manifest.metadata.is_splash_skipped", true],
         ["Sc.manifest.metadata.are_button_controls_enabled_by_default", true],
         
@@ -80,8 +80,10 @@ func _get_manifest_overrides() -> Array:
 #            "8",
 #            "9",
 #            "10",
-            "11",
+#            "11",
 #            "12",
+#            "13",
+           "14",
         ]],
         ["Su.manifest.ignores_platform_graph_save_files", false],
         

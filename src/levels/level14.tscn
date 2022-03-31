@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://addons/squirrel_away/src/config/squirrel_away_level.gd" type="Script" id=1]
+[ext_resource path="res://addons/squirrel_away/src/tiles/squirrel_away_tilemap_with_many_angles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/squirrel_away/src/gui/background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/surfacer/src/character/surfacer_spawn_position.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/surfacer/src/tiles/surface_enablement.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/surfacer/src/tiles/surface_enablement_tileset.tres" type="TileSet" id=6]
+[ext_resource path="res://addons/squirrel_away/src/tiles/squirrel_away_tileset_with_many_angles.tres" type="TileSet" id=7]
+[ext_resource path="res://addons/surface_tiler/src/corner_match_inner_tilemap.gd" type="Script" id=8]
+
+[node name="Level14" type="Node2D"]
+script = ExtResource( 1 )
+level_id = "14"
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="SquirrelAwayTilemapWithManyAngles" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 65533, 7, 0, 65534, 7, 0, 65535, 7, 0, 0, 7, 0, 1, 7, 0, 2, 7, 0, 131069, 8, 0, 131070, 8, 0, 131071, 8, 0, 65536, 8, 0, 65537, 8, 0, 65538, 8, 0 )
+
+[node name="InnerTilemap" type="TileMap" parent="SquirrelAwayTilemapWithManyAngles" groups=["surfaces"]]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65530, 6, 16, 65531, 6, 3, 65532, 6, 2, 65533, 6, 3, 65534, 6, 2, 65535, 6, 3, 0, 6, 2, 1, 6, 3, 2, 6, 2, 3, 6, 3, 4, 6, 2, 5, 6, 17, 131066, 6, 1507352, 131067, 6, 3080219, 131068, 6, 65538, 131069, 6, 65539, 131070, 6, 65538, 131071, 6, 65539, 65536, 6, 65538, 65537, 6, 65539, 65538, 6, 65538, 65539, 6, 65539, 65540, 6, 3080218, 65541, 6, 1507353, 196602, 6, 1310734, 196603, 6, 655361, 196604, 6, 1179668, 196605, 6, 131077, 196606, 6, 131076, 196607, 6, 131077, 131072, 6, 131076, 131073, 6, 131077, 131074, 6, 131076, 131075, 6, 1179669, 131076, 6, 655362, 131077, 6, 1310737, 262138, 6, 327708, 262139, 6, 1245203, 262140, 6, 1245204, 262141, 6, 65561, 262142, 6, 65560, 262143, 6, 65561, 196608, 6, 65560, 196609, 6, 65561, 196610, 6, 65560, 196611, 6, 1245205, 196612, 6, 1245206, 196613, 6, 327709 )
+script = ExtResource( 8 )
+id = "_inner"
+
+[node name="IntroChoreographyDestination" type="Position2D" parent="." groups=["intro_choreography_destination"]]
+
+[node name="CatSpawn" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -224 )
+character_name = "cat"
+character_name = "cat"
+
+[node name="SurfaceEnablement" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 1, 0.0999999, 0.7 )
+tile_set = ExtResource( 6 )
+tile_data = PoolIntArray( 3932160, 0, 0 )
+character_categories = 0
