@@ -35,5 +35,7 @@ character_name = "cat"
 character_name = "cat"
 
 [node name="SurfaceEnablement" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 1, 0.0999999, 0.7 )
 tile_set = ExtResource( 6 )
 tile_data = PoolIntArray( 3932160, 0, 0 )
+character_categories = 0

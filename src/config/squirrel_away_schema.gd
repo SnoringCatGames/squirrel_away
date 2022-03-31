@@ -78,7 +78,7 @@ var _additive_overrides := {
         tilesets = [
             {
                 recalculate_tileset = [TYPE_CUSTOM, RecalculateTilesetCustomProperty],
-                tile_set = preload("res://addons/surfacer/src/tiles/demo_tileset.tres"),
+                tile_set = preload("res://addons/squirrel_away/src/tiles/squirrel_away_tileset_with_many_angles.tres"),
                 quadrant_size = 16,
                 corner_match_tiles = [
                     {
