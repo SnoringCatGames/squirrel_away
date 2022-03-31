@@ -91,6 +91,8 @@ var _additive_overrides := {
                         subtile_collision_margin = 3.0,
                         are_45_degree_subtiles_used = true,
                         are_27_degree_subtiles_used = false,
+                        properties = "default",
+                        is_collidable = true,
                     },
                 ],
                 non_corner_match_tiles = [
