@@ -83,7 +83,7 @@ func _get_manifest_overrides() -> Array:
 #            "11",
 #            "12",
 #            "13",
-#           "14",
+#            "14",
         ]],
         ["Su.manifest.ignores_platform_graph_save_files", false],
         
@@ -94,7 +94,7 @@ func _get_manifest_overrides() -> Array:
             is_using_threads],
         
         ["Sc.manifest.gui_manifest.debug_window_size", debug_window_size],
-        ["Sc.manifest.gui_manifest.hud_manifest.is_inspector_enabled_default", false],
+        ["Sc.manifest.gui_manifest.hud_manifest.is_inspector_enabled_default", true],
         ["Sc.manifest.gui_manifest.hud_manifest.is_hud_visible_by_default", true],
         
 #        ["Su.manifest.debug_params.limit_parsing", {
