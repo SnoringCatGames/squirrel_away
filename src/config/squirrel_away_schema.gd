@@ -60,57 +60,6 @@ var _metadata := {
 
 var _sounds_manifest := [
     {
-        name = "fall",
-        volume_db = 18.0,
-        path_prefix = "res://addons/scaffolder/assets/sounds/",
-    },
-    {
-        name = "cadence_win",
-        volume_db = 10.0,
-        path_prefix = "res://addons/scaffolder/assets/sounds/",
-    },
-    {
-        name = "cadence_lose",
-        volume_db = 10.0,
-        path_prefix = "res://addons/scaffolder/assets/sounds/",
-    },
-    {
-        name = "menu_select",
-        volume_db = -2.0,
-        path_prefix = "res://addons/scaffolder/assets/sounds/",
-    },
-    {
-        name = "menu_select_fancy",
-        volume_db = -6.0,
-        path_prefix = "res://addons/scaffolder/assets/sounds/",
-    },
-    {
-        name = "lock_low",
-        volume_db = 0.0,
-        path_prefix = "res://addons/scaffolder/assets/sounds/",
-    },
-    {
-        name = "lock_high",
-        volume_db = 0.0,
-        path_prefix = "res://addons/scaffolder/assets/sounds/",
-    },
-    {
-        name = "walk",
-        volume_db = 15.0,
-        path_prefix = "res://addons/scaffolder/assets/sounds/",
-    },
-    {
-        name = "achievement",
-        volume_db = 12.0,
-        path_prefix = "res://addons/scaffolder/assets/sounds/",
-    },
-    {
-        name = "single_cat_snore",
-        volume_db = 17.0,
-        path_prefix = "res://addons/scaffolder/assets/sounds/",
-    },
-    
-    {
         name = "cat_jump",
         volume_db = 0.0,
         path_prefix = "",
