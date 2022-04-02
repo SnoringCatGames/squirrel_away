@@ -12,7 +12,7 @@ const PLUGIN_ICON_PATH_PREFIX := \
         "res://addons/scaffolder/assets/images/editor_icons/plugin/star"
 const SCHEMA_PATH := \
         "res://addons/squirrel_away/src/config/squirrel_away_schema.gd"
-const MANIFEST_PATH_OVERRIDE := "res://addons/squirrel_away/src/global/manifest.json"
+const MANIFEST_PATH_OVERRIDE := "res://addons/squirrel_away/src/config/manifest.json"
 const METRIC_KEYS := [
     "start_new_squirrel_navigation",
 ]
