@@ -18,5 +18,5 @@ func _attach_behavior_move_targets() -> void:
             var behavior: Behavior = \
                     squirrel.get_behavior(behavior_class)
             if is_instance_valid(behavior):
-                behavior.move_target = player_character
+                behavior.move_target = active_player_character
                 behavior.trigger(false)
