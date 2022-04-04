@@ -35,6 +35,7 @@ func _get_manifest_overrides() -> Array:
             Sc.modes.get_is_active("release", "local_dev") and \
             OS.is_debug_build()
     var playtest: bool = Sc.modes.get_is_active("release", "playtest")
+    var recording: bool = Sc.modes.get_is_active("release", "recording")
     var is_using_threads: bool = Sc.modes.get_is_active("threading", "enabled")
     var is_using_pixel_style: bool = \
             Sc.modes.get_is_active("ui_smoothness", "pixelated")
@@ -46,14 +47,21 @@ func _get_manifest_overrides() -> Array:
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.full_screen
 #    var debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.google_ads_portrait
     
+    if recording:
+        debug_window_size = ScaffolderGuiConfig.SCREEN_RESOLUTIONS.youtube
+        # FIXME: -------- 
+        # - Disable music.
+        # - Hide the pause button.
+        # - Hide the inspector panel.
+        # - Hide the time hud key-value item.
+        # - Hide other hud elements...
+    
     var overrides := []
     Sc.utils.concat(overrides, _get_common_overrides_for_release_mode())
     Sc.utils.concat(overrides, _get_common_overrides_for_annotations_mode())
     Sc.utils.concat(overrides, [
         ["Sc.manifest.metadata.app_version", "0.0.1"],
         
-        ["Sc.manifest.metadata.debug", debug, "release"],
-        ["Sc.manifest.metadata.playtest", playtest, "release"],
         ["Sc.manifest.metadata.rng_seed", 723],
         ["Sc.manifest.metadata.pauses_on_focus_out", false],
         ["Sc.manifest.metadata.also_prints_to_stdout", true],
