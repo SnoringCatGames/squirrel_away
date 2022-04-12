@@ -38,7 +38,7 @@ var level_manifest := {
         intro_choreography = [
             {
                 is_player_interaction_enabled = false,
-                zoom_multiplier = 0.5,
+                zoom = 0.5,
             },
             {
                 duration = 1.0,
@@ -49,7 +49,7 @@ var level_manifest := {
             },
             {
                 duration = 0.4,
-                zoom_multiplier = 1.0,
+                zoom = 1.0,
             },
             {
                 is_player_interaction_enabled = true,
@@ -89,7 +89,7 @@ var level_manifest := {
 #        intro_choreography = [
 #            {
 #                is_player_interaction_enabled = false,
-#                zoom_multiplier = 0.5,
+#                zoom = 0.5,
 #            },
 #            {
 #                duration = 1.0,
@@ -100,7 +100,7 @@ var level_manifest := {
 #            },
 #            {
 #                duration = 0.4,
-#                zoom_multiplier = 1.0,
+#                zoom = 1.0,
 #            },
 #            {
 #                is_player_interaction_enabled = true,
