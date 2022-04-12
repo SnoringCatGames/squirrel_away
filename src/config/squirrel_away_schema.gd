@@ -250,6 +250,15 @@ var _character_manifest := {
     is_camera_auto_assigned_to_player_character = true,
 }
 
+var _level_manifest := {
+    level_config_class = SquirrelAwayLevelConfig,
+    level_session_class = SquirrelAwayLevelSession,
+    default_camera_bounds_level_margin = \
+        ScaffolderLevelConfig.DEFAULT_CAMERA_BOUNDS_LEVEL_MARGIN,
+    default_character_bounds_level_margin = \
+        ScaffolderLevelConfig.DEFAULT_CHARACTER_BOUNDS_LEVEL_MARGIN,
+}
+
 var _gui_manifest := {
     third_party_license_text = \
             SquirrelAwayThirdPartyLicenses.TEXT + \
@@ -298,6 +307,7 @@ var _additive_overrides := {
         metadata = _metadata,
         audio_manifest = _audio_manifest,
         character_manifest = _character_manifest,
+        level_manifest = _level_manifest,
         colors_manifest = \
             Utils.get_direct_color_properties(SquirrelAwayDefaultColors.new()),
         annotation_parameters_manifest = Sc.utils.merge(

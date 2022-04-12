@@ -27,7 +27,7 @@ func _start() -> void:
     cat = active_player_character
 
     _does_level_have_squirrels = \
-            Sc.level_config.get_level_config(Sc.level_session.id) \
+            Sc.levels.get_level_config(Sc.levels.session.id) \
             .platform_graph_character_category_names.has("squirrel")
 
 
