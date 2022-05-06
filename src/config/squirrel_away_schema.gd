@@ -316,6 +316,12 @@ var _additive_overrides := {
                 SquirrelAwayDefaultColors.new())),
         gui_manifest = _gui_manifest,
     },
+    SurfacerSchema: {
+        movement_manifest = {
+            do_player_actions_interrupt_navigation = true,
+        },
+        cancel_active_player_control_on_invalid_nav_selection = false,
+    },
     SurfaceTilerSchema: {
         # FIXME: LEFT OFF HERE: --------------------------------
         # - Customize this.
