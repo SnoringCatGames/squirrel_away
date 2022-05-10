@@ -280,9 +280,37 @@ var _gui_manifest := {
             },
         },
     },
+    pause_item_manifest = [
+        LevelControlRow,
+        TimeControlRow,
+#        FastestTimeControlRow,
+#        LongestTimeControlRow,
+#        ScoreControlRow,
+#        HighScoreControlRow,
+    ],
+    game_over_item_manifest = [
+        LevelControlRow,
+        TimeControlRow,
+#        FastestTimeControlRow,
+#        LongestTimeControlRow,
+#        ScoreControlRow,
+#        HighScoreControlRow,
+    ],
+    level_select_item_manifest = [
+        TotalPlaysControlRow,
+#        FastestTimeControlRow,
+#        LongestTimeControlRow,
+        HighScoreControlRow,
+    ],
     hud_manifest = {
         hud_key_value_box_size = Vector2(256.0, 48.0),
         hud_key_value_list_item_manifest = [
+            {
+                item_class = TimeControlRow,
+                settings_enablement_label = "Time",
+                enabled_by_default = true,
+                settings_group_key = "hud",
+            },
         ],
         is_hud_visible_by_default = true,
         is_inspector_enabled_default = false,
