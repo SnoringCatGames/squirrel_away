@@ -32,7 +32,7 @@ var _metadata := {
     
     app_name = "Squirrel Away",
     app_id = "games.snoringcat.squirrel_away",
-    app_version = "0.0.3",
+    app_version = "0.8.0",
     score_version = "0.0.1",
     data_agreement_version = "0.0.1",
     
