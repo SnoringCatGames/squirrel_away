@@ -2,7 +2,7 @@
 import sys
 import zipfile
 
-from snore_core.build_utils import (
+from submodules.snore_core.build_utils import (
     add_submodule_to_zip,
     create_submodule_addons_symlinks,
     default_addon_dir_name as snore_core_addon_dir_name,
@@ -10,17 +10,17 @@ from snore_core.build_utils import (
     pre_setup as pre_setup_snore_core,
     set_up as set_up_snore_core,
 )
-from scaffolder.build_utils import (
+from submodules.scaffolder.build_utils import (
     default_addon_dir_name as scaffolder_addon_dir_name,
     default_lib_name as scaffolder_lib_name,
     set_up as set_up_scaffolder,
 )
-from surfacer.build_utils import (
+from submodules.surfacer.build_utils import (
     default_addon_dir_name as surfacer_addon_dir_name,
     default_lib_name as surfacer_lib_name,
     set_up as set_up_surfacer,
 )
-from surf_scaf.build_utils import (
+from submodules.surf_scaf.build_utils import (
     default_addon_dir_name as surf_scaf_addon_dir_name,
     default_lib_name as surf_scaf_lib_name,
 )
