@@ -18,3 +18,6 @@
 	path = godot
 	url = https://github.com/godotengine/godot.git
 	branch = 4.4
+[submodule "surf_scaf"]
+	path = surf_scaf
+	url = https://github.com/SnoringCatGames/surf_scaf

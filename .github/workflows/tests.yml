@@ -28,8 +28,8 @@ jobs:
           #   lfs: true
           token: ${{ secrets.PRIVATECHECKOUTACCESSTOKEN}}
 
-      # Setup dependencies (like installing scons).
-      - name: Setup godot-cpp
+      # Set up dependencies (like installing scons).
+      - name: Set up godot-cpp
         uses: ./godot-cpp/.github/actions/setup-godot-cpp
         with:
           platform: windows
@@ -61,32 +61,12 @@ jobs:
             ./godot/bin
           key: ${{ steps.godot-restore.outputs.cache-primary-key }}
 
-      # Build SnoreCore GDExtension.
-      - name: Build SnoreCore GDExtension Debug Build
+      # Build the GDExtension.
+      - name: Build the GDExtension Debug Build
         shell: sh
         run: |
-          cd snore_core
-          scons ci=yes tests=yes optimize=debug target=template_debug platform=windows arch=x86_64 precision=single custom_api_file=extension_api.json
-          cd ..
-        # scons ci=yes tests=yes optimize=debug target=template_debug platform=linux arch=x86_64 precision=single custom_api_file=extension_api.json
-
-      # Build Scaffolder GDExtension.
-      - name: Build Scaffolder GDExtension Debug Build
-        shell: sh
-        run: |
-          cd scaffolder
-          scons ci=yes tests=yes optimize=debug target=template_debug platform=windows arch=x86_64 precision=single custom_api_file=extension_api.json
-          cd ..
-        # scons ci=yes tests=yes optimize=debug target=template_debug platform=linux arch=x86_64 precision=single custom_api_file=extension_api.json
-
-      # Build Surfacer GDExtension.
-      - name: Build Surfacer GDExtension Debug Build
-        shell: sh
-        run: |
-          cd surfacer
-          scons ci=yes tests=yes optimize=debug target=template_debug platform=windows arch=x86_64 precision=single custom_api_file=extension_api.json
-          cd ..
-        # scons ci=yes tests=yes optimize=debug target=template_debug platform=linux arch=x86_64 precision=single custom_api_file=extension_api.json
+          scons sc_ci=yes sc_tests=yes optimize=debug target=template_debug platform=windows arch=x86_64 precision=single custom_api_file=extension_api.json
+        # scons sc_ci=yes sc_tests=yes optimize=debug target=template_debug platform=linux arch=x86_64 precision=single custom_api_file=extension_api.json
 
       - name: Trigger asset imports
         shell: sh
