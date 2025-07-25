@@ -12,12 +12,10 @@ from submodules.snore_core.build_utils import (
 )
 from submodules.scaffolder.build_utils import (
     default_addon_dir_name as scaffolder_addon_dir_name,
-    default_lib_name as scaffolder_lib_name,
     set_up as set_up_scaffolder,
 )
 from submodules.surfacer.build_utils import (
     default_addon_dir_name as surfacer_addon_dir_name,
-    default_lib_name as surfacer_lib_name,
     set_up as set_up_surfacer,
 )
 from submodules.surf_scaf.build_utils import (
@@ -26,7 +24,6 @@ from submodules.surf_scaf.build_utils import (
 )
 from build_utils import (
     default_addon_dir_name as squirrel_away_addon_dir_name,
-    default_lib_name as squirrel_away_lib_name,
 )
 
 
