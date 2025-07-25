@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 import sys
 import zipfile
 
@@ -21,9 +22,13 @@ from submodules.surfacer.build_utils import (
 from submodules.surf_scaf.build_utils import (
     default_addon_dir_name as surf_scaf_addon_dir_name,
     default_lib_name as surf_scaf_lib_name,
+    set_up as set_up_surf_scaf,
 )
 from build_utils import (
+    create_symlink_for_squirrel_away_demo_project,
+    default_lib_name,
     default_addon_dir_name as squirrel_away_addon_dir_name,
+    move_bin_from_squirrel_away_to_surf_scaf,
 )
 
 
@@ -65,6 +70,13 @@ set_up_surfacer(
     surfacer_addon_dir_name,
     is_setup_for_self=False,
 )
+set_up_surf_scaf(
+    env,
+    cpp_paths,
+    sources,
+    surf_scaf_addon_dir_name,
+    is_setup_for_self=False,
+)
 
 post_setup_snore_core(
     env,
@@ -80,3 +92,6 @@ create_submodule_addons_symlinks(scaffolder_addon_dir_name, False)
 create_submodule_addons_symlinks(surfacer_addon_dir_name, False)
 create_submodule_addons_symlinks(surf_scaf_addon_dir_name, False)
 create_submodule_addons_symlinks(squirrel_away_addon_dir_name, True)
+
+create_symlink_for_squirrel_away_demo_project()
+move_bin_from_squirrel_away_to_surf_scaf()

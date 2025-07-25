@@ -63,6 +63,7 @@ compile_commands.json
 # Custom changes
 
 ~*
+doc_classes/
 
 ## Ignore built binaries
 

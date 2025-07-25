@@ -11,21 +11,19 @@ config_version=5
 [application]
 
 config/name="Squirrel Away"
-run/main_scene="uid://dd6yp3qtgdlum"
+run/main_scene="res://addons/squirrel_away/src/main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://addons/squirrel_away/icon.svg"
 
 [audio]
 
-buses/default_bus_layout="res://src/default_bus_layout.tres"
+buses/default_bus_layout="res://addons/squirrel_away/src/default_bus_layout.tres"
 
 [autoload]
 
-S="*res://addons/scaffolder2/src/core/s.gd"
-G="*res://src/demo_globals.gd"
+S="*res://addons/scaffolder/src/core/s.gd"
+G="*res://addons/squirrel_away/src/demo_globals.gd"
 
 [native_extensions]
 
-paths=["res://bin/scaffolder.gdextension"]
-paths=["res://bin/snore_core.gdextension"]
-paths=["res://bin/surfacer.gdextension"]
+paths=["res://addons/surf_scaf/bin/surf_scaf.gdextension"]
