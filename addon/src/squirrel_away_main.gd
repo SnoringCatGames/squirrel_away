@@ -1,4 +1,4 @@
-class_name DemoMain
+class_name SquirrelAwayMain
 extends Node
 
 
@@ -11,11 +11,11 @@ extends Node
 
 
 func _ready() -> void:
-    G.snore_core = SnoreCore.get_module("SnoreCore")
-    G.scaffolder = SnoreCore.get_module("Scaffolder")
-    G.surfacer = SnoreCore.get_module("Surfacer")
+    Sq.snore_core = SnoreCore.get_module("SnoreCore")
+    Sq.scaffolder = SnoreCore.get_module("Scaffolder")
+    Sq.surfacer = SnoreCore.get_module("Surfacer")
 
-    G.snore_core.connect("all_modules_set_up_finished", _on_snore_core_set_up_finished)
+    Sq.snore_core.connect("all_modules_set_up_finished", _on_snore_core_set_up_finished)
     SnoreCore.set_up([snore_core_settings, scaffolder_settings, surfacer_settings])
 
     if run_tests:
@@ -23,9 +23,9 @@ func _ready() -> void:
 
 
 func _on_snore_core_set_up_finished() -> void:
-    G.snore_core_settings = G.snore_core.get_settings()
-    G.scaffolder_settings = G.scaffolder.get_settings()
-    G.surfacer_settings = G.surfacer.get_settings()
+    Sq.snore_core_settings = Sq.snore_core.get_settings()
+    Sq.scaffolder_settings = Sq.scaffolder.get_settings()
+    Sq.surfacer_settings = Sq.surfacer.get_settings()
 
     # FIXME: Port Scaffolder logic and get this running.
-    #S.set_up(G.scaffolder_settings)
+    #S.set_up(Sq.scaffolder_settings)

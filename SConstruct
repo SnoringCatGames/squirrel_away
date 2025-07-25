@@ -26,9 +26,9 @@ from submodules.surf_scaf.build_utils import (
 )
 from build_utils import (
     create_symlink_for_squirrel_away_demo_project,
+    create_symlink_for_surf_scaf_extension_manifest,
     default_lib_name,
     default_addon_dir_name as squirrel_away_addon_dir_name,
-    move_bin_from_squirrel_away_to_surf_scaf,
 )
 
 
@@ -84,6 +84,7 @@ post_setup_snore_core(
     sources,
     surf_scaf_lib_name,
     surf_scaf_addon_dir_name,
+    False,
     Default,
 )
 
@@ -94,4 +95,4 @@ create_submodule_addons_symlinks(surf_scaf_addon_dir_name, False)
 create_submodule_addons_symlinks(squirrel_away_addon_dir_name, True)
 
 create_symlink_for_squirrel_away_demo_project()
-move_bin_from_squirrel_away_to_surf_scaf()
+create_symlink_for_surf_scaf_extension_manifest()

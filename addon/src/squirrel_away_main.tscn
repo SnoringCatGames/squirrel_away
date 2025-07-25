@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd6yp3qtgdlum"]
+
+[ext_resource type="Script" uid="uid://48ej5xloh5ng" path="res://addons/squirrel_away/src/squirrel_away_main.gd" id="1_ny2vc"]
+
+[node name="SquirrelAwayMain" type="Node2D"]
+script = ExtResource("1_ny2vc")

@@ -1,6 +1,6 @@
-class_name DemoGlobals
+class_name SquirrelAwayGlobals
 extends Node
-## G (DemoGlobals)
+## Sq (SquirrelAwayGlobals)
 ##
 ## -   This is an autoload containing game-specific stuff.
 ## -   General-purpose reusable features should instead live in S or some other
@@ -15,5 +15,5 @@ var scaffolder_settings: ScaffolderSettings
 var surfacer: Surfacer
 var surfacer_settings: SurfacerSettings
 
-var main: DemoMain
-var level: DemoLevel
+var main: SquirrelAwayMain
+var level: SquirrelAwayLevel
