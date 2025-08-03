@@ -69,3 +69,7 @@ doc_classes/
 
 **/bin/**/*.dll
 build/
+
+## Ignore demo/addons/ content that gets linked/copied during the build
+
+demo/addons/*
