@@ -14,7 +14,7 @@ def create_symlink_for_squirrel_away_demo_project() -> None:
 
 
 def create_symlink_for_surf_scaf_extension_manifest() -> None:
-    source_path = os.path.abspath("submodules/surf_scaf/addon/bin")
+    source_path = os.path.abspath("../surf_scaf/addon/bin")
     link_path = os.path.abspath("demo/addons/surf_scaf/bin")
 
     # Ensure the destination directory exists.

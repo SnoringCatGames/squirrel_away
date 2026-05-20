@@ -3,7 +3,11 @@ import os
 import sys
 import zipfile
 
-from submodules.snore_core.build_utils import (
+# Workspace-sibling layout: all framework deps live next to squirrel_away,
+# not nested under it.
+sys.path.insert(0, os.path.abspath(".."))
+
+from snore_core.build_utils import (
     add_submodule_to_zip,
     create_submodule_addons_symlinks,
     default_addon_dir_name as snore_core_addon_dir_name,
@@ -11,15 +15,15 @@ from submodules.snore_core.build_utils import (
     pre_setup as pre_setup_snore_core,
     set_up as set_up_snore_core,
 )
-from submodules.scaffolder.build_utils import (
+from scaffolder.build_utils import (
     default_addon_dir_name as scaffolder_addon_dir_name,
     set_up as set_up_scaffolder,
 )
-from submodules.surfacer.build_utils import (
+from surfacer.build_utils import (
     default_addon_dir_name as surfacer_addon_dir_name,
     set_up as set_up_surfacer,
 )
-from submodules.surf_scaf.build_utils import (
+from surf_scaf.build_utils import (
     default_addon_dir_name as surf_scaf_addon_dir_name,
     default_lib_name as surf_scaf_lib_name,
     set_up as set_up_surf_scaf,
