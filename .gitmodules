@@ -3,10 +3,10 @@
 	url = https://github.com/SnoringCatGames/snore_core
 [submodule "submodules/surfacer"]
 	path = submodules/surfacer
-	url = https://github.com/SnoringCatGames/surfacer2
+	url = https://github.com/SnoringCatGames/surfacer
 [submodule "submodules/scaffolder"]
 	path = submodules/scaffolder
-	url = https://github.com/SnoringCatGames/scaffolder2
+	url = https://github.com/SnoringCatGames/scaffolder
 [submodule "submodules/googletest"]
 	path = submodules/googletest
 	url = https://github.com/google/googletest.git
