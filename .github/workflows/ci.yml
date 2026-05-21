@@ -85,9 +85,15 @@ jobs:
 
       - name: Verify artifact landed in demo/addons/surf_scaf/bin
         working-directory: squirrel_away
+        # Bash glob with nullglob: empty array if no match. Robust across
+        # OS / find quirks (this path is reached through the
+        # demo/addons/surf_scaf symlink to ../surf_scaf/addon, which makes
+        # find's default behavior surprising — see CLAUDE.md "GitHub
+        # Actions" for context).
         run: |
           set -e
           ls -lR demo/addons/surf_scaf/bin/
-          find demo/addons/surf_scaf/bin -name 'libSurfScaf.*.so' \
-                                        -o -name 'libSurfScaf.*.dylib' \
-              | grep -q . || (echo 'No shared library produced.'; exit 1)
+          shopt -s nullglob
+          files=( demo/addons/surf_scaf/bin/linux/libSurfScaf*.so )
+          (( ${#files[@]} > 0 )) || { echo 'No shared library produced.'; exit 1; }
+          echo "Found: ${files[*]}"
