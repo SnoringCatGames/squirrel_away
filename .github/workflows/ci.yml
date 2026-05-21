@@ -1,20 +1,26 @@
 name: CI
 
-# Build verification on push / PR. squirrel_away builds its own
-# bundled extension (statically linking snore_core, scaffolder,
-# surfacer, and surf_scaf) into demo/addons/surf_scaf/bin/. The
-# library binary is named SurfScaf because squirrel_away currently
-# reuses surf_scaf's lib name and addon path (this is intentional in
-# build_utils.py's post_setup).
+# Build verification. squirrel_away builds its own bundled extension
+# (statically linking snore_core, scaffolder, surfacer, and
+# surf_scaf) into demo/addons/surf_scaf/bin/. The library binary is
+# named SurfScaf because squirrel_away currently reuses surf_scaf's
+# lib name and addon path (this is intentional in build_utils.py's
+# post_setup).
 #
 # What this catches: changes to squirrel_away (or upstream changes
 # breaking squirrel_away's build) that break compilation.
 
 on:
+  # Cost-conscious trigger set (matches hopnbop_private's pattern):
+  # active dev work pushes to `dev` and does NOT trigger CI; the
+  # daily schedule + integration pushes to the slim default branches
+  # do.
   push:
-    branches: [dev, main, master]
+    branches: [main, master]
   pull_request:
-    branches: [dev, main, master]
+    branches: [main, master]
+  schedule:
+    - cron: '0 4 * * *'  # 04:00 UTC daily
   workflow_dispatch:
 
 concurrency:
