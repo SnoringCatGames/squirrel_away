@@ -1,0 +1,93 @@
+name: CI
+
+# Build verification on push / PR. squirrel_away builds its own
+# bundled extension (statically linking snore_core, scaffolder,
+# surfacer, and surf_scaf) into demo/addons/surf_scaf/bin/. The
+# library binary is named SurfScaf because squirrel_away currently
+# reuses surf_scaf's lib name and addon path (this is intentional in
+# build_utils.py's post_setup).
+#
+# What this catches: changes to squirrel_away (or upstream changes
+# breaking squirrel_away's build) that break compilation.
+
+on:
+  push:
+    branches: [dev, main, master]
+  pull_request:
+    branches: [dev, main, master]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build (Linux, x86_64, debug)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout squirrel_away
+        uses: actions/checkout@v4
+        with:
+          path: squirrel_away
+
+      - name: Checkout snore_core (private)
+        uses: actions/checkout@v4
+        with:
+          repository: SnoringCatGames/snore_core
+          ref: dev
+          token: ${{ secrets.PRIVATECHECKOUTACCESSTOKEN }}
+          path: snore_core
+
+      - name: Checkout scaffolder
+        uses: actions/checkout@v4
+        with:
+          repository: SnoringCatGames/scaffolder
+          ref: dev
+          path: scaffolder
+
+      - name: Checkout surfacer
+        uses: actions/checkout@v4
+        with:
+          repository: SnoringCatGames/surfacer
+          ref: dev
+          path: surfacer
+
+      - name: Checkout surf_scaf (private)
+        uses: actions/checkout@v4
+        with:
+          repository: SnoringCatGames/surf_scaf
+          ref: dev
+          token: ${{ secrets.PRIVATECHECKOUTACCESSTOKEN }}
+          path: surf_scaf
+
+      - name: Checkout godot-cpp (4.4)
+        uses: actions/checkout@v4
+        with:
+          repository: godotengine/godot-cpp
+          ref: '4.4'
+          path: godot-cpp
+
+      - name: Checkout googletest
+        uses: actions/checkout@v4
+        with:
+          repository: google/googletest
+          path: googletest
+
+      - name: Install SCons
+        run: |
+          python3 -m pip install --upgrade pip
+          pip3 install scons
+
+      - name: Build squirrel_away (CI mode, dev features + tests)
+        working-directory: squirrel_away
+        run: scons sc_ci=yes sc_dev=yes sc_tests=yes
+
+      - name: Verify artifact landed in demo/addons/surf_scaf/bin
+        working-directory: squirrel_away
+        run: |
+          set -e
+          ls -lR demo/addons/surf_scaf/bin/
+          find demo/addons/surf_scaf/bin -name 'libSurfScaf.*.so' \
+                                        -o -name 'libSurfScaf.*.dylib' \
+              | grep -q . || (echo 'No shared library produced.'; exit 1)
