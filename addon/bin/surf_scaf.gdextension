@@ -25,8 +25,6 @@ android.release.x86_64 = "res://addons/surf_scaf/bin/android/SurfScaf.android.te
 android.debug.arm64 = "res://addons/surf_scaf/bin/android/SurfScaf.android.template_debug.arm64.so"
 android.release.arm64 = "res://addons/surf_scaf/bin/android/SurfScaf.android.template_release.arm64.so"
 
-[icons]
-
-; FIXME
-; TODO: Add other icons.
-GDExample = "res://addons/surf_scaf/addons/surf_scaf2/assets/editor_icons/SurfScafNode.svg"
+; [icons] block intentionally omitted — no editor icons are designed yet.
+; When icons are added, declare per-class entries like:
+;     ClassName = "res://addons/surf_scaf/icons/ClassName.svg"
